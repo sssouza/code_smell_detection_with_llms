@@ -1,0 +1,1580 @@
+file_path,analysis
+AccessControlLogEntry.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+Preconditions.java,"1. The class `Preconditions` has no fields, so there are no many fields to consider.
+
+2. The class does not provide any simple accessor methods (getters/setters) because it has no fields.
+
+3. The class has many methods that implement meaningful behavior, such as `checkArgument`, `checkState`, `checkNotNull`, `checkElementIndex`, `checkPositionIndex`, and `checkPositionIndexes`.
+
+4. The class does not expose any data directly or indirectly because it has no fields.
+
+5. Based on the analysis, the class `Preconditions` is not primarily a data holder with little or no meaningful behavior.
+
+NO, I did not find Data Class"
+FileRefreshableDataSource.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+SaSecureUtil.java,"To analyze this Java file for symptoms of the ""Data Class"" code smell, I will go through the questions step by step:
+
+1. **Many Fields**: The class `SaSecureUtil` has only two static fields, `encoder` and `decoder`, which are used for Base64 encoding and decoding. It does not have many fields, so this symptom is not prominent.
+
+2. **Accessor Methods**: The class does not have traditional getter and setter methods for accessing and modifying its fields. Instead, it provides various static methods for performing encryption and decryption operations. Therefore, this symptom is also not significant.
+
+3. **Lack of Functional Methods**: The class has numerous static methods that implement various encryption and decryption algorithms, such as MD5, SHA1, SHA256, AES, and RSA. These methods are not simply accessors but provide meaningful functionality. Hence, this symptom is not indicative of a Data Class.
+
+4. **Encapsulation**: The class does encapsulate its data (the `encoder` and `decoder` fields) by making them private and static. It does not expose its data directly and instead provides methods to perform operations using this data. This suggests good encapsulation.
+
+5. **Summary Judgment**: Based on the analysis, the `SaSecureUtil` class does not primarily hold data or provide simple accessor methods. It is rich in functionality, providing various encryption and decryption methods, which are its primary purpose. Therefore, it does not exhibit the characteristics of a Data Class.
+
+NO, I did not find Data Class."
+ClassLoaderCommand.java,"1. Many Fields: YES 
+2. Accessor Methods: YES 
+3. Lack of Functional Methods: NO 
+4. Encapsulation: NO 
+5. Summary Judgment: NO, I did not find Data Class"
+AclException.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+GeneralAppIdDecoder.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+DuplicateRemovedScheduler.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SaTokenException.java,"1. No
+2. No
+3. Yes
+4. No
+5. No, I did not find Data Class"
+LinkedTreeMap.java,"1. NO
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SocketIOChannelInitializer.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+JobGroupController.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+ApiException.java,"To address the questions step by step as requested:
+
+1. Many Fields: 
+The class `ApiException` has only one field, `errorCode`, which is private and not public. Therefore, this does not strongly indicate a Data Class.
+
+2. Accessor Methods: 
+The class provides one simple accessor method, `getErrorCode()`, for its field. This is a relatively low number, given the class's purpose.
+
+3. Lack of Functional Methods: 
+The class has several constructors and one getter method. It does not have many methods beyond accessors or constructors, but the methods it does have (constructors) are essential for its functionality as an exception class.
+
+4. Encapsulation: 
+The class encapsulates its data well, with the `errorCode` field being private and accessed through a getter method.
+
+5. Summary Judgment: 
+Based on the analysis, the class `ApiException` primarily serves as an exception with encapsulated data and necessary constructors for its purpose, rather than a simple data holder.
+
+NO, I did not find Data Class"
+SaOAuth2Template.java,"To analyze the provided Java file for symptoms of the ""Data Class"" code smell, let's address each question step by step:
+
+1. **Many Fields**: 
+   - The class `SaOAuth2Template` does not have many fields (attributes) itself. It primarily contains methods for various operations related to OAuth2, such as getting, saving, and deleting tokens, and does not hold a large amount of data in fields.
+
+2. **Accessor Methods**:
+   - While there are many methods in the class, they are not simple accessor methods (getters and setters) for fields. Most methods perform specific operations related to OAuth2 management, such as generating tokens, checking client secrets, or building URLs. There are getter methods (e.g., `getAccessToken`, `getClientToken`), but they are not merely accessing fields; they're interacting with an underlying data storage or system to retrieve tokens.
+
+3. **Lack of Functional Methods**:
+   - The class has a multitude of methods that implement meaningful behavior related to OAuth2 functionality. These include token generation, validation, and management, as well as methods for constructing URLs and checking client credentials. It does not lack functional methods.
+
+4. **Encapsulation**:
+   - The class does expose some of its data indirectly through getter methods, but this is necessary for its intended functionality as an OAuth2 template, providing access to tokens and other OAuth2-related data stored elsewhere (e.g., in a database or cache accessed via `SaManager.getSaTokenDao()`). It does not expose its data directly through public fields.
+
+5. **Summary Judgment**:
+   - Based on the analysis, the class `SaOAuth2Template` is not primarily a data holder with little or no meaningful behavior. It encapsulates complex logic related to OAuth2 management, including token lifecycle management, client authentication, and more. The data it handles is primarily managed through methods that perform significant operations rather than merely storing and exposing data.
+
+Given the analysis, the answer is: **NO, I did not find Data Class**"
+ReplyMessageProcessorTest.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+NodeTraversor.java,"NO, I did not find Data Class"
+DirectoryBrowserSupport.java,"1. Many Fields: YES 
+2. Accessor Methods: YES 
+3. Lack of Functional Methods: NO 
+4. Encapsulation: YES 
+5. Summary Judgment: NO, I did not find Data Class"
+ExcelWriter.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+MethodInfo.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ApolloDataSourceFactoryBean.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+UmsMemberService.java,"NO, I did not find Data Class."
+BillboardParticleBatch.java,"1. Many Fields: YES 
+2. Accessor Methods: YES 
+3. Lack of Functional Methods: NO 
+4. Encapsulation: NO 
+5. Summary Judgment: NO, I did not find Data Class"
+BrokerController.java,"1. Many Fields: YES
+2. Accessor Methods: YES
+3. Lack of Functional Methods: NO
+4. Encapsulation: YES
+5. Summary Judgment: NO, I did not find Data Class"
+StringUtils.java,"To analyze the provided Java file for symptoms of the ""Data Class"" code smell, let's answer the questions step by step:
+
+1. **Many Fields:** The class `StringUtils` does have several static fields, such as `PAD_LIMIT` and `INDEX_NOT_FOUND`, but it does not have many fields in the sense of complex data structures or numerous instance variables. Most of its fields are constants.
+
+2. **Accessor Methods:** The class is filled with static methods that can be considered as getter or utility methods since they provide access to various string manipulations and do not modify the state of the class. However, since it's a utility class and does not hold any state (all methods are static), it doesn't have traditional accessor methods (getters and setters) for instance fields.
+
+3. **Lack of Functional Methods:** The majority of the methods in the `StringUtils` class are indeed functional and implement meaningful behavior related to string manipulation. It's a utility class designed to provide various functionalities for working with strings.
+
+4. **Encapsulation:** Given that this is a utility class with all static methods and no instance variables, encapsulation, in terms of hiding data behind meaningful services, is not applicable in the traditional sense. The class does not expose any data directly since it does not maintain any state.
+
+5. **Summary Judgment:** Considering the class is designed to provide utility functions for string manipulation and does not hold any data or provide simple accessor methods for data, it does not fit the definition of a Data Class.
+
+Therefore, the response to the analysis is:
+
+NO, I did not find Data Class."
+PacketEncoder.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+FastByteArrayOutputStream.java,"NO, I did not find Data Class"
+BinaryRedisPipeline.java,"1. No, the file does not define a class with many fields.
+2. No, the class does not provide many simple accessor methods (getters and/or setters) for its fields, because there are no fields.
+3. Yes, the class has few or no methods that implement meaningful behavior beyond accessors, because all methods seem to be part of an interface to interact with Redis.
+4. No, the class does not expose its data directly, because there are no fields to expose.
+5. No, based on the analysis, the file does not define a class that is primarily a data holder with little or no meaningful behavior.
+
+NO, I did not find Data Class"
+LineTransformationOutputStream.java,"1. No
+2. No
+3. No
+4. No
+5. NO, I did not find Data Class"
+RedissonObject.java,"1. The class `RedissonObject` has 3 fields: `commandExecutor`, `name`, and `codec`. Although it has few fields, one of them, `name`, is a public accessor (`getName()` and `setName()`). However, the number of fields is not excessive.
+
+2. The class provides several simple accessor methods for its fields, including `getName()` and `getCodec()`, as well as `setName()`. There are also other methods like `encode()` and `decode()` that seem to be more than simple accessors, but `getName()`, `getCodec()`, and `setName()` are indeed simple accessors.
+
+3. The class has several methods that implement meaningful behavior, such as `rename()`, `sizeInMemory()`, `migrate()`, `copy()`, `move()`, `renamenx()`, `delete()`, `unlink()`, `touch()`, `isExists()`, `dump()`, `restore()`, `getIdleTime()`, `addListener()`, `removeListener()`, and many others. Most of these methods have asynchronous counterparts as well. The presence of these methods suggests that the class does more than just hold data.
+
+4. The class does not expose its data directly (no public fields), and the access to its fields is controlled through methods. The data is thus encapsulated.
+
+5. Based on the analysis, this class seems to have meaningful behavior and is not just a data holder. 
+
+NO, I did not find Data Class"
+DokanyVolume.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AnalysisContext.java,"NO, I did not find Data Class"
+ClassLoaderModel.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+MethodRoadie.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+StubConnection.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ExpandedProductParsedResult.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+SaFoxUtil.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+Stage.java,"1. Yes, the class has many fields (approximately 30).
+2. Yes, the class provides getter and setter methods for many of its fields.
+3. Yes, most methods in the class are simple getters, setters, or event handlers, and there are few methods that implement complex behavior.
+4. Yes, the class exposes its data through getter and setter methods, rather than encapsulating it behind meaningful services.
+5. YES, I found Data Class"
+Finance.java,"NO, I did not find Data Class."
+AdminBrokerProcessor.java,"1. Many Fields: NO
+
+2. Accessor Methods: NO
+
+3. Lack of Functional Methods: NO
+
+4. Encapsulation: NO
+
+5. Summary Judgment: NO, I did not find Data Class"
+PreparedStatementHandler.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SmsFlashPromotionProductRelationServiceImpl.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+PrefixPluginLogger.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+BitMatrix.java,"1. YES
+2. YES
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+JobTriggerPoolHelper.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+MigrationRunController.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Internet.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AllMembersSupplier.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AwtCodec.java,"NO, I did not find Data Class"
+OrderController.java,"To analyze the provided Java file for symptoms of the ""Data Class"" code smell, we will follow the steps outlined:
+
+1. Many Fields: The class `OrderController` does have fields, but not an excessive number typically associated with a Data Class. The fields it does have are largely related to its function as a controller and for logging, database interaction, and REST operations. However, there's another class referenced here, `Order`, which is not defined in this snippet but seems to hold data. Without its definition, we can't fully assess this aspect for `Order`, but `OrderController` itself doesn't seem to have many fields that are just for holding data.
+
+2. Accessor Methods: There are no simple accessor methods (getters/setters) provided in the `OrderController` class. The methods present are mostly related to performing actions or calculations, not just accessing fields.
+
+3. Lack of Functional Methods: The `OrderController` class contains several methods that implement meaningful behavior, such as `order`, `calculate`, and `invokerAccountService`. These are not just trivial or simple accessors but perform significant operations.
+
+4. Encapsulation: The data in `OrderController` is encapsulated, with fields being private and accessed within the class. The `Order` object, when created, does seem to have public fields (based on how it's accessed), but without its definition, it's hard to say if this violates encapsulation principles within the context of its own class.
+
+5. Summary Judgment: Based on the provided code and analysis, the `OrderController` class itself does not appear to be primarily a data holder with little or no meaningful behavior. It has functionality and performs operations, which suggests it is not a Data Class.
+
+However, since the `Order` class is referenced but not defined here, and it seems to be used in a way that could indicate it might be a Data Class (given it's used to hold data about an order and has what appears to be public fields based on the usage in `OrderController`), we can only definitively assess `OrderController`.
+
+Given the analysis, the `OrderController` class is not a Data Class. But since the question about Data Class detection pertains to the file and there's an implication that `Order` might exhibit characteristics of a Data Class, the focus strictly on `OrderController` leads to the conclusion that it does not fit the criteria. Yet, since the detection instructions are strict and imply a judgment based on finding such a pattern anywhere in the provided code, and there's an indication that `Order` could fit this pattern:
+
+NO, I did not find Data Class"
+XxlJobInfoDao.java,"NO, I did not find Data Class"
+ConnectionPool.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+LinkedHashMultimap.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+PropertyElf.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+PendingTransactionsDialog.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+JedisClusterTest.java,"To analyze if the provided Java class `JedisClusterTest` exhibits symptoms of a ""Data Class"" code smell, let's break down the questions:
+
+1. **Many Fields**: The class `JedisClusterTest` indeed contains several fields (attributes), such as `node1`, `node2`, `node3`, `node4`, `nodeSlave2`, `LOCAL_IP`, `DEFAULT_TIMEOUT`, `DEFAULT_REDIRECTIONS`, `DEFAULT_POOL_CONFIG`, `DEFAULT_CLIENT_CONFIG`, `nodeInfo1`, `nodeInfo2`, `nodeInfo3`, `nodeInfo4`, `nodeInfoSlave2`, and `log`. However, most of these are initialized as part of the setup for testing and are not merely data containers without any functionality.
+
+2. **Accessor Methods**: While the class doesn't contain traditional getter and setter methods for its fields, its primary methods are tests, which indirectly access and modify the states of the nodes and other objects under test. There are no simple accessor methods (getters/setters) for all fields, which is a key characteristic of a data class.
+
+3. **Lack of Functional Methods**: The class contains numerous test methods (`@Test` annotated methods) that implement meaningful behavior. These methods are not just accessors or trivial; they are designed to test various aspects of JedisCluster functionality. The presence of substantial, meaningful test logic indicates that the class is not merely a data container.
+
+4. **Encapsulation**: The class does expose some of its data directly (e.g., through the use of `static` fields for configuration), but the primary purpose of these exposures is to facilitate testing rather than to act as a data container. The tests themselves encapsulate the logic for interacting with the `JedisCluster` and its nodes.
+
+5. **Summary Judgment**: Based on the analysis, the `JedisClusterTest` class is primarily designed for testing the functionality of `JedisCluster` rather than serving as a data holder with little to no meaningful behavior. It contains test logic, setup methods, and teardown methods, which are all functional and meaningful in the context of testing.
+
+Given this analysis:
+
+NO, I did not find Data Class."
+RandomGenerator.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+RouterNanoHTTPD.java,"To determine if the provided Java class, `RouterNanoHTTPD`, exhibits symptoms of the ""Data Class"" code smell, let's analyze it step by step according to the provided guidelines.
+
+1. **Many Fields**: 
+   - The class `RouterNanoHTTPD` itself has relatively few fields, notably `router` of type `UriRouter`. However, it's essential to look into the classes and interfaces it defines or uses, especially `UriResource`, which has multiple fields.
+
+2. **Accessor Methods**: 
+   - `UriResource` provides several getter methods (e.g., `getUri()`, `initParameter(Class<T> paramClazz)`) and setter methods (e.g., `setPriority(int priority)`), which could indicate a potential for being a data class if its primary purpose is holding data.
+
+3. **Lack of Functional Methods**: 
+   - Upon closer inspection, `UriResource` does have methods like `process(Map<String, String> urlParams, IHTTPSession session)` and `match(String url)`, which implement meaningful behavior beyond simple data access. This suggests that while `UriResource` does hold data, it also encapsulates significant functionality related to that data.
+
+4. **Encapsulation**: 
+   - The fields in `UriResource` are private, and access is controlled through getter and setter methods, which is good encapsulation. However, the presence of many public accessors could potentially expose its internal state too much, depending on how it's used.
+
+5. **Summary Judgment**: 
+   - Considering `UriResource`'s mix of data storage and meaningful behavior (like processing and matching), it doesn't strictly fit the definition of a Data Class, which is primarily about holding data with little or no meaningful behavior.
+
+Based on this analysis, the provided class and its components do not strictly adhere to the characteristics of a ""Data Class"" due to the presence of meaningful behavior alongside data storage and access methods.
+
+**NO, I did not find Data Class**"
+JavassistProxyFactory.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+ClusterConnectionManager.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+RequestLimiter.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+MockNamingService.java,"To determine if the provided Java file defines a class that is primarily a data holder with little or no meaningful behavior (i.e., a Data Class), we need to analyze it based on the criteria provided:
+
+1. **Many Fields**: The class does not define many fields. In fact, it does not define any fields that are visible in this code snippet.
+
+2. **Accessor Methods**: The class does provide many methods, but they are mostly overridden from an interface (`NamingService`) and seem to be related to service operations rather than simple accessors (getters/setters) for fields.
+
+3. **Lack of Functional Methods**: The class implements many methods, all of which are overrides from the `NamingService` interface. While they are numerous, they could be considered as providing meaningful behavior related to service management, even though they are all empty implementations in this example.
+
+4. **Encapsulation**: The class does not expose any data directly (no public fields are defined), and there are no simple accessor methods (getters/setters) because there are no fields to access.
+
+5. **Summary Judgment**: Based on the analysis, the class does not hold data and does not have simple accessors. It implements an interface with methods that could offer meaningful behavior, but in this implementation, they are empty.
+
+Given the above analysis, the conclusion would be that this class is not primarily a data holder with little or no meaningful behavior based on the lack of fields and the presence of what could be considered functional methods. However, the fact that all these methods are empty and simply override an interface might suggest a lack of meaningful implementation, but this does not fit the classic definition of a Data Class, which is more about holding data with little functionality.
+
+NO, I did not find Data Class."
+MethodVisitor.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+FlowControllerV1.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+DiagnosedStreamCorruptionException.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+XMLConfigBuilder.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Lexeme.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+DBeaverCore.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+AztecCode.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+EntryConfig.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ScriptProcessorBuilder.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+MapTypeAdapterFactory.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AttributeNameHistoWalker.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+PageModelExtractor.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+TreeTypeAdapter.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Spider.java,"To determine if the provided Java class `Spider` exhibits symptoms of the ""Data Class"" code smell, let's analyze it step by step according to the given instructions.
+
+1. **Many Fields**: The class `Spider` has numerous fields (attributes) such as `downloader`, `pipelines`, `pageProcessor`, `startRequests`, `site`, `uuid`, `scheduler`, `logger`, `threadPool`, `executorService`, `threadNum`, `stat`, `exitWhenComplete`, `spawnUrl`, `newUrlLock`, `newUrlCondition`, `spiderListeners`, `pageCount`, `startTime`, and `emptySleepTime`. This suggests a strong presence of the first criterion for the ""Data Class"" smell.
+
+2. **Accessor Methods**: The class provides several getter and setter methods for its fields, such as `getUUID()`, `getSite()`, `getScheduler()`, `getSpiderListeners()`, `getStartTime()`, `getPageCount()`, `getThreadAlive()`, `setUUID()`, `setScheduler()`, `addPipeline()`, `setPipelines()`, `setDownloader()`, `setExitWhenComplete()`, `setSpawnUrl()`, `setExecutorService()`, and `setSpiderListeners()`. This fulfills the second criterion.
+
+3. **Lack of Functional Methods**: Although the class has a significant number of methods, many of them are indeed simple accessors (getters and setters) or methods that configure or manage the lifecycle of the spider (like `initComponent()`, `checkIfRunning()`, `checkRunningStat()`, `close()`, `run()`, `start()`, `stop()`, `thread()`, `setEmptySleepTime()`). However, it also contains methods that implement more complex behaviors related to the crawling process, such as `processRequest()`, `onDownloadSuccess()`, `onDownloaderFail()`, `extractAndAddRequests()`, and `doCycleRetry()`. Despite this, the ratio of accessor methods to functional methods is high, indicating a possible issue.
+
+4. **Encapsulation**: The class does expose its data indirectly through many public accessors (getters and setters), although most fields are declared as `protected` or private, indicating an attempt at encapsulation. The presence of numerous public accessor methods, however, means that the data is not as encapsulated as it could be, contributing to the ""Data Class"" smell.
+
+5. **Summary Judgment**: Based on the analysis above, while the `Spider` class does exhibit some symptoms of the ""Data Class"" smell (many fields, numerous accessor methods, and indirect exposure of data), it also contains meaningful behavior in several of its methods. The class seems to be a mix of a data holder and a functional component, but its primary role is to manage the crawling process, which involves both data management and complex behaviors.
+
+Considering the instructions provided, the answer to whether this file defines a class that is primarily a data holder with little or no meaningful behavior (i.e., a Data Class) might seem affirmative at first glance due to the presence of many fields and accessor methods. However, the class also contains substantial functionality related to its purpose as a web crawler, suggesting it is not merely a data class. Despite this, the sheer number of fields and accessor methods, compared to the functional methods, leans towards indicating the presence of a Data Class smell.
+
+Given the complex nature of the `Spider` class and its responsibilities that extend beyond simple data holding, but also considering the emphasis on the analysis instructions:
+
+YES, I found Data Class"
+RandomService.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+RuleContainer.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+LocalCacheListener.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+TransactionMQProducer.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+PlainPermissionManager.java,"1. Many Fields: 
+The class `PlainPermissionManager` has several fields, including `fileHome`, `fileName`, `plainAccessResourceMap`, `globalWhiteRemoteAddressStrategy`, `remoteAddressStrategyFactory`, `isWatchStart`, and `dataVersion`. 
+
+2. Accessor Methods: 
+The class `PlainPermissionManager` provides several accessor methods, such as `getAclConfigDataVersion()` for accessing the data version, and other methods like `load()`, `updateAccessConfig()`, `deleteAccessConfig()`, `updateGlobalWhiteAddrsConfig()`, `getAllAclConfig()` that return or modify data. 
+
+3. Lack of Functional Methods: 
+Although the class `PlainPermissionManager` has several methods that seem to implement meaningful behavior, such as `load()`, `updateAccessConfig()`, `deleteAccessConfig()`, `updateGlobalWhiteAddrsConfig()`, `getAllAclConfig()`, `checkPerm()`, `validate()`, most of these methods seem to be focused on managing and manipulating the data stored in the fields, rather than implementing complex business logic. 
+
+4. Encapsulation: 
+The class `PlainPermissionManager` does encapsulate its data, with most fields being private, and access to the data is controlled through methods. However, some fields, like `plainAccessResourceMap` and `globalWhiteRemoteAddressStrategy`, seem to be primarily used for storing and retrieving data, rather than being used in complex calculations or business logic.
+
+5. Summary Judgment: 
+Based on the provided code and the analysis above, it seems that the class `PlainPermissionManager` is primarily focused on managing and storing data related to permissions, and its methods are mostly used for accessing, modifying, and validating this data. 
+
+NO, I did not find Data Class."
+JSONTokener.java,"1. Many Fields: YES
+2. Accessor Methods: NO
+3. Lack of Functional Methods: NO
+4. Encapsulation: NO
+5. Summary Judgment: NO, I did not find Data Class"
+AndroidMusic.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+WriteWorkbookHolder.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+DefaultDateTypeAdapter.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AckSchedulerKey.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+TableView.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HttpClientDownloader.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+CN_QuantifierSegmenter.java,"1. The class `CN_QuantifierSegmenter` has a few fields, including `nStart`, `nEnd`, `countHits`, `Chn_Num`, and `ChnNumberChars`, which is not an excessive number of fields.
+
+2. There are getter and setter methods for some of the fields, but not all of them. However, the fields that do have getter and setter methods are largely encapsulated and accessed through these methods.
+
+3. The class has several methods, including `analyze`, `reset`, `processCNumber`, `processCount`, `needCountScan`, and `outputNumLexeme`, which implement meaningful behavior.
+
+4. The class encapsulates its data and provides methods to interact with it. The fields are mostly private, and access to them is controlled through the provided methods.
+
+5. Based on the analysis, the class does not seem to be primarily a data holder with little or no meaningful behavior. 
+
+NO, I did not find Data Class"
+CompareObjectsSettings.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+InlineSizeHistoVisitable.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+CodahaleHealthChecker.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class."
+ClassicPluginStrategy.java,"1. Many Fields: NO 
+2. Accessor Methods: NO 
+3. Lack of Functional Methods: NO 
+4. Encapsulation: NO 
+5. Summary Judgment: NO, I did not find Data Class"
+ClientHead.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Closer.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Tokeniser.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HazelcastPubSubStore.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ContentType.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ResultLoaderMap.java,"1. Many Fields: YES
+2. Accessor Methods: YES
+3. Lack of Functional Methods: NO
+4. Encapsulation: NO
+5. Summary Judgment: NO, I did not find Data Class"
+HikariConfig.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+Configuration.java,"To determine if the provided Java class exhibits symptoms of the ""Data Class"" code smell, we will analyze it step by step according to the given criteria:
+
+1. **Many Fields**: The class has several fields (attributes), including `environment`, `settings`, `useSmart`, `enableRemoteDict`, and `enableLowercase`. This could be considered a moderate number of fields, but it's not excessively large. However, the presence of multiple fields is a characteristic often found in Data Classes.
+
+2. **Accessor Methods**: The class provides simple accessor methods (getters and setters) for its fields, such as `isUseSmart()`, `setUseSmart(boolean)`, `getEnvironment()`, `getSettings()`, `isEnableRemoteDict()`, and `isEnableLowercase()`. The presence of these accessors is another trait commonly associated with Data Classes.
+
+3. **Lack of Functional Methods**: Besides the accessor methods, the class has a constructor that initializes the object and a method `getConfigInPluginDir()` which computes a path. There's also the `Dictionary.initial(this);` call in the constructor, which seems to introduce some functionality. However, the majority of the class's methods are indeed accessors or simple setters, indicating a lack of complex, meaningful behavior.
+
+4. **Encapsulation**: The class encapsulates its data by making the fields private and providing public accessors. This is good encapsulation practice but does not by itself determine if the class is a Data Class. The fact that it exposes its data indirectly through many public accessors could contribute to the Data Class smell.
+
+5. **Summary Judgment**: Considering the points above, the class seems to primarily hold data and provide access to it with little to no meaningful behavior beyond simple access and initialization. It does have some functionality, like the `getConfigInPluginDir()` method, but the class's main purpose appears to be holding and providing access to configuration data.
+
+YES, I found Data Class"
+VCardResultParser.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+InterceptorProcessor.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+HandleCallbackParam.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+SimpleWebServer.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+AbstractWriteHolder.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+TestProxies.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+JITDataModel.java,"To analyze the provided Java file for symptoms of the ""Data Class"" code smell, let's go through the questions step by step:
+
+1. **Many Fields**: The class `JITDataModel` has several fields, including `packageManager`, `stats`, `jitEvents`, `codeCacheTagList`, `compilerThreads`, `endOfLog`, `jdkMajorVersion`, and `baseTimestamp`. This could indicate a class with many fields, but let's continue to see if there are other indicators.
+
+2. **Accessor Methods**: The class provides several getter and setter methods for its fields, such as `getJDKMajorVersion()`, `getCompilerThreads()`, `getPackageManager()`, `getJITStats()`, `getCodeCacheEvents()`, and `getEndOfLogTag()`. This is another indicator of a potential Data Class.
+
+3. **Lack of Functional Methods**: Upon inspection, the class has several methods that implement meaningful behavior, such as `reset()`, `addEvent(JITEvent event)`, `updateStats(IMetaMember member, Map<String, String> attrs)`, and `buildAndGetMetaClass(Class<?> clazz)`. These methods perform significant operations and are not just simple accessors or mutators.
+
+4. **Encapsulation**: The class does encapsulate its data, with most fields being private and accessed through getter and setter methods. However, the presence of many getter and setter methods might indicate that the class's data is not as encapsulated as it could be, as it exposes its internal state to the outside world.
+
+5. **Summary Judgment**: Based on the analysis, the `JITDataModel` class does have some characteristics of a Data Class, such as many fields and accessor methods. However, it also has several methods that provide meaningful behavior, which is not typical of a Data Class. The class seems to balance data storage with functional behavior.
+
+Given the instructions to answer based strictly on the presence of Data Class symptoms without considering the balance of behaviors, the analysis might suggest a Data Class due to the number of fields and accessor methods. However, considering the overall class structure and the presence of meaningful methods, the conclusion might lean towards not being a pure Data Class.
+
+Therefore, based on the strict interpretation of the instructions and focusing solely on local patterns and structures that could contribute to the ""Data Class"" smell, the answer should be provided directly as per the format requested. 
+
+YES, I found Data Class"
+BytecodeInstruction.java,"To answer the questions regarding the presence of a ""Data Class"" code smell in the provided Java file:
+
+1. Many Fields: The class `BytecodeInstruction` has several fields: `offset`, `opcode`, `parameters`, `hasComment`, and `comment`. While not an excessive number, it's enough to warrant consideration. 
+
+2. Accessor Methods: The class provides accessor methods (getters and setters) for its fields, including `getOffset`, `setOffset`, `getOpcode`, `setOpcode`, `getParameters`, `addParameter`, `getComment`, and `setComment`.
+
+3. Lack of Functional Methods: The class has several methods that implement meaningful behavior beyond simple accessors, such as `toString`, `toStringComplete`, `toStringNonSwitch`, `toStringSwitch`, `hashCode`, and `equals`. These methods provide functionality and are not just trivial accessors.
+
+4. Encapsulation: The class encapsulates its data with private fields and provides public accessors, which is good practice. Direct data access is not exposed, and the use of getter and setter methods helps in controlling access and modifying the data.
+
+5. Summary Judgment: Based on the analysis, while the class does have several fields and accessor methods, it also contains a significant amount of meaningful behavior implemented through various methods. This suggests that the class is not merely a data holder but provides functionality beyond simple data access.
+
+Considering these points, the conclusion is that this class, while having some characteristics of a Data Class, significantly contributes meaningful behavior through its methods, making it more than just a data holder. 
+
+NO, I did not find Data Class"
+BatchResult.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+AbstractSendMessageProcessor.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+StpLogic.java,"To determine if the `StpLogic` class is a Data Class, let's analyze it step by step according to the provided guidelines.
+
+
+## Step 1: Many Fields
+The class has a few fields, including `loginType`. However, the number of fields is not excessively large, which might not immediately indicate a Data Class.
+
+
+## Step 2: Accessor Methods
+The class provides several getter and setter methods for its fields, such as `getLoginType()` and `setLoginType(String loginType)`. This is a characteristic of Data Classes, which primarily hold data and provide access to it.
+
+
+## Step 3: Lack of Functional Methods
+Although the class has numerous methods, many of them are indeed functional and perform significant operations, such as login, logout, and authorization checks. This suggests that the class is not solely a data holder.
+
+
+## Step 4: Encapsulation
+The class does encapsulate its data, providing controlled access through getter and setter methods, which is good object-oriented practice.
+
+
+## Step 5: Summary Judgment
+Considering the steps above, while the `StpLogic` class does have some characteristics of a Data Class, such as providing accessor methods, it also contains a significant amount of functional logic. This makes it more than just a simple data holder.
+
+
+The final answer is: $\boxed{NO, I did not find Data Class}$"
+QueueTest.java,"NO, I did not find Data Class"
+DetectionResultRowIndicatorColumn.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+RedissonSessionRepository.java,"To answer your questions:
+
+1. Many Fields: 
+The `RedissonSessionRepository` class has several fields (e.g., `redisson`, `eventPublisher`, `deletedTopic`, etc.), but they are not excessively numerous and serve specific purposes. However, the `RedissonSession` class has several fields as well (e.g., `principalName`, `delegate`, `map`), which, combined with the methods provided, could indicate some data-holder characteristics.
+
+2. Accessor Methods: 
+The `RedissonSession` class provides several simple accessor methods (getters and setters) for its fields (e.g., `getId`, `getAttribute`, `setAttribute`, etc.), which is a common trait of data classes.
+
+3. Lack of Functional Methods: 
+While the `RedissonSessionRepository` class has several methods, many of them are directly related to managing sessions (e.g., `createSession`, `save`, `findById`, `deleteById`, etc.), and the `RedissonSession` class mostly provides accessor methods. However, both classes also contain more complex, functional methods (e.g., `changeSessionId`, `resolvePrincipal`, `publishEvent`, etc.), suggesting that they are not purely data holders.
+
+4. Encapsulation: 
+The data in both classes is generally well-encapsulated, with most fields being private and access provided through methods. This suggests that the classes are following good object-oriented principles and are not simply exposing their data.
+
+5. Summary Judgment: 
+Based on the analysis, while the classes exhibit some characteristics of data classes (e.g., accessor methods), they also provide meaningful behavior and are not solely data holders.
+
+Therefore, the answer is:
+NO, I did not find Data Class."
+RelationshipTest.java,"NO, I did not find Data Class"
+BaseSwaggerConfig.java,"NO, I did not find Data Class"
+MapperBuilderAssistant.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+BuildCommand.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+FrameworkField.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+CmsSubjectCategoryExample.java,"1. Many Fields: YES 
+2. Accessor Methods: YES 
+3. Lack of Functional Methods: NO 
+4. Encapsulation: NO 
+5. Summary Judgment: NO, I did not find Data Class"
+GsonBuilder.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+RedissonBloomFilter.java,"1. YES
+2. YES
+3. NO
+4. NO 
+5. NO, I did not find Data Class"
+InvokeCountOperation.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AbstractSentinelAspectSupport.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SaTokenConfig.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+HelpCommand.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+UrlConnectionClient.java,"1. No 
+2. No 
+3. No 
+4. No 
+5. No, I did not find Data Class"
+AssemblyProcessor.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+JavaBeanDeserializer.java,"1. YES, I found many fields (attributes) in the class, some of them public, and many with public accessors.
+2. YES, I found many simple accessor methods (getters and setters) for the class's fields.
+3. YES, I found that most methods in the class are accessors or trivial, with few methods implementing meaningful behavior.
+4. YES, I found that the class exposes its data directly and indirectly through many public accessors.
+5. YES, I found Data Class."
+RetrofitError.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+Selectable.java,"NO, I did not find Data Class"
+CellFormulaTagHandler.java,"NO, I did not find Data Class."
+ClassWriter.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+CompareToBuilder.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+DataFormatter.java,"1. Many Fields: YES 
+2. Accessor Methods: YES 
+3. Lack of Functional Methods: NO 
+4. Encapsulation: YES 
+5. Summary Judgment: NO, I did not find Data Class"
+AccessTokenModel.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+NiceSecurePasswordField.java,"NO, I did not find Data Class"
+GeometryViewerRegistry.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+RestMethodInfoTest.java,"1. Many Fields: NO
+2. Accessor Methods: NO
+3. Lack of Functional Methods: YES
+4. Encapsulation: YES
+5. Summary Judgment: YES, I found Data Class"
+AssertUtil.java,"NO, I did not find Data Class"
+FieldAttributes.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ExcelWriteFillExecutor.java,"1. Does this file define a class with many fields (attributes), especially public fields or fields with public accessors?
+   Yes, the class `ExcelWriteFillExecutor` has several fields, including `templateAnalysisCache`, `templateCollectionAnalysisCache`, `collectionFieldStyleCache`, `collectionRowHeightCache`, `collectionLastIndexCache`, `relativeRowIndexMap`, `currentDataPrefix`, and `currentUniqueDataFlag`.
+
+2. Does the class provide many simple accessor methods (getters and/or setters) for its fields?
+   There are few simple accessor methods in the class. Most fields are private and do not have public getter or setter methods.
+
+3. Does the class have few or no methods that implement meaningful behavior (i.e., most methods are just accessors or trivial)?
+   No, the class `ExcelWriteFillExecutor` has several methods that implement meaningful behavior, such as `fill`, `shiftRows`, `doFill`, `getOneCell`, `createCellIfNecessary`, `createRowIfNecessary`, `checkRowHeight`, `readTemplateData`, `prepareData`, `dealAnalysisCell`, `initAnalysisCell`, `convertPrepareData`, `uniqueDataFlag`, and `tablePrefix`.
+
+4. Does the class expose its data directly (public fields) or indirectly (many public accessors), rather than hiding it behind meaningful services?
+   The class does not expose its data directly. All fields are private, and there are few public accessor methods.
+
+5. Based on your analysis, does this file define a class that is primarily a data holder with little or no meaningful behavior (i.e., a Data Class)?
+   No, the class `ExcelWriteFillExecutor` is not primarily a data holder. It has several methods that implement meaningful behavior.
+
+NO, I did not find Data Class"
+Throwables.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+BeanCopier.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AndroidGraphics.java,"1. Many Fields: YES
+2. Accessor Methods: YES
+3. Lack of Functional Methods: NO
+4. Encapsulation: NO
+5. Summary Judgment: NO, I did not find Data Class"
+ExecutorRouteBusyover.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+IncompleteElementException.java,"1. NO
+2. NO
+3. YES
+4. NO
+5. NO, I did not find Data Class"
+NioClientTest.java,"NO, I did not find Data Class"
+ClientHandler.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+DefaultJedisSocketFactory.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+CronExpression.java,"To answer the questions step by step:
+
+1. **Many Fields**: The class `CronExpression` has many fields, including `seconds`, `minutes`, `hours`, `daysOfMonth`, `months`, `daysOfWeek`, `years`, `lastdayOfWeek`, `nthdayOfWeek`, `lastdayOfMonth`, `nearestWeekday`, and `lastdayOffset`. There are also several static fields and constants. Therefore, the answer is: **YES**
+
+2. **Accessor Methods**: The class provides several simple accessor methods (getters and/or setters) for its fields, such as `getCronExpression()`, `getTimeZone()`, `setTimeZone(TimeZone)`, and others. Therefore, the answer is: **YES**
+
+3. **Lack of Functional Methods**: Although the class has several methods that implement meaningful behavior (e.g., `isSatisfiedBy(Date)`, `getNextValidTimeAfter(Date)`, `buildExpression(String)`), there are also many simple accessor methods. However, considering the complexity of the class and its purpose, the number of functional methods is significant. But, the presence of many fields and accessor methods might still indicate a potential Data Class smell.
+
+4. **Encapsulation**: The class encapsulates its data by using private or protected fields and providing public accessor methods. However, the presence of many accessor methods could be seen as exposing the data indirectly, rather than hiding it behind meaningful services.
+
+5. **Summary Judgment**: Based on the analysis above, the class does have many fields and accessor methods, but it also has a significant number of functional methods. However, considering the primary purpose of the class is to hold and manipulate cron expression data, and the fact that it has a large number of fields and accessor methods, the answer is: **YES, I found Data Class**"
+PooledDataSource.java,"1. YES 
+2. YES 
+3. NO 
+4. YES 
+5. YES, I found Data Class"
+EmbedServer.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SentinelDubboConsumerFilter.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+QueryParser.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HikariDataSource.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Excluder.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+JedisClusterCommand.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+TestConnections.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+OmsReceiverInfoParam.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ResizeController.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Lifecycle.java,"1. NO
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+MarkdownWebServerPlugin.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+EsProductServiceImpl.java,"NO, I did not find Data Class."
+ProjectExportWizard.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SentinelApacheHttpClientConfig.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+CachingExecutor.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+RedisPriorityScheduler.java,"NO, I did not find Data Class."
+EnablePluginCommand.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+PoolStats.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+MinMaxPriorityQueue.java,"To analyze the given Java file for symptoms of the ""Data Class"" code smell, we will follow the provided step-by-step instructions.
+
+1. **Many Fields**: 
+The class `MinMaxPriorityQueue` has several fields: `minHeap`, `maxHeap`, `maximumSize`, `queue`, `size`, and `modCount`. Although there are multiple fields, they are not excessively numerous for a data structure implementation like a priority queue, which inherently requires a certain amount of data to manage its state.
+
+2. **Accessor Methods**: 
+The class provides several methods that can be considered as accessors or mutators for its fields, such as `size()`, `comparator()`, `capacity()`, and the various `offer`, `poll`, `peek` methods. However, these methods are primarily used to manage the queue's state and functionality rather than just to access or modify fields directly. There are few traditional getter and setter methods, which is a good sign as it suggests encapsulation.
+
+3. **Lack of Functional Methods**: 
+Despite the presence of many methods, this class is not lacking in functional methods. Most of its methods (e.g., `offer`, `poll`, `peekFirst`, `peekLast`, `removeAt`, `iterator`) implement meaningful behavior related to the management and operation of a min-max priority queue, contributing to its functionality rather than just accessing or modifying data.
+
+4. **Encapsulation**: 
+The class does encapsulate its data. The fields are private, and there are no public fields. The data is accessed and modified through the provided methods, which helps in controlling how the data is changed and ensures the integrity of the queue's state.
+
+5. **Summary Judgment**: 
+Based on the analysis, the `MinMaxPriorityQueue` class does not fit the definition of a Data Class. Although it has several fields, they are not exposed directly (either through public fields or excessively simple getters and setters), and the class provides a significant amount of functionality beyond mere data access and modification.
+
+NO, I did not find Data Class."
+MapDeserializer.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+ConversionException.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+Profiler.java,"1. NO 
+2. YES 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+ParentRunnerTest.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+NumberTest.java,"NO, I did not find Data Class"
+TextEditorUtils.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+PageResult.java,"1. Yes, the class `PageResult` has many fields: `page`, `pageSize`, `totalPage`, and `total`.
+
+2. Yes, the class provides many simple accessor methods (getters and setters) for its fields.
+
+3. Yes, the class has few methods that implement meaningful behavior, and most methods are just accessors or trivial, except for `isFirst()` and `isLast()`.
+
+4. Yes, the class exposes its data indirectly through many public accessors.
+
+5. YES, I found Data Class"
+HikariPool.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+SMSParsedResult.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+AnnotationScanner.java,"NO, I did not find Data Class"
+easyexcel-2.2.11_ExcelDataConvertException.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+Connection.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+CameraInputController.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES"
+WebLogAspect.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+ComparisonCriteria.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+CodeCacheEventWalker.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Dictionary.java,"To analyze the given Java file for symptoms of the ""Data Class"" code smell, let's evaluate the class based on the provided criteria step by step:
+
+1. **Many Fields**: The `Dictionary` class has several fields, including `_MainDict`, `_QuantifierDict`, `_StopWords`, `configuration`, `logger`, `pool`, and several string constants for dictionary paths. While it does contain multiple fields, this alone doesn't necessarily indicate a Data Class, as many of these fields seem to serve specific purposes within the class's functionality.
+
+2. **Accessor Methods**: The class provides simple accessor methods (getters) for some of its fields, such as `getSingleton()`, which returns the singleton instance of `Dictionary`, and methods like `matchInMainDict`, `matchInQuantifierDict`, etc., which operate on the dictionary objects. However, it does not solely consist of getter and setter methods. There are meaningful operations like loading dictionaries, matching words, and more, which indicates it does more than just hold data.
+
+3. **Lack of Functional Methods**: Despite having fields and accessors, the `Dictionary` class is rich in functional methods. It includes methods for loading different types of dictionaries (`loadMainDict`, `loadQuantifierDict`, etc.), managing words (`addWords`, `disableWords`), and checking for stop words (`isStopWord`). These methods contribute to the class having substantial behavior beyond mere data storage.
+
+4. **Encapsulation**: The class generally encapsulates its data well, with most fields being private. The use of a singleton pattern for the `Dictionary` instance also suggests an attempt to control access and manage the lifecycle of the object, which is a good encapsulation practice.
+
+5. **Summary Judgment**: Based on the analysis, the `Dictionary` class, while containing several fields and some accessor methods, does not primarily serve as a data holder. It encapsulates data and provides significant functionality related to dictionary management and word matching. The presence of numerous functional methods and the class's role in managing and utilizing the dictionary data indicate that it is more than a simple Data Class.
+
+Therefore, considering the instructions provided, the conclusion is:
+
+**NO, I did not find Data Class**"
+SmartContentSelector.java,"NO, I did not find Data Class."
+Faker.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ConstructorConstructor.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+StatisticSlot.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HttpConnection.java,"1. NO, I did not find Data Class
+2. NO, I did not find Data Class
+3. NO, I did not find Data Class
+4. NO, I did not find Data Class
+5. NO, I did not find Data Class"
+FireBirdMetaModel.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+PendingEntry.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+Location.java,"1. Many Fields: YES 
+2. Accessor Methods: YES 
+3. Lack of Functional Methods: YES 
+4. Encapsulation: YES 
+5. Summary Judgment: YES, I found Data Class"
+Evaluator.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+JsonAdapterAnnotationTypeAdapterFactory.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+DriverDataSource.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AbstractMetaMember.java,"To analyze the provided Java file for symptoms of the ""Data Class"" code smell, we'll go through the questions step by step:
+
+1. **Many Fields**: The class `AbstractMetaMember` has several fields (e.g., `metaClass`, `compilations`, `selectedCompilationIndex`, `isCompiled`, `isVarArgs`, `isPolymorphicSignature`, `modifier`, `memberName`, `returnType`, `paramTypes`), which could indicate a class with many fields.
+
+2. **Accessor Methods**: The class provides numerous simple accessor methods (getters and setters) for its fields (e.g., `getMemberName`, `getModifier`, `getReturnTypeName`, `getParamTypeNames`, `getMetaClass`, etc.), suggesting a high number of accessor methods.
+
+3. **Lack of Functional Methods**: Although the class has several methods, many of them are accessors or provide simple functionality related to accessing or comparing data. However, there are also methods that implement more meaningful behavior (e.g., `matchesSignature`, `checkPolymorphicSignature`, `getClassesForParamTypes`), suggesting that the class is not purely a data holder.
+
+4. **Encapsulation**: The class encapsulates its data by using private fields and providing public accessors (getters and setters), which is good practice. However, the presence of many accessors could be seen as indirectly exposing its data.
+
+5. **Summary Judgment**: Considering the steps above, while the class does have many fields and accessor methods, it also implements meaningful behavior, which suggests that it's not solely a data class. However, the balance between data holding and behavior is tipped towards having more data and accessors than complex behaviors.
+
+Given the specific instructions for answering and the analysis, the conclusion is based on detecting symptoms that could indicate a Data Class, which in this detailed analysis seems present to some extent but not entirely conclusive without considering the broader context of how this class is used within the system.
+
+YES, I found Data Class"
+ParentRunner.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+OmsPortalOrderServiceImpl.java,"1. No 
+2. No 
+3. No 
+4. No 
+5. No, I did not find Data Class"
+JUnitCommandLineParseResult.java,"1. YES 
+2. YES 
+3. NO 
+4. YES 
+5. NO, I did not find Data Class"
+ClassReader.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES 
+
+NO, I did not find Data Class"
+XxlJobExecutor.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO"
+InPacketHandler.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+ConstrainableInputStream.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+AndroidGL20.java,"To answer your questions regarding the presence of a ""Data Class"" code smell in the provided Java file, let's analyze it step by step:
+
+1. **Many Fields**: The class `AndroidGL20` defines a few fields such as `ints`, `ints2`, `ints3`, and `buffer`. While there are multiple fields, the number is not excessively large compared to the overall size and purpose of the class, which appears to be an implementation or wrapper around OpenGL ES 2.0 functionality.
+
+2. **Accessor Methods**: The class provides numerous methods, but these are primarily wrappers around the `GLES20` class methods rather than simple accessor (getter/setter) methods for fields. The primary purpose of these methods is to interact with OpenGL ES 2.0, not to access or modify the class's internal state.
+
+3. **Lack of Functional Methods**: The class is rich in methods, but these methods are not simple accessors. Instead, they are functional methods that interact with the OpenGL ES 2.0 API, performing tasks such as enabling/disabling capabilities, setting up framebuffers, rendering, and more. While the class might not have complex logic within its methods, its purpose is to provide an interface to `GLES20`, not to perform complex computations or business logic.
+
+4. **Encapsulation**: The class does encapsulate its data to some extent by making the fields private and not providing direct public access to them. However, the class's main function is to serve as an interface or a facade to OpenGL ES 2.0 functionality, rather than to encapsulate data for the sake of hiding it and providing services over it.
+
+5. **Summary Judgment**: Considering the class's purpose, structure, and content, it does not fit the typical definition of a ""Data Class"" because it is not primarily a holder of data with little to no meaningful behavior. Instead, it provides a significant amount of functionality by acting as an interface to `GLES20`. The class's fields are minimal and primarily serve to support the functionality of interacting with OpenGL ES 2.0.
+
+Therefore, based on the analysis:
+
+NO, I did not find Data Class"
+SaJwtUtil.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Code.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HomeController.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+NacosWatch.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+DictSegment.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+RocketMQMessageHandler.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+NacosDiscoveryProperties.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+HtmlTreeBuilderStateTest.java,"NO, I did not find Data Class"
+QuotedStringTokenizer.java,"1. Many Fields: YES
+2. Accessor Methods: YES
+3. Lack of Functional Methods: NO
+4. Encapsulation: NO
+5. Summary Judgment: NO, I did not find Data Class"
+CodeCacheStage.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HTTPSession.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ParserConfig.java,"1. Many Fields: YES
+2. Accessor Methods: YES
+3. Lack of Functional Methods: YES 
+4. Encapsulation: YES 
+5. Summary Judgment: YES, I found Data Class"
+btActivatingCollisionAlgorithm.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. YES 
+
+Since the prompt requires a specific format answer:
+YES, I found Data Class"
+RedissonTransactionalBucket.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+HttpClientRequestContext.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+DefaultMQAdminExtImpl.java,"To analyze this Java file for symptoms of the ""Data Class"" code smell, we will follow the given steps.
+
+## Step 1: Many Fields
+The class `DefaultMQAdminExtImpl` has several fields, including `log`, `defaultMQAdminExt`, `serviceState`, `mqClientInstance`, `rpcHook`, `timeoutMillis`, and `random`. Additionally, it has a static set `SYSTEM_GROUP_SET`. While this is not an excessively large number of fields, it is a notable amount. The fields seem to be a mix of state variables and constants.
+
+## Step 2: Accessor Methods
+Upon reviewing the class, it's apparent that it does not primarily consist of simple accessor methods (getters and setters) for its fields. Most methods perform more complex operations or interact with other components of the system.
+
+## Step 3: Lack of Functional Methods
+Contrary to what might be expected in a Data Class, `DefaultMQAdminExtImpl` contains a significant number of methods with substantial functionality. These methods are not merely accessors but implement various behaviors related to message queue administration, such as starting and shutting down services, updating configurations, and examining topic statistics.
+
+## Step 4: Encapsulation
+The class does encapsulate its data, as its fields are private. However, the presence of many methods that operate on this data and interact with the external system suggests that the class's primary role is not merely to hold data but to provide services related to that data.
+
+## Step 5: Summary Judgment
+Based on the analysis, `DefaultMQAdminExtImpl` does not appear to be a Data Class. It encapsulates data but also provides meaningful behavior and services, which is contrary to the characteristics of a Data Class.
+
+The final answer is: $\boxed{NO, I did not find Data Class}$"
+Settings.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES, I found Data Class"
+ConnectionPageShellCommands.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+MailUtil.java,"1. No 
+2. No 
+3. No 
+4. No 
+5. NO, I did not find Data Class"
+HttpRequestMethodsMatcherTest.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+SymbolInfo.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+TextureAtlas.java,"1. YES 
+2. YES 
+3. NO 
+4. YES 
+5. YES, I found Data Class"
+ImmutableEnumMap.java,"1. NO
+2. YES
+3. YES
+4. YES
+5. YES 
+
+YES, I found Data Class"
+CharacterReader.java,"1. Many Fields: YES
+2. Accessor Methods: NO 
+3. Lack of Functional Methods: NO 
+4. Encapsulation: NO 
+5. Summary Judgment: NO, I did not find Data Class"
+ArgumentTokenizer.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+JobLogController.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Monitor.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HistoryPageFilter.java,"1. YES 
+2. YES 
+3. NO 
+4. YES 
+5. NO, I did not find Data Class"
+HandshakeData.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+Vault.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO"
+CommandDecoder.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+FxApplication.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HttpHeadRequestTest.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+BatchExecutor.java,"To answer the given questions step by step:
+
+
+1. Many Fields: 
+The class `BatchExecutor` has several fields, including `statementList`, `batchResultList`, `currentSql`, and `currentStatement`, indicating it does contain multiple fields.
+
+
+2. Accessor Methods: 
+Although not traditionally simple, the class has methods that could be considered complex accessors or modifiers due to its interaction with the fields, particularly those that add or modify elements in the `statementList` and `batchResultList`. However, traditional simple getters and setters are not prominent in this class.
+
+
+3. Lack of Functional Methods: 
+The class has several methods (`doUpdate`, `doQuery`, `doQueryCursor`, `doFlushStatements`) that implement significant behavior, such as executing SQL statements, querying databases, and flushing statements. These methods are not trivial and provide meaningful functionality.
+
+
+4. Encapsulation: 
+The class encapsulates its data reasonably well, with fields being private and access controlled through methods, demonstrating an attempt to hide data and expose services.
+
+
+5. Summary Judgment: 
+Based on the analysis, despite having multiple fields, the class provides substantial functionality through its methods and does not primarily act as a simple data holder with minimal behavior.
+
+
+Therefore, the answer is: NO, I did not find Data Class."
+TokenQueue.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+DubboServiceMetadataRepository.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+FakeValuesService.java,"To answer your questions step by step:
+
+1. **Many Fields**: 
+The class `FakeValuesService` has several fields, including `EXPRESSION_PATTERN`, `EXPRESSION_ARGUMENTS_PATTERN`, `log`, `fakeValuesList`, and `randomService`. However, most of these fields are not public and seem to be used internally by the class. They are also not numerous enough to suggest a ""god object"" anti-pattern. The focus of the class appears to be on providing methods for fake data generation and resolution rather than merely holding data.
+
+2. **Accessor Methods**: 
+The class does provide some simple accessor methods such as `fetch`, `fetchString`, `safeFetch`, and `fetchObject`, but these are not mere getters and setters for fields. Instead, they implement logic related to fake data generation and access, suggesting they are part of the class's meaningful behavior.
+
+3. **Lack of Functional Methods**: 
+The opposite seems to be true. The class is rich in methods that implement meaningful behavior, including `resolveExpression`, `resolveFromMethodOn`, `resolveFakerObjectAndMethod`, `accessor`, `coerceArguments`, and several others. These methods perform complex operations like resolving expressions, invoking methods dynamically, and coercing argument types, indicating a high degree of functional complexity.
+
+4. **Encapsulation**: 
+The class encapsulates its data well. Most of its fields are private or package-private, and it provides controlled access through its methods. There's no direct exposure of its internal state to the outside, adhering to principles of encapsulation.
+
+5. **Summary Judgment**: 
+Based on the analysis, **NO, I did not find Data Class**. The class `FakeValuesService` exhibits characteristics opposite to those of a Data Class. It has few fields, most of which are private and used internally, provides methods that are more than just simple accessors, includes a significant amount of meaningful behavior, and encapsulates its data well."
+PassphraseEntryController.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+LexemePath.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+PullAPIWrapper.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+ParamFlowChecker.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SaTokenContextForThreadLocalStorage.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+AbortedTransactionException.java,"1. NO 
+2. NO 
+3. YES 
+4. NO 
+5. NO, I did not find Data Class"
+HttpRequest.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ProxyDatabaseMetaData.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+MethodCallInliner.java,"NO, I did not find Data Class."
+IKArbitrator.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+SingleRoomBroadcastOperations.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+Lorem.java,"1. NO
+2. NO
+3. NO
+4. NO
+5. NO, I did not find Data Class"
+HostAndPort.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+DefaultJSONParser.java,"To analyze the provided Java file for symptoms of the ""Data Class"" code smell, we need to follow the steps you've outlined:
+
+1. **Many Fields**: The class `DefaultJSONParser` has several fields, including `input`, `symbolTable`, `config`, `dateFormatPattern`, `dateFormat`, `lexer`, `context`, `contextArray`, `contextArrayIndex`, `resolveTaskList`, `extraTypeProviders`, `extraProcessors`, `fieldTypeResolver`, `objectKeyLevel`, `autoTypeEnable`, `autoTypeAccept`, and `lastBeanContext`. While this is a significant number of fields, it's essential to consider the class's purpose and complexity. In this case, the class appears to be a parser for JSON data, which can be complex and require multiple fields to manage state and configuration.
+
+2. **Accessor Methods**: The class provides getter and setter methods for many of its fields, such as `getDateFomartPattern()`, `getDateFormat()`, `setDateFormat(String)`, `getConfig()`, `setConfig(ParserConfig)`, etc. These accessor methods are typical for encapsulating data within a class. However, the presence of many accessor methods, especially for fields that could be considered as merely holding data, might indicate a potential ""Data Class"" issue.
+
+3. **Lack of Functional Methods**: At first glance, the class seems to have a substantial number of methods that implement meaningful behavior, such as `parseObject()`, `parseArray()`, `parse()`, `handleResovleTask()`, etc. These methods are crucial for the JSON parsing functionality and suggest that the class is not merely a data holder. Upon closer inspection, while the class does contain several functional methods, the majority of its methods are indeed related to accessing or manipulating its fields, or they are part of the parsing logic which inherently requires data storage and access.
+
+4. **Encapsulation**: The class encapsulates its data by making most fields private or protected and providing public accessor methods. This is a good practice for hiding internal implementation details and controlling access to the class's state. However, the extensive use of public accessors could potentially expose the class's internal state too much, aligning with concerns related to the ""Data Class"" smell.
+
+5. **Summary Judgment**: Given the analysis above, while the `DefaultJSONParser` class does exhibit some characteristics that could be associated with the ""Data Class"" smell (many fields and accessor methods), its primary function as a JSON parser necessitates the management of complex state and configuration. The class also contains significant functional logic for parsing JSON, which offsets the ""Data Class"" characteristics to some extent.
+
+Based on the provided instructions, despite theclass having many fields and accessor methods, its functional methods and the context of its use as a JSON parser suggest it's not predominantly a ""Data Class"". However, the strict instruction to follow the format to the letter and provide a binary answer simplifies the nuanced analysis:
+
+NO, I did not find Data Class"
+AutoLocker.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+ReedSolomonDecoder.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+ExecutionSequencer.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+DirectedGraphConnections.java,"1. YES 
+2. YES 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+HttpServerTest.java,"1. YES 
+2. YES 
+3. YES 
+4. YES 
+5. YES, I found Data Class"
+ServiceLoader.java,"1. NO 
+2. NO 
+3. NO 
+4. NO 
+5. NO, I did not find Data Class"
+JedisSentinelPool.java,"1. YES
+2. YES
+3. NO 
+4. YES 
+5. NO, I did not find Data Class"
+SimpleEchoSocket.java,"1. YES
+2. YES
+3. YES
+4. YES
+5. YES 
+
+NO, I did not find Data Class"
+RestAdapter.java,"1. YES, I found many fields (attributes), especially private fields with public accessors.
+2. YES, I found many simple accessor methods (getters and/or setters) for its fields.
+3. YES, I found that the class has few or no methods that implement meaningful behavior.
+4. YES, I found that the class exposes its data indirectly through many public accessors.
+5. YES, I found Data Class."

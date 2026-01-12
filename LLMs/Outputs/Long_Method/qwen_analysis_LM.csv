@@ -1,0 +1,3583 @@
+file_path,analysis
+AccessControlLogEntry.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - `getMapFromRawClientInfo`: Contains a loop and a conditional.
+
+3. Deep Nesting:
+   - `getMapFromRawClientInfo`: Not deeply nested, just one level of conditional within a loop.
+
+4. Many Variables:
+   - `getMapFromRawClientInfo`: Uses multiple variables (entry, kvArray, etc.). However, the number is manageable.
+   - `public AccessControlLogEntry(Map<String, Object> map)`: Uses many variables but they are field initializations.
+
+5. Summary Judgment:
+   - None of the methods exhibit all the characteristics of a Long Method simultaneously."
+Preconditions.java,"NO, I did not find Long Method
+
+1. Large Methods: No methods exceed a reasonable method length in this file.
+
+2. High Complexity: Methods like `checkArgument`, `checkState`, and `checkNotNull` have multiple overloads with different parameters but each method variant itself is simple and does not have high cyclomatic complexity.
+
+3. Deep Nesting: No methods exhibit deep nesting. The most complex conditional structures have only one level of nesting.
+
+4. Many Variables: Methods do not use an excessive number of variables. The parameters and local variables used are limited and related directly to the function's purpose.
+
+5. Summary Judgment: Based on the analysis, this file does not contain methods that are excessively large, complex, deeply nested, and use many variables, so it does not indicate the presence of Long Methods."
+FileRefreshableDataSource.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods exceed a significant number of lines, with most being concise and focused.
+
+2. High Complexity:
+- `readSource()` has multiple conditional branches and nested structures.
+- The constructor with all parameters has multiple checks and logic for initialization.
+
+3. Deep Nesting:
+- `readSource()` includes nested try-catch blocks and conditional statements.
+
+4. Many Variables:
+- The constructor with all parameters uses a number of parameters and local variables.
+- `readSource()` handles multiple variables for file handling and reading.
+
+5. Summary Judgment:
+- While there are methods with some complexity and variable usage, none exhibit the symptoms of a Long Method in terms of being excessively large, complex, deeply nested, and using many variables."
+SaSecureUtil.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a reasonable number of lines for their functionality.
+
+2. High Complexity:
+   - No methods show excessive conditional branches or loops.
+
+3. Deep Nesting:
+   - No methods have deep nesting of control structures.
+
+4. Many Variables:
+   - While some methods use a reasonable number of variables, none seem to use an excessive amount.
+
+5. Summary Judgment:
+   - Based on the analysis, this file does not contain any methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+ClassLoaderCommand.java,"NO, I did not find Long Method"
+AclException.java,"NO, I did not find Long Method
+
+1. Large Methods:
+No methods are excessively large in this file.
+
+2. High Complexity:
+No methods in this file have high cyclomatic complexity.
+
+3. Deep Nesting:
+No methods in this file have deep nesting of control structures.
+
+4. Many Variables:
+No methods in this file use many variables.
+
+5. Summary Judgment:
+This file does not contain any methods that are excessively large, complex, deeply nested, and use many variables."
+GeneralAppIdDecoder.java,"1. Large Methods:
+- decodeAllCodes: 22 lines
+- parseBlocks: 15 lines
+- parseNumericBlock: 22 lines
+- parseIsoIec646Block: 26 lines
+- parseAlphaBlock: 24 lines
+- isStillIsoIec646: 15 lines
+- decodeIsoIec646: 39 lines
+- isStillAlpha: 18 lines
+- decodeAlphanumeric: 29 lines
+
+2. High Complexity:
+- decodeIsoIec646: Contains 1 switch statement with multiple cases
+- decodeAlphanumeric: Contains 1 switch statement with multiple cases
+
+3. Deep Nesting:
+- decodeIsoIec646: Nested switch statement
+- decodeAlphanumeric: Nested switch statement
+
+4. Many Variables:
+- decodeAllCodes: Uses 5 variables (buff, currentPosition, remaining, info, parsedFields)
+- parseBlocks: Uses 3 variables (isFinished, result, initialPosition)
+- parseNumericBlock: Uses 2 variables (numeric, information)
+- decodeIsoIec646: Uses 4 variables (fiveBitValue, sevenBitValue, eightBitValue, c)
+- decodeAlphanumeric: Uses 4 variables (fiveBitValue, sixBitValue, c)
+
+5. Summary Judgment:
+YES, I found Long Method"
+DuplicateRemovedScheduler.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None found.
+
+2. High Complexity:
+   - `push` has multiple conditions in the if statement but is not excessively complex.
+
+3. Deep Nesting:
+   - No deep nesting found.
+
+4. Many Variables:
+   - Methods use a reasonable number of variables.
+
+5. Summary Judgment:
+   - No methods exhibit characteristics of a Long Method."
+SaTokenException.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods are excessively large.
+
+2. High Complexity:
+   - `throwBy` has a conditional branch (`if` statement).
+   - `throwByNull` has a conditional branch (`if` statement).
+
+3. Deep Nesting:
+   - No methods have deep nesting of control structures.
+
+4. Many Variables:
+   - `throwBy` uses 2 variables.
+   - `throwByNull` uses 2 variables.
+   - None of the methods use many variables.
+
+5. Summary Judgment:
+   - Based on the analysis, there are no methods that are excessively large, complex, deeply nested, and use many variables."
+LinkedTreeMap.java,"YES, I found Long Method
+
+1. Large Methods:
+- `find` method (lines 174-278)
+- `rebalance` method (lines 462-558)
+
+2. High Complexity:
+- `find` method (highly conditional with loops and comparisons)
+- `rebalance` method (contains multiple conditional branches and loops)
+
+3. Deep Nesting:
+- `find` method (multiple levels of if/else)
+- `rebalance` method (multiple levels of if/else)
+
+4. Many Variables:
+- `find` method (uses many variables including `nearest`, `comparison`, `created`, etc.)
+- `rebalance` method (uses many variables including `left`, `right`, `originalParent`, etc.)
+
+5. Summary Judgment:
+Based on the analysis, `find` and `rebalance` methods contain symptoms that could indicate the ""Long Method"" code smell."
+SocketIOChannelInitializer.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - Methods do not exceed a large number of lines.
+
+2. High Complexity:
+   - `start` has conditional branches but is not excessively complex.
+   - `addSocketioHandlers` has multiple additions to the pipeline.
+
+3. Deep Nesting:
+   - No methods exhibit deep nesting.
+
+4. Many Variables:
+   - `start` uses many variables but they are necessary for initialization.
+
+5. Summary Judgment:
+   - No methods are excessively large, complex, deeply nested, and use many variables to be considered Long Methods."
+JobGroupController.java,"1. Large Methods:
+- `save(XxlJobGroup xxlJobGroup)`
+- `update(XxlJobGroup xxlJobGroup)`
+
+2. High Complexity:
+- `save(XxlJobGroup xxlJobGroup)`
+- `update(XxlJobGroup xxlJobGroup)`
+
+3. Deep Nesting:
+- `save(XxlJobGroup xxlJobGroup)`
+- `update(XxlJobGroup xxlJobGroup)`
+
+4. Many Variables:
+- `save(XxlJobGroup xxlJobGroup)`
+- `update(XxlJobGroup xxlJobGroup)`
+
+5. Summary Judgment:
+YES, I found Long Method"
+ApiException.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- None
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- None
+
+5. Summary Judgment:
+- No methods indicating Long Method code smell."
+SaOAuth2Template.java,"NO, I did not find Long Method
+
+### 1. Large Methods:
+- None of the methods appear to be excessively large based on the number of lines of code.
+
+### 2. High Complexity:
+- Methods like `generateAccessToken(String code)` have multiple steps and conditional checks, indicating a moderate level of complexity.
+- Methods like `checkGainTokenParam` and `checkRefreshTokenParam` also have several conditional checks.
+- However, none seem to have an unusually high cyclomatic complexity.
+
+### 3. Deep Nesting:
+- There is some nesting in methods such as `checkGainTokenParam` and `checkRefreshTokenParam` due to conditional checks.
+- No method has an excessive level of deep nesting.
+
+### 4. Many Variables:
+- Methods generally use a reasonable number of variables.
+- Methods like `generateAccessToken(String code)` and `generateAccessToken(RequestAuthModel ra, boolean isCreateRt)` use more parameters and local variables but do not overdo it.
+
+### 5. Summary Judgment:
+- Based on the analysis of the methods in the file, none exhibit the characteristics of a ""Long Method"" in terms of being excessively large, highly complex, deeply nested, or using many variables."
+ReplyMessageProcessorTest.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods have an excessive number of lines of code.
+
+2. High Complexity:
+- None of the methods exhibit high cyclomatic complexity.
+
+3. Deep Nesting:
+- None of the methods show deep nesting of control structures.
+
+4. Many Variables:
+- While the `init` method has quite a few variable initializations, none of the methods have an overwhelming number of variables.
+
+5. Summary Judgment:
+- The methods in this file do not exhibit characteristics of a long method."
+NodeTraversor.java,"YES, I found Long Method
+
+1. Large Methods:
+- `traverse(NodeVisitor visitor, Node root)`
+- `filter(NodeFilter filter, Node root)`
+
+2. High Complexity:
+- `traverse(NodeVisitor visitor, Node root)` (Multiple if-else conditions, loops)
+- `filter(NodeFilter filter, Node root)` (Multiple if-else conditions, loops)
+
+3. Deep Nesting:
+- `traverse(NodeVisitor visitor, Node root)` (Nested if-else, while loops)
+- `filter(NodeFilter filter, Node root)` (Nested if-else, while loops)
+
+4. Many Variables:
+- `traverse(NodeVisitor visitor, Node root)` (Node node, Node parent, int depth)
+- `filter(NodeFilter filter, Node root)` (Node node, int depth, FilterResult result, Node prev)
+
+5. Summary Judgment:
+YES, I found Long Method"
+DirectoryBrowserSupport.java,"YES, I found Long Method
+
+1. Large Methods:
+- `serveFile` method is excessively large with many lines of code.
+
+2. High Complexity:
+- `serveFile` method has high cyclomatic complexity due to multiple conditional branches and loops.
+
+3. Deep Nesting:
+- `serveFile` method has deep nesting of control structures, including nested if statements and loops.
+
+4. Many Variables:
+- `serveFile` method uses many variables, including parameters, local variables, and fields.
+
+5. Summary Judgment:
+Based on the analysis, the `serveFile` method in this file is excessively large, complex, deeply nested, and uses many variables, indicating the presence of a Long Method."
+ExcelWriter.java,"NO, I did not find Long Method"
+MethodInfo.java,"NO, I did not find Long Method"
+ApolloDataSourceFactoryBean.java,"NO, I did not find Long Method"
+UmsMemberService.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- None
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- None
+
+5. Summary Judgment:
+- None"
+BillboardParticleBatch.java,"YES, I found Long Method
+
+1. Large Methods:
+- `fillVerticesToViewPointCPU` - Contains many lines and handles multiple calculations and loops.
+- `fillVerticesToScreenCPU` - Similar to `fillVerticesToViewPointCPU`, it also has many lines and performs complex calculations with loops.
+
+2. High Complexity:
+- `fillVerticesToViewPointCPU` - Multiple conditional checks and nested loops.
+- `fillVerticesToScreenCPU` - Similar complexity with multiple conditionals and nested loops.
+
+3. Deep Nesting:
+- `fillVerticesToViewPointCPU` - Nested conditional statements and loops.
+- `fillVerticesToScreenCPU` - Also has deeply nested structures.
+
+4. Many Variables:
+- `fillVerticesToViewPointCPU` - Uses a large number of variables including local and constants.
+- `fillVerticesToScreenCPU` - Uses many variables for calculations.
+
+5. Summary Judgment:
+Based on the analysis, both `fillVerticesToViewPointCPU` and `fillVerticesToScreenCPU` exhibit characteristics of a Long Method, with excessive length, high complexity, deep nesting, and a large number of variables."
+BrokerController.java,"YES, I found Long Method
+
+1. Large Methods:
+- `initialize()`: This method contains a significant amount of code, including numerous lines for configuration and setup.
+
+2. High Complexity:
+- `initialize()`: Multiple conditions and loops contribute to the high cyclomatic complexity, including conditional checks to set configurations and load services.
+
+3. Deep Nesting:
+- `initialize()`: The method contains deep nesting, particularly within the `if` statements for setup and initialization of various services and schedulers.
+
+4. Many Variables:
+- `initialize()`: A large number of variables are used, including local variables and assigned member variables, to configure and initialize the broker.
+
+5. Summary Judgment:
+Based on the analysis, the `initialize()` method in this file demonstrates characteristics of a Long Method due to its size, complexity, nesting, and use of variables."
+StringUtils.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No obviously large methods; most methods have less than 20 lines of code.
+
+2. High Complexity:
+   - Methods like `hasText`, `trimWhitespace`, `trimAllWhitespace`, `trimLeadingWhitespace`, `trimTrailingWhitespace`, `trimLeadingCharacter`, `trimTrailingCharacter`, `startsWithIgnoreCase`, `endsWithIgnoreCase`, `substringMatch`, and `countOccurrencesOf` have multiple conditional branches, indicating moderate complexity.
+
+3. Deep Nesting:
+   - No deeply nested control structures found; most control structures have a nesting level of 1 or 2.
+
+4. Many Variables:
+   - Methods like `modify`, `replace`, `split`, and `splitArrayElementsIntoProperties` use a significant number of variables.
+
+5. Summary Judgment:
+   - No method in the file combines all characteristics of a Long Method (excessively large, highly complex, deeply nested, and uses many variables)."
+PacketEncoder.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `encodeJsonP` has 43 lines of code.
+   - `encodePackets` has 22 lines of code.
+   - `encodePacket` has 80 lines of code.
+
+2. High Complexity:
+   - `encodeJsonP` has high complexity due to loops and conditionals.
+   - `encodePackets` has high complexity due to loops.
+   - `encodePacket` has high complexity due to a switch statement with multiple cases.
+
+3. Deep Nesting:
+   - `encodePacket` has deep nesting within the switch statement and loops.
+
+4. Many Variables:
+   - `encodeJsonP` uses manys variables including parameters and local variables.
+   - `encodePackets` uses many variables including parameters and local variables.
+   - `encodePacket` uses a large number of variables including parameters, local variables, and fields.
+
+5. Summary Judgment:
+   - `encodeJsonP` and `encodePackets` and `encodePacket` are excessively large, complex, deeply nested, and use many variables."
+FastByteArrayOutputStream.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a reasonable number of lines that would be considered excessively large.
+
+2. High Complexity:
+   - `writeTo`: Contains a loop and a try-catch block which slightly increases complexity.
+   - `toString(String charsetName)`: Has a single method call with a parameter conversion.
+   - `toString(Charset charset)`: Has a single method call with a parameter conversion and a default value handling.
+
+3. Deep Nesting:
+   - `writeTo`: Includes one level of nesting with an if-statement and a for-loop.
+   - Other methods have minimal or no nesting.
+
+4. Many Variables:
+   - `writeTo`: Uses several variables (`index`, `buf`, `i`).
+   - Other methods use a few variables or rely on instance variables.
+
+5. Summary Judgment:
+   - No method in this file combines all aspects of the Long Method smell (excessive length, high complexity, deep nesting, many variables)."
+BinaryRedisPipeline.java,"NO, I did not find Long Method"
+LineTransformationOutputStream.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods have many lines of code. Most methods are concise and focused on specific tasks.
+
+2. High Complexity:
+   - None of the methods have high cyclomatic complexity. The methods contain simple conditional checks and loops.
+
+3. Deep Nesting:
+   - The nesting is not deep. The only method with a loop is `write(byte[] b, int off, int len)`, but the loop structure is simple.
+
+4. Many Variables:
+   - None of the methods use many variables. The variables used in the methods are necessary for their functionality.
+
+5. Summary Judgment:
+   - This file does not contain any methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+RedissonObject.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No method in this file contains a large number of lines.
+
+2. High Complexity:
+   - `restoreAsync(byte[], long, TimeUnit)`, `restoreAndReplaceAsync(byte[], long, TimeUnit)`: These methods contain conditional branches but are not excessively complex.
+   - `addListener(ObjectListener)`, `addListenerAsync(ObjectListener)`: These methods contain conditional branches but are not excessively complex.
+
+3. Deep Nesting:
+   - `restoreAsync(byte[], long, TimeUnit)`, `restoreAndReplaceAsync(byte[], long, TimeUnit)`: These methods have a single level of conditional nesting, which is not deep.
+   - `addListener(ObjectListener)`, `addListenerAsync(ObjectListener)`: These methods have a single level of conditional nesting, which is not deep.
+
+4. Many Variables:
+   - `restoreAsync(byte[], long, TimeUnit)`, `restoreAndReplaceAsync(byte[], long, TimeUnit)`: These methods use a moderate number of variables.
+   - `addListener(ObjectListener)`, `addListenerAsync(ObjectListener)`: These methods use a moderate number of variables.
+
+5. Summary Judgment:
+   - None of the methods in this file exhibit the symptoms of a Long Method."
+DokanyVolume.java,"NO, I did not find Long Method"
+AnalysisContext.java,"NO, I did not find Long Method
+
+1. Large Methods:
+NO large methods found as the file defines an interface with only declarations of methods, no method implementations.
+
+2. High Complexity:
+NO methods with high complexity as there are no method implementations.
+
+3. Deep Nesting:
+NO deep nesting found as there are no method implementations.
+
+4. Many Variables:
+NO methods using many variables as there are no method implementations.
+
+5. Summary Judgment:
+NO, I did not find Long Method"
+ClassLoaderModel.java,"NO, I did not find Long Method"
+MethodRoadie.java,"NO, I did not find Long Method
+
+1. Large Methods: None of the methods exceed a reasonable number of lines that would be considered excessively large.
+2. High Complexity: `runWithTimeout` has multiple conditional branches and nested structures (try-catch).
+3. Deep Nesting: `runWithTimeout` has deeply nested try-catch blocks and anonymous classes.
+4. Many Variables: No single method uses an unreasonably high number of variables.
+5. Summary Judgment: Based on the analysis, no method in this file is excessively large, overly complex, deeply nested, or uses many variables, thus not qualifying as a Long Method."
+StubConnection.java,"NO, I did not find Long Method"
+ExpandedProductParsedResult.java,"NO, I did not find Long Method
+
+1. Large Methods: None
+2. High Complexity: None
+3. Deep Nesting: None
+4. Many Variables: None
+5. Summary Judgment: This file does not contain any methods that are excessively large, complex, deeply nested, and use many variables."
+SaFoxUtil.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a significant number of lines that would be considered excessively large.
+
+2. High Complexity:
+   - `searchList(Collection<String> dataList, String prefix, String keyword, int start, int size)` and `searchList(List<String> list, int start, int size)` have moderate complexity due to the presence of loops and conditionals.
+   - `vagueMatch(String patt, String str)` has moderate complexity due to the conditional statements.
+   - `joinParam(String url, String parameStr)` and `joinSharpParam(String url, String parameStr)` also have moderate complexity due to the conditional checks and string manipulations.
+
+3. Deep Nesting:
+   - `searchList(Collection<String> dataList, String prefix, String keyword, int start, int size)` and `searchList(List<String> list, int start, int size)` have moderate levels of nesting with conditional branches within loops.
+   - `joinParam(String url, String parameStr)` and `joinSharpParam(String url, String parameStr)` have moderate nesting with multiple conditional branches.
+
+4. Many Variables:
+   - `searchList(Collection<String> dataList, String prefix, String keyword, int start, int size)` and `searchList(List<String> list, int start, int size)` use a significant number of variables, including iterators and lists.
+   - `getValueByType(Object obj, Class<T> cs)` has multiple variables due to type checking and conversion logic.
+
+5. Summary Judgment:
+   - While some methods show signs of moderate complexity, nesting, and variable usage, none of them appear to be excessively large, deeply nested, highly complex, and use many variables simultaneously to be considered a Long Method based on the provided code."
+Stage.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `act(float delta)` is quite large, spanning multiple pages and handling several tasks including touch and mouse events, and updating actor states.
+
+2. High Complexity:
+   - `act(float delta)` has high cyclomatic complexity due to multiple conditional branches and loops, particularly in handling multiple touch pointers and actors.
+
+3. Deep Nesting:
+   - `act(float delta)` features deep nesting, especially within loops and conditional structures, which can make understanding the flow intricate.
+
+4. Many Variables:
+   - `act(float delta)` uses many variables, including local and class fields like `pointerOverActors`, `pointerTouched`, `pointerScreenX`, `pointerScreenY`, `mouseScreenX`, `mouseScreenY`, and more, which can complicate comprehension.
+
+5. Summary Judgment:
+   - `act(float delta)` demonstrates characteristics of a Long Method due to its length, complexity, deep nesting, and use of many variables."
+Finance.java,"1. Large Methods:
+   - `creditCard(CreditCardType creditCardType)` has 23 lines of code.
+
+2. High Complexity:
+   - `creditCard(CreditCardType creditCardType)` contains multiple loops and conditional logic, increasing its complexity.
+
+3. Deep Nesting:
+   - `creditCard(CreditCardType creditCardType)` has loops and conditional statements that are nested, though not deeply so.
+
+4. Many Variables:
+   - `creditCard(CreditCardType creditCardType)` uses several variables and local variables, including `key`, `value`, `template`, `split`, `reversedAsInt`, `luhnSum`, `multiplier`, `luhnDigit`, `current`, and `digit`.
+
+5. Summary Judgment:
+   YES, I found Long Method"
+AdminBrokerProcessor.java,"NO, I did not find Long Method
+
+Explanation:
+
+1. Large Methods:
+   - None of the methods exceed an unusually large number of lines that could be considered excessively long.
+
+2. High Complexity:
+   - Methods like `fetchAllConsumeStatsInBroker` and `queryConsumeQueue` have high cyclomatic complexity due to the number of conditional branches and loops.
+
+3. Deep Nesting:
+   - Methods such as `fetchAllConsumeStatsInBroker` and `queryConsumeQueue` have deep nesting of loops and conditionals.
+
+4. Many Variables:
+   - Methods like `fetchAllConsumeStatsInBroker` use a large number of local variables.
+
+5. Summary Judgment:
+   - While some methods show characteristics of a Long Method, none of them combine all the traits (large, complex, deeply nested, and numerous variables) to conclusively indicate the Long Method smell."
+PreparedStatementHandler.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a reasonable number of lines.
+
+2. High Complexity:
+   - `instantiateStatement` method has multiple conditional branches (if-else).
+
+3. Deep Nesting:
+   - `instantiateStatement` method has nested if-else structures.
+
+4. Many Variables:
+   - `instantiateStatement` method uses several variables.
+   - `query` and `queryCursor` use multiple parameters and local variables.
+
+5. Summary Judgment:
+   - While `instantiateStatement` has high complexity and some nesting, it does not meet the full criteria of a Long Method based on the given file content."
+SmsFlashPromotionProductRelationServiceImpl.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods in this file are excessively large. They range from 1 to 5 lines of code.
+
+2. High Complexity:
+- None of the methods have high cyclomatic complexity. They do not contain multiple conditional branches or loops.
+
+3. Deep Nesting:
+- None of the methods show deep nesting of control structures. The control structures are simple and straightforward.
+
+4. Many Variables:
+- None of the methods use many variables. They typically use 1 to 3 variables.
+
+5. Summary Judgment:
+- Based on the analysis, this file does not contain any methods that are excessively large, complex, deeply nested, and use many variables."
+PrefixPluginLogger.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods with many lines of code.
+
+2. High Complexity:
+   - `PrefixPluginLogger(ExtendedLogger logger, String name, String prefix)` has moderate complexity due to the synchronized block and conditional logic but does not reach high complexity.
+
+3. Deep Nesting:
+   - `PrefixPluginLogger(ExtendedLogger logger, String name, String prefix)` has a nested if-else structure but not deeply nested.
+
+4. Many Variables:
+   - `PrefixPluginLogger(ExtendedLogger logger, String name, String prefix)` uses multiple variables, but the count is reasonable and does not indicate excessive use.
+
+5. Summary Judgment:
+   - None of the methods exhibit characteristics of a Long Method."
+BitMatrix.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `parse(String stringRepresentation, String setString, String unsetString)` - 42 lines of code
+   - `setRegion(int left, int top, int width, int height)` - 23 lines of code
+   - `getEnclosingRectangle()` - 36 lines of code
+
+2. High Complexity:
+   - `parse(String stringRepresentation, String setString, String unsetString)` - many conditional branches
+   - `setRegion(int left, int top, int width, int height)` - nested loops and conditionals
+   - `getEnclosingRectangle()` - nested loops and complex conditionals
+
+3. Deep Nesting:
+   - `parse(String stringRepresentation, String setString, String unsetString)` - multiple levels of if/else structures
+   - `setRegion(int left, int top, int width, int height)` - nested loops within loops
+
+4. Many Variables:
+   - `parse(String stringRepresentation, String setString, String unsetString)` - multiple local variables
+   - `setRegion(int left, int top, int width, int height)` - multiple local variables and parameters
+   - `getEnclosingRectangle()` - multiple local variables
+
+5. Summary Judgment:
+   - Methods `parse(String stringRepresentation, String setString, String unsetString)`, `setRegion(int left, int top, int width, int height)`, and `getEnclosingRectangle()` exhibit characteristics of Long Methods due to their length, complexity, nesting, and use of many variables."
+JobTriggerPoolHelper.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods are excessively large. The `addTrigger` method is the longest with around 30 lines of code, but this includes comments, logging, and important logic for triggering jobs.
+
+2. High Complexity:
+- The `addTrigger` method has some conditional logic but does not appear to have a high cyclomatic complexity. It mainly involves a single conditional statement to choose between fast and slow trigger pools and some logging and cleanup in a finally block.
+
+3. Deep Nesting:
+- The `addTrigger` method does have nested control structures, particularly inside the `Runnable` task executed by the thread pool, but the nesting is not particularly deep.
+
+4. Many Variables:
+- The `addTrigger` method uses several parameters and local variables, but the number of variables is manageable and not excessive.
+
+5. Summary Judgment:
+- Based on the analysis, none of the methods in the file exhibit characteristics that would qualify them as Long Methods."
+MigrationRunController.java,"YES, I found Long Method
+
+1. Large Methods:
+- `migrate()` method is quite large, containing multiple stages of logic including conditionals and variable manipulations.
+
+2. High Complexity:
+- `migrate()` method has high cyclomatic complexity due to multiple `if`, `else`, and exception handling blocks.
+
+3. Deep Nesting:
+- `migrate()` method has some level of nested control structures, especially within the `Tasks.create()` lambda and the error handling blocks.
+
+4. Many Variables:
+- `migrate()` method uses many local variables and interacts with several instance fields and parameters.
+
+5. Summary Judgment:
+- Based on the analysis, the `migrate()` method appears to be a Long Method due to its size, complexity, nesting levels, and variable usage."
+Internet.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No methods exceed a significant number of lines that could be considered excessively large.
+
+2. High Complexity:
+- Methods like `image`, `password`, `privateIpV4Address`, and `publicIpV4Address` have multiple branches and conditions.
+
+3. Deep Nesting:
+- Methods like `image` and `password` have some level of nesting, but not deeply nested.
+- `privateIpV4Address` has a switch statement with nested conditional logic.
+
+4. Many Variables:
+- Methods such as `privateIpV4Address` and `publicIpV4Address` use several variables, but within a manageable number.
+
+5. Summary Judgment:
+- Based on the analysis, while there are methods with higher complexity and variable usage, none of the methods show all the characteristics of a Long Method."
+AllMembersSupplier.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a typical threshold for large methods (e.g., 50-100 lines).
+
+2. High Complexity:
+   - `getValueSources`: Contains a few conditional checks but not abundant.
+   - `addMultiPointMethods`: Contains conditional checks but not excessively complex.
+   - `addDataPointsValues`: Simple branching based on type.
+   - `addArrayValues`: Loop with conditional.
+   - `addIterableValues`: Loop with conditional.
+
+3. Deep Nesting:
+   - `MethodParameterValue.getValue`: Multiple catch blocks and one if-statement.
+   - `addMultiPointMethods`: Nested conditional blocks with try-catch.
+   - `getStaticFieldValue`: Nested catch blocks.
+
+4. Many Variables:
+   - `addMultiPointMethods`: Uses several variables (dataPointsMethod, returnType, list, etc.).
+   - `addDataPointsValues`: Uses multiple variables (type, sig, name, list, value).
+   - `addArrayValues`: Uses few variables (i, name, sig, list, value).
+   - `addIterableValues`: Uses several variables (iterator, i, name, sig, list, value).
+
+5. Summary Judgment:
+   - None of the methods exhibit the symptoms of a Long Method in terms of size, complexity, nesting, and variable usage."
+AwtCodec.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `write` method has 49 lines of code.
+   - `parseFont` method has 37 lines of code.
+   - `parseColor` method has 37 lines of code.
+   - `parseRectangle` method has 44 lines of code.
+   - `parsePoint` method has 46 lines of code.
+
+2. High Complexity:
+   - `write` method has multiple conditional branches.
+   - `parseFont` method has a loop and many conditional branches.
+   - `parseColor` method has a loop and many conditional branches.
+   - `parseRectangle` method has a loop and many conditional branches.
+   - `parsePoint` method has a loop and many conditional branches.
+
+3. Deep Nesting:
+   - `write` method has nested if-else statements.
+   - `parseFont` method has nested for loop and if-else statements.
+   - `parseColor` method has nested for loop and if-else statements.
+   - `parseRectangle` method has nested for loop and if-else statements.
+   - `parsePoint` method has nested for loop and if-else statements.
+
+4. Many Variables:
+   - `write` method uses several local variables.
+   - `parseFont` method uses several local variables.
+   - `parseColor` method uses several local variables.
+   - `parseRectangle` method uses several local variables.
+   - `parsePoint` method uses several local variables.
+
+5. Summary Judgment:
+   Based on the analysis, this file contains methods that are excessively large, complex, deeply nested, and use many variables, indicative of Long Methods."
+OrderController.java,"YES, I found Long Method
+
+1. Large Methods:
+   - order
+
+2. High Complexity:
+   - order (contains if-else statement and nested try-catch within the PreparedStatementCreator)
+
+3. Deep Nesting:
+   - order (nested within the PreparedStatementCreator and if-else logic)
+
+4. Many Variables:
+   - order (uses multiple local variables for order processing and database operations)
+
+5. Summary Judgment:
+   Based on the analysis, the `order` method in this file appears to be excessively large, complex, deeply nested, and uses many variables, indicating a Long Method."
+XxlJobInfoDao.java,"NO, I did not find Long Method"
+ConnectionPool.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `createConnection`
+
+2. High Complexity:
+   - `createConnection`
+
+3. Deep Nesting:
+   - `createConnection`
+
+4. Many Variables:
+   - `createConnection`
+
+5. Summary Judgment:
+   - Based on the analysis, `createConnection` method is excessively large, complex, deeply nested, and uses many variables."
+LinkedHashMultimap.java,"NO, I did not find Long Method"
+PropertyElf.java,"YES, I found Long Method
+
+1. Large Methods:
+- `setProperty` has 41 lines of code.
+
+2. High Complexity:
+- `setProperty` has multiple conditional branches due to if-else statements and parameters checking.
+
+3. Deep Nesting:
+- `setProperty` contains nested try-catch blocks and conditional if-else structures.
+
+4. Many Variables:
+- `setProperty` uses many variables including `target`, `propName`, `propValue`, `methods`, `writeMethod`, `paramClass`, and others.
+
+5. Summary Judgment:
+Based on the analysis, the `setProperty` method in this file is excessively large, complex, deeply nested, and uses many variables, indicating the presence of the Long Method smell."
+PendingTransactionsDialog.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `createDialogArea(Composite parent)`: This method contains over 50 lines of code, setting it up as a potentially large method.
+
+2. High Complexity:
+   - `createDialogArea(Composite parent)`: It includes multiple conditional branches and loops, indicating high complexity.
+
+3. Deep Nesting:
+   - `createDialogArea(Composite parent)`: The method has several nested structures, including nested if statements and for-loops.
+
+4. Many Variables:
+   - `loadContexts(boolean showAllContexts)`: This method uses many variables including arrays, lists, and loop variables, which could make it harder to understand.
+
+5. Summary Judgment:
+   Based on the analysis, the `createDialogArea(Composite parent)` method is excessively large, complex, deeply nested, and uses many variables, indicating the presence of a Long Method."
+JedisClusterTest.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods in this file appear to be excessively large. The methods have a reasonable number of lines, typically ranging from 5 to 30 lines.
+
+2. High Complexity:
+   - The `setUp` method has a slightly higher complexity due to the loop and conditional logic for configuring the cluster slots, but it is not exceptionally high.
+   - Other methods generally have low complexity with straightforward logic and conditional statements.
+
+3. Deep Nesting:
+   - There is no deep nesting of control structures observed in any of the methods. Most methods have method chaining, try-catch blocks, and loops with a single level of nesting.
+
+4. Many Variables:
+   - The `setUp` method uses a significant number of variables to configure the cluster nodes and their slots. However, other methods use a reasonable number of variables.
+
+5. Summary Judgment:
+   - Based on the analysis, this file does not contain any methods that are excessively large, complex, deeply nested, or use many variables."
+RandomGenerator.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- None
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- None
+
+5. Summary Judgment:
+- None"
+RouterNanoHTTPD.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods found that are excessively large in terms of the number of lines of code.
+
+2. High Complexity:
+   - `UriResource.createUriPattern()` has high cyclomatic complexity due to loops and string manipulations.
+   - `UriResource.process()` has high cyclomatic complexity due to a switch statement and exception handling.
+
+3. Deep Nesting:
+   - `UriResource.process()` has deep nesting with a switch statement inside a conditional.
+   - `BaseRoutePrioritizer.addRoute()` has a nested if statement.
+
+4. Many Variables:
+   - `UriResource.createUriPattern()` uses many variables during string manipulation and pattern creation.
+   - `UriResource.process()` uses many variables for method parameters, object instantiation, and handling.
+
+5. Summary Judgment:
+   - The file does not contain any methods that are excessively large, deeply nested, and use many variables that exhibit all the characteristics of a Long Method. However, there are methods with high complexity, which can be a point of concern."
+JavassistProxyFactory.java,"YES, I found Long Method
+
+1. **Large Methods**:
+   - `generateProxyClass` has 90 lines of code.
+
+2. **High Complexity**:
+   - `generateProxyClass` contains loops, conditionals, and switch statements, indicating high cyclomatic complexity.
+
+3. **Deep Nesting**:
+   - `generateProxyClass` has multiple levels of nested loops and conditionals.
+
+4. **Many Variables**:
+   - `generateProxyClass` uses many variables, including parameters, local variables, and fields.
+
+5. **Summary Judgment**:
+   - `generateProxyClass` is excessively large, complex, deeply nested, and uses many variables."
+ClusterConnectionManager.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `ClusterConnectionManager` constructor: This method has many lines of code and includes multiple responsibilities, such as configuration checking, connecting to nodes, parsing cluster nodes, and handling exceptions.
+   - `scheduleClusterChangeCheck`: This method is relatively long and includes scheduling tasks and handling node information.
+   - `checkClusterState`: This method has multiple conditional branches and iterative operations, making it quite long.
+   - `updateClusterState`: This method handles asynchronous operations and state updates, making it substantial in length.
+   - `checkMasterNodesChange`: This method contains nested loops and conditional checks, making it a candidate for being a long method.
+
+2. High Complexity:
+   - `ClusterConnectionManager` constructor: Contains multiple if-else conditions and try-catch blocks.
+   - `scheduleClusterChangeCheck`: Has a nested runnable and future listener with multiple operations.
+   - `checkClusterState`: Includes a sequence of asynchronous callbacks and operations.
+   - `updateClusterState`: Involves asynchronous callbacks and operations, with nested if-else structures.
+   - `checkMasterNodesChange`: Multiple nested loops and conditional checks increase its complexity.
+
+3. Deep Nesting:
+   - `ClusterConnectionManager` constructor: Deep nesting due to loops, try-catch blocks, and if-else conditions.
+   - `scheduleClusterChangeCheck`: Deep nesting within the runnable and future listener.
+   - `checkClusterState`: Deep nesting due to multiple asynchronous callbacks and operations.
+   - `updateClusterState`: Deep nesting due to nested operations and callbacks.
+   - `checkMasterNodesChange`: Deep nesting due to nested loops and conditional checks.
+
+4. Many Variables:
+   - `ClusterConnectionManager` constructor: Uses a wide range of variables, including local variables, exception handling variables, and collections.
+   - `scheduleClusterChangeCheck`: Uses multiple variables, including collections and future-related variables.
+   - `checkClusterState`: Uses variables for node information, iterables, and exceptions.
+   - `updateClusterState`: Uses many variables, including connection, partition information, and exceptions.
+   - `checkMasterNodesChange`: Uses multiple variables, including sets, maps, and iterators.
+
+5. Summary Judgment:
+   Based on the analysis, the file contains methods that are excessively large, complex, deeply nested, and use many variables, indicating the presence of the Long Method code smell."
+RequestLimiter.java,"NO, I did not find Long Method"
+MockNamingService.java,"NO, I did not find Long Method"
+MethodVisitor.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- None
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- None
+
+5. Summary Judgment:
+Based on the analysis, this file does not contain any methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+FlowControllerV1.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No method exceeds a reasonable number of lines based on the provided code.
+
+2. High Complexity:
+   - `apiUpdateFlowRule` has multiple conditions and branches.
+   - `checkEntityInternal` includes a series of checks and returns, indicating moderate complexity.
+
+3. Deep Nesting:
+   - No method has deeply nested control structures. The nesting is generally shallow.
+
+4. Many Variables:
+   - `apiUpdateFlowRule` has multiple parameters, but they are necessary for the functionality.
+   - `checkEntityInternal` checks numerous fields of `FlowRuleEntity`.
+
+5. Summary Judgment:
+   - No single method shows all symptoms of a Long Method. While there are some methods that could be broken down for clarity and maintainability, none is clearly excessively large, complex, deeply nested, or uses many variables in a problematic way."
+DiagnosedStreamCorruptionException.java,"NO, I did not find Long Method"
+XMLConfigBuilder.java,"YES, I found Long Method
+
+1. Large Methods:
+- `parseConfiguration(XNode root)` - This method has many lines of code and handles different configuration elements.
+
+2. High Complexity:
+- `parseConfiguration(XNode root)` - It contains multiple conditional branches and handles different XML nodes.
+- `settingsElement(Properties props)` - This method contains many conditional branches and variable assignments.
+
+3. Deep Nesting:
+- `parseConfiguration(XNode root)` - The method has a try-catch block containing multiple if-else statements and method calls.
+- `settingsElement(Properties props)` - Contains multiple if-else statements.
+
+4. Many Variables:
+- `parseConfiguration(XNode root)` - Uses several variables and constants.
+- `settingsElement(Properties props)` - Uses many variables and constants for different settings.
+
+5. Summary Judgment:
+Based on the analysis, `parseConfiguration(XNode root)` and `settingsElement(Properties props)` in this file exhibit characteristics of methods that can be considered Long Methods due to their size, complexity, nesting, and use of many variables."
+Lexeme.java,"NO, I did not find Long Method"
+DBeaverCore.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `initialize()` has 45 lines of code.
+   - `dispose()` has 46 lines of code.
+
+2. High Complexity:
+   - `initialize()` has multiple conditional statements and object initializations.
+   - `dispose()` has multiple conditional statements and resource cleanup operations.
+
+3. Deep Nesting:
+   - `initialize()` has nested try-catch and if-else statements.
+   - `dispose()` has nested if-else and try-catch statements.
+
+4. Many Variables:
+   - `initialize()` uses several local variables for configuration and object initialization.
+   - `dispose()` uses several local variables and fields (e.g., `this.queryManager`, `this.qmLogWriter`).
+
+5. Summary Judgment:
+   Based on the analysis, `initialize()` and `dispose()` methods are excessively large, complex, deeply nested, and use many variables, indicating the Long Method code smell."
+AztecCode.java,"NO, I did not find Long Method"
+EntryConfig.java,"NO, I did not find Long Method"
+ScriptProcessorBuilder.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - None
+
+3. Deep Nesting:
+   - None
+
+4. Many Variables:
+   - None
+
+5. Summary Judgment:
+   - No methods in this file indicate the Long Method code smell."
+MapTypeAdapterFactory.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods in the file exceed a reasonable number of lines. The `create`, `read`, `write`, and `keyToString` methods are the largest, but they do not exceed 50 lines, which is generally not considered excessively large.
+
+2. High Complexity:
+- `write` method has a cyclomatic complexity of 7 due to conditional branches and loops.
+- `read` method has a cyclomatic complexity of 5 due to conditional branches and loops.
+- `keyToString` method has a cyclomatic complexity of 5 due to multiple conditionals.
+
+3. Deep Nesting:
+- None of the methods have deep nesting that goes beyond a reasonable level. The `write` and `read` methods have nested loops and conditional statements, but these are not deeply nested.
+
+4. Many Variables:
+- `write` method uses a relatively large number of variables and collections (`keys`, `values`, `hasComplexKeys`).
+- `read` method also uses multiple variables (`map`, `key`, `value`, `replaced`).
+- `create` method has a moderate number of variables.
+- `keyToString` uses a moderate number of variables.
+
+5. Summary Judgment:
+- Based on the analysis, while some methods (`read` and `write`) have relatively high complexity and use a significant number of variables, they do not exhibit all symptoms of the Long Method smell, particularly in terms of length and deep nesting."
+AttributeNameHistoWalker.java,"NO, I did not find Long Method"
+PageModelExtractor.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `processSingle`: Contains many lines of code with multiple switch cases and loops.
+
+2. High Complexity:
+   - `processSingle`: High cyclomatic complexity due to multiple if-else conditions and switch-case statements.
+
+3. Deep Nesting:
+   - `processSingle`: Deeply nested control structures, especially within the switch-case statements and loops.
+   - `init`: Nested if-else conditions to check annotations and set fields.
+
+4. Many Variables:
+   - `processSingle`: Uses many variables, including local variables and parameters, for processing different types of data.
+   - `init`: Uses many variables to manage fields, annotations, and field extractors.
+
+5. Summary Judgment:
+   - `processSingle` and `init` exhibit signs of being long methods given their size, complexity, nesting, and number of variables."
+TreeTypeAdapter.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No methods exceed what could be considered a large number of lines. All methods are relatively short.
+
+2. High Complexity:
+- No methods have a high cyclomatic complexity. Conditional branches and loops are minimal.
+
+3. Deep Nesting:
+- No methods show deep nesting of control structures.
+
+4. Many Variables:
+- No methods use an excessive number of variables.
+
+5. Summary Judgment:
+- The file does not contain any methods that are excessively large, complex, deeply nested, or use many variables."
+Spider.java,"YES, I found Long Method
+
+1. Large Methods:
+- `run()`: Excessively large with many lines of code.
+
+2. High Complexity:
+- `run()`: Contains many conditional branches and loops.
+
+3. Deep Nesting:
+- `run()`: Deeply nested control structures, especially around the while loop and try-catch blocks.
+- `onError(Request request, Exception e)`: Nested if statement.
+
+4. Many Variables:
+- `run()`: Uses many variables, including parameters, local variables, and fields.
+
+5. Summary Judgment:
+Based on the analysis, the `run()` method in this file is excessively large, complex, deeply nested, and uses many variables, indicative of the Long Method code smell."
+RandomService.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No method exceeds a reasonable number of lines.
+
+2. High Complexity:
+   - `nextLong(long n)` has moderate complexity due to a do-while loop and conditional checks.
+
+3. Deep Nesting:
+   - No methods exhibit deep nesting of control structures.
+
+4. Many Variables:
+   - `hex(int length)` uses a moderate number of variables, but it is not excessive.
+
+5. Summary Judgment:
+   - No method is excessively large, complex, deeply nested, or uses many variables in a way that indicates a Long Method."
+RuleContainer.java,"NO, I did not find Long Method"
+LocalCacheListener.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `add(Map<?, ?> cache)`: Contains a significant number of lines of code, especially within the message listener.
+
+2. High Complexity:
+   - `add(Map<?, ?> cache)`: Contains multiple conditional statements and a nested loop, which increases its cyclomatic complexity.
+
+3. Deep Nesting:
+   - `add(Map<?, ?> cache)`: Nested structures involving if-else statements within message handling for `LocalCachedMapDisable`, `LocalCachedMapEnable`, `LocalCachedMapClear`, `LocalCachedMapInvalidate`, and `LocalCachedMapUpdate`.
+
+4. Many Variables:
+   - `add(Map<?, ?> cache)`: Uses a significant number of variables for handling different message types, keys, and states.
+
+5. Summary Judgment:
+   - The `add(Map<?, ?> cache)` method is excessively large, complex, deeply nested, and uses many variables."
+TransactionMQProducer.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods in this file exceed a considerable number of lines that would be indicative of a long method.
+
+2. High Complexity:
+- None of the methods contain a high number of conditional branches, loops, or logic that would suggest high cyclomatic complexity.
+
+3. Deep Nesting:
+- None of the methods show deep nesting of control structures.
+
+4. Many Variables:
+- Methods do not use an excessive number of variables; most methods use a few parameters and local variables as needed.
+
+5. Summary Judgment:
+- This file does not contain any methods that are excessively large, complex, deeply nested, or use many variables."
+PlainPermissionManager.java,"1. Large Methods:
+   - `load()`: 42 lines
+   - `updateAccessConfig(PlainAccessConfig plainAccessConfig)`: 52 lines
+
+2. High Complexity:
+   - `updateAccessConfig(PlainAccessConfig plainAccessConfig)`: Multiple conditional branches and loops.
+   - `createAclAccessConfigMap(Map<String, Object> existedAccountMap, PlainAccessConfig plainAccessConfig)`: Several conditional branches.
+
+3. Deep Nesting:
+   - `updateAccessConfig(PlainAccessConfig plainAccessConfig)`: Nested if statements and loops.
+
+4. Many Variables:
+   - `load()`: Multiple local variables.
+   - `updateAccessConfig(PlainAccessConfig plainAccessConfig)`: Multiple local variables and parameters.
+
+5. Summary Judgment:
+YES, I found Long Method"
+JSONTokener.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `nextString(char quote)` - 35 lines of code.
+   - `nextTo(char delimiter)` - 18 lines of code.
+   - `nextTo(String delimiters)` - 18 lines of code.
+   - `nextValue()` - 39 lines of code.
+   - `toJSONArray()` - 38 lines of code.
+
+2. High Complexity:
+   - `nextString(char quote)` - Multiple switch cases.
+   - `nextValue()` - Contains a switch statement with multiple cases.
+   - `toJSONArray()` - Contains nested switch statements and loops.
+
+3. Deep Nesting:
+   - `nextString(char quote)` - Nested switch statements.
+   - `nextValue()` - Nested switch statements.
+   - `toJSONArray()` - Nested switch and try-catch blocks.
+
+4. Many Variables:
+   - `nextString(char quote)` - Uses variables `c`, `sb`.
+   - `nextTo(char delimiter)` - Uses variables `c`, `sb`.
+   - `nextTo(String delimiters)` - Uses variables `c`, `sb`.
+   - `nextValue()` - Uses variables `c`, `string`, `sb`.
+   - `toJSONArray()` - Uses variables `jsonArray`, `c`.
+
+5. Summary Judgment:
+   Based on the analysis, the methods `nextString(char quote)`, `nextTo(char delimiter)`, `nextTo(String delimiters)`, `nextValue()`, and `toJSONArray()` exhibit characteristics of the Long Method smell due to their length, complexity, nesting, and variable usage."
+AndroidMusic.java,"NO, I did not find Long Method"
+WriteWorkbookHolder.java,"NO, I did not find Long Method"
+DefaultDateTypeAdapter.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No methods are excessively large.
+
+2. High Complexity:
+- Methods with if or switch statements include: `DefaultDateTypeAdapter(Class<? extends Date> dateType)`, `DefaultDateTypeAdapter(Class<? extends Date> dateType, String datePattern)`, `DefaultDateTypeAdapter(Class<? extends Date> dateType, int style)`, `DefaultDateTypeAdapter(Class<? extends Date> dateType, int dateStyle, int timeStyle)`, `read(JsonReader in)`.
+- No methods with switch statements are present.
+- No methods with multiple loops are present.
+
+3. Deep Nesting:
+- Methods with nested control structures:
+  - `DefaultDateTypeAdapter(Class<? extends Date> dateType)` has 2 levels of nesting (if and another if).
+  - `DefaultDateTypeAdapter(Class<? extends Date> dateType, String datePattern)` has 2 levels of nesting (if and another if).
+  - `DefaultDateTypeAdapter(Class<? extends Date> dateType, int style)` has 2 levels of nesting (if and another if).
+  - `DefaultDateTypeAdapter(Class<? extends Date> dateType, int dateStyle, int timeStyle)` has 2 levels of nesting (if and another if).
+  - `write(JsonWriter out, Date value)` has 2 levels of nesting (if and synchronized).
+  - `read(JsonReader in)` has 3 levels of nesting (if, nested if, and else if).
+  - `deserializeToDate(String s)` has 2 levels of nesting (synchronized and for loop with try-catch).
+  - `toString()` has 2 levels of nesting (if and else).
+
+4. Many Variables:
+- No methods use an unusually large number of variables.
+
+5. Summary Judgment:
+- Based on the analysis, no methods are excessively large, highly complex, deeply nested, or use many variables."
+AckSchedulerKey.java,"NO, I did not find Long Method"
+TableView.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `draw()`: 62 lines
+   - `drawRow()`: 44 lines
+
+2. High Complexity:
+   - `draw()`: Contains multiple if-else conditions and a loop.
+   - `drawRow()`: Contains a do-while loop, multiple if-else conditions, and a for loop.
+
+3. Deep Nesting:
+   - `draw()`: Nested if-else conditions within a for loop.
+   - `drawRow()`: Nested if-else conditions within a nested for loop and a do-while loop.
+
+4. Many Variables:
+   - `draw()`: Uses multiple variables and arrays (`tableSB`, `widthCacheArray`, `tableHigh`, `rowIndex`, `isFirstRow`, `isLastRow`, `hasNext`, `scannerArray`).
+   - `drawRow()`: Uses multiple variables and arrays (`rowSB`, `scannerArray`, `hasNext`, `segmentSB`, `colIndex`, `borderChar`, `width`, `isLastColOfRow`, `scanner`, `data`, `dataFormat`, `paddingChar`, `columnDefine`).
+
+5. Summary Judgment:
+   Based on the analysis, the methods `draw()` and `drawRow()` are excessively large, complex, deeply nested, and use many variables, indicating the presence of Long Methods."
+HttpClientDownloader.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods are excessively large. The largest method, `download`, is 37 lines long.
+
+2. High Complexity:
+   - `download` has moderate complexity due to the try-catch-finally block and conditional checks.
+   - `handleResponse` has a few conditional checks but is not overly complex.
+
+3. Deep Nesting:
+   - `download` has a nested structure due to the try-catch-finally blocks and conditional checks, but it is not deeply nested.
+   - `getHttpClient` contains nested if statements, but they are not excessively deep.
+
+4. Many Variables:
+   - `download` uses several variables, including parameters and local variables, but it is not using an excessive number.
+   - `handleResponse` also uses multiple variables, but manages them reasonably.
+
+5. Summary Judgment:
+   - None of the methods show symptoms of being excessively large, complex, deeply nested, and using many variables."
+CN_QuantifierSegmenter.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods exceed 20 lines of code, which is generally considered a reasonable threshold for method length in Java.
+
+2. High Complexity:
+- `processCount` and `analyze` methods have relatively high cyclomatic complexity due to the presence of multiple conditional branches.
+
+3. Deep Nesting:
+- `processCNumber` has nested if/else blocks.
+- `processCount` has a loop with nested if/else blocks, and also a conditional check nested within another if block.
+
+4. Many Variables:
+- `analyze`, `processCNumber`, and `processCount` use a moderate number of variables, but none stand out as having an excessive number.
+
+5. Summary Judgment:
+- Based on the analysis, none of the methods in this file exhibit all the characteristics of a Long Method (excessive length, high complexity, deep nesting, and many variables). However, `processCount` and `analyze` warrant closer scrutiny due to their complexity and nesting."
+CompareObjectsSettings.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- `loadFrom(DBPSettingsSection dialogSettings)`: 7 conditional branches
+- `saveTo(DBPSettingsSection dialogSettings)`: No conditional branches, but it has multiple write operations
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- `loadFrom(DBPSettingsSection dialogSettings)`: Uses 7 fields from the class
+- `saveTo(DBPSettingsSection dialogSettings)`: Uses 7 fields from the class
+
+5. Summary Judgment:
+- No methods are excessively large, deeply nested, or use many variables in a problematic way that would indicate the Long Method smell."
+InlineSizeHistoVisitable.java,"1. Large Methods:
+   - `processParseTag` has 35 lines of code, which can be considered large.
+
+2. High Complexity:
+   - `processParseTag` has multiple conditional branches, including a `switch` statement with several `case` labels, and nested `if` statements.
+   
+3. Deep Nesting:
+   - `processParseTag` has deep nesting, especially within the `TAG_INLINE_SUCCESS` case where there are multiple `if` statements nested.
+
+4. Many Variables:
+   - `processParseTag` uses several variables: `parseTag`, `parseDictionary`, `currentMethod`, `holder`, `attrInlineBytes`, `child`, `tagName`, `attrs`, `klassTag`, `fqName`, `inlinedByteCount`.
+   
+5. Summary Judgment:
+   YES, I found Long Method. The `processParseTag` method is excessively large, complex, deeply nested, and uses many variables."
+CodahaleHealthChecker.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- `registerHealthChecks` has 12 lines of code.
+- `ConnectivityHealthCheck.check` has 13 lines of code, but it includes a try-catch block and a try-with-resources statement which is standard.
+- `Connection99Percent.check` has 7 lines of code.
+
+2. High Complexity:
+- `registerHealthChecks` has 3 conditional branches (2 `if` statements and a loop).
+- `ConnectivityHealthCheck.check` has 1 conditional branch (a try-catch block).
+- `Connection99Percent.check` has 1 conditional branch.
+
+3. Deep Nesting:
+- `registerHealthChecks` has a nested `if` statement inside another `if` statement.
+- `ConnectivityHealthCheck.check` has one level of nesting (try-with-resources).
+- `Connection99Percent.check` does not have nested control structures.
+
+4. Many Variables:
+- `registerHealthChecks` uses 6 variables (including parameters and local variables).
+- `ConnectivityHealthCheck.check` uses 2 variables (including parameter and local variable).
+- `Connection99Percent.check` uses 3 variables (including parameters and local variable).
+
+5. Summary Judgment:
+None of the methods are excessively large, complex, deeply nested, or use many variables, so there are no Long Methods in this file."
+ClassicPluginStrategy.java,"NO, I did not find Long Method"
+ClientHead.java,"NO, I did not find Long Method"
+Closer.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `close()`: This method has multiple lines of code, which could be considered large depending on the context.
+
+2. High Complexity:
+   - `close()`: Contains a while loop and nested try-catch blocks, indicating higher complexity.
+
+3. Deep Nesting:
+   - `close()`: Includes nested control structures (try-catch inside a while loop).
+
+4. Many Variables:
+   - `close()`: Uses several variables (`throwable`, `closeable`, `e`).
+
+5. Summary Judgment:
+   - `close()`: Method is excessively large, complex, deeply nested, and uses many variables, indicating the presence of the Long Method smell."
+Tokeniser.java,"YES, I found Long Method
+
+1. Large Methods:
+- `consumeCharacterReference`: 45 lines of code.
+
+2. High Complexity:
+- `consumeCharacterReference`: Multiple conditional branches including if-else statements, ternary operators, and loops.
+
+3. Deep Nesting:
+- `consumeCharacterReference`: Includes nested if-else statements and loops.
+
+4. Many Variables:
+- `consumeCharacterReference`: Utilizes multiple variables for error handling, numeric reference parsing, and character codepoint manipulation.
+
+5. Summary Judgment:
+Based on the analysis, `consumeCharacterReference` contains many lines of code, high cyclomatic complexity, deep nesting, and uses many variables, indicating a Long Method."
+HazelcastPubSubStore.java,"NO, I did not find Long Method
+
+1. Large Methods: None
+2. High Complexity: None
+3. Deep Nesting: subscribe has a nested structure with an if statement inside a lambda, but it is not deeply nested.
+4. Many Variables: None of the methods use many variables.
+5. Summary Judgment: No methods exhibit characteristics of Long Methods."
+ContentType.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - `ContentType(String contentTypeHeader)`: Contains conditional branches but not excessively complex.
+   - `getDetailFromContentHeader(String contentTypeHeader, Pattern pattern, String defaultValue, int group)`: Simple method.
+   - Other methods: Simple getters and boolean checks.
+
+3. Deep Nesting:
+   - None
+
+4. Many Variables:
+   - `ContentType(String contentTypeHeader)`: Uses several variables but not excessively.
+   - `getDetailFromContentHeader(String contentTypeHeader, Pattern pattern, String defaultValue, int group)`: Uses a few local variables.
+   - Other methods: Minimal usage of variables.
+
+5. Summary Judgment:
+   - None of the methods exhibit characteristics of being long, highly complex, deeply nested, or using a large number of variables."
+ResultLoaderMap.java,"YES, I found Long Method
+
+1. Large Methods:
+- `LoadPair.load(Object userObject)`: 90 lines of code
+
+2. High Complexity:
+- `LoadPair.load(Object userObject)`: Multiple conditional branches and nested structures
+
+3. Deep Nesting:
+- `LoadPair.load(Object userObject)`: Deep nesting with try-catch blocks and conditional statements
+
+4. Many Variables:
+- `LoadPair.load(Object userObject)`: Uses many variables for error checking and object setup
+
+5. Summary Judgment:
+Based on my analysis, `LoadPair.load(Object userObject)` in this file contains a Long Method."
+HikariConfig.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No method exceeds a size that would typically be considered excessively large.
+
+2. High Complexity:
+   - `validate()` has multiple conditionals but does not seem excessively complex at first glance.
+   - `validateNumerics()` also contains many conditionals but remains within a reasonable range.
+
+3. Deep Nesting:
+   - `setDriverClassName` and `setExceptionOverrideClassName` methods have nested structures but not deeply nested.
+
+4. Many Variables:
+   - Methods like `validateNumerics()` use several variables but do not use an unusually large number compared to typical setter and getter methods.
+
+5. Summary Judgment:
+   - Based on the analysis, this file does contain methods with multiple responsibilities and conditionals, but none of them are excessively long, deeply nested, or use an unusually large number of variables to be categorized as a Long Method."
+Configuration.java,"NO, I did not find Long Method"
+VCardResultParser.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `parse()` method has many lines of code.
+
+2. High Complexity:
+   - `parse()` method contains many conditional branches.
+
+3. Deep Nesting:
+   - `parse()` method has deep nesting of control structures, especially in the `while` and `if` statements.
+
+4. Many Variables:
+   - `parse()` method uses many variables, including parameters, local variables, and fields.
+
+5. Summary Judgment:
+   - Based on the analysis, the `parse()` method in this file is excessively large, complex, deeply nested, and uses many variables, indicating the presence of a Long Method."
+InterceptorProcessor.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `process(MethodProcessor methodProcessor)`: This method has over 100 lines of code.
+
+2. High Complexity:
+   - `process(MethodProcessor methodProcessor)`: Contains multiple if-else statements, for-loops, and try-catch structures.
+
+3. Deep Nesting:
+   - `process(MethodProcessor methodProcessor)`: Has nested if-else structures and loops.
+
+4. Many Variables:
+   - `process(MethodProcessor methodProcessor)`: Uses a significant number of local variables and parameters (e.g., `locations`, `toInsert`, `stackSaveInsnList`, `stackLoadInsnList`, `stackSaver`, `bindingContext`, `interceptorBindings`, `methodType`, `argumentTypes`, etc.).
+
+5. Summary Judgment:
+   - The `process(MethodProcessor methodProcessor)` method exhibits characteristics of a Long Method due to its size, complexity, nesting, and numerous variables."
+HandleCallbackParam.java,"NO, I did not find Long Method
+
+1. Large Methods: No method is excessively large as all methods are relatively short.
+2. High Complexity: No method has high cyclomatic complexity as all methods are simple getters, setters, and a constructor.
+3. Deep Nesting: No method has deep nesting as there are no control structures that are nested within each other.
+4. Many Variables: No method uses many variables; each method deals with a single variable.
+5. Summary Judgment: The file does not contain any methods that are excessively large, complex, deeply nested, or use many variables."
+SimpleWebServer.java,"YES, I found Long Method
+
+1. Large Methods:
+- `main`: 95 lines of code
+- `serve`: 23 lines of code
+- `defaultRespond`: 40 lines of code
+
+2. High Complexity:
+- `defaultRespond`: Multiple if/else statements and loops
+- `serve`: Loops for logging
+
+3. Deep Nesting:
+- `defaultRespond`: Multiple levels of if/else
+- `serveFile`: Nested if/else conditions with try/catch blocks
+
+4. Many Variables:
+- `main`: Multiple command-line option variables and collections
+- `defaultRespond`: Multiple variables for URI manipulation and file handling
+- `serveFile`: Variables for etag calculation, range requests, and file handling
+
+5. Summary Judgment:
+- Based on the analysis, the methods `main`, `serve`, and `defaultRespond` are excessively large, complex, deeply nested, and use many variables, indicating the presence of Long Methods."
+AbstractWriteHolder.java,"YES, I found Long Method
+
+1. Large Methods:
+- `AbstractWriteHolder`: Constructor with 89 lines of code.
+
+2. High Complexity:
+- `AbstractWriteHolder`: Constructor has multiple conditional branches for setting properties.
+
+3. Deep Nesting:
+- Constructor has deep nesting due to multiple levels of `if/else` structures.
+
+4. Many Variables:
+- Constructor uses many variables including parameters and local variables for initialization and configuration.
+
+5. Summary Judgment:
+Based on the analysis, the constructor of `AbstractWriteHolder` method is excessively large, has high complexity due to conditional branches, exhibits deep nesting, and uses many variables, indicating a Long Method."
+TestProxies.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- `testStatementExceptions` and `testOtherExceptions` have high complexity due to numerous try-catch blocks.
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- None
+
+5. Summary Judgment:
+- Based on the analysis, there are methods with high complexity but no methods that are excessively large, deeply nested, or that use many variables."
+JITDataModel.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   No methods in this file exceed a considerable number of lines that would typically indicate a long method.
+
+2. High Complexity:
+   The `updateStats` method contains multiple conditional branches which could increase its complexity.
+
+3. Deep Nesting:
+   The `updateStats` method has nested control structures such as if-else statements.
+
+4. Many Variables:
+   The `updateStats` method uses a moderate number of variables, including parameters, local variables, and fields.
+
+5. Summary Judgment:
+   Based on the analysis, while the `updateStats` method contains multiple conditional branches and some nesting, it does not reach a point where it is excessively complex or large in the context of the whole file. No method in this file meets the criteria for being a Long Method."
+BytecodeInstruction.java,"YES, I found Long Method
+
+1. Large Methods:
+- `getCommentWithMemberPrefixStripped()`
+- `toStringComplete()`
+- `toString(int maxOffset, int line)`
+- `equals(Object obj)`
+
+2. High Complexity:
+- `getCommentWithMemberPrefixStripped()`
+- `equals(Object obj)`
+
+3. Deep Nesting:
+- `getCommentWithMemberPrefixStripped()`
+- `equals(Object obj)`
+
+4. Many Variables:
+- `toStringNonSwitch(int maxOffset)`
+- `toStringSwitch(int maxOffset, int line)`
+- `equals(Object obj)`
+
+5. Summary Judgment:
+YES, I found Long Method"
+BatchResult.java,"NO, I did not find Long Method
+
+1. Large Methods: No methods with many lines of code.
+2. High Complexity: No methods with many conditional branches.
+3. Deep Nesting: No methods with deep nesting of control structures.
+4. Many Variables: No methods using many variables.
+5. Summary Judgment: No methods exhibit characteristics of Long Methods."
+AbstractSendMessageProcessor.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   No method in this file appears to be excessively large. Methods have a reasonable number of lines.
+
+2. High Complexity:
+   - `msgCheck` contains multiple conditional branches.
+   - `msgContentCheck` has a few conditional branches.
+   - `parseRequestHeader` uses a switch statement with multiple cases.
+   - `decodeSendMessageHeaderV2` has many conditional checks and parsing logic.
+
+3. Deep Nesting:
+   - `msgCheck` has nested conditional branches that could be considered moderately deep.
+   - `decodeSendMessageHeaderV2` has several conditional checks but does not appear deeply nested.
+
+4. Many Variables:
+   - `msgCheck` uses several local variables.
+   - `decodeSendMessageHeaderV2` uses many local variables, including a HashMap for parsing.
+
+5. Summary Judgment:
+   While there are methods with a moderate number of lines, high complexity, and use of many variables, none of them combine all the symptoms definitively to qualify them as Long Methods in the context of this file alone."
+StpLogic.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `getTokenValueNotCut`: 33 lines of code.
+   - `login`: 156 lines of code.
+   - `logout`: 20 lines of code.
+   - `getTokenInfo`: 10 lines of code, but this is not excessively large.
+   - `checkLogin`: 6 lines of code, but this is not excessively large.
+   - `getLoginId`: 50 lines of code.
+   - `getLoginIdDefaultNull`: 44 lines of code.
+   - `getLoginIdByToken`: 11 lines of code, but this is not excessively large.
+   - `getSessionByLoginId`: 12 lines of code, but this is not excessively large.
+   - `getTokenSession`: 48 lines of code.
+   - `getTokenActivityTimeoutByToken`: 42 lines of code.
+
+2. High Complexity:
+   - `login`: Contains multiple conditional checks and nested operations.
+   - `getLoginId`: Contains multiple conditional checks and nested operations.
+   - `getTokenSession`: Contains conditional checks and session-related logic.
+
+3. Deep Nesting:
+   - `login`: Multiple levels of if/else, particularly in handling login logic.
+   - `getLoginId`: Multiple nested if/else statements for checking different conditions and exceptions.
+
+4. Many Variables:
+   - `login`: Uses a wide variety of parameters, local variables, and method calls.
+   - `getLoginId`: Uses multiple local variables and method calls to perform various checks and retrieve information.
+   - `getTokenSession`: Uses multiple local variables and method calls, especially for handling session data.
+
+5. Summary Judgment:
+YES, I found Long Method. Methods such as `login` and `getTokenValueNotCut` are excessively large, complex, deeply nested, and use many variables, indicating the presence of the Long Method code smell."
+QueueTest.java,"YES, I found Long Method
+
+1. Large Methods:
+- `resizableQueueTest` (65 lines)
+- `resizableDequeTest` (65 lines)
+- `getTest` (40 lines)
+- `removeTest` (33 lines)
+- `indexOfTest` (21 lines)
+- `iteratorTest` (82 lines)
+- `iteratorRemoveEdgeCaseTest` (26 lines)
+- `hashEqualsTest` (30 lines)
+
+2. High Complexity:
+- `resizableQueueTest` (nested loops and conditions)
+- `resizableDequeTest` (nested loops and conditions)
+- `getTest` (nested loops and conditions)
+- `removeTest` (nested loops and conditions)
+- `indexOfTest` (nested loops)
+- `iteratorTest` (nested loops and conditions)
+- `hashEqualsTest` (loop and conditions)
+
+3. Deep Nesting:
+- `resizableQueueTest` (nested for-loops and try-catch blocks)
+- `resizableDequeTest` (nested for-loops and try-catch blocks)
+- `getTest` (nested for-loops)
+- `removeTest` (nested for-loops)
+- `indexOfTest` (nested for-loops)
+- `iteratorTest` (nested for-loops and try-catch blocks)
+
+4. Many Variables:
+- `resizableQueueTest` (uses `q`, `i`, `j`, `peeked`, `size`, `pop`, `peek`)
+- `resizableDequeTest` (uses `q`, `i`, `j`, `peeked`, `size`, `pop`, `peek`)
+- `getTest` (uses `q`, `i`, `j`)
+- `removeTest` (uses `q`, `j`, `pop`)
+- `indexOfTest` (uses `q`, `j`)
+- `iteratorTest` (uses `q`, `iter`, `j`, `i`)
+
+5. Summary Judgment:
+Based on my analysis, this file contains methods that are excessively large, complex, deeply nested, and use many variables."
+DetectionResultRowIndicatorColumn.java,"YES, I found Long Method
+
+1. Large Methods:
+- `adjustCompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: 70 lines
+- `adjustIncompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: 51 lines
+- `getBarcodeMetadata()`: 45 lines
+
+2. High Complexity:
+- `adjustCompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: Multiple if-else conditions and loops
+- `adjustIncompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: Multiple if-else conditions and loops
+- `getBarcodeMetadata()`: Multiple if-else conditions and for-each loop
+
+3. Deep Nesting:
+- `adjustCompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: Deeply nested if-else conditions and for-loops
+- `adjustIncompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: Deeply nested if-else conditions and for-loops
+
+4. Many Variables:
+- `adjustCompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: Uses several parameters and local variables (`codewords`, `boundingBox`, `top`, `bottom`, `firstRow`, `lastRow`, `barcodeRow`, `maxRowHeight`, `currentRowHeight`, `checkedRows`)
+- `adjustIncompleteIndicatorColumnRowNumbers(BarcodeMetadata barcodeMetadata)`: Uses several parameters and local variables (`codewords`, `boundingBox`, `top`, `bottom`, `firstRow`, `lastRow`, `barcodeRow`, `maxRowHeight`, `currentRowHeight`)
+- `getBarcodeMetadata()`: Uses several local variables (`codewords`, `barcodeColumnCount`, `barcodeRowCountUpperPart`, `barcodeRowCountLowerPart`, `barcodeECLevel`, `rowIndicatorValue`, `codewordRowNumber`)
+
+5. Summary Judgment:
+Based on the analysis, this file contains methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+RedissonSessionRepository.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a large number of lines that would typically indicate a ""Long Method.""
+
+2. High Complexity:
+   - `onMessage`: Contains multiple if-else branches.
+   - `loadSession`: Contains a for loop and multiple if conditions.
+   - `changeSessionId`: Contains multiple if conditions and batch operations.
+   - `publishEvent`: Contains a try-catch block.
+
+3. Deep Nesting:
+   - `setAttribute`: Contains nested if conditions.
+   - `onMessage`: Contains nested if conditions.
+
+4. Many Variables:
+   - `changeSessionId`: Uses a significant number of local variables.
+   - `loadSession`: Uses multiple local variables.
+
+5. Summary Judgment:
+   - While there are some methods with relatively high complexity, deep nesting, and a fair number of variables, none of the methods exhibit all symptoms of the ""Long Method"" code smell to a degree that raises significant concerns without additional context or specific guidelines for what constitutes ""excessive"" in this project."
+RelationshipTest.java,"NO, I did not find Long Method"
+BaseSwaggerConfig.java,"NO, I did not find Long Method"
+MapperBuilderAssistant.java,"NO, I did not find Long Method
+
+1. Large Methods:
+None found.
+
+2. High Complexity:
+`addMappedStatement` (multiple parameters and conditions) and `addResultMap` (conditional checks and list manipulations).
+
+3. Deep Nesting:
+`addResultMap` and `getStatementResultMaps` have nested control structures.
+
+4. Many Variables:
+`addMappedStatement` uses many parameters and local variables.
+
+5. Summary Judgment:
+`addMappedStatement` and `addResultMap` show signs of complexity, nesting, and use of many variables, but do not appear to be excessively large overall."
+BuildCommand.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `run()` has 160 lines of code.
+
+2. High Complexity:
+   - `run()` has multiple conditional statements and loops, indicating high cyclomatic complexity.
+
+3. Deep Nesting:
+   - `run()` contains several levels of nested if/else statements and loops.
+
+4. Many Variables:
+   - `run()` uses many variables, including parameters, local variables, and fields.
+
+5. Summary Judgment:
+   - Based on the presence of a large method with high complexity, deep nesting, and use of many variables, this file contains Long Methods."
+FrameworkField.java,"NO, I did not find Long Method"
+CmsSubjectCategoryExample.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No method in the file exceeds a reasonable number of lines that would typically be considered large (e.g., over 50-100 lines).
+
+2. High Complexity:
+   - Methods like `createCriteria()` and `addCriterion(String condition, Object value1, Object value2, String property)` have moderate complexity due to conditional checks, but they are not excessively complex.
+
+3. Deep Nesting:
+   - Methods such as `addCriterion(String condition, Object value1, Object value2, String property)` have nested if statements, but the nesting is not deep.
+
+4. Many Variables:
+   - Most methods use a small number of variables. The `Criteria` class and its constructor use several, but this is typical for classes representing complex query criteria.
+
+5. Summary Judgment:
+   - Based on the analysis, no method in this file is excessively large, complex, deeply nested, or uses many variables, so it does not contain any Long Methods."
+GsonBuilder.java,"NO, I did not find Long Method"
+RedissonBloomFilter.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- `add`: 42 lines
+- `contains`: 42 lines
+- `tryInit`: 41 lines
+
+2. High Complexity:
+- `add`: Contains loops and conditionals.
+- `contains`: Contains loops and conditionals.
+- `tryInit`: Contains multiple conditionals and loops.
+
+3. Deep Nesting:
+- `add`: Nested while loop and nested try-catch block.
+- `contains`: Nested while loop and nested try-catch block.
+- `tryInit`: Nested try-catch block with multiple conditions.
+
+4. Many Variables:
+- `add`: Uses a variety of variables including `hashes`, `hashIterations`, `bs`, `indexes`, `executorService`.
+- `contains`: Uses a variety of variables including `hashes`, `hashIterations`, `bs`, `indexes`, `executorService`.
+- `tryInit`: Uses `size`, `hashIterations`, `executorService`, `expectedInsertions`, `falseProbability`.
+
+5. Summary Judgment:
+Based on the analysis, methods `add`, `contains`, and `tryInit` are long, complex, and use many variables, which indicates a Long Method code smell."
+InvokeCountOperation.java,"NO, I did not find Long Method"
+AbstractSentinelAspectSupport.java,"YES, I found Long Method
+
+1. Large Methods:
+- `extractDefaultFallbackMethod`: This method has a substantial number of lines and logic blocks.
+- `handleFallback`: This method has multiple conditions and nested structures.
+
+2. High Complexity:
+- `extractDefaultFallbackMethod`: Contains multiple if-else conditions and nested logic.
+- `handleFallback`: Contains multiple if-else conditions and nested logic.
+
+3. Deep Nesting:
+- `extractDefaultFallbackMethod`: Has multiple levels of if-else statements.
+- `handleFallback`: Includes nested if conditions and method calls.
+
+4. Many Variables:
+- `extractDefaultFallbackMethod`: Uses many local variables and parameters.
+- `handleFallback`: Uses multiple local variables and parameters.
+
+5. Summary Judgment:
+Based on the analysis, this file contains methods such as `extractDefaultFallbackMethod` and `handleFallback` that are excessively large, complex, deeply nested, and use many variables, indicating the symptoms of a Long Method."
+SaTokenConfig.java,"NO, I did not find Long Method"
+HelpCommand.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- `process` (12 lines)
+- `createHelpModel` (12 lines)
+- `createCommandVO` (20 lines)
+- `complete` (16 lines)
+- `allCommands` (12 lines)
+- `findCommand` (8 lines)
+None of these methods appear excessively large.
+
+2. High Complexity:
+- `createCommandVO` (8 conditional branches)
+This method has a moderate number of conditional branches but does not seem excessively complex.
+
+3. Deep Nesting:
+- `createCommandVO` (4 levels deep at the `for` loop iterating over `arguments`)
+This method has some level of nesting, but it is not deeply nested.
+
+4. Many Variables:
+- `createCommandVO` (uses 8 variables)
+This method uses a moderate number of variables and does not seem to use many variables excessively.
+
+5. Summary Judgment:
+Based on the analysis, there are no methods that appear to be excessively large, complex, deeply nested, and use many variables."
+UrlConnectionClient.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods are excessively large in terms of number of lines of code.
+
+2. High Complexity:
+   - `prepareRequest`: Contains conditional branches and a loop.
+   - `readResponse`: Contains conditional branches and a loop.
+
+3. Deep Nesting:
+   - `prepareRequest`: Contains nested if/else statements.
+   - `readResponse`: Contains conditional branches but not deeply nested.
+
+4. Many Variables:
+   - `prepareRequest`: Uses several variables.
+   - `readResponse`: Uses several variables.
+
+5. Summary Judgment:
+   - No method is excessively large, deeply nested, highly complex, and uses many variables to be considered a Long Method."
+AssemblyProcessor.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `handleLine`: 68 lines
+   - `attachAssemblyToMembers`: 35 lines
+
+2. High Complexity:
+   - `handleLine`: Multiple conditional branches and loops.
+   - `attachAssemblyToMembers`: Contains a loop with nested conditionals.
+
+3. Deep Nesting:
+   - `handleLine`: Nested if-else structures up to 3 levels deep.
+   - `attachAssemblyToMembers`: Nested try-catch with if-else structures.
+
+4. Many Variables:
+   - `handleLine`: Uses many variables including `line`, `trimmedLine`, `possibleNativeAddress`, `possibleEntryAddress`, `couldBeNativeMethodMark`, etc.
+   - `attachAssemblyToMembers`: Uses `asmString`, `parser`, `assemblyMethod`, `asmSignature`, `msp`, `currentMember`, among others.
+
+5. Summary Judgment:
+   - Based on the analysis, both `handleLine` and `attachAssemblyToMembers` exhibit characteristics of Long Methods."
+JavaBeanDeserializer.java,"YES, I found Long Method
+
+1. Large Methods:
+- `deserialze(DefaultJSONParser parser, Type type, Object fieldName, Object object, int features, int[] setFlags)` - This method has more than 500 lines of code.
+
+2. High Complexity:
+- `deserialze(DefaultJSONParser parser, Type type, Object fieldName, Object object, int features, int[] setFlags)` - Contains many conditional branches (if/else, switch, for loops).
+
+3. Deep Nesting:
+- `deserialze(DefaultJSONParser parser, Type type, Object fieldName, Object object, int features, int[] setFlags)` - Has deeply nested structures, including multiple levels of if/else and loops within loops.
+
+4. Many Variables:
+- `deserialze(DefaultJSONParser parser, Type type, Object fieldName, Object object, int features, int[] setFlags)` - Uses many variables for different purposes, including parameters, local variables, and fields.
+
+5. Summary Judgment:
+Based on the analysis, the file contains a method that is excessively large, complex, deeply nested, and uses many variables, which is indicative of a Long Method."
+RetrofitError.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No method exceeds a reasonable number of lines.
+
+2. High Complexity:
+- `getBodyAs` method has moderate complexity due to conditional branches but is not excessively complex.
+
+3. Deep Nesting:
+- `getBodyAs` method has a level of nesting but is not deeply nested.
+
+4. Many Variables:
+- Methods do not use an unusually large number of variables.
+
+5. Summary Judgment:
+- Based on the analysis, no methods are excessively large, complex, deeply nested, or use many variables."
+Selectable.java,"NO, I did not find Long Method
+
+1. Large Methods: NA (Interface methods do not contain code)
+2. High Complexity: NA (Interface methods do not contain code)
+3. Deep Nesting: NA (Interface methods do not contain code)
+4. Many Variables: NA (Interface methods do not contain code)
+
+5. Summary Judgment: This file does not contain any methods that are excessively large, complex, deeply nested, and use many variables."
+CellFormulaTagHandler.java,"NO, I did not find Long Method"
+ClassWriter.java,"NO, I did not find Long Method"
+CompareToBuilder.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No single method exceeds a typical threshold for line count that would be considered excessively large.
+
+2. High Complexity:
+   - `reflectionCompare` methods and `append` methods have multiple conditional branches, but none are excessively complex.
+
+3. Deep Nesting:
+   - Methods like `reflectionCompare` and `reflectionAppend` have some nested structures, but they are not deeply nested.
+
+4. Many Variables:
+   - Methods like `reflectionCompare` and `reflectionAppend` use several parameters and local variables, but not excessively.
+
+5. Summary Judgment:
+   - No method combines large size, high complexity, deep nesting, and many variables indicating a Long Method."
+DataFormatter.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No method exceeds a typical threshold for being excessively large. The longest method, `createDateFormat`, is about 100 lines but not excessively long.
+
+2. High Complexity:
+- Methods like `createDateFormat` and `createNumberFormat` have some complexity due to the number of conditionals and loops, but not abnormally high.
+
+3. Deep Nesting:
+- Methods such as `createDateFormat` and `createNumberFormat` have some nested control structures but do not exhibit deep nesting.
+
+4. Many Variables:
+- Some methods use a considerable number of variables (e.g., `createDateFormat`, `createNumberFormat`), but not an overwhelming number.
+
+5. Summary Judgment:
+- Based on the given criteria, the file does not contain methods that are excessively large, complex, deeply nested, and use many variables."
+AccessTokenModel.java,"NO, I did not find Long Method"
+NiceSecurePasswordField.java,"NO, I did not find Long Method"
+GeometryViewerRegistry.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `flushConfig()`: This method has many lines of code responsible for writing XML configuration, indicating it may be too large.
+
+2. High Complexity:
+   - `flushConfig()`: Contains multiple conditional branches and loops.
+
+3. Deep Nesting:
+   - `flushConfig()`: Uses multiple levels of `try-with-resources` and nested `try-with-resources` blocks, leading to deep nesting.
+
+4. Many Variables:
+   - `flushConfig()`: Uses several variables for XML elements, attributes, and collections.
+
+5. Summary Judgment:
+   - `flushConfig()` is excessively large, complex, deeply nested, and uses many variables, fitting the description of a Long Method."
+RestMethodInfoTest.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods in the file appear excessively large.
+
+2. High Complexity:
+- None of the methods have a high number of conditional branches or complex logic structures.
+
+3. Deep Nesting:
+- None of the methods exhibit deep nesting of control structures.
+
+4. Many Variables:
+- None of the methods use an unusually large number of variables.
+
+5. Summary Judgment:
+- Based on the analysis, there are no methods in this file that are excessively large, complex, deeply nested, and use many variables."
+AssertUtil.java,"NO, I did not find Long Method"
+FieldAttributes.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a reasonable number of lines.
+
+2. High Complexity:
+   - None of the methods contain a high number of conditional branches.
+
+3. Deep Nesting:
+   - None of the methods exhibit deep nesting of control structures.
+
+4. Many Variables:
+   - None of the methods use many variables.
+
+5. Summary Judgment:
+   - This file does not contain any methods that are excessively large, complex, deeply nested, and use many variables."
+ExcelWriteFillExecutor.java,"YES, I found Long Method
+
+1. Large Methods:
+- `fill` (109 lines)
+
+2. High Complexity:
+- `fill` (multiple conditional branches and iterations)
+- `prepareData` (multiple conditional branches and loops)
+
+3. Deep Nesting:
+- `fill` (contains nested if-else and loops)
+- `shiftRows` (contains nested if-else)
+- `getOneCell` (contains switch-case and nested if-else)
+- `createRowIfNecessary` (contains nested if-else)
+- `checkRowHeight` (contains nested if-else)
+- `prepareData` (contains nested loops and if-else)
+
+4. Many Variables:
+- `fill` (uses multiple local variables and parameters)
+- `doFill` (uses multiple local variables and parameters)
+- `shiftRows` (uses multiple local variables)
+- `increaseRowIndex` (uses multiple local variables)
+- `getOneCell` (uses multiple local variables and parameters)
+- `createRowIfNecessary` (uses multiple local variables and parameters)
+- `checkRowHeight` (uses multiple parameters)
+- `prepareData` (uses multiple local variables)
+- `dealAnalysisCell` (uses multiple local variables and parameters)
+
+5. Summary Judgment:
+Based on the analysis, the `fill` method demonstrates signs of being a Long Method due to its size, complexity, nesting, and use of variables."
+Throwables.java,"1. Large Methods:
+- `getTrimmedStackTrace` has 26 lines of code.
+- `getCauseStackTraceLines` has 22 lines of code.
+
+2. High Complexity:
+- `getTrimmedStackTrace` has branches from the if-else statement and the loop.
+- `getCauseStackTraceLines` has branches from the if-else statements, try-catch block, and loops.
+
+3. Deep Nesting:
+- `getCauseStackTraceLines` has nested try-catch and while loops.
+
+4. Many Variables:
+- `getTrimmedStackTrace` uses 5 local variables.
+- `getCauseStackTraceLines` uses 6 local variables or references.
+
+5. Summary Judgment:
+YES, I found Long Method"
+BeanCopier.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - The `copy()` method is moderately long with approximately 35 lines, but it is essentially a router method directing the flow based on the `source` and `dest` types.
+
+2. High Complexity:
+   - The `copy()` method contains multiple conditional branches (if, else) which increase its complexity.
+   - The `mapToMap()` and `beanToMap()` methods both use many conditional branches within their `forEach` loops, increasing their complexity.
+
+3. Deep Nesting:
+   - The `copy()` method has a degree of nesting with the if/else statements.
+   - The `mapToMap()` and `beanToMap()` methods have nested logic within their forEach loops, though not deeply nested in a traditional sense.
+
+4. Many Variables:
+   - The `copy()` method uses a few variables.
+   - The `mapToMap()` and `beanToMap()` methods both use multiple variables within their forEach loops.
+
+5. Summary Judgment:
+   - While there are methods with moderate complexity and some use of variables, none of the methods are exceptionally large or deeply nested to be considered Long Methods."
+AndroidGraphics.java,"1. Large Methods:
+   - `onDrawFrame(GL10 gl)`: This method has 105 lines of code.
+
+2. High Complexity:
+   - `onDrawFrame(GL10 gl)`: Contains multiple conditional branches and loops.
+
+3. Deep Nesting:
+   - `onDrawFrame(GL10 gl)`: Has nested loops and conditional branches.
+
+4. Many Variables:
+   - `onDrawFrame(GL10 gl)`: Uses many variables including `lrunning`, `lpause`, `ldestroy`, `lresume`, `listeners`, `lifecycleListeners`.
+
+5. Summary Judgment:
+   YES, I found Long Method"
+ExecutorRouteBusyover.java,"NO, I did not find Long Method
+
+1. Large Methods: No methods with many lines of code are present.
+2. High Complexity: No methods with many conditional branches are present.
+3. Deep Nesting: No methods with deep nesting are present.
+4. Many Variables: No methods using many variables are present.
+5. Summary Judgment: No methods exhibit symptoms indicative of the Long Method code smell."
+IncompleteElementException.java,"NO, I did not find Long Method
+
+1. Large Methods: None
+2. High Complexity: None
+3. Deep Nesting: None
+4. Many Variables: None
+5. Summary Judgment: None"
+NioClientTest.java,"NO, I did not find Long Method"
+ClientHandler.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - `run()`: Has moderate complexity due to a try-catch-finally block and an if-statement.
+
+3. Deep Nesting:
+   - `run()`: Moderate nesting, the if-statement is nested within the catch block.
+
+4. Many Variables:
+   - `run()`: Uses a few variables (`outputStream`, `tempFileManager`, `session`).
+
+5. Summary Judgment:
+   - None of the methods are excessively large, complex, deeply nested, or use many variables."
+DefaultJedisSocketFactory.java,"1. Large Methods:
+   - `createSocket()`
+
+2. High Complexity:
+   - `createSocket()`
+
+3. Deep Nesting:
+   - `createSocket()`
+
+4. Many Variables:
+   - `createSocket()`
+
+5. Summary Judgment:
+YES, I found Long Method"
+CronExpression.java,"YES, I found Long Method
+
+1. Large Methods:
+- `getTimeAfter(Date afterTime)`: This method is excessively long, with over 100 lines of code, covering extensive logic for calculating the next valid cron time.
+
+2. High Complexity:
+- `getTimeAfter(Date afterTime)`: It contains many conditional branches related to loading different cron fields, handling overflow ranges, and correctly identifying the next valid time according to the cron expression.
+
+3. Deep Nesting:
+- `getTimeAfter(Date afterTime)`: Deeply nested control structures (multiple if/else, loops) are used to handle various cron expression rules and edge cases.
+
+4. Many Variables:
+- `getTimeAfter(Date afterTime)`: Uses many local variables (`sec`, `min`, `hr`, `day`, `mon`, `year`, `st`, `t`, `tmon`, `dayOfMSpec`, `dayOfWSpec`, etc.) to store state and control logic.
+
+5. Summary Judgment:
+Based on the analysis, `getTimeAfter(Date afterTime)` contains characteristics of a Long Method due to its size, complexity, extensive use of nesting, and the large number of variables."
+PooledDataSource.java,"YES, I found Long Method
+
+1. Large Methods:
+- `forceCloseAll`: 42 lines
+- `popConnection`: 100 lines
+- `pingConnection`: 51 lines
+
+2. High Complexity:
+- `forceCloseAll`: Contains multiple loops and conditions.
+- `popConnection`: Contains while loop, nested if-else conditions, and a try-catch block.
+- `pingConnection`: Contains nested if conditions and a try-with-resources statement.
+
+3. Deep Nesting:
+- `forceCloseAll`: Nested try-catch blocks inside loops.
+- `popConnection`: Deeply nested if-else statements within a while loop.
+- `pingConnection`: Nested if conditions and try-catch blocks.
+
+4. Many Variables:
+- `forceCloseAll`: Uses several local variables for iteration and exception handling.
+- `popConnection`: Uses numerous local variables for tracking time, connections, and error counts.
+- `pingConnection`: Uses local variables for connection validity checks and database interactions.
+
+5. Summary Judgment:
+YES, I found Long Method in `forceCloseAll`, `popConnection`, and `pingConnection`, which exhibit characteristics of large size, high complexity, deep nesting, and a significant number of variables."
+EmbedServer.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `start` method: 85 lines of code
+
+2. High Complexity:
+   - `start` method: Contains multiple try-catch blocks and complex setup for Netty server
+   - `process` method in `EmbedHttpServerHandler`: Contains multiple conditional branches
+   - `writeResponse` method in `EmbedHttpServerHandler`: Simple but part of the larger `channelRead0` method
+
+3. Deep Nesting:
+   - `start` method: Has nested try-catch structure and multiple method calls
+   - `process` method in `EmbedHttpServerHandler`: Nested conditional branches
+
+4. Many Variables:
+   - `start` method: Uses several variables for configuring Netty server
+   - `channelRead0` method in `EmbedHttpServerHandler`: Uses multiple parameters and local variables for handling requests
+   - `process` method in `EmbedHttpServerHandler`: Uses multiple parameters and local variables for validation and processing
+
+5. Summary Judgment:
+   Based on the analysis, the `start` method in the `EmbedServer` class contains a large number of lines of code, has high complexity due to its setup for the Netty server and exception handling, exhibits deep nesting with its try-catch structure and nested method calls, and uses many variables for configuring and managing the server. Therefore, it aligns with the symptoms of a Long Method."
+SentinelDubboConsumerFilter.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No method exceeds a typical threshold for being considered large in terms of line count.
+
+2. High Complexity:
+   - `syncInvoke` and `asyncInvoke` contain multiple `try-catch` blocks and conditionals, indicating moderate complexity.
+
+3. Deep Nesting:
+   - `syncInvoke` and `asyncInvoke` have moderate nesting, particularly around the `try-catch-finally` blocks and loops.
+
+4. Many Variables:
+   - `syncInvoke` and `asyncInvoke` use a moderate number of variables, including locals and method parameters.
+
+5. Summary Judgment:
+   - No single method exhibits all characteristics of a Long Method."
+QueryParser.java,"1. Large Methods:
+   - `parse()` method: 55 lines of code.
+
+2. High Complexity:
+   - `parse()` method: Contains multiple conditional branches (if, else, switch).
+
+3. Deep Nesting:
+   - `parse()` method: Multilevel if/else statements and loops (`while` loop containing `if` statements inside).
+
+4. Many Variables:
+   - `parse()` method: Uses many variables (`tq`, `query`, `evals`, `rootEval`, `currentEval`, `newEval`, `replaceRightMost`).
+
+5. Summary Judgment:
+YES, I found Long Method"
+HikariDataSource.java,"NO, I did not find Long Method"
+Excluder.java,"YES, I found Long Method
+
+1. Large Methods:
+- `excludeField` has 26 lines of code.
+- `create` has 29 lines of code.
+
+2. High Complexity:
+- `excludeField` includes multiple conditions and loops, indicating high cyclomatic complexity.
+- `create` has multiple conditions, making it complex.
+
+3. Deep Nesting:
+- `excludeField` has nested conditions and loops, indicating deep nesting.
+- `create` has nested conditions and method calls.
+
+4. Many Variables:
+- `excludeField` uses many variables and parameters.
+- `create` uses many variables and has nested method definitions.
+
+5. Summary Judgment:
+Based on the analysis, the methods `excludeField` and `create` contain symptoms that could indicate the Long Method code smell."
+JedisClusterCommand.java,"YES, I found Long Method
+
+1. Large Methods:
+- `runWithRetries(int slot)` has 79 lines of code.
+
+2. High Complexity:
+- `runWithRetries(int slot)` contains multiple nested loops, exceptions handling, and conditionals, indicating high cyclomatic complexity.
+
+3. Deep Nesting:
+- `runWithRetries(int slot)` has deep nesting of try-catch blocks and if-else structures.
+
+4. Many Variables:
+- `runWithRetries(int slot)` uses many variables: `deadline`, `redirect`, `consecutiveConnectionFailures`, `lastException`, `attemptsLeft`, `connection`, etc.
+
+5. Summary Judgment:
+- `runWithRetries(int slot)` is excessively large, complex, deeply nested, and uses many variables, indicating it is a Long Method."
+TestConnections.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed reasonable line count thresholds typically associated with a ""Long Method"".
+
+2. High Complexity:
+   - Methods like `testDoubleClose`, `testEviction`, and others contain multiple tests and assertions but do not have highly complex logic structures.
+
+3. Deep Nesting:
+   - The methods seem to have nested structures, typical for test methods using try-with-resources and assertions, but not deeply nested.
+
+4. Many Variables:
+   - Some methods use a reasonable number of variables, but none seem to滥用 a very large number. For example, `testPopulationSlowAcquisition` uses several variables but within a manageable range.
+
+5. Summary Judgment:
+   - Based on the analysis, no method exhibits characteristics of a Long Method."
+OmsReceiverInfoParam.java,"NO, I did not find Long Method"
+ResizeController.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a significant number of lines that would be considered excessive without more context, but `initialize()` and `didDisplayConfigurationChange()` contain a fair amount of logic.
+
+2. High Complexity:
+   - `initialize()`: Contains nested if/else statements.
+   - `didDisplayConfigurationChange()`: Contains conditional logic and a loop in `getMonitorSizes()` is indirectly part of its call stack.
+
+3. Deep Nesting:
+   - `initialize()`: Has multiple levels of if/else statements.
+
+4. Many Variables:
+   - `initialize()`: Uses several variables from the controller’s context.
+   - `didDisplayConfigurationChange()`: Uses configuration properties and local variables.
+   - `getMonitorSizes()`: Uses local variables and a loop variable.
+
+5. Summary Judgment:
+   - While some methods exhibit traits that could indicate complexity or length over time, none of the methods in this file are excessively large, complex, deeply nested, and use many variables to warrant classification as a Long Method based on the current content."
+Lifecycle.java,"NO, I did not find Long Method"
+MarkdownWebServerPlugin.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No method with many lines of code detected.
+
+2. High Complexity:
+- `readSource` has some conditional branches and a loop, but it is not excessively complex.
+
+3. Deep Nesting:
+- No method with deep nesting detected.
+
+4. Many Variables:
+- `readSource` and `serveFile` use a reasonable number of variables.
+
+5. Summary Judgment:
+- No method meets the criteria for being a Long Method."
+EsProductServiceImpl.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort)`: 60 lines of code.
+   - `recommend(Long id, Integer pageNum, Integer pageSize)`: 55 lines of code.
+   - `convertProductRelatedInfo(SearchHits<EsProduct> response)`: 49 lines of code.
+
+2. High Complexity:
+   - `search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort)`: Multiple conditional branches and loops.
+   - `recommend(Long id, Integer pageNum, Integer pageSize)`: Multiple conditional branches and loops.
+   - `convertProductRelatedInfo(SearchHits<EsProduct> response)`: Multiple loops.
+
+3. Deep Nesting:
+   - `search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort)`: Deeply nested if/else statements and loops.
+   - `recommend(Long id, Integer pageNum, Integer pageSize)`: Nested if/else and loops.
+   - `convertProductRelatedInfo(SearchHits<EsProduct> response)`: Nested loops.
+
+4. Many Variables:
+   - `search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort)`: Uses many variables for queries, sorting, and aggregation.
+   - `recommend(Long id, Integer pageNum, Integer pageSize)`: Uses many variables for filtering and queries.
+   - `convertProductRelatedInfo(SearchHits<EsProduct> response)`: Uses many variables for processing aggregations.
+
+5. Summary Judgment:
+   Based on the analysis, the methods `search`, `recommend`, and `convertProductRelatedInfo` exhibit characteristics of a Long Method due to their size, complexity, deep nesting, and use of many variables."
+ProjectExportWizard.java,"YES, I found Long Method
+
+1. Large Methods:
+- `exportProjects(DBRProgressMonitor monitor, final ProjectExportData exportData)`: This method has many lines of code and performs multiple operations including checking directory existence, creating archive files, and handling exports.
+
+2. High Complexity:
+- `exportProjects(DBRProgressMonitor monitor, final ProjectExportData exportData)`: Contains multiple conditional checks and loops, indicating high cyclomatic complexity.
+
+3. Deep Nesting:
+- `exportProjects(DBRProgressMonitor monitor, final ProjectExportData exportData)`: Includes nested loops and conditional blocks, increasing the nesting level.
+
+4. Many Variables:
+- `exportProjects(DBRProgressMonitor monitor, final ProjectExportData exportData)`: Uses many local variables (e.g., `archiveStream`, `metaBuffer`, `meta`, `resCountMap`, `libFiles`, `libPathMap`, etc.).
+
+5. Summary Judgment:
+- Based on the analysis, `exportProjects(DBRProgressMonitor monitor, final ProjectExportData exportData)` method is excessively large, complex, deeply nested, and uses many variables, indicating the presence of a Long Method."
+SentinelApacheHttpClientConfig.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - None
+
+3. Deep Nesting:
+   - None
+
+4. Many Variables:
+   - None
+
+5. Summary Judgment:
+   - No methods in this file exhibit characteristics of a Long Method."
+CachingExecutor.java,"NO, I did not find Long Method"
+RedisPriorityScheduler.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods in the file exceed a reasonable number of lines (most are 5-15 lines long).
+
+2. High Complexity:
+- `pushWhenNoDuplicate` has a low cyclomatic complexity.
+- `poll` has a low cyclomatic complexity.
+- `getRequest` has moderate cyclomatic complexity due to conditional branches but is manageable.
+- Other methods are simple and straightforward.
+
+3. Deep Nesting:
+- `getRequest` has some nesting but not excessively deep.
+- Other methods have limited or no nested structures.
+
+4. Many Variables:
+- Methods generally use a reasonable number of variables.
+- `setExtrasInItem` and `getExtrasInItem` use a few variables and fields, but not excessively.
+
+5. Summary Judgment:
+- None of the methods exhibit characteristics of being excessively large, complex, deeply nested, or using many variables, so there are no Long Methods present."
+EnablePluginCommand.java,"NO, I did not find Long Method"
+PoolStats.java,"NO, I did not find Long Method"
+MinMaxPriorityQueue.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None of the methods appear excessively large in terms of the number of lines of code.
+
+2. High Complexity:
+- Methods with multiple conditional branches include `fillHole`, `tryCrossOverAndBubbleUp`, `isIntact`, and parts of `offer` and `pollLast`.
+- `fillHole` has nested method calls and a while loop.
+- `tryCrossOverAndBubbleUp` has conditional branches, method calls, and conditional returns.
+- `isIntact` contains a for loop and multiple condition checks within it.
+- `offer` method calls multiple other methods and uses an if condition.
+- `pollLast` uses a switch statement with multiple cases.
+
+3. Deep Nesting:
+- Methods with deep nesting are `fillHole` with nested condition checks and method calls, and `tryCrossOverAndBubbleUp` that also uses deep nesting.
+
+4. Many Variables:
+- Methods that use many variables include `tryCrossOverAndBubbleUp`, `fillHole`, `pollLast`, and `offer`.
+- `tryCrossOverAndBubbleUp` uses `crossOver`, `crossOverUp`, and other method calls that involve several variables.
+- `fillHoleAt` and `bubbleUpAlternatingLevels` use several local variables for calculations and comparisons.
+- `offer` and `pollLast` also involve several variable operations and method calls.
+
+5. Summary Judgment:
+- While there are methods with high complexity, deep nesting, and many variables, none of the methods are excessively large in the number of lines of code, and the methods using many variables are primarily within the `Heap` inner class, which is responsible for the complex heap operations. Hence, based on the provided criteria, this file does not contain any methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+MapDeserializer.java,"YES, I found Long Method
+
+1. Large Methods:
+- `parseMap(DefaultJSONParser parser, Map<String, Object> map, Type valueType, Object fieldName, int features)`
+
+2. High Complexity:
+- `parseMap(DefaultJSONParser parser, Map<String, Object> map, Type valueType, Object fieldName, int features)`
+
+3. Deep Nesting:
+- `parseMap(DefaultJSONParser parser, Map<String, Object> map, Type valueType, Object fieldName, int features)`
+
+4. Many Variables:
+- `parseMap(DefaultJSONParser parser, Map<String, Object> map, Type valueType, Object fieldName, int features)`
+- `parseMap(DefaultJSONParser parser, Map<Object, Object> map, Type keyType, Type valueType, Object fieldName)`
+
+5. Summary Judgment:
+Based on the analysis, the `parseMap` methods are excessively large, complex, deeply nested, and use many variables, indicating the presence of Long Methods."
+ConversionException.java,"NO, I did not find Long Method"
+Profiler.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No excessively large methods are present.
+
+2. High Complexity:
+   - No methods with high cyclomatic complexity are present.
+
+3. Deep Nesting:
+   - No methods with deep nesting of control structures are present.
+
+4. Many Variables:
+   - No methods using many variables (including parameters, local variables, and fields) are present.
+
+5. Summary Judgment:
+   - This file does not contain any methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+ParentRunnerTest.java,"NO, I did not find Long Method"
+NumberTest.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `randomizationQualityTest` has 28 lines of code.
+
+2. High Complexity:
+   - `randomizationQualityTest` has multiple loops and conditional statements.
+   - `uniquePercentageOfResults` contains a try-catch block and a loop.
+
+3. Deep Nesting:
+   - `randomizationQualityTest` has nested loops and conditions.
+   - `uniquePercentageOfResults` has a try-catch block nesting.
+
+4. Many Variables:
+   - `randomizationQualityTest` uses several local variables and parameters.
+   - `uniquePercentageOfResults` uses local variables and a parameter.
+
+5. Summary Judgment:
+   - `randomizationQualityTest` and `uniquePercentageOfResults` are large, complex, and use many variables, indicating Long Methods."
+TextEditorUtils.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - `enableHostEditorKeyBindingsSupport`: Contains multiple conditionals and event listeners.
+   - `isDarkThemeEnabled`: Contains multiple conditional checks.
+
+3. Deep Nesting:
+   - `enableHostEditorKeyBindings`: Nested `if` statements and try-catch block.
+
+4. Many Variables:
+   - `enableHostEditorKeyBindingsSupport`: Uses multiple variables (`partSite`, `control`, `activated`).
+   - `enableHostEditorKeyBindings`: Uses multiple variables (`partSite`, `enable`, `part`, `hostEditor`, `widget`, `activatorMethod`).
+
+5. Summary Judgment:
+   - None of the methods appear to be excessively large, deeply nested, or to use many variables to the extent that would necessarily qualify them as Long Methods. The methods are relatively well-structured and focused on specific tasks."
+PageResult.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - None
+
+3. Deep Nesting:
+   - None
+
+4. Many Variables:
+   - None
+
+5. Summary Judgment:
+   - No methods show signs of being excessively large, complex, deeply nested, or using many variables."
+HikariPool.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `getConnection(long hardTimeout)`: 45 lines of code
+   - `shutdown()`: 54 lines of code
+
+2. High Complexity:
+   - `getConnection(long hardTimeout)`: Multiple try-catch blocks, if-else statements, and a do-while loop
+   - `shutdown()`: Nested try-catch blocks and multiple if conditions
+
+3. Deep Nesting:
+   - `getConnection(long hardTimeout)`: Nested inside try-catch blocks and has an inner do-while loop
+   - `shutdown()`: Nested try-catch blocks and if-conditions
+
+4. Many Variables:
+   - `getConnection(long hardTimeout)`: Uses multiple variables like `startTime`, `timeout`, `poolEntry`, `now`, among others
+   - `shutdown()`: Uses multiple variables including `startTime`, `start`, `poolState`, and executors
+
+5. Summary Judgment:
+   Based on the analysis, methods `getConnection(long hardTimeout)` and `shutdown()` contain characteristics of long methods with high complexity, deep nesting, and use of many variables."
+SMSParsedResult.java,"NO, I did not find Long Method"
+AnnotationScanner.java,"NO, I did not find Long Method"
+easyexcel-2.2.11_ExcelDataConvertException.java,"NO, I did not find Long Method"
+Connection.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No method in the file appears to be excessively large based on line count.
+
+2. High Complexity:
+- `connect()`, `getMany(int count)`, and `sendCommand(ProtocolCommand cmd, byte[]... args)` have multiple conditional branches and loops.
+
+3. Deep Nesting:
+- `connect()` and `sendCommand(ProtocolCommand cmd, byte[]... args)` have nested structures with multiple levels of if/else and try/catch blocks.
+- `getMany(int count)` uses a for loop with a try/catch block inside.
+
+4. Many Variables:
+- `connect()` uses many variables including parameters, local variables, and fields (`socketParamModified`, `socketFactory`, `socket`, `outputStream`, `inputStream`, `broken`, `hostAndPort`, `clientConfig`, `soTimeout`, `infiniteSoTimeout`, `connectionTimeout`, `ex`, `errorMessage`, `e`, `jce`).
+- `sendCommand(ProtocolCommand cmd, byte[]... args)` also uses multiple variables and parameters.
+
+5. Summary Judgment:
+- While there are signs of high complexity, deep nesting, and the use of many variables in certain methods, there is no single method that combines all these aspects to be classified as a Long Method."
+CameraInputController.java,"1. Large Methods:
+- `process`: 14 lines of code.
+- `touchDragged`: 13 lines of code.
+- `zoom`: 7 lines of code.
+- `pinchZoom`: 2 lines of code.
+- `keyDown`: 6 lines of code.
+- `keyUp`: 7 lines of code.
+None of these methods seem excessively large.
+
+2. High Complexity:
+- `process`: Contains multiple if-else conditions.
+- `keyDown`: Contains multiple if-else conditions.
+- `keyUp`: Contains multiple if-else conditions.
+These methods have higher cyclomatic complexity due to conditional branching.
+
+3. Deep Nesting:
+- None of the methods show deep nesting. The control structures are relatively shallow.
+
+4. Many Variables:
+- `process`, `touchDragged`, and `zoom` use several local variables.
+- `update` uses a few local variables within loops.
+
+5. Summary Judgment:
+NO, I did not find Long Method"
+WebLogAspect.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `doAround`: Contains many lines of code.
+
+2. High Complexity:
+   - `doAround`: Contains multiple conditional branches and logic for setting up the logging information.
+   - `getParameter`: Contains conditional branches for handling different types of parameters.
+
+3. Deep Nesting:
+   - `doAround`: Has nested if/else and try/catch structures.
+   - `getParameter`: Has nested if statements.
+
+4. Many Variables:
+   - `doAround`: Uses many variables for storing request details, timing, and log data.
+   - `getParameter`: Uses several variables for handling parameters and their annotations.
+
+5. Summary Judgment:
+   - Based on analysis, `doAround` contains large size, high complexity, deep nesting, and uses many variables, indicating it is a Long Method."
+ComparisonCriteria.java,"YES, I found Long Method
+
+1. Large Methods:
+- `arrayEquals(String message, Object expecteds, Object actuals, boolean outer)`: This method has 41 lines of code, including comments and braces, indicating it might be excessively large.
+
+2. High Complexity:
+- `arrayEquals(String message, Object expecteds, Object actuals, boolean outer)`: Multiple `if` statements and a `for` loop indicate high cyclomatic complexity.
+
+3. Deep Nesting:
+- `arrayEquals(String message, Object expecteds, Object actuals, boolean outer)`: Contains nested `if` statements and `try-catch` blocks, indicating deep nesting.
+
+4. Many Variables:
+- `arrayEquals(String message, Object expecteds, Object actuals, boolean outer)`: Uses several local variables such as `header`, `exceptionMessage`, `actualsLength`, `expectedsLength`, `prefixLength`, `expected`, `actual`, and loop counter `i`.
+
+5. Summary Judgment:
+Based on the analysis, the method `arrayEquals(String message, Object expecteds, Object actuals, boolean outer)` exhibits characteristics of a Long Method due to its size, complexity, deep nesting, and use of many variables."
+CodeCacheEventWalker.java,"NO, I did not find Long Method"
+Dictionary.java,"NO, I did not find Long Method"
+SmartContentSelector.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `select(String html)`: 68 lines of code
+
+2. High Complexity:
+   - `select(String html)`: Contains multiple if-else conditions and loops
+
+3. Deep Nesting:
+   - `select(String html)`: Contains nested loops and nested if-else conditions
+
+4. Many Variables:
+   - `select(String html)`: Uses multiple variables including `html`, `lines`, `blocksWidth`, `threshold`, `start`, `end`, `text`, `indexDistribution`, `boolstart`, `boolend`, `wordsNum`, `ii`, `tmp`, `str`
+
+5. Summary Judgment:
+   - The `select(String html)` method contains excessive lines of code, has high cyclomatic complexity, deep nesting, and uses many variables, indicating the presence of the Long Method smell."
+Faker.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a large number of lines that would be considered excessively large for a single method.
+
+2. High Complexity:
+   - No methods have a particularly high cyclomatic complexity; most methods are straightforward getters or delegate to another service.
+
+3. Deep Nesting:
+   - No methods exhibit deep nesting of control structures (e.g., multiple levels of if/else, loops within loops).
+
+4. Many Variables:
+   - No single method uses an unusually high number of variables; variables are limited primarily to method parameters and instance fields.
+
+5. Summary Judgment:
+   - Based on the above analysis, this file does not contain any methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+ConstructorConstructor.java,"1. Large Methods:
+- `get`: 40 lines of code.
+
+2. High Complexity:
+- `get`: Contains multiple conditionals (if-else statements) leading to higher cyclomatic complexity.
+
+3. Deep Nesting:
+- `get`: Has nested if-else statements.
+- `newDefaultImplementationConstructor`: Includes nested if-else statements.
+
+4. Many Variables:
+- `get`: Uses several variables like `type`, `rawType`, `typeCreator`, `rawTypeCreator`, `defaultConstructor`, `defaultImplementation`.
+- `newDefaultImplementationConstructor`: Uses variables such as `type`, `rawType`, `elementType`.
+
+5. Summary Judgment:
+YES, I found Long Method"
+StatisticSlot.java,"YES, I found Long Method
+
+1. Large Methods:
+- `entry`: 57 lines of code.
+- `exit`: 22 lines of code.
+
+2. High Complexity:
+- `entry`: Contains multiple conditional branches and a try-catch block.
+- `exit`: Contains multiple conditional branches and a loop.
+
+3. Deep Nesting:
+- `entry`: Nested if and try-catch blocks.
+- `exit`: Nested if statements.
+
+4. Many Variables:
+- `entry`: Uses multiple parameters and local variables.
+- `exit`: Uses multiple parameters and local variables.
+
+5. Summary Judgment:
+Based on the analysis, `entry` and `exit` methods contain a combination of large size, high complexity, deep nesting, and use many variables, indicating the potential for the Long Method code smell."
+HttpConnection.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `execute(HttpConnection.Request req, @Nullable Response previousResponse)` is quite large with over 150 lines of code.
+
+2. High Complexity:
+   - `execute(HttpConnection.Request req, @Nullable Response previousResponse)` has high cyclomatic complexity due to multiple if-else conditions and nested try-catch blocks.
+
+3. Deep Nesting:
+   - `execute(HttpConnection.Request req, @Nullable Response previousResponse)` has deep nesting of control structures, especially in the handling of connections and error management.
+
+4. Many Variables:
+   - `execute(HttpConnection.Request req, @Nullable Response previousResponse)` uses many variables including parameters, local variables, and fields.
+
+5. Summary Judgment:
+   - The method `execute(HttpConnection.Request req, @Nullable Response previousResponse)` in this file is excessively large, complex, deeply nested, and uses many variables, indicating the presence of a Long Method."
+FireBirdMetaModel.java,"NO, I did not find Long Method"
+PendingEntry.java,"NO, I did not find Long Method"
+Location.java,"NO, I did not find Long Method"
+Evaluator.java,"NO, I did not find Long Method"
+JsonAdapterAnnotationTypeAdapterFactory.java,"NO, I did not find Long Method"
+DriverDataSource.java,"YES, I found Long Method
+
+1. Large Methods:
+- `DriverDataSource` constructor: Excessively large with over 50 lines of code.
+
+2. High Complexity:
+- `DriverDataSource` constructor: High cyclomatic complexity due to multiple conditional branches and loops.
+
+3. Deep Nesting:
+- `DriverDataSource` constructor: Deep nesting with multiple levels of if/else, loops, and try/catch blocks.
+
+4. Many Variables:
+- `DriverDataSource` constructor: Uses many variables including parameters, local variables, and fields.
+
+5. Summary Judgment:
+The `DriverDataSource` constructor shows symptoms of the Long Method code smell due to its size, complexity, deep nesting, and use of many variables."
+AbstractMetaMember.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No methods exceed a reasonable number of lines that would be considered excessively large.
+
+2. High Complexity:
+- `matchesSignature` contains multiple conditional branches.
+- `getCompilationByCompileID` and `getCompilationByAddress` contain loops and conditional branches, but are not overly complex.
+
+3. Deep Nesting:
+- `matchesSignature` has moderate nesting due to multiple if/else blocks and try/catch.
+- No deeply nested structures observed in other methods.
+
+4. Many Variables:
+- `matchesSignature` and `getClassesForParamTypes` use a moderate number of variables.
+- No methods use an unusually high number of variables.
+
+5. Summary Judgment:
+- No methods in this file are excessively large, complex, deeply nested, or use many variables."
+ParentRunner.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a large number of lines.
+
+2. High Complexity:
+   - Methods like `run(RunNotifier notifier)`, `sort(Sorter sorter)`, `order(Orderer orderer)`, and `collectInitializationErrors(List<Throwable> errors)` have multiple conditional branches and loops.
+
+3. Deep Nesting:
+   - Methods like `sort(Sorter sorter)`, `order(Orderer orderer)`, and `run(RunNotifier notifier)` contain moderate levels of nesting.
+
+4. Many Variables:
+   - Methods like `sort(Sorter sorter)`, `order(Orderer orderer)`, and `collectInitializationErrors(List<Throwable> errors)` use multiple variables within their scopes.
+
+5. Summary Judgment:
+   - Although there are methods with high complexity, deep nesting, and many variables, there are no excessively large methods in the file."
+OmsPortalOrderServiceImpl.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `generateOrder`: This method has 100+ lines of code, handling multiple complex operations including data transformations, validations, and database operations.
+
+2. High Complexity:
+   - `generateOrder`: Includes multiple conditional branches and loops, such as if-else statements and for-loops, contributing to high cyclomatic complexity.
+   - `generateConfirmOrder`: Involves multiple list manipulations and validations.
+
+3. Deep Nesting:
+   - `generateOrder`: Has deeply nested if-else statements, particularly when handling coupon and integration usages.
+
+4. Many Variables:
+   - `generateOrder`: Uses a significant number of variables for holding order details, coupon information, and other related data.
+   - `generateConfirmOrder`: Also uses multiple variables, especially when collecting data from different services.
+
+5. Summary Judgment:
+   - Based on the analysis, `generateOrder` method exhibits characteristics of a Long Method due to its size, complexity, deep nesting, and use of many variables."
+JUnitCommandLineParseResult.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - parseOptions
+   - parseParameters
+   - createRequest
+   - applyFilterSpecs
+
+3. Deep Nesting:
+   - parseOptions
+
+4. Many Variables:
+   - parseOptions (args, i, arg, filterSpec)
+   - parseParameters (args, arg, e)
+   - createRequest (computer, request)
+   - applyFilterSpecs (request, filterSpec, filter)
+
+5. Summary Judgment:
+   NO, I did not find Long Method"
+ClassReader.java,"YES, I found Long Method
+
+1. Large Methods:
+- `accept(final TypeCollector classVisitor)`: 110 lines of code.
+
+2. High Complexity:
+- `accept(final TypeCollector classVisitor)`: Contains multiple loops and conditionals.
+- `readMethod(TypeCollector classVisitor, char[] c, int u)`: Contains multiple loops and conditionals.
+
+3. Deep Nesting:
+- `accept(final TypeCollector classVisitor)`: Nested loops and conditionals.
+- `readMethod(TypeCollector classVisitor, char[] c, int u)`: Nested loops and conditionals.
+
+4. Many Variables:
+- `accept(final TypeCollector classVisitor)`: Uses multiple variables (`c`, `i`, `j`, `u`, `v`, `anns`).
+- `readMethod(TypeCollector classVisitor, char[] c, int u)`: Uses multiple variables (`v`, `w`, `j`, `attrName`, `k`, `access`, `name`, `desc`, `codeLength`, `codeStart`, `codeEnd`, `varTable`, `varTypeTable`, `typeTable`, `index`, `signature`).
+
+5. Summary Judgment:
+Based on the analysis, the `accept` and `readMethod` methods in the file are excessively large, complex, deeply nested, and use many variables, indicating the presence of Long Method code smell."
+XxlJobExecutor.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods appear to be excessively large in terms of line count.
+
+2. High Complexity:
+   - `initAdminBizList` and `initEmbedServer` have multiple conditional branches but are not excessively complex.
+
+3. Deep Nesting:
+   - `initAdminBizList` has nested if statements, but the nesting depth is not deep.
+
+4. Many Variables:
+   - Methods use a reasonable number of variables. `start` uses more variables, but it initializes several components necessary for the executor, which justifies the number.
+
+5. Summary Judgment:
+   - Based on the analysis, no methods exhibit enough length, complexity, nesting, or variable usage to be classified as Long Methods."
+InPacketHandler.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `channelRead0`: Contains approximately 30 lines of code, which is relatively long for a single method.
+
+2. High Complexity:
+   - `channelRead0`: Contains multiple conditional branches (`if`, `else if`, and a `try-catch` block), potential high complexity.
+
+3. Deep Nesting:
+   - `channelRead0`: Has multiple levels of nesting with `if` statements inside the `while` loop.
+
+4. Many Variables:
+   - `channelRead0`: Uses several variables such as `content`, `client`, `packet`, `ns`, `nClient`, etc.
+
+5. Summary Judgment:
+   - `channelRead0`: Excessively large, complex, deeply nested, and uses many variables, indicating a potential Long Method."
+ConstrainableInputStream.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods have an excessive number of lines.
+
+2. High Complexity:
+   - `read` method contains multiple conditional branches but it is not excessively complex.
+   - `readToByteBuffer` method has a loop and multiple conditions but is not excessively complex.
+
+3. Deep Nesting:
+   - `readToByteBuffer` has nested conditions but is not deeply nested.
+
+4. Many Variables:
+   - `readToByteBuffer` uses several local variables but it is not a large number.
+
+5. Summary Judgment:
+   - No methods exhibit symptoms of being excessively large, complex, deeply nested, or using many variables."
+AndroidGL20.java,"NO, I did not find Long Method"
+SaJwtUtil.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- `getTimeout` has multiple conditional branches (if).
+
+3. Deep Nesting:
+- `parseToken` has nested control structures (try-catch inside if).
+- `getTimeout` has nested control structures (try-catch inside if).
+
+4. Many Variables:
+- `createToken` and `getTimeout` use multiple variables.
+
+5. Summary Judgment:
+- No method displays all characteristics of a Long Method (large size, high complexity, deep nesting, and use of many variables)."
+Code.java,"1. Large Methods:
+   - `isbn10(boolean separator)`: 17 lines
+   - `isbn13(boolean separator)`: 18 lines
+   - `imei()`: 26 lines
+
+2. High Complexity:
+   - `isbnRegistrant()`: Contains a switch statement with 6 branches.
+   - `isbn10CheckDigit(CharSequence t)`: Contains a for loop.
+   - `isbn13CheckDigit(CharSequence t)`: Contains a for loop with a conditional branch.
+   - `imei()`: Contains a for loop with a conditional branch.
+   - `gtin8()`: Contains a for loop and an if statement.
+   - `gtin13()`: Contains a for loop and an if statement.
+
+3. Deep Nesting:
+   - No methods exhibit deep nesting.
+
+4. Many Variables:
+   - `imei()`: Uses multiple local variables (`str`, `len`, `lenOffset`, `t`, `sum`).
+
+5. Summary Judgment:
+YES, I found Long Method"
+HomeController.java,"NO, I did not find Long Method"
+NacosWatch.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a reasonable number of lines that would be considered excessively large. Each method is focused on a specific task.
+
+2. High Complexity:
+   - The `start()` method has multiple conditional checks and try/catch blocks, which contributes to some complexity, but it is not excessively high.
+   - The `stop()` method also has some complexity due to conditional checks and exception handling.
+
+3. Deep Nesting:
+   - The anonymous inner class within `start()` and the lambda within `selectCurrentInstance()` contribute to some nesting, but it is not deeply nested.
+
+4. Many Variables:
+   - No method uses a large number of variables. Variables are mostly limited to a few necessary for the method's logic.
+
+5. Summary Judgment:
+   - Based on the analysis, the file does not contain any methods that are excessively large, complex, deeply nested, and use many variables."
+DictSegment.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `match(char[] charArray, int begin, int length, Hit searchHit)`: 45 lines
+   - `fillSegment(char[] charArray, int begin, int length, int enabled)`: 34 lines
+   - `lookforSegment(Character keyChar, int create)`: 68 lines
+
+2. High Complexity:
+   - `match(char[] charArray, int begin, int length, Hit searchHit)`: Multiple if-else branches
+   - `fillSegment(char[] charArray, int begin, int length, int enabled)`: if-else branches and conditional recursive calls
+   - `lookforSegment(Character keyChar, int create)`: Multiple if-else branches
+
+3. Deep Nesting:
+   - `fillSegment(char[] charArray, int begin, int length, int enabled)`: Multiple levels of if-else nesting
+   - `lookforSegment(Character keyChar, int create)`: Multiple levels of if-else nesting
+
+4. Many Variables:
+   - `match(char[] charArray, int begin, int length, Hit searchHit)`: Uses multiple variables (keyChar, ds, segmentArray, segmentMap, etc.)
+   - `fillSegment(char[] charArray, int begin, int length, int enabled)`: Uses multiple variables (beginChar, keyChar, ds, segmentArray, segmentMap, etc.)
+   - `lookforSegment(Character keyChar, int create)`: Uses multiple variables (ds, segmentArray, keySegment, segmentMap, etc.)
+
+5. Summary Judgment:
+   - The file contains methods that are excessively large, complex, deeply nested, and use many variables, indicating the presence of Long Methods."
+RocketMQMessageHandler.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `handleMessageInternal` has 87 lines of code.
+
+2. High Complexity:
+   - `handleMessageInternal` contains multiple conditional branches, including if/else statements and try/catch blocks.
+
+3. Deep Nesting:
+   - `handleMessageInternal` has deep nesting, especially within the try block where message sending logic is handled with further if/else checks.
+
+4. Many Variables:
+   - `handleMessageInternal` uses many variables including `jsonHeaders`, `topicWithTags`, `tags`, `sendRes`, `delayLevel`, `needSelectQueue`, `finalMessage`, `sendCallback`, and `message`.
+
+5. Summary Judgment:
+   - Based on the analysis, `handleMessageInternal` is excessively large, complex, deeply nested, and uses many variables, indicating the Long Method code smell."
+NacosDiscoveryProperties.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods in this file appear to be excessively large in terms of the number of lines of code.
+
+2. High Complexity:
+   - `init()`: Contains multiple conditional branches and loops, which may indicate high complexity.
+   - `overrideFromEnv(Environment env)`: Contains multiple conditional checks.
+   - `getNacosProperties()`: Includes conditional logic based on the presence of colons in the `endpoint` string.
+
+3. Deep Nesting:
+   - `init()`: Has nested if/else and loop structures which indicate deep nesting.
+
+4. Many Variables:
+   - `init()`: Uses a significant number of variables for processing the IP address and network interface.
+   - `getNacosProperties()`: Uses multiple variables to build the properties object.
+   - `overrideFromEnv(Environment env)`: Uses several variables to fetch and set environment properties.
+
+5. Summary Judgment:
+   - While `init()` is complex, nested, and uses many variables, it does not reach the point of being an excessively large or unmanageable method in the context of a single class with multiple responsibilities. The other methods do not exhibit traits of a long method."
+HtmlTreeBuilderStateTest.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a reasonable number of lines.
+
+2. High Complexity:
+   - `findConstantArrays` has a cyclomatic complexity of 3 due to the conditional statements.
+   - `ensureSorted` has a complexity of 1.
+   - `ensureArraysAreSorted` has a complexity of 1.
+   - Both `nestedAnchorElements01` and `nestedAnchorElements02` have a complexity of 1.
+
+3. Deep Nesting:
+   - `findConstantArrays` has up to 2 levels of nesting.
+   - `ensureSorted` and `ensureArraysAreSorted` have no deep nesting.
+   - Both `nestedAnchorElements01` and `nestedAnchorElements02` have no deep nesting.
+
+4. Many Variables:
+   - `findConstantArrays` uses 4 variables.
+   - `ensureSorted` uses 2 variables.
+   - `ensureArraysAreSorted` uses 1 variable.
+   - Both `nestedAnchorElements01` and `nestedAnchorElements02` use 2 variables.
+
+5. Summary Judgment:
+   - None of the methods exhibit the symptoms of a Long Method based on size, complexity, nesting, or variable usage."
+QuotedStringTokenizer.java,"YES, I found Long Method
+
+1. Large Methods:
+- `hasMoreTokens()`: This method contains 59 lines of code, which is relatively large.
+
+2. High Complexity:
+- `hasMoreTokens()`: This method contains a complex switch statement with multiple cases and conditions.
+
+3. Deep Nesting:
+- `hasMoreTokens()`: This method has nested if-else structures and switch-case blocks that go several levels deep.
+
+4. Many Variables:
+- `hasMoreTokens()`: This method uses multiple variables including `c`, `state`, `escape`, and others within a single method, which contributes to its complexity.
+
+5. Summary Judgment:
+Based on the analysis, the `hasMoreTokens()` method is excessively large, complex, deeply nested, and uses many variables, indicating that it is a Long Method."
+CodeCacheStage.java,"YES, I found Long Method
+
+1. Large Methods:
+- `redraw()`: This method has 97 lines of code, which is considered large.
+
+2. High Complexity:
+- `redraw()`: Contains multiple conditional branches and loops.
+
+3. Deep Nesting:
+- `redraw()`: Has nested if-else statements and a for-loop with nested conditions.
+
+4. Many Variables:
+- `redraw()`: Uses many variables including `codeCacheEvents`, `firstEvent`, `minX`, `maxX`, `minY`, `maxY`, `firstNonZeroY`, `endOfLogTag`, `lastEvent`, `lastCX`, `lastCY`, `colourLine`, `lineWidth`, `stamp`, `x`, `y`, `freeCodeCache`, `labelX`, `labelY`.
+
+5. Summary Judgment:
+Based on the analysis, the `redraw()` method is excessively large, complex, deeply nested, and uses many variables, indicating the presence of the Long Method code smell."
+HTTPSession.java,"YES, I found Long Method
+
+1. Large Methods:
+- `execute()` (214 lines)
+
+2. High Complexity:
+- `execute()` (contains many conditional branches and loops)
+
+3. Deep Nesting:
+- `execute()` (has multiple levels of if/else and try/catch blocks)
+
+4. Many Variables:
+- `execute()` (uses many variables including parameters, local variables, and fields)
+
+5. Summary Judgment:
+Based on the analysis, the `execute()` method in this file qualifies as a Long Method due to its size, complexity, nesting, and use of many variables."
+ParserConfig.java,"YES, I found Long Method
+
+1. Large Methods:
+- `getDeserializer(Class<?> clazz, Type type)`: 258 lines long
+- `checkAutoType(String typeName, Class<?> expectClass, int features)`: 163 lines long
+
+2. High Complexity:
+- `getDeserializer(Class<?> clazz, Type type)`: Many conditional branches including if-else statements and for-loops
+- `checkAutoType(String typeName, Class<?> expectClass, int features)`: Many conditional branches including if-else statements and for-loops
+
+3. Deep Nesting:
+- `getDeserializer(Class<?> clazz, Type type)`: Multiple levels of if/else, loops within loops
+- `checkAutoType(String typeName, Class<?> expectClass, int features)`: Multiple levels of if/else, loops within loops
+
+4. Many Variables:
+- `getDeserializer(Class<?> clazz, Type type)`: Uses many variables including method parameters, local variables, and fields
+- `checkAutoType(String typeName, Class<?> expectClass, int features)`: Uses many variables including method parameters, local variables, and fields
+
+5. Summary Judgment:
+Based on the analysis, the `getDeserializer(Class<?> clazz, Type type)` and `checkAutoType(String typeName, Class<?> expectClass, int features)` methods in this file are excessively large, complex, deeply nested, and use many variables, indicating a Long Method code smell."
+btActivatingCollisionAlgorithm.java,"NO, I did not find Long Method"
+RedissonTransactionalBucket.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No method in the file exceeds a typical threshold for large methods (e.g., 50-100 lines).
+
+2. High Complexity:
+   - Methods `touchAsync()`, `unlinkAsync()`, `deleteAsync()`, `compareAndSetAsync()`, `getAndSet()`, `getAndDeleteAsync()`, `setAsync(V newValue, TransactionalOperation operation)`, and `trySet(V newValue, TransactionalOperation operation)` have multiple conditional branches and operations but do not appear excessively complex.
+
+3. Deep Nesting:
+   - Methods `touchAsync()`, `unlinkAsync()`, `deleteAsync()`, `compareAndSetAsync()`, `getAndSet()`, `getAndDeleteAsync()`, `setAsync(V newValue, TransactionalOperation operation)`, and `trySet(V newValue, TransactionalOperation operation)` contain nested if-else statements but are not deeply nested in a way that would significantly impact readability.
+
+4. Many Variables:
+   - Methods `compareAndSetAsync()`, `getAndSet()`, `getAndDeleteAsync()`, `setAsync(V newValue, TransactionalOperation operation)`, and `trySet(V newValue, TransactionalOperation operation)` use several variables and parameters, but the number of variables is not excessive for their functionality.
+
+5. Summary Judgment:
+   - No method in the file appears to be excessively large, complex, deeply nested, or use many variables, thus not indicating a Long Method."
+HttpClientRequestContext.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods with many lines of code.
+
+2. High Complexity:
+   - No methods with high cyclomatic complexity.
+
+3. Deep Nesting:
+   - No methods with deep nesting of control structures.
+
+4. Many Variables:
+   - No methods using many variables.
+
+5. Summary Judgment:
+   - No methods indicating Long Method smell."
+DefaultMQAdminExtImpl.java,"YES, I found Long Method
+
+1. Large Methods:
+- `resetOffsetByTimestampOld` is quite large with over 50 lines of code.
+- `createOrUpdateOrderConf` is also lengthy with conditional logic and iteration over maps and strings.
+
+2. High Complexity:
+- `resetOffsetByTimestampOld` contains multiple conditional branches and loops.
+- `createOrUpdateOrderConf` has nested conditionals and exception handling increasing its complexity.
+
+3. Deep Nesting:
+- `resetOffsetByTimestampOld` has nested for-loops and conditionals with multiple levels.
+- `messageTrackDetail` has nested try-catch blocks and switch-case within loops, indicating deep nesting.
+
+4. Many Variables:
+- `resetOffsetByTimestampOld` uses several parameters and local variables.
+- `messageTrackDetail` also uses many local variables and handles various exceptions, contributing to a high number of variables.
+
+5. Summary Judgment:
+Based on the analysis, methods like `resetOffsetByTimestampOld` and `messageTrackDetail` exhibit characteristics of the Long Method code smell due to their size, complexity, deeply nested control structures, and the number of variables they use."
+Settings.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a reasonable number of lines.
+
+2. High Complexity:
+   - No methods have multiple conditional branches or complex logic.
+
+3. Deep Nesting:
+   - No methods are deeply nested with multiple levels of control structures.
+
+4. Many Variables:
+   - The constructor `Settings(Environment env)` initializes many properties, but it's more of an initialization block rather than a method that performs complex logic.
+
+5. Summary Judgment:
+   - None of the methods in this file exhibit characteristics of a Long Method."
+ConnectionPageShellCommands.java,"NO, I did not find Long Method"
+MailUtil.java,"NO, I did not find Long Method"
+HttpRequestMethodsMatcherTest.java,"NO, I did not find Long Method"
+SymbolInfo.java,"NO, I did not find Long Method"
+TextureAtlas.java,"YES, I found Long Method
+
+1. Large Methods:
+- `load()` method in `TextureAtlasData` is large with over 100 lines of code.
+
+2. High Complexity:
+- `load()` method in `TextureAtlasData` has high complexity due to multiple conditional statements and loops.
+
+3. Deep Nesting:
+- `load()` method in `TextureAtlasData` has deep nesting with loops and conditional statements.
+
+4. Many Variables:
+- `load()` method in `TextureAtlasData` uses many variables, including parameters, local variables, and fields.
+
+5. Summary Judgment:
+Based on the analysis, the `load()` method in `TextureAtlasData` is excessively large, complex, deeply nested, and uses many variables, indicating a Long Method."
+ImmutableEnumMap.java,"NO, I did not find Long Method"
+CharacterReader.java,"YES, I found Long Method
+
+1. Large Methods:
+- `bufferUp()` has 78 lines of code.
+- `consumeToAny()` has 36 lines of code.
+- `consumeToAnySorted()` has 27 lines of code.
+- `consumeData()` has 33 lines of code.
+- `consumeAttributeQuoted()` has 38 lines of code.
+- `consumeRawData()` has 30 lines of code.
+- `consumeTagName()` has 33 lines of code.
+- `consumeLetterSequence()` has 22 lines of code.
+- `consumeLetterThenDigitSequence()` has 33 lines of code.
+- `consumeHexSequence()` has 27 lines of code.
+- `consumeDigitSequence()` has 27 lines of code.
+- `matches()` has 5 lines of code, but is part of a series of similar methods that contribute to method concentration.
+- `matches(String seq)` has 19 lines of code.
+- `matchesIgnoreCase(String seq)` has 22 lines of code.
+- `matchesAny(char... seq)` has 22 lines of code.
+- `matchesAnySorted(char[] seq)` has 20 lines of code.
+- `consumeTo(String seq)` has 34 lines of code.
+
+2. High Complexity:
+- `bufferUp()` has multiple if, else, try-catch, and loops.
+- `consumeToAny()` has multiple loops and a switch statement.
+- `consumeData()` has a switch statement with multiple cases.
+- `consumeAttributeQuoted()` has a switch statement with multiple cases.
+- `consumeRawData()` has a switch statement with multiple cases.
+- `consumeTagName()` has a switch statement with multiple cases.
+- `matches(String seq)` has a for loop.
+- `matchesIgnoreCase(String seq)` has multiple for loops nested with character checks.
+- `consumeTo(String seq)` has a nested if-else structure and two while loops.
+
+3. Deep Nesting:
+- `bufferUp()` has deeply nested try-catch blocks and if-foe-else structures.
+- `consumeToAny()` has a loop with nested if-break statements.
+- `consumeRawData()` has a switch statement with break statements inside.
+- `consumeAttributeQuoted()` has a switch statement with break statements inside.
+- `consumeData()` has a switch statement with break statements inside.
+- `consumeTagName()` has a switch statement with break statements inside.
+
+4. Many Variables:
+- `bufferUp()` has multiple local variables and uses class fields heavily.
+- `consumeToAny()` uses multiple local variables.
+- `consumeRawData()` uses multiple local variables.
+- `consumeAttributeQuoted()` uses multiple local variables.
+- `consumeData()` uses multiple local variables.
+- `consumeTagName()` uses multiple local variables.
+- `consumeTo(String seq)` has multiple local variables and uses class fields heavily.
+
+5. Summary Judgment:
+YES, I found Long Method"
+ArgumentTokenizer.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `tokenize(String arguments, boolean stringify)`: This method has over 60 lines of code and includes significant logic.
+
+2. High Complexity:
+   - `tokenize(String arguments, boolean stringify)`: The method contains multiple conditional branches and a nested switch statement, which increases its complexity.
+
+3. Deep Nesting:
+   - `tokenize(String arguments, boolean stringify)`: The method includes a nested switch structure and multiple if-else statements, leading to deep nesting.
+
+4. Many Variables:
+   - `tokenize(String arguments, boolean stringify)`: The method uses several local variables (`argList`, `currArg`, `escaped`, `state`, `len`, `i`, `c`, `next`), parameters (`arguments`, `stringify`), and a few fields (`NO_TOKEN_STATE`, `NORMAL_TOKEN_STATE`, `SINGLE_QUOTE_STATE`, `DOUBLE_QUOTE_STATE`).
+
+5. Summary Judgment:
+   - Based on the analysis, the `tokenize(String arguments, boolean stringify)` method is excessively large, complex, deeply nested, and uses many variables, indicating the presence of the Long Method code smell."
+JobLogController.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No method exceeds a reasonable amount of lines that would indicate it is excessively large.
+
+2. High Complexity:
+- The `pageList` method has multiple conditional branches and parameters, indicating it may have a high cyclomatic complexity.
+
+3. Deep Nesting:
+- The `clearLog` method has multiple `if-else` blocks which can be considered deep nesting.
+- The `logKill` method also contains nested `if` statements, but not as deeply nested as in `clearLog`.
+
+4. Many Variables:
+- The `pageList` method uses a considerable number of variables and parameters.
+- The `clearLog` method has a significant number of conditional variables.
+
+5. Summary Judgment:
+- Based on the analysis, while some methods show signs of high complexity and many variables, none of the methods are excessively large or deeply nested in a manner that conforms to a typical Long Method pattern."
+Monitor.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `runUnprivileged` has 35 lines of code.
+
+2. High Complexity:
+   - `runUnprivileged` has multiple `if` conditions and a `try-catch-finally` block.
+
+3. Deep Nesting:
+   - `runUnprivileged` has nested `if` statements within the `try` block.
+
+4. Many Variables:
+   - `runUnprivileged` uses several variables such as `rc`, `head`, `response`, `last_modified`, `eTags`, and others within its scope.
+
+5. Summary Judgment:
+   - Based on the analysis, `runUnprivileged` is a method that is excessively large, complex, deeply nested, and uses many variables, indicating the Long Method code smell."
+HistoryPageFilter.java,"YES, I found Long Method
+
+1. Large Methods:
+- `addInternal`: This method has many lines of code and performs multiple tasks, including sorting, adding items, and managing pagination logic.
+
+2. High Complexity:
+- `addInternal`: Contains many conditional branches such as if-else statements and loops, indicating high cyclomatic complexity.
+
+3. Deep Nesting:
+- `addInternal`: Features deep nesting through multiple levels of if/else statements and nested loops.
+
+4. Many Variables:
+- `addInternal`: Uses many variables including parameters, local variables, and fields, which contributes to the overall complexity.
+
+5. Summary Judgment:
+Based on the analysis, the method `addInternal` is excessively large, complex, deeply nested, and uses many variables, indicating a Long Method."
+HandshakeData.java,"NO, I did not find Long Method"
+Vault.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a number of lines that would be considered excessively large.
+
+2. High Complexity:
+   - `createCryptoFileSystem` has several conditional branches and might be considered complex.
+
+3. Deep Nesting:
+   - `createCryptoFileSystem` contains nested conditions and a try-catch block nested inside it, which could indicate deep nesting.
+
+4. Many Variables:
+   - `createCryptoFileSystem` uses multiple parameters and local variables.
+   - `unlock` also uses multiple local variables and parameters.
+
+5. Summary Judgment:
+   - While `createCryptoFileSystem` and `unlock` methods seem to have higher complexity and use several variables/conditions, they do not exceed typical thresholds that would constitute a Long Method based on this code sample alone."
+CommandDecoder.java,"NO, I did not find Long Method"
+FxApplication.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None of the methods exceed a reasonable number of lines.
+
+2. High Complexity:
+   - `loadSelectedStyleSheet` has some complexity due to the switch-case and conditional checks.
+   - `systemInterfaceThemeChanged` also has a switch-case but is not excessively complex.
+
+3. Deep Nesting:
+   - No method shows deep nesting of control structures.
+
+4. Many Variables:
+   - `start` uses several variables but does not exceed a reasonable number.
+   - `loadSelectedStyleSheet` and `applySystemTheme` use multiple variables, but the usage is not excessive.
+   - Constructor initializes many fields, but this is normal for dependency injection.
+
+5. Summary Judgment:
+   - None of the methods exhibit symptoms of being excessively large, complex, deeply nested, or using many variables."
+HttpHeadRequestTest.java,"NO, I did not find Long Method"
+BatchExecutor.java,"YES, I found Long Method
+
+1. Large Methods:
+- `doFlushStatements`: 40 lines
+
+2. High Complexity:
+- `doFlushStatements`: Contains loops and multiple conditional branches.
+
+3. Deep Nesting:
+- `doFlushStatements`: Has nested try-catch blocks and loops with if-else conditions.
+
+4. Many Variables:
+- `doFlushStatements`: Uses many variables including `results`, `isRollback`, `stmt`, `batchResult`, `parameterObjects`, `keyGenerator`, `jdbc3KeyGenerator`, `parameter`, `e`, `message`, `i`.
+
+5. Summary Judgment:
+- `doFlushStatements` is excessively large, complex, deeply nested, and uses many variables, indicating a Long Method."
+TokenQueue.java,"YES, I found Long Method
+
+1. Large Methods:
+   - chompBalanced has 50 lines of code, which is relatively large.
+   - consumeToIgnoreCase has 22 lines of code, which is on the larger side.
+
+2. High Complexity:
+   - chompBalanced contains multiple conditional branches and a loop, indicating high complexity.
+
+3. Deep Nesting:
+   - chompBalanced has deep nesting due to multiple if statements inside a do-while loop.
+
+4. Many Variables:
+   - chompBalanced uses many variables including `start`, `end`, `depth`, `last`, `inSingleQuote`, `inDoubleQuote`, `inRegexQE`, `c`, and `out`.
+
+5. Summary Judgment:
+   - chompBalanced is a method that is excessively large, complex, deeply nested, and uses many variables."
+DubboServiceMetadataRepository.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `initializeMetadata(String serviceName)`
+   - `get(String serviceName, RequestMetadata requestMetadata)`
+   - `getServiceRestMetadataSet(String serviceName)`
+
+2. High Complexity:
+   - `get(String serviceName, RequestMetadata requestMetadata)`
+   - `initDubboRestServiceMetadataRepository(String serviceName)`
+
+3. Deep Nesting:
+   - `get(String serviceName, RequestMetadata requestMetadata)`
+
+4. Many Variables:
+   - `initDubboRestServiceMetadataRepository(String serviceName)`
+   - `get(String serviceName, RequestMetadata requestMetadata)`
+   - `getServiceRestMetadataSet(String serviceName)`
+
+5. Summary Judgment:
+   Based on the analysis, this file contains methods that are excessively large, complex, deeply nested, and use many variables (i.e., Long Methods)."
+FakeValuesService.java,"YES, I found Long Method
+
+1. Large Methods:
+- `resolveExpression(String expression, Object current, Faker root)`: 66 lines of code
+- `resolveExpression(String directive, List<String> args, Object current, Faker root)`: 48 lines of code
+
+2. High Complexity:
+- `resolveExpression(String directive, List<String> args, Object current, Faker root)`: Contains multiple if-else statements and loops.
+- `resolveExpression(String expression, Object current, Faker root)`: Also contains multiple if-else statements and loops.
+
+3. Deep Nesting:
+- `resolveExpression(String directive, List<String> args, Object current, Faker root)`: Contains multiple nested if-else and try-catch blocks.
+- `resolveExpression(String expression, Object current, Faker root)`: Contains nested while loop, if-else statements, and try-catch blocks.
+
+4. Many Variables:
+- `resolveExpression(String directive, List<String> args, Object current, Faker root)`: Uses numerous variables such as `escapedDirective`, `directive`, `arguments`, `argsMatcher`, `args`, `resolved`, `matcher`, `simpleDirective`, etc.
+- `resolveExpression(String expression, Object current, Faker root)`: Uses numerous variables such as `matcher`, `escapedDirective`, `directive`, `arguments`, `resolved`, `argsMatcher`, `args`, etc.
+
+5. Summary Judgment:
+Based on the analysis, methods such as `resolveExpression(String expression, Object current, Faker root)` and `resolveExpression(String directive, List<String> args, Object current, Faker root)` indicate the presence of Long Methods in this file."
+PassphraseEntryController.java,"NO, I did not find Long Method"
+LexemePath.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods exceed a large number of lines that would be considered excessively large.
+
+2. High Complexity:
+   - `checkCross`: Contains a couple of conditional branches.
+   - `getXWeight` and `getPWeight`: Each contains a loop and conditional within the loop, but not excessively complex.
+   - `compareTo`: Contains multiple conditional branches and nesting.
+
+3. Deep Nesting:
+   - `compareTo`: Has several levels of nested if-else clauses.
+   
+4. Many Variables:
+   - `compareTo`: Uses many variables in its comparison logic.
+   - Other methods use a reasonable number of variables.
+
+5. Summary Judgment:
+   - While some methods have moderate complexity and nesting, none of them are excessively large, complex, deeply nested, and use many variables to be considered Long Methods."
+PullAPIWrapper.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `pullKernelImpl` has 90 lines of code.
+
+2. High Complexity:
+   - `pullKernelImpl` contains multiple conditional branches and nested structures.
+
+3. Deep Nesting:
+   - `pullKernelImpl` has nested `if` statements and a nested block for version checking.
+
+4. Many Variables:
+   - `pullKernelImpl` uses a significant number of parameters and local variables for processing the pull request.
+
+5. Summary Judgment:
+   - `pullKernelImpl` is excessively large, complex, deeply nested, and uses many variables, indicating it may be a Long Method."
+ParamFlowChecker.java,"NO, I did not find Long Method
+
+1. Large Methods: 
+   - No methods exceed a significant number of lines that would be considered excessively large.
+
+2. High Complexity:
+   - `passDefaultLocalCheck` and `passThrottleLocalCheck` have multiple conditional branches and loops, indicating potential high cyclomatic complexity.
+
+3. Deep Nesting:
+   - Methods like `passDefaultLocalCheck` and `passThrottleLocalCheck` have nested loops and conditionals, but they are not deeply nested to the extent of being unintelligible.
+
+4. Many Variables:
+   - `passDefaultLocalCheck` and `passThrottleLocalCheck` use a considerable number of variables, which can contribute to cognitive load.
+
+5. Summary Judgment:
+   - While some methods show signs of high complexity and a moderate use of variables, none of them exhibit all the characteristics of a Long Method simultaneously, making it unlikely that this file contains Long Methods as per the provided code."
+SaTokenContextForThreadLocalStorage.java,"NO, I did not find Long Method"
+AbortedTransactionException.java,"NO, I did not find Long Method"
+HttpRequest.java,"NO, I did not find Long Method"
+ProxyDatabaseMetaData.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- None
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- None
+
+5. Summary Judgment:
+- Based on the analysis, none of the methods in this file exhibit characteristics of a Long Method. Each method is relatively short, has a simple flow, and uses a limited number of variables."
+MethodCallInliner.java,"NO, I did not find Long Method"
+IKArbitrator.java,"1. Large Methods:
+- `process` method has 34 lines of code.
+- `judge` method has 23 lines of code.
+- `forwardPath` method has 21 lines of code.
+- `backPath` method has 9 lines of code.
+
+2. High Complexity:
+- `process` method has multiple if-else conditions and a while loop.
+- `judge` method has a while loop and multiple conditional checks.
+- `forwardPath` method has a while loop with conditional checks.
+- `backPath` method has a while loop with a conditional check.
+
+3. Deep Nesting:
+- `process` method has nested if-else structures.
+- `judge` method has nested if-else structures.
+- `forwardPath` method has nested if-else structures.
+
+4. Many Variables:
+- `process` method uses several variables: `orgLexemes`, `orgLexeme`, `crossPath`, `headCell`, `judgeResult`.
+- `judge` method uses several variables: `pathOptions`, `option`, `lexemeStack`, `c`.
+- `forwardPath` method uses several variables: `conflictStack`, `c`.
+- `backPath` method uses variables: `l`.
+
+5. Summary Judgment:
+YES, I found Long Method"
+SingleRoomBroadcastOperations.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No methods appear to have an excessive number of lines of code.
+
+2. High Complexity:
+- `sendEvent(String name, SocketIOClient excludedClient, Object... data)` has a conditional statement.
+- `sendEvent(String name, Object data, SocketIOClient excludedClient, BroadcastAckCallback<T> ackCallback)` has a conditional statement.
+- Other methods are fairly simple.
+
+3. Deep Nesting:
+- `sendEvent(String name, SocketIOClient excludedClient, Object... data)` has one level of nesting due to an if-statement.
+- `sendEvent(String name, Object data, SocketIOClient excludedClient, BroadcastAckCallback<T> ackCallback)` has one level of nesting due to an if-statement.
+- There is no deep nesting observed in any method.
+
+4. Many Variables:
+- Methods generally use a reasonable number of variables.
+- `sendEvent(String name, SocketIOClient excludedClient, Object... data)` uses a few variables including loop variables and parameters.
+- `sendEvent(String name, Object data, SocketIOClient excludedClient, BroadcastAckCallback<T> ackCallback)` uses a few variables including loop variables and parameters.
+
+5. Summary Judgment:
+- No methods exhibit qualities typically associated with Long Methods such as being large, highly complex, deeply nested, or using many variables."
+Lorem.java,"NO, I did not find Long Method
+
+1. Large Methods: None found.
+2. High Complexity: None found.
+3. Deep Nesting: None found.
+4. Many Variables: None found.
+5. Summary Judgment: No methods in the file exhibit characteristics of a Long Method."
+HostAndPort.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - None
+
+2. High Complexity:
+   - fromString: Contains multiple conditional branches (if, else).
+
+3. Deep Nesting:
+   - fromString: Includes nested if-else structures.
+   - getHostAndPortFromBracketedHost: Includes nested if-else structures.
+
+4. Many Variables:
+   - fromString: Uses several variables including host, portString, hasBracketlessColons, colonPos, closeBracketIndex, host, host, port, host, host, host.
+   - getHostAndPortFromBracketedHost: Uses several variables including colonIndex, closeBracketIndex, host, host.
+
+5. Summary Judgment:
+   - The file does not contain methods that are excessively large, complex, deeply nested, and use many variables to the extent that they would be considered Long Methods."
+DefaultJSONParser.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `parseObject(final Map object, Object fieldName)`: This method has over 100 lines of code and handles complex parsing logic.
+
+2. High Complexity:
+   - `parseObject(final Map object, Object fieldName)`: Contains numerous conditional branches (`if`, `else`, `switch`) and loops.
+
+3. Deep Nesting:
+   - `parseObject(final Map object, Object fieldName)`: Has multiple levels of nested `if` statements and loops.
+
+4. Many Variables:
+   - `parseObject(final Map object, Object fieldName)`: Uses a large number of local variables to manage the parsing state and logic.
+
+5. Summary Judgment:
+   - The method `parseObject(final Map object, Object fieldName)` contains excessive lines of code, high cyclomatic complexity, deep nesting, and a large number of variables, indicating it is a Long Method."
+AutoLocker.java,"NO, I did not find Long Method
+
+1. Large Methods:
+   - No methods are excessively large. The methods are relatively short and focused on specific tasks.
+
+2. High Complexity:
+   - `exceedsIdleTime` has some conditional logic but is not overly complex.
+
+3. Deep Nesting:
+   - No methods exhibit deep nesting. The logic is straightforward and easy to follow.
+
+4. Many Variables:
+   - No methods use an excessive number of variables. Variables are used efficiently within each method.
+
+5. Summary Judgment:
+   - Based on the analysis, this file does not contain any methods that are excessively large, complex, deeply nested, or use many variables."
+ReedSolomonDecoder.java,"YES, I found Long Method
+
+1. Large Methods:
+   - `decode`: 43 lines
+
+2. High Complexity:
+   - `decode`: Multiple if/else statements and loops
+   - `runEuclideanAlgorithm`: Nested loops and complex conditional logic
+   - `findErrorMagnitudes`: Nested loops
+
+3. Deep Nesting:
+   - `runEuclideanAlgorithm`: Multiple levels of nested loops and if/else statements
+   - `findErrorMagnitudes`: Nested loops
+
+4. Many Variables:
+   - `decode`: Many local variables (poly, syndromeCoefficients, noError, syndrome, sigmaOmega, sigma, omega, errorLocations, errorMagnitudes, position)
+   - `runEuclideanAlgorithm`: Many local variables (rLast, r, tLast, t, rLastLast, tLastLast, q, denominatorLeadingTerm, dltInverse, degreeDiff, scale)
+   - `findErrorMagnitudes`: Many local variables (numErrors, result, e, xiInverse, denominator, term, termPlus1)
+
+5. Summary Judgment:
+   - Based on the analysis, the `decode` and `runEuclideanAlgorithm` methods are particularly large, complex, deeply nested, and use many variables, indicating the presence of Long Methods."
+ExecutionSequencer.java,"NO, I did not find Long Method"
+DirectedGraphConnections.java,"NO, I did not find Long Method"
+HttpServerTest.java,"NO, I did not find Long Method"
+ServiceLoader.java,"YES, I found Long Method
+
+1. Large Methods:
+- `load(Class<T> clazz, ClassLoader classLoader)` has 40 lines of code.
+
+2. High Complexity:
+- `load(Class<T> clazz, ClassLoader classLoader)` has multiple conditional branches including if-else, try-catch blocks, and loops.
+- `load(URL url, Set<String> set)` has a for-loop and multiple conditional branches.
+
+3. Deep Nesting:
+- `load(Class<T> clazz, ClassLoader classLoader)` has nested if-else statements and try-catch blocks.
+- `load(URL url, Set<String> set)` has nested if statements inside the for-loop.
+
+4. Many Variables:
+- `load(Class<T> clazz, ClassLoader classLoader)` uses multiple variables: `services`, `className`, `path`, `serviceNames`, `urls`, `url`, `serviceName`, `serviceClass`, and `service`.
+- `load(URL url, Set<String> set)` uses multiple variables: `is`, `reader`, `line`, `ci`.
+
+5. Summary Judgment:
+- Based on the analysis, `load(Class<T> clazz, ClassLoader classLoader)` is excessively large, complex, deeply nested, and uses many variables, indicating a Long Method."
+JedisSentinelPool.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- No single method exceeds a large number of lines that would be considered excessively large.
+
+2. High Complexity:
+- The `initSentinels` and `MasterListener.run` methods have multiple conditional branches and loops, indicating higher complexity.
+
+3. Deep Nesting:
+- The `initSentinels` method has moderate nesting, and the `MasterListener.run` method has deep nesting due to multiple levels of loops and try-catch blocks.
+
+4. Many Variables:
+- The `initSentinels` and `MasterListener.run` methods use a moderate number of variables.
+- The constructors of `JedisSentinelPool` are long because they manage multiple parameters, but they do not necessarily indicate high complexity or nesting.
+
+5. Summary Judgment:
+- No methods in this class exhibit all the characteristics of a Long Method (excessively large, high complexity, deep nesting, and many variables)."
+SimpleEchoSocket.java,"NO, I did not find Long Method
+
+1. Large Methods:
+- None
+
+2. High Complexity:
+- None
+
+3. Deep Nesting:
+- None
+
+4. Many Variables:
+- `onConnect` method uses several variables and has a loop, but it does not reach a level that would be considered excessive for complexity or many variables.
+
+5. Summary Judgment:
+- Based on the analysis, there are no methods that are excessively large, complex, deeply nested, or use many variables."
+RestAdapter.java,"YES, I found Long Method
+
+1. Large Methods:
+- `invokeRequest` method in `RestHandler` class has many lines of code.
+
+2. High Complexity:
+- `invokeRequest` method in `RestHandler` class contains many conditional branches and has a high cyclomatic complexity due to multiple try-catch blocks and if-else statements.
+
+3. Deep Nesting:
+- `invokeRequest` method in `RestHandler` class has deep nesting due to multiple levels of if-else statements and nested try-catch blocks.
+
+4. Many Variables:
+- `invokeRequest` method in `RestHandler` class uses many variables including local variables and method parameters.
+
+5. Summary Judgment:
+Based on the analysis, the `invokeRequest` method in the `RestHandler` class is excessively large, complex, deeply nested, and uses many variables, indicating the presence of a Long Method."

@@ -1,0 +1,1846 @@
+file_path,analysis
+AccessControlLogEntry.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- AccessControlLogEntry(Map<String, Object> map) (constructor)
+  - Calls map.get(...) repeatedly for keys COUNT, REASON, CONTEXT, OBJECT, USERNAME, AGE_SECONDS, CLIENT_INFO.
+  - Casts the returned Objects to String/long and passes the CLIENT_INFO string into getMapFromRawClientInfo.
+  - So this method accesses the java.util.Map passed in (and uses map.get many times).
+- private Map<String, String> getMapFromRawClientInfo(String clientInfo)
+  - Operates on the String parameter: clientInfo.split("" ""), entry.split(""=""), and creates a LinkedHashMap.
+  - So it heavily uses java.lang.String facilities and java.util.Map/LinkedHashMap.
+- toString()
+  - Uses only this class’s fields (and String concatenation), no external object field access beyond standard API usage.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- Constructor: it reads many values from the input Map (several map.get calls) to initialize its own fields. It uses the Map fairly extensively, but the purpose is to construct/populate this object from an external representation — using a Map here is expected. It does not repeatedly manipulate another object's internal state beyond reading values; it ultimately stores those values into its own fields.
+- getMapFromRawClientInfo: this method primarily manipulates the input String and builds a Map to return. It does more work on the parameter (String parsing and Map construction) than on the instance's own fields — it does not access instance fields at all. So it shows more interest in the method parameter (String and Map construction) than the instance.
+
+3) Are the accessed foreign attributes/methods concentrated in one or few classes?
+- Yes. The foreign interactions are with core/JDK types: java.util.Map (and LinkedHashMap) and java.lang.String. They are not spread across many domain classes.
+
+4) Potential misplacement
+- Constructor: parsing an input Map to populate this class’s fields is exactly the constructor’s responsibility; it is appropriate to access the Map here. Moving the logic elsewhere (e.g., to a factory) is possible but not necessary — this class represents the parsed data, so constructor usage is reasonable.
+- getMapFromRawClientInfo: this is a small helper that parses a Redis client-info string into a Map. It does not access this class’s fields and could be a static helper or put in a small parsing/util class, but it is also tightly related to the semantics of AccessControlLogEntry (parsing the CLIENT_INFO field). Its placement here is acceptable and probably clearer for encapsulation.
+
+5) Summary judgment
+- There are methods that read a lot from a foreign object: the constructor reads many entries from the provided Map and getMapFromRawClientInfo works primarily on its String parameter. However, these access patterns are natural for constructing and parsing this class’s data. The foreign accesses are limited to core library classes (Map, String) and not to another domain class whose data/model is being more heavily used than this class’s own fields.
+- Therefore, I do not find convincing evidence of Feature Envy (i.e., methods being more interested in another domain class’s data/methods than their own).
+
+NO, I did not find Feature Envy."
+Preconditions.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- Many methods call methods from other classes (mainly Strings.lenientFormat and java.lang.String.valueOf). Examples:
+  - checkArgument(boolean, String, Object...) and most of its overloads call lenientFormat(...)
+  - checkState(boolean, String, Object...) and most of its overloads call lenientFormat(...)
+  - checkNotNull(T, String, Object...) and most of its overloads call lenientFormat(...)
+  - badElementIndex(...), badPositionIndex(...), badPositionIndexes(...) call lenientFormat(...) and in one branch call new IllegalArgumentException(...)
+  - The static initializer calls Java8Usage.performCheck() and Logger.getLogger(...).log(...)
+
+These are calls to other classes (Strings.lenientFormat, String.valueOf, Java8Usage, java.util.logging.Logger). There is no field access on other classes (no instance attribute access), only method calls (mostly static helpers).
+
+2) Do these methods use more data/methods from another class than from their own class?
+- No. The methods primarily operate on their own parameters and local primitives/objects, and only delegate formatting to Strings.lenientFormat or to String.valueOf. They do not fetch or manipulate many members of another class; they simply call a small set of formatting and logging helpers. So they do not use more of another class's data/methods than their own.
+
+3) Few foreign classes vs many
+- The external calls are concentrated in a very small set of classes: Strings (lenientFormat), java.lang.String (valueOf), Java8Usage (single static check), and java.util.logging.Logger. The foreign interactions are therefore limited to a few helper classes, not spread across many unrelated classes.
+
+4) Potential misplacement
+- The behavior in this file (precondition checking and message assembly) is cohesive and belongs in a utility Preconditions class. The calls to Strings.lenientFormat and String.valueOf are ordinary delegations to a formatting helper — they do not indicate that these methods should live in the Strings class (those are formatting helpers already). The static initializer’s call to Java8Usage.performCheck() is a compatibility check, appropriately placed in class initialization. There is no clear indication that any of these methods would be more appropriately placed in another class.
+
+5) Summary judgment
+- Based on the above, there are no methods that show the classic Feature Envy pattern (lots of access to another class's data/members and using that class's state more than their own). The methods are small, operate on their own parameters, and delegate a small number of formatting/logging calls to helper classes.
+
+NO, I did not find Feature Envy — the file’s methods only delegate to a few helper methods (formatting/logging) but primarily operate on their own inputs, so they do not exhibit the characteristic “more interested in another class’s data than their own.”"
+FileRefreshableDataSource.java,
+SaSecureUtil.java,
+ClassLoaderCommand.java,
+AclException.java,"1. Methods Accessing Foreign Data:
+- No methods in this file access many attributes or methods of another class. The constructors call the superclass constructors (super(), super(message), super(message, throwable)), and some methods accept or return String and int and use Throwable as a parameter in a constructor, but they do not access fields or call multiple methods of any other class.
+
+2. More Interest in Foreign Data:
+- Not applicable: the methods primarily set or return this class's own fields (status and code) or delegate to the superclass constructor. They do not use more data/methods from another class than from their own class.
+
+3. Few Foreign Classes:
+- The only external types referenced are java.lang.String, java.lang.Throwable and the superclass java.lang.RuntimeException. References are minimal (constructor delegation and parameter types) and not concentrated on inspecting or manipulating those external types' data.
+
+4. Potential Misplacement:
+- There is no indication any method would be more appropriately placed in another class. All methods operate on this class's own fields or perform normal exception-construction delegation to the superclass.
+
+5. Summary Judgment:
+- This class contains simple constructors, getters and setters that operate on its own fields and delegate to the superclass where appropriate. There are no methods showing the characteristic behavior of Feature Envy (heavy access to another class's data or API).
+
+NO, I did not find Feature Envy"
+GeneralAppIdDecoder.java,
+DuplicateRemovedScheduler.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- push(Request request, Task task)
+  - Accesses Request methods: request.getUrl() (twice).
+  - Calls duplicatedRemover.isDuplicate(request, task) (DuplicateRemover).
+  - Uses Task as an argument to the DuplicateRemover call (but does not call Task methods itself).
+  - Uses logger (Logger) to log messages.
+- shouldReserved(Request request)
+  - Accesses Request static constant and method: Request.CYCLE_TRIED_TIMES and request.getExtra(...).
+- noNeedToRemoveDuplicate(Request request)
+  - Uses HttpConstant.Method.POST (static) and request.getMethod().
+- getDuplicateRemover() / setDuplicateRemover(...)
+  - Access the duplicatedRemover field (DuplicateRemover) and return/set it.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- push: mixes use of its own state/methods and foreign data. It calls its own helper methods (shouldReserved, noNeedToRemoveDuplicate, pushWhenNoDuplicate), accesses its own field duplicatedRemover, and logs via its logger. It also calls request.getUrl() twice and duplicatedRemover.isDuplicate(...). The foreign accesses are limited (a few Request calls and one DuplicateRemover call) and are required to decide scheduling — not overwhelmingly more than use of own class data/behavior.
+- shouldReserved: uses a single Request accessor (getExtra) and a Request constant. This is a small, single accessor check, not extensive use of Request internals.
+- noNeedToRemoveDuplicate: uses one Request accessor (getMethod) and a static constant from HttpConstant. Again, limited foreign access.
+
+Overall, none of these methods access substantially more methods/attributes of another class than they use of their own class’s behavior and fields.
+
+3) Are accessed foreign attributes/methods concentrated in one or few classes?
+- Yes. The foreign interactions are primarily with Request and DuplicateRemover (and a small use of HttpConstant and Logger). The foreign accesses are not spread widely across many unrelated classes.
+
+4) Potential misplacement
+- The logic in push (duplicate check + conditional push) is orchestration for the scheduler and relies on scheduler state (duplicatedRemover) and scheduler hooks (pushWhenNoDuplicate). It appears correctly placed in the scheduler abstraction.
+- The small Request checks (shouldReserved and noNeedToRemoveDuplicate) are simple predicate helpers using Request accessors; they are lightweight and appropriate as scheduler-side decisions rather than being moved into Request or DuplicateRemover.
+
+5) Summary judgment
+- The file contains methods that access other classes (mainly Request and DuplicateRemover), but the access is limited, narrow, and appropriate for scheduler responsibilities. There is no clear example of a method that is substantially more interested in another class’s data than its own.
+
+NO, I did not find Feature Envy — the methods interact with a few other classes as part of normal scheduler responsibilities, but they do not exhibit the heavy, misplaced use of another class’s internals that characterizes Feature Envy."
+SaTokenException.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data:
+- throwBy(boolean flag, String message): does not access another class's data/methods except calling the SaTokenException constructor (own class) and RuntimeException's behavior. No foreign-class calls.
+- throwByNull(Object value, String message): calls SaFoxUtil.isEmpty(value) — a single static method call to the SaFoxUtil class. Other than that it constructs and throws a SaTokenException (own class).
+
+2) More interest in foreign data:
+- No. throwByNull uses one call to SaFoxUtil.isEmpty(value) and otherwise operates on its own parameters and creates its own exception. It does not access many members or methods of SaFoxUtil; usage of foreign data is minimal. The other methods use essentially only their own class/parameters.
+
+3) Few foreign classes:
+- Yes. Only one external class is referenced: cn.dev33.satoken.util.SaFoxUtil (and the standard RuntimeException as the superclass, which is not a sign of Feature Envy). There is no broad scattering across many foreign classes.
+
+4) Potential misplacement:
+- Unlikely. The static convenience method throwByNull performs a simple utility check (isEmpty) then throws this exception — keeping this helper close to the exception type is reasonable. There is no clear indication the method should be moved into SaFoxUtil; it is tied to throwing SaTokenException when a check fails.
+
+5) Summary judgment:
+- There are no methods that access many attributes or methods of another class or show stronger interest in another class's data than their own. The single foreign call (SaFoxUtil.isEmpty) is minimal and does not indicate Feature Envy.
+
+NO, I did not find Feature Envy."
+LinkedTreeMap.java,
+SocketIOChannelInitializer.java,
+JobGroupController.java,
+ApiException.java,"1. Methods Accessing Foreign Data:
+- ApiException(IErrorCode errorCode) — calls errorCode.getMessage() (accesses IErrorCode).
+- getErrorCode() — returns the IErrorCode reference (does not call methods on it, just exposes it).
+- Other constructors accept String or Throwable and delegate to super(...); they don’t access other objects' internals.
+
+2. More Interest in Foreign Data:
+- No. The IErrorCode-accepting constructor makes a single call to errorCode.getMessage() and stores the reference in this.errorCode. It does not perform many calls or accesses on IErrorCode. The class also uses its own field (errorCode) and the superclass constructor, so it is not using substantially more data/methods from the foreign class than from itself.
+
+3. Few Foreign Classes:
+- The only foreign type whose data/methods are accessed is IErrorCode (and standard Throwable/RuntimeException usage for exception chaining). Accesses are concentrated in that one interface, not spread across many classes.
+
+4. Potential Misplacement:
+- No. The behavior (creating an ApiException from an IErrorCode and passing its message to the RuntimeException superclass) is cohesive for an exception wrapper class. The logic belongs naturally in this exception class rather than being moved to IErrorCode.
+
+5. Summary Judgment:
+- Based on the above, this file does not exhibit the Feature Envy smell. The single meaningful access to another object is minimal and appropriate for an exception wrapper.
+
+NO, I did not find Feature Envy"
+SaOAuth2Template.java,
+ReplyMessageProcessorTest.java,
+NodeTraversor.java,"1. Methods Accessing Foreign Data:
+- traverse(NodeVisitor visitor, Node root)
+  - Frequently calls Node methods: parentNode(), hasParent(), siblingIndex(), childNodeSize(), childNode(int), nextSibling(), remove() (in some paths via node.remove()), and uses Node as the traversed structure.
+  - Calls visitor.head(node, depth) and visitor.tail(node, depth) (NodeVisitor API).
+  - Calls Validate.notNull(visitor) and Validate.notNull(root).
+
+- traverse(NodeVisitor visitor, Elements elements)
+  - Uses Elements/Element only to iterate: for (Element el : elements) traverse(visitor, el).
+  - Calls Validate.notNull(visitor) and Validate.notNull(elements).
+
+- filter(NodeFilter filter, Node root)
+  - Frequently calls Node methods: childNodeSize(), childNode(0), nextSibling(), parentNode(), remove(), etc.
+  - Calls filter.head(node, depth) and filter.tail(node, depth) and reacts to FilterResult enum.
+  - Uses and returns NodeFilter.FilterResult values.
+
+- filter(NodeFilter filter, Elements elements)
+  - Iterates Elements and calls filter(filter, el); uses Validate.notNull(filter) and Validate.notNull(elements).
+
+2. More Interest in Foreign Data:
+- Yes: all four methods operate almost entirely on other classes' APIs (primarily Node and the visitor/filter interfaces). NodeTraversor itself has no fields or helper methods; its methods are static utilities that call many Node methods and visitor/filter callbacks. So they use far more operations on Node (and NodeVisitor/NodeFilter) than on NodeTraversor itself.
+
+3. Few Foreign Classes:
+- The foreign calls are concentrated in a very small set of classes:
+  - Node (many calls)
+  - NodeVisitor (head/tail callbacks)
+  - NodeFilter / FilterResult (head/tail and enum)
+  - Elements / Element (iteration)
+  - Validate (simple null checks)
+So the access is focused, mainly on Node and the visitor/filter interfaces.
+
+4. Potential Misplacement:
+- Possibly: one could argue traversal logic might be placed as instance methods on Node (e.g., node.traverse(visitor) or node.filter(filter)), moving traversal knowledge into Node. However, this is a common and reasonable design to keep traversal logic separated into a utility/traversor that coordinates Node and visitor/filter callbacks. The heavy use of Node's API is expected for a dedicated traverser and doesn't by itself indicate the method is misplaced.
+
+5. Summary Judgment:
+- The methods do show the pattern of accessing many methods of another class (Node) — they are heavily dependent on Node and visitor/filter interfaces. However, this is appropriate for a traversal utility (NodeTraversor has no state and is intentionally a coordinator). Given that the foreign calls are concentrated and that the class purpose is to traverse Node trees, the usage does not strongly indicate a misplaced responsibility.
+
+NO, I did not find Feature Envy. The methods are heavily using Node and visitor/filter APIs (expected for a traverser), and the access pattern looks intentional rather than a smell of misplaced behavior."
+DirectoryBrowserSupport.java,
+ExcelWriter.java,
+MethodInfo.java,"Step-by-step analysis:
+
+1. Methods Accessing Foreign Data:
+- The class contains only simple getters and setters: getAccess, setAccess, getName, setName, getDesc, setDesc, getOwner, setOwner.
+- None of these methods access attributes or methods of any other class. They read or write this object's private fields. They do not call methods on other objects or traverse other classes' data.
+
+2. More Interest in Foreign Data:
+- Not applicable: the methods do not use data or methods from other classes at all. All usage is of their own fields (primitive int and String references).
+
+3. Few Foreign Classes:
+- Not applicable: there is no concentration of accesses to any foreign class. The methods do not interact with external classes beyond using standard types (String, int) as field types, but they do not invoke String methods or access String internals.
+
+4. Potential Misplacement:
+- No evidence that any method would be better placed in another class. The getters/setters naturally belong to this data holder class.
+
+5. Summary Judgment:
+- This file does not show symptoms of Feature Envy. The methods operate on their own fields only and do not exhibit interest in other classes' data.
+
+NO, I did not find Feature Envy."
+ApolloDataSourceFactoryBean.java,"1. Methods Accessing Foreign Data:
+- getObject(): creates and returns new ApolloDataSource(namespaceName, flowRulesKey, defaultFlowRuleValue, converter). This is the only method that references another class (ApolloDataSource) beyond using it as a return type / constructor target. It also uses the Converter type as a field passed into that constructor, but it does not call any methods on Converter.
+- getObjectType(): returns ApolloDataSource.class (a static class reference).
+- Other methods (getters/setters) only access this class's own fields.
+
+2. More Interest in Foreign Data:
+- No. getObject primarily reads this class's own fields (namespaceName, flowRulesKey, defaultFlowRuleValue, converter) and passes them to the ApolloDataSource constructor. It does not access ApolloDataSource's internal fields or call instance methods on an ApolloDataSource; it merely constructs one. getObjectType only returns the class literal. Thus these methods use more data from their own class than from the foreign class.
+
+3. Few Foreign Classes:
+- The few foreign references are concentrated: ApolloDataSource is referenced (constructor and class literal) and Converter is the type of one field. There is no spread across many foreign classes.
+
+4. Potential Misplacement:
+- No. getObject is a factory method (this class implements FactoryBean<ApolloDataSource>) whose responsibility is to create an ApolloDataSource. That behavior belongs in a FactoryBean, so it is appropriately placed here rather than in ApolloDataSource.
+
+5. Summary Judgment:
+- Based on the above, there are no methods in this file that are more interested in the data of other classes than their own. The class acts as a simple factory and only passes its own fields into the ApolloDataSource constructor; it does not probe or manipulate another class's internals.
+
+NO, I did not find Feature Envy"
+UmsMemberService.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- This file is an interface (UmsMemberService) and contains only method signatures; there are no method bodies to inspect for field or method accesses.
+- The signatures reference UmsMember and Spring Security's UserDetails. Methods that operate on those types (by return type or parameters) are: getByUsername, getById, register, getCurrentMember, updateIntegration, loadUserByUsername, login, refreshToken. generateAuthCode and updatePassword also conceptually use member-related data (telephone, authCode).
+- Because there are no implementations here, there are no direct accesses to another class's attributes or methods visible in this file.
+
+2) More Interest in Foreign Data:
+- Cannot determine from an interface: without method bodies we cannot count or compare how much data/methods each method uses from other classes versus its own class.
+- Conceptually, the service methods are designed to operate on UmsMember data — that is their responsibility — so their ""interest"" in UmsMember is expected and appropriate for a service.
+
+3) Few Foreign Classes:
+- The external types referenced are few: primarily com.macro.mall.model.UmsMember and org.springframework.security.core.userdetails.UserDetails. The dependencies are concentrated in these very few classes, not spread across many.
+
+4) Potential Misplacement:
+- These methods belong to a service interface named UmsMemberService. The responsibilities (finding members, registering, password update, token/login handling, updating integration points) are typical service-layer concerns and are appropriately placed in a member-related service, not necessarily on the UmsMember model itself. Without implementation details, there is no evidence that any method should be moved to UmsMember or another class.
+
+5) Summary Judgment:
+- Given that this file contains only an interface with method signatures and no implementations, there is no visible evidence of methods accessing many attributes or methods of another class in a way that would indicate Feature Envy.
+- The referenced foreign data is limited to a couple of expected types (UmsMember, UserDetails) and the methods' responsibilities align with a member service.
+
+NO, I did not find Feature Envy."
+BillboardParticleBatch.java,
+BrokerController.java,
+StringUtils.java,
+PacketEncoder.java,
+FastByteArrayOutputStream.java,
+BinaryRedisPipeline.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- This file is an interface (BinaryRedisPipeline). Almost all methods are abstract declarations with no implementation, so they do not access any data or call methods on other classes.
+- There are a few default methods with implementations:
+  - @Deprecated default Response<Long> expire(byte[] key, int seconds) { return expire(key, (long) seconds); }
+  - @Deprecated default Response<String> setex(byte[] key, int seconds, byte[] value) { return setex(key, (long) seconds, value); }
+  - @Deprecated default Response<String> restore(byte[] key, int ttl, byte[] serializedValue) { return restore(key, (long) ttl, serializedValue); }
+  - @Deprecated default Response<String> restoreReplace(byte[] key, int ttl, byte[] serializedValue) { return restoreReplace(key, (long) ttl, serializedValue); }
+  These default methods only call other methods on the same interface and perform simple primitive casts. They do not access attributes or methods of other classes (beyond calling other interface methods).
+
+2) More Interest in Foreign Data:
+- Not applicable. Since there are no implemented methods that traverse or access members of other classes, none of the methods use more data or methods from another class than from their own. The few default methods interact only with other methods declared in this interface.
+
+3) Few Foreign Classes:
+- The interface declares parameters and return types from many other classes (Response, GeoCoordinate, ZAddParams, Tuple, etc.), but declaring method signatures is not the same as accessing foreign data. The (very small) default methods do not concentrate access on any single external class — they just delegate to other interface methods.
+
+4) Potential Misplacement:
+- Not applicable. There is no implemented logic that appears to belong to another class. The default methods are small overload-conversion/delegation helpers, appropriately in the interface as compatibility shims.
+
+5) Summary Judgment:
+- This file does not contain methods that are more interested in other classes' data than their own. It is an API interface with mostly declarations and only trivial delegating default methods.
+
+NO, I did not find Feature Envy."
+LineTransformationOutputStream.java,
+RedissonObject.java,
+DokanyVolume.java,
+AnalysisContext.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- This file is an interface (AnalysisContext) and contains no method bodies, but the method signatures show which other classes it exposes/returns. Methods that clearly involve other classes (i.e., would access or forward data from them in implementations) include:
+  - readWorkbookHolder() -> ReadWorkbookHolder
+  - readSheetHolder() -> ReadSheetHolder
+  - readRowHolder() / readRowHolder(ReadRowHolder) -> ReadRowHolder
+  - currentReadHolder() -> ReadHolder
+  - currentSheet(ReadSheet) -> ReadSheet (setter)
+  - readSheetList() / readSheetList(List<ReadSheet>) -> ReadSheet
+  - analysisEventProcessor() -> AnalysisEventProcessor
+  - getCustom() -> Object (custom attribute, possibly referencing external data)
+  - Deprecated convenience getters that likely delegate to holders:
+    - getCurrentSheet() -> Sheet
+    - getExcelType() -> ExcelTypeEnum
+    - getInputStream() -> InputStream
+    - getCurrentRowNum(), getTotalCount(), getCurrentRowAnalysisResult() -> values likely obtained from ReadRowHolder/ReadWorkbookHolder
+    - interrupt() (deprecated; references AnalysisEventListener in the javadoc)
+- Foreign classes referenced: ReadWorkbookHolder, ReadSheetHolder, ReadRowHolder, ReadHolder, ReadSheet, AnalysisEventProcessor, AnalysisEventListener (javadoc), ExcelTypeEnum, InputStream, Sheet.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- Because this is an interface, there are no implementations to inspect, so we cannot count actual attribute/method accesses.
+- However, the interface is primarily a façade: most methods simply return or accept holder objects (ReadWorkbookHolder, ReadSheetHolder, ReadRowHolder) or forward to them (the deprecated convenience methods imply delegation). That pattern indicates implementations will often delegate to these holder classes and therefore interact heavily with their data. From the signatures alone, the methods appear to be primarily about exposing and routing access to those holder classes rather than operating on AnalysisContext's own internal data.
+
+3) Are accessed foreign attributes/methods concentrated in one or few other classes?
+- Yes. The references are concentrated in the family of ""holder"" classes (ReadWorkbookHolder, ReadSheetHolder, ReadRowHolder, ReadHolder) and a small set of related types (ReadSheet, AnalysisEventProcessor, ExcelTypeEnum, InputStream). The foreign interactions are not spread across many unrelated classes.
+
+4) Potential misplacement
+- The interface design suggests AnalysisContext intentionally serves as the central access point (context) for workbook/sheet/row holders and processors. Even if implementations delegate heavily to holder classes, this is consistent with the role of a context/facade. The methods therefore seem appropriately placed in a context/facade component rather than misplaced into one of the holder classes.
+
+5) Summary judgment
+- Evidence for Feature Envy requires a method implementation that accesses another class's data/methods substantially more than its own and thus should likely be moved. This file contains only an interface (no method bodies). Although the API exposes and routes access to a few holder classes (which means implementations will interact a lot with those holders), there is no implementation here to inspect and no clear sign that behavior belongs in another class rather than in the context/facade.
+
+Conclusion: NO, I did not find Feature Envy — reasoning: the file is an interface with no implementations, and the apparent heavy use of holder classes reflects an intended context/facade design (concentrated on a few related holder classes) rather than a misplaced method implementation."
+ClassLoaderModel.java,"1. Methods Accessing Foreign Data:
+- No. The file contains only simple getters, setters, a no-arg constructor, and an overridden getType() that returns a literal. None of the methods access attributes or call methods on other objects (they only return or assign references to other types such as ClassSetVO, ClassLoaderVO, ClassDetailVO, ClassLoaderStat, List, Map, Collection).
+
+2. More Interest in Foreign Data:
+- No. The methods operate only on this class's own fields (storing references to or returning them). They do not read or manipulate data inside the referenced objects, so they do not use more data or methods from another class than from their own class.
+
+3. Few Foreign Classes:
+- N/A in the problematic sense. The class does reference a small number of other types (ClassSetVO, ClassDetailVO, ClassLoaderVO, ClassLoaderStat, plus collection types), but those are only types of fields/parameters/return values, not objects whose internals are heavily accessed.
+
+4. Potential Misplacement:
+- No. Since methods are simple accessors for this model's own fields, there's no indication they belong in another class.
+
+5. Summary Judgment:
+- Based on the above, this file does not exhibit the Feature Envy smell. The methods do not preferentially access data or methods of other classes; they merely hold and expose references.
+
+NO, I did not find Feature Envy"
+MethodRoadie.java,
+StubConnection.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- I found no method in this file that accesses many attributes or methods of a single other object/class (i.e., no deep navigation like otherObj.getA().getB().getC() or repeated reads/writes of another object's fields).
+- Notable external interactions (but not ""many"" accesses):
+  - Constructors use UtilityElf.quietlySleep(...) (one call to a utility class).
+  - Several prepareStatement(...) methods instantiate new StubPreparedStatement(this) (create an object of another class, but do not access its internals).
+  - refreshConnectionWaitTimeout() calls connectionWaitTimeout.schedule(..., TimeUnit.MILLISECONDS) — uses a ScheduledExecutorService (a static field in this class) and TimeUnit.
+  - unwrap(...) calls iface.isInstance(this) and may throw SQLException — a single check against the Class object.
+  - Many methods throw or declare java.sql.* exceptions or return JDBC-related types (required by the API) but do not repeatedly access a foreign object's data.
+
+2) More Interest in Foreign Data:
+- No. The methods generally operate on this class's own fields (isClosed, waitTimeout, waitTimeoutTask, autoCommit, isolation, catalog, etc.) or perform simple API/utility calls. They do not use more data or methods from another class than from their own class.
+
+3) Few Foreign Classes:
+- The few external classes referenced are limited and scattered: UtilityElf, StubPreparedStatement, ScheduledExecutorService/TimeUnit, standard java.sql classes (SQLException, CallableStatement, PreparedStatement, etc.). These references are few and lightweight (single calls or object constructions), not concentrated on one foreign class's data.
+
+4) Potential Misplacement:
+- No method appears to belong more naturally to another class. The behavior (managing connection state, scheduling wait-timeout task, creating stub statements) logically belongs in a Connection stub implementation.
+
+5) Summary Judgment:
+- Based on the above, this file does not exhibit methods that are ""more interested"" in other classes' data than their own in a way that indicates Feature Envy. Many methods are simple stubs required by the Connection API or perform small interactions with utilities/other classes, but they mostly read/write this class's fields and manage connection-related state.
+
+NO, I did not find Feature Envy."
+ExpandedProductParsedResult.java,"Step 1 — Methods Accessing Foreign Data
+- equals(Object o): accesses many fields of the other object (other.productID, other.sscc, other.lotNumber, other.productionDate, other.bestBeforeDate, other.expirationDate, other.weight, other.weightType, other.weightIncrement, other.price, other.priceIncrement, other.priceCurrency, other.uncommonAIs).
+- hashCode(): calls Objects.hashCode(...) repeatedly on this object's fields (no foreign instance fields accessed).
+- getDisplayResult(): calls String.valueOf(rawText) (uses a standard library static method).
+- Other getters and the constructor only read/assign this class's own fields.
+
+Note: equals accesses many attributes, but they belong to another instance of the same class (ExpandedProductParsedResult), not a different class. The file also uses java.util.Objects and java.lang.String static methods, and a Map field (uncommonAIs) is compared via Objects.equals — but those are standard library helpers, not rich accesses into other domain classes.
+
+Step 2 — More Interest in Foreign Data?
+- equals does read many fields from the other instance, but it also uses the current instance's fields in each comparison (Objects.equals(productID, other.productID) etc.). Because the ""foreign"" object is the same class type, equals is naturally symmetric and intended to compare both objects' data. No method is using more data/methods from a different class than from its own class.
+- hashCode and getters primarily use own fields.
+- getDisplayResult mainly delegates to String.valueOf — a single library call.
+
+Step 3 — Few Foreign Classes?
+- The only external classes/members referenced are standard library helpers (java.util.Objects, java.lang.String, java.util.Map as the type of a field). References to other classes are minimal and limited to these standard utilities. Accesses are not spread across many domain classes.
+
+Step 4 — Potential Misplacement?
+- equals belongs in this class to compare two instances of the same class — that is the correct place.
+- hashCode and getters are appropriate here.
+- No method appears to be doing work that would more naturally belong to some other domain class.
+
+Step 5 — Summary Judgment
+There are no methods that show the characteristic Feature Envy pattern of being primarily interested in another (different) class's internals. The only method that accesses many fields of a ""foreign"" object is equals, but that object is another instance of the same class and equals is correctly implemented here to compare both instances' fields. External usage of standard-library methods (Objects, String) is minimal. Therefore:
+
+NO, I did not find Feature Envy."
+SaFoxUtil.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- printSaToken()
+  - Accesses SaTokenConsts.DEV_DOC_URL, SaTokenConsts.VERSION_NO, SaTokenConsts.GITHUB_URL (a single other class SaTokenConsts).
+- encodeUrl(String) and decoderUrl(String)
+  - Call java.net.URLEncoder/URLDecoder methods and construct a cn.dev33.satoken.exception.SaTokenException on error.
+- vagueMatch(String, String)
+  - Calls java.util.regex.Pattern.matches.
+- getValueByType(Object, Class<T>)
+  - Compares cs.equals(...) against many Java wrapper/primitive classes (Integer.class, Long.class, Boolean.class, etc.) and uses their valueOf(...) methods.
+- formatDate(Date)
+  - Uses java.text.SimpleDateFormat.
+- getRandomString(int), getMarking28()
+  - Use java.util.Random.
+- Many other methods call JDK classes (String.join, Collections/ArrayList methods, String methods, URL_REGEX constant usage). Most methods primarily operate on their parameters and JDK helpers.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- No. SaFoxUtil is a stateless utility class with only static methods and a single static URL_REGEX field. Most methods operate on their own parameters/local variables and invoke JDK library functions. The only method that accesses another project class in more than one place is printSaToken() (it reads three constants from SaTokenConsts), but it still does little more than assemble and print a string. getValueByType references many JDK wrapper classes but does not interact heavily with any single other non-JDK class. So none of the methods use more data/methods from a particular foreign class than from their own context (parameters/local data).
+
+3) Are the accessed foreign attributes/methods concentrated in one or few other classes?
+- No. Accesses are spread:
+  - SaTokenConsts is referenced only by printSaToken().
+  - SaTokenException is referenced only by encodeUrl/decoderUrl (for exception wrapping).
+  - Most other calls are to standard JDK classes (URLEncoder, URLDecoder, Pattern, Random, SimpleDateFormat, wrapper classes). There is not a concentration on a single external domain class.
+
+4) Potential misplacement
+- printSaToken() reads SaTokenConsts constants and prints an ASCII banner. It could arguably live in a different class responsible for boot/start logging, but it does not heavily manipulate SaTokenConsts state; it only uses constants. encodeUrl/decoderUrl are thin wrappers over JDK encoders that wrap exceptions — appropriate in a utility class. getValueByType handles type conversions — appropriate for a utility. Overall, there is no clear candidate class that these methods should be moved into based on heavy access to another class's internals.
+
+5) Summary judgment
+- There are no methods that consistently access many attributes or behaviors of a single other (non-JDK) class such that they appear more interested in that other class's data than their own. The code is a typical stateless utility collection that calls various JDK helpers and occasionally reads constants from SaTokenConsts. These patterns do not match the usual Feature Envy symptom (a method repeatedly reaching into another domain object's internals).
+
+NO, I did not find Feature Envy."
+Stage.java,
+Finance.java,
+AdminBrokerProcessor.java,
+PreparedStatementHandler.java,
+SmsFlashPromotionProductRelationServiceImpl.java,
+PrefixPluginLogger.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- prefix()
+  - Accesses: this.marker.getName()
+  - Foreign class involved: org.apache.logging.log4j.Marker (calls a single accessor getName()).
+
+- PrefixPluginLogger(...) constructor
+  - Accesses/uses: MarkerManager.Log4jMarker (creates one, casts), and the shared static markers map (WeakHashMap) which is a field of this class.
+  - Foreign class involved: org.apache.logging.log4j.MarkerManager.Log4jMarker (construction and cast).
+  - Also operates on java.util.WeakHashMap (own-class static field) via get/put and synchronization.
+
+- logMessage(String fqcn, Level level, Marker marker, Message message, Throwable t)
+  - Accesses: this.marker (a Marker) and calls super.logMessage(...) — delegates to superclass method.
+  - Foreign class involved: superclass org.apache.logging.log4j.spi.ExtendedLoggerWrapper / ExtendedLogger for behavior, and uses this class's Marker instance as an argument.
+
+2) Do these methods use more data or methods from another class than from their own class?
+- prefix(): No. It uses one accessor of Marker but primarily just returns information derived from this.marker, which is a field of its own class.
+- Constructor: No. Most operations are on the class's own static markers map and on its own field this.marker. It creates/uses a MarkerManager.Log4jMarker, but the majority of logic (synchronization, map lookup/put, assignment to this.marker) is about managing the class's own marker cache and field.
+- logMessage(...): No. It mostly delegates to the superclass (calls super.logMessage) while supplying this class's marker. It does not intensely interrogate another object's internals.
+
+3) Are the accessed foreign attributes/methods concentrated in one or very few other classes?
+- Yes. The external interactions are limited to a small set: org.apache.logging.log4j.Marker and org.apache.logging.log4j.MarkerManager.Log4jMarker (and superclass ExtendedLoggerWrapper/ExtendedLogger for delegation). The foreign accesses are not spread across many unrelated classes.
+
+4) Potential Misplacement — would these methods be more appropriately placed in the foreign class?
+- No. The methods logically belong to this wrapper/logger: the constructor manages a marker cache and assigns a marker to this wrapper; prefix() returns the wrapper's prefix/marker name; logMessage delegates logging while injecting the wrapper's marker. These behaviors are responsibilities of this logger wrapper, not of Marker or MarkerManager, so moving them to the foreign classes would be inappropriate.
+
+5) Summary judgment
+- There are no methods that heavily access many attributes or methods of another class such that they appear more interested in foreign data than their own. The foreign interactions are minimal and focused (a couple of calls / a construction), and most logic manipulates this class's own fields (markers map, this.marker) or delegates to the superclass. Therefore this file does not exhibit Feature Envy.
+
+NO, I did not find Feature Envy."
+BitMatrix.java,
+JobTriggerPoolHelper.java,"1. Methods accessing foreign data
+- start()
+  - Calls XxlJobAdminConfig.getAdminConfig().getTriggerPoolFastMax() and XxlJobAdminConfig.getAdminConfig().getTriggerPoolSlowMax().
+  - Uses JDK ThreadPoolExecutor/LinkedBlockingQueue/ThreadFactory APIs (standard library).
+- addTrigger(...) (inner Runnable.run)
+  - Calls XxlJobTrigger.trigger(jobId, ...).
+  - Uses ConcurrentMap/AtomicInteger JDK APIs (jobTimeoutCountMap, putIfAbsent, incrementAndGet).
+- toStart(), toStop(), trigger(...) (static delegators)
+  - Call methods on the private static helper instance (own class).
+
+2. More interest in foreign data
+- start() uses two accessor calls on XxlJobAdminConfig but otherwise constructs and stores its own ThreadPoolExecutor fields and configures ThreadFactory; it primarily operates on its own fields. It does not use more data/methods of XxlJobAdminConfig than its own.
+- addTrigger(...) invokes XxlJobTrigger.trigger(...) once; most of the method’s logic manipulates its own fields (fastTriggerPool/slowTriggerPool, jobTimeoutCountMap, minTim). It does not use more data/methods from XxlJobTrigger than from its own class.
+- The delegator methods simply forward to the helper (own class).
+
+3. Few foreign classes
+- The external, non-JDK classes accessed are limited to XxlJobAdminConfig (in start) and XxlJobTrigger (in addTrigger). Accesses are concentrated in these one or two classes rather than spread across many domain classes.
+
+4. Potential misplacement
+- There is no clear sign that any method should belong to XxlJobAdminConfig or XxlJobTrigger. The logic in start() is about initializing the thread pools (reasonable in JobTriggerPoolHelper). addTrigger() coordinates scheduling and timeout-count bookkeeping and calls XxlJobTrigger to perform the actual trigger; placing that scheduling/ bookkeeping logic into XxlJobTrigger would not be an obvious improvement.
+
+5. Summary judgment
+- The file uses a couple of external class methods, but methods mostly operate on their own fields and standard library types. There is no strong pattern of a method accessing many members of another domain class or being more interested in another class’s data than its own.
+
+NO, I did not find Feature Envy."
+MigrationRunController.java,
+Internet.java,
+AllMembersSupplier.java,
+AwtCodec.java,
+OrderController.java,
+XxlJobInfoDao.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- This file is an interface XxlJobInfoDao. It contains no method bodies, only signatures.
+- Methods that reference another class: save(XxlJobInfo info), loadById(int id) returns XxlJobInfo, update(XxlJobInfo xxlJobInfo), scheduleUpdate(XxlJobInfo xxlJobInfo), getJobsByGroup(...), pageList(...), pageListCount(...), scheduleJobQuery(...), findAllCount(), delete(...).
+- The only non-primitive/annotation type referenced is com.xxl.job.admin.core.model.XxlJobInfo. Other referenced types are primitives or Strings. Because there are no implementations, there is no code that accesses attributes or methods of XxlJobInfo here — only method signatures that accept/return that type.
+
+2) More Interest in Foreign Data:
+- There is no implementation code in this file to show usage counts of foreign vs. own data. The DAO interface naturally operates on XxlJobInfo objects (parameters/returns). The interface itself has no fields; therefore methods do not show more interest in other-class data in any implemented sense.
+- The parameter lists (e.g., jobGroup, triggerStatus, jobDesc, executorHandler, author) likely correspond to fields of XxlJobInfo, but passing those as parameters in DAO methods is standard and not evidence of a method being more interested in another class’s internal data.
+
+3) Few Foreign Classes:
+- The only foreign model class referenced is XxlJobInfo. Access (in signatures) is concentrated in that single class, not spread across many classes.
+
+4) Potential Misplacement:
+- These methods belong to a DAO whose purpose is to persist/query XxlJobInfo instances. Even if the DAO methods primarily reference XxlJobInfo data, that is the intended responsibility of the DAO layer. There is no sign they should be moved into XxlJobInfo itself — DAOs separate persistence concerns from the domain object.
+
+5) Summary Judgment:
+- Because this file contains only method signatures (no method bodies) and the references to another class (XxlJobInfo) are appropriate for a DAO interface, there is no evidence of Feature Envy in this file.
+
+NO, I did not find Feature Envy."
+ConnectionPool.java,
+LinkedHashMultimap.java,
+PropertyElf.java,
+PendingTransactionsDialog.java,
+JedisClusterTest.java,
+RandomGenerator.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- generate():
+  - Calls RandomUtil.randomString(this.baseStr, this.length) — uses a static method on RandomUtil and uses this.baseStr and this.length (inherited fields).
+- verify(String code, String userInputCode):
+  - Calls StrUtil.isNotBlank(userInputCode) and StrUtil.equalsIgnoreCase(code, userInputCode) — uses static methods on StrUtil and its own method parameters.
+
+There are no methods here that access instance attributes or many methods of another (non-utility) object.
+
+2) More Interest in Foreign Data:
+- generate() mainly uses its own fields (baseStr, length) and delegates string creation to a static utility RandomUtil method. It does not access another object's instance data.
+- verify() operates on its parameters and uses static helper methods from StrUtil. It does not access another class's instance state.
+Conclusion: neither method uses more data/methods from another class than from its own class.
+
+3) Few Foreign Classes:
+- The only external classes used are two utility classes: RandomUtil and StrUtil. Accesses are few and are to static helper methods, not to instance state of other domain classes.
+
+4) Potential Misplacement:
+- No: the behavior belongs naturally to this generator class (generate uses its baseStr/length; verify checks codes). There is no evidence the methods would be more appropriate on RandomUtil or StrUtil (those are general utilities), nor on any other domain class.
+
+5) Summary Judgment:
+Given the methods only use their own (inherited) fields and a couple of static utility calls, and they do not access instance data of another domain class extensively, there are no signs of Feature Envy in this file.
+
+NO, I did not find Feature Envy"
+RouterNanoHTTPD.java,
+JavassistProxyFactory.java,
+ClusterConnectionManager.java,
+RequestLimiter.java,
+MockNamingService.java,"1. Methods Accessing Foreign Data:
+- No. All methods in MockNamingService are empty (either have empty bodies or return null) and there are no fields in this class. Although method signatures reference other classes (Instance, ServiceInfo, ListView, EventListener, AbstractSelector, etc.), none of the methods access attributes or call methods on those parameter/return types in their bodies.
+
+2. More Interest in Foreign Data:
+- Not applicable. Since no method body uses any data at all (no field access, no calls on parameters), none use more data/methods from another class than from their own class.
+
+3. Few Foreign Classes:
+- Not applicable in practice because there is no foreign-data access. The signatures reference several other classes, but that is a type/API dependency rather than runtime access to another object's internals.
+
+4. Potential Misplacement:
+- No evidence to suggest any method would be more appropriately placed in another class, because there is no logic implemented that operates on another class's data.
+
+5. Summary Judgment:
+- Based on the file content (a mock implementation with empty methods and no fields), there are no signs of methods being more interested in other classes' data than their own. There is no Feature Envy in this file.
+
+NO, I did not find Feature Envy"
+MethodVisitor.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- This file is an interface (MethodVisitor) and contains only method signatures (no method bodies). No method in this file directly accesses attributes or calls methods of other classes (there is no implementation).
+- However several method signatures accept parameters that represent/describe other classes or their members. Notable methods and the external types they mention:
+  - visitFieldInsn(int opcode, String owner, String name, String desc) — references another class via the owner (String internal name) and field descriptor.
+  - visitMethodInsn(int opcode, String owner, String name, String desc) — references another class via owner and method descriptor.
+  - visitTypeInsn(int opcode, String type) — references a class internal name (Type.getInternalName()).
+  - visitLabel(Label label) and visitJumpInsn(int opcode, Label label) — reference Label.
+  - visitLdcInsn(Object cst) — may receive a Type (or other constant) as cst.
+  - visitMaxs, visitVarInsn, visitIincInsn, visitInsn, visitIntInsn, visitJumpInsn, etc. take primitives or Label and thus are intended to work on bytecode entities.
+- No implementations are present to show any access patterns like calling many methods/reading many fields on a foreign object.
+
+2) More Interest in Foreign Data:
+- If we treat ""use"" as the parameter types and intent, these methods are entirely about visiting/operating on other classes' bytecode (they carry data that describes other classes/members). The interface itself has no fields; therefore, at the implementation-signature level, the methods are concerned with foreign data rather than their own class state.
+- But because there are no implementations here, we cannot see any method body that uses more members of another class than of its own.
+
+3) Few Foreign Classes:
+- The foreign types referenced are concentrated: String owner/type descriptors, Label, and Type (via javadoc mention and Object parameter for LDC). So the interaction targets a small set of bytecode entity types rather than being spread across many unrelated classes.
+
+4) Potential Misplacement:
+- These methods are part of the Visitor pattern: their purpose is to be implemented by classes that ""visit"" bytecode elements. Given that role, it is intentional that they describe and operate on foreign class/method/field descriptors. Moving these method declarations into the classes being described (Label, Type, classes whose fields/methods are visited) would break the visitor design and reduce separation of concerns. So they are not plausibly misplaced.
+
+5) Summary Judgment:
+- There are no method implementations in this file that demonstrate the classic Feature Envy symptom (a method body repeatedly accessing many members of another specific class).
+- The interface methods are intentionally defined to accept descriptions of foreign classes (visitor responsibilities), so their apparent focus on foreign data is by design and not an instance of misplaced behavior.
+
+Final answer: NO, I did not find Feature Envy — because this file only declares visitor methods (no implementations) and the methods' focus on other classes is intentional (Visitor pattern), not an indication that a method is wrongly placed."
+FlowControllerV1.java,"1. Methods Accessing Foreign Data:
+- checkEntityInternal(FlowRuleEntity entity)
+  - Accesses many getters on FlowRuleEntity (getApp, getIp, getPort, getLimitApp, getResource, getGrade, getCount, getStrategy, getRefResource, getControlBehavior, getWarmUpPeriodSec, getMaxQueueingTimeMs, isClusterMode, getClusterConfig).
+- apiUpdateFlowRule(...)
+  - Loads a FlowRuleEntity from repository and calls many setters/getters on it (setApp/setLimitApp/setResource/setGrade/setCount/setStrategy/setRefResource/setControlBehavior/setWarmUpPeriodSec/setMaxQueueingTimeMs, plus getApp/getIp for logging/publishing).
+- apiAddFlowRule(FlowRuleEntity entity)
+  - Calls many setters on the provided FlowRuleEntity (setId, setGmtCreate, setGmtModified, setLimitApp, setResource) and later reads getApp/getIp/getPort to publish rules.
+- apiDeleteFlowRule(Long id)
+  - Reads fields from a FlowRuleEntity returned by repository (oldEntity.getApp(), getIp(), getPort()).
+- publishRules(String app, String ip, Integer port)
+  - Calls repository.findAllByMachine(MachineInfo.of(...)) and sentinelApiClient.setFlowRuleOfMachineAsync(...). (This method coordinates two other collaborators rather than digging into another object's fields.)
+
+Other methods (apiQueryMachineRules, etc.) interact with SentinelApiClient and repository, but the strongest field-level access is on FlowRuleEntity.
+
+2. More Interest in Foreign Data:
+- Yes. checkEntityInternal is almost entirely about inspecting the contents of a FlowRuleEntity; it reads many of that object's fields and performs validation logic. The controller's own state is limited (logger, repository, sentinelApiClient), yet checkEntityInternal operates primarily on the entity passed in.
+- apiUpdateFlowRule and apiAddFlowRule also manipulate many properties of FlowRuleEntity (getters/setters) and perform entity-centric validation and normalization; these methods use the entity's data much more than the controller's own fields.
+
+3. Few Foreign Classes:
+- Yes. The heavy access is concentrated mostly in one class: FlowRuleEntity. Secondary frequent collaborators are InMemoryRuleRepositoryAdapter (repository) and SentinelApiClient, but those are used as services (calls), not for many individual attributes. So the field/method access is concentrated in FlowRuleEntity.
+
+4. Potential Misplacement:
+- checkEntityInternal: Likely better placed in a FlowRuleValidator or as validation logic associated with FlowRuleEntity (e.g., a validate() method or a separate validator class). It accesses many entity fields and expresses domain validation rules, which suggests it's not a good fit inside the controller.
+- apiUpdateFlowRule/apiAddFlowRule: They contain entity-normalization and many setter calls. Some of that logic (trimming strings, defaulting timestamps, setting derived fields, and validation) could be moved to FlowRuleEntity methods or a service/validator to keep the controller thin. However, orchestration (calling repository.save and publishing rules) is appropriate for a controller/service layer.
+
+5. Summary Judgment:
+- There are clear symptoms of Feature Envy: checkEntityInternal (and to a lesser extent the entity-manipulating parts of apiAddFlowRule and apiUpdateFlowRule) are more interested in FlowRuleEntity's data than in the controller's own state. The access is concentrated on FlowRuleEntity, and the validation/normalization logic would be more appropriately located in a validator or on the entity itself.
+
+YES, I found Feature Envy."
+DiagnosedStreamCorruptionException.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- Constructor DiagnosedStreamCorruptionException(Exception cause, Exception diagnoseFailure, byte[] readBack, byte[] readAhead)
+  - Calls initCause(cause) (inherited from Throwable) and assigns passed-in parameters to its own fields. No heavy use of another class's internals.
+- getDiagnoseFailure(), getReadBack(), getReadAhead()
+  - Simple accessors that return this class's fields only.
+- toString()
+  - Uses:
+    - HexDump.toHex(readBack) and HexDump.toHex(readAhead) (static utility calls to another class HexDump)
+    - diagnoseFailure.printStackTrace(p) (invokes a method on the Exception object stored in this class)
+    - StringWriter and PrintWriter API (local helper objects)
+    - super.toString()
+  - So the only notable accesses of other classes are the two HexDump calls, a single call to the diagnoseFailure Exception's printStackTrace, and standard library writers.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- No. toString primarily formats this object's own fields (readBack, readAhead, diagnoseFailure) and super.toString(). The external interactions are limited: two static HexDump calls and one call into the diagnoseFailure Exception. The access to ""foreign"" classes is minimal compared to use of its own data.
+
+3) Are the accessed foreign attributes/methods concentrated in one or a few other classes?
+- The external calls are limited and concentrated in a few classes: HexDump (two static calls), java.io.StringWriter and java.io.PrintWriter (local builders), and java.lang.Exception (printStackTrace). This is a small set, but the volume of use per external class is small.
+
+4) Potential misplacement
+- There is no evidence that any method would be more appropriate in HexDump or Exception. toString's job is presentation of this exception object (including hex dump of its own byte arrays and an embedded exception trace), so it belongs in this exception class.
+
+5) Summary judgment
+- There are no methods that show a strong tendency to access many members of another class or to rely more on foreign data than their own. The class mainly works on its own fields and uses a couple of small utility calls for formatting.
+
+NO, I did not find Feature Envy. The only cross-class interactions are small, appropriate formatting/utility calls (HexDump, writers, and printing the embedded Exception), and methods primarily operate on this object's own data."
+XMLConfigBuilder.java,
+Lexeme.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- equals(Object o)
+  - Accesses methods on the other object when it is a Lexeme: other.getOffset(), other.getBegin(), other.getLength().
+  - Also uses instanceof (Object) and casts.
+- compareTo(Lexeme other)
+  - Calls other.getBegin(), other.getLength().
+- append(Lexeme l, int lexemeType)
+  - Calls l.getBeginPosition(), l.getLength().
+- setLexemeText(String lexemeText)
+  - Calls lexemeText.length() on the passed-in String (and assigns to this.lexemeText).
+- toString()
+  - Uses java.lang.StringBuffer and calls append(...) on it.
+- hashCode()
+  - Calls this.getBeginPosition(), this.getEndPosition(), getLength() (own methods) — no heavy foreign use, but uses own accessors.
+
+Summary of classes accessed:
+- Other Lexeme instances (same class) in equals, compareTo, append.
+- java.lang.String (setLexemeText).
+- java.lang.StringBuffer (toString).
+- java.lang.Object (instanceof in equals).
+
+2) Do these methods use more data/methods from another class than from their own?
+- No. equals, compareTo and append operate primarily as comparisons/merging between two Lexeme instances and rely heavily on this object's fields/methods as well as symmetric access to the other Lexeme; they do not preferentially manipulate a different class's internal data.
+- setLexemeText uses one String method (length()), but it mainly sets this.lexemeText and updates this.length (i.e., acts on its own state).
+- toString uses StringBuffer to build a representation, but the substantive data used are this object's fields/methods.
+
+3) Are accessed foreign attributes/methods concentrated in one or few classes?
+- Yes — the only external classes used are standard library types (String, StringBuffer, Object) and most cross-object access is to other Lexeme instances (same class). The foreign-method calls are not spread across many domain classes.
+
+4) Potential misplacement: would the method be more appropriate in another class?
+- No. The methods that take another Lexeme are natural operations on Lexeme objects (equality, ordering, merging, string representation, hash code). They operate mainly on this object's state and compare/merge with another Lexeme, so their placement in Lexeme is appropriate.
+- Use of String/StringBuffer is incidental and appropriate for text handling and representation.
+
+5) Summary judgment
+- There are no methods that show the classic Feature Envy pattern (i.e., methods that consistently access many attributes/methods of a different domain class while barely using their own). Cross-object access is mostly to other Lexeme instances (same class) or to standard library helpers (String/StringBuffer).
+
+NO, I did not find Feature Envy."
+DBeaverCore.java,
+AztecCode.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- There are no methods that access many attributes or methods of another class. The only interactions with another class are:
+  - getMatrix() returns the BitMatrix field (type: com.google.zxing.common.BitMatrix).
+  - setMatrix(BitMatrix matrix) accepts a BitMatrix parameter and stores it.
+  These methods do not call any methods on BitMatrix nor access its internals; they only hold a reference.
+
+2) More Interest in Foreign Data:
+- Not applicable. The methods operate on this class's own fields (compact, size, layers, codeWords, matrix). The getters and setters primarily read/write this class's fields, not the foreign object's data or behavior. No method uses more data/methods from BitMatrix than from AztecCode.
+
+3) Few Foreign Classes:
+- Only one foreign class appears at all: BitMatrix. However, usage is minimal (just storing/returning the reference), so there's no concentration of heavy access to that class.
+
+4) Potential Misplacement:
+- No. Because methods are simple accessors for AztecCode's own fields (including the matrix field), there is no indication they'd be more appropriately placed in BitMatrix or another class.
+
+5) Summary Judgment:
+- This file does not show methods that are more interested in another class's data than their own. The code consists of standard getters/setters; interactions with BitMatrix are limited to storing/returning the reference and do not demonstrate Feature Envy.
+
+NO, I did not find Feature Envy"
+EntryConfig.java,"1. Methods Accessing Foreign Data:
+- Constructors (several overloads, ultimately the one with full parameter list):
+  - Call AssertUtil.assertNotBlank(...), AssertUtil.notNull(...), AssertUtil.isTrue(...).
+  - Read ResourceTypeConstants.COMMON (static constant).
+- toString():
+  - Calls Arrays.toString(args) (static utility).
+  - Invokes contextConfig.toString() implicitly by concatenation if contextConfig != null.
+- No other methods access attributes or call instance methods on other classes. Getters (getResourceName, getEntryType, getAcquireCount, getArgs, getContextConfig, getResourceType) only return this class's fields.
+
+2. More Interest in Foreign Data:
+- No. All methods primarily operate on this class's own fields (resourceName, entryType, resourceType, acquireCount, args, contextConfig). The foreign calls are either static utility calls (AssertUtil, Arrays) or a single implicit toString() on contextConfig. The constructors use AssertUtil for validation of their own inputs — this is a common, small dependency and not an indication that the logic belongs to AssertUtil or ContextConfig.
+
+3. Few Foreign Classes:
+- The foreign accesses are concentrated in a small set of utility/constant classes: AssertUtil, ResourceTypeConstants, Arrays, and an implicit call to ContextConfig.toString(). They are not spread over many domain classes.
+
+4. Potential Misplacement:
+- No. The behavior (constructing/configuring an EntryConfig, validating parameters, and producing a string representation) belongs naturally to EntryConfig. The use of AssertUtil and Arrays are normal helper usages; the only interaction with another instance is to include contextConfig (and its toString) — that does not suggest the method should be moved to ContextConfig.
+
+5. Summary Judgment:
+- Based on the above, there are no methods that show clear Feature Envy. The methods mainly use this class's own data; external calls are utility/validation or trivial stringification of a contained object.
+
+NO, I did not find Feature Envy."
+ScriptProcessorBuilder.java,"1. Methods Accessing Foreign Data:
+- scriptFromFile(String fileName)
+  - Accesses: new FileInputStream(fileName) (java.io.FileInputStream), IOUtils.toString(InputStream) (org.apache.commons.io.IOUtils), IOException (java.io.IOException) via catch.
+- scriptFromClassPathFile(String fileName)
+  - Accesses: ScriptProcessor.class.getClassLoader().getResourceAsStream(fileName) (java.lang.Class / ClassLoader / ScriptProcessor), IOUtils.toString(InputStream), IOException.
+- build()
+  - Accesses: new ScriptProcessor(language, script, threadNum) (us.codecraft.webmagic.scripts.ScriptProcessor).
+
+Other methods (language, script, thread, custom, constructor) mainly work with this class's own fields.
+
+2. More Interest in Foreign Data:
+- No. The methods listed primarily set or return this builder's own fields (script, language, threadNum) or construct/obtain streams to populate those fields. The foreign calls are utility/IO calls (FileInputStream, IOUtils, ClassLoader) or a constructor call (ScriptProcessor). They do not operate heavily on the internals of another object's state or call many methods on a single foreign object; they merely fetch data (a script string) or create an instance.
+
+3. Few Foreign Classes:
+- The foreign calls are concentrated in a few utility/IO classes: FileInputStream, IOUtils, ClassLoader (via ScriptProcessor.class), and ScriptProcessor. That is a small number of classes, but usage is simple and aligned with builder responsibilities (reading files, loading resources, creating the built object).
+
+4. Potential Misplacement:
+- The code appears properly placed in a builder: reading script content and producing a ScriptProcessor instance are expected responsibilities of a ScriptProcessorBuilder. There is no indication that these methods would be more appropriate inside ScriptProcessor; ScriptProcessor likely should remain focused on processing, while the builder handles assembling/configuring instances and reading script sources.
+
+5. Summary Judgment:
+- Based on the above, there are no methods that show the classic Feature Envy pattern (i.e., heavily accessing many members of another class). The foreign accesses are minimal, utility-focused, and consistent with a builder's role.
+
+NO, I did not find Feature Envy."
+MapTypeAdapterFactory.java,
+AttributeNameHistoWalker.java,"Step-by-step analysis:
+
+1. Methods Accessing Foreign Data:
+- visit(IMetaMember mm)
+  - Calls mm.getCompiledAttribute(attributeName) or mm.getQueuedAttribute(attributeName).
+  - Calls Long.valueOf(attrValue) (standard library).
+  - Calls histo.addValue(val) — histo is an inherited field (from AbstractHistoVisitable) and its type is a foreign object, but it is part of this class's internal responsibility.
+- Constructor AttributeNameHistoWalker(...) calls super(model, resolution) (uses IReadOnlyJITDataModel via superclass), but that is a normal superclass initialization, not repeated foreign-data handling.
+
+2. More Interest in Foreign Data:
+- No. visit uses only one or two accessor calls on the IMetaMember (either getCompiledAttribute or getQueuedAttribute). The method primarily uses its own state (isCompileAttribute and attributeName) to decide which accessor to call and then records the parsed value into its own histogram (histo). The number and variety of interactions with IMetaMember are minimal.
+
+3. Few Foreign Classes:
+- The foreign interactions are concentrated: the main external type used is IMetaMember (and the histogram object from the superclass). Interactions are not spread across many different classes.
+
+4. Potential Misplacement:
+- It does not appear that visit would be more appropriately placed in IMetaMember. The method is part of a histogram-walker/visitor, whose responsibility is to extract attributes from members and record them. Moving the visit logic into IMetaMember would break the visitor pattern and mix concerns (presentation/aggregation into the model class). The current placement fits the purpose of visiting members and updating a histogram.
+
+5. Summary Judgment:
+- Based on the above, there is no clear Feature Envy. The visit method accesses only a small, appropriate set of IMetaMember accessors and primarily operates on this walker’s own fields and histogram.
+
+NO, I did not find Feature Envy."
+PageModelExtractor.java,
+TreeTypeAdapter.java,
+Spider.java,
+RandomService.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- The class has a single foreign object field: java.util.Random random.
+- Methods that call methods on that foreign object:
+  - nextInt(int n) -> random.nextInt(n)
+  - nextLong() -> random.nextLong()
+  - nextLong(long n) -> random.nextLong() (called inside the loop)
+  - nextDouble() -> random.nextDouble()
+  - nextBoolean() -> random.nextBoolean()
+  - nextInt(int min, int max) -> random.nextInt(...) (one call)
+  - hex(int length) -> calls nextInt(16) (which delegates to random.nextInt)
+  - hex() -> calls hex(8)
+All foreign accesses are to java.util.Random.
+
+2) Do these methods use more data/methods from the foreign class than from their own class?
+- Most methods are thin delegations to the Random instance (nextInt, nextLong, nextDouble, nextBoolean, nextInt(min,max)). Those methods primarily invoke a single Random method and return or wrap it — they do not access many own fields or perform heavy work beyond delegation.
+- nextLong(long n) implements an algorithm locally (bit manipulation, loop, modulus) and only uses random.nextLong() as a source of bits; the bulk of the logic is in this class.
+- hex(int length) builds character data itself and calls this.nextInt(16) (own method delegating to Random). The generation logic is implemented here.
+Overall: some methods are pure delegations (they call one Random method and return), so they do use the foreign object's methods but only in a straightforward wrapper way. Other methods implement their own nontrivial logic and only use Random as a data source.
+
+3) Are the accessed foreign attributes/methods concentrated in one or very few classes?
+- Yes. All foreign accesses are concentrated in one class: java.util.Random.
+
+4) Potential misplacement
+- The delegating methods are intentionally a wrapper/service around Random; they provide convenience API (e.g., nextInt(min,max), hex) and/or reuse a shared Random instance. They do not appear misplaced in the sense of being complex algorithms that should belong to Random.
+- nextLong(long n) could arguably be implemented as a Random utility, but RandomService is a common and appropriate place for such convenience methods (it encapsulates the Random instance and provides extra functionality). hex generation is clearly logic that belongs to this service, not to Random.
+
+5) Summary judgment
+- This file shows many methods that call methods on a Random instance, but those calls are simple delegations or use Random as a data source for locally implemented logic. The foreign calls are all to a single class (java.util.Random) and are consistent with an intentional wrapper/service pattern rather than a method being misplaced.
+- Therefore, I do not find evidence of Feature Envy in the sense of methods being more interested in another class's data than their own in a problematic way.
+
+NO, I did not find Feature Envy."
+RuleContainer.java,
+LocalCacheListener.java,
+TransactionMQProducer.java,
+PlainPermissionManager.java,
+JSONTokener.java,
+AndroidMusic.java,
+WriteWorkbookHolder.java,
+DefaultDateTypeAdapter.java,
+AckSchedulerKey.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- Constructor AckSchedulerKey(Type type, UUID sessionId, long index) calls super(type, sessionId) — invokes the parent (SchedulerKey) constructor.
+- hashCode() calls super.hashCode().
+- equals(Object obj) calls super.equals(obj), uses getClass() (from Object), casts obj to AckSchedulerKey and compares its index.
+None of these methods access many attributes or methods of some other domain class; they only call parent-class (SchedulerKey/Object) methods and operate on this class's own field (index).
+
+2) More Interest in Foreign Data:
+- No. The methods primarily use this class's own data (the index field) and only delegate to the parent implementation where appropriate. They do not use more data or methods from another class than from their own class.
+
+3) Few Foreign Classes:
+- The only ""foreign"" class interactions are with the superclass (SchedulerKey) and Object methods (getClass). These are few and expected for equality/hashCode implementations, not a spread across many classes.
+
+4) Potential Misplacement:
+- No. equals and hashCode are appropriately implemented in this subclass because they must include the subclass-specific field (index). The constructor must call the superclass constructor. There is no indication these methods belong in another class.
+
+5) Summary Judgment:
+Based on the above, this file does not show methods that are more interested in other classes' data than their own. The interactions with the superclass are normal and limited.
+
+NO, I did not find Feature Envy"
+TableView.java,
+HttpClientDownloader.java,
+CN_QuantifierSegmenter.java,
+CompareObjectsSettings.java,
+InlineSizeHistoVisitable.java,"1. Methods Accessing Foreign Data:
+- processParseTag(Tag parseTag, IParseDictionary parseDictionary)
+  - Heavily accesses Tag instances (child, klassTag): child.getName(), child.getAttributes(), child.getChildren(), klassTag.getAttributes().get(ATTR_NAME).
+  - Uses the attributes Map returned from Tag.getAttributes(): attrs.get(ATTR_NAME), attrs.get(ATTR_HOLDER), attrs.get(ATTR_BYTES), attrs.get(ATTR_NAME) for phase.
+  - Uses IParseDictionary: parseDictionary.getKlass(holder).
+  - Also calls logger.warn(...) (SLF4J) and uses histo.addValue(...) and inlinedCounted (own fields) but the bulk of logic is reading Tag and parseDictionary data.
+- visit(IMetaMember metaMember)
+  - Accesses IMetaMember: metaMember.isCompiled(), metaMember.getCompilations().
+  - Passes Compilation objects to CompilationUtil.visitParseTagsOfCompilation(compilation, this).
+- visitTag(Tag parseTag, IParseDictionary parseDictionary)
+  - Simply delegates to processParseTag(parseTag, parseDictionary) (so it indirectly accesses the same Tag/IParseDictionary details).
+
+2. More Interest in Foreign Data:
+- processParseTag: Yes. The method primarily reads data from Tag objects and the attribute Map (many gets and branching on tag names) and asks the IParseDictionary for klass Tag. Its decision logic and core work are driven by foreign objects' attributes; use of its own state is limited to updating inlinedCounted and histo.
+- visit(IMetaMember): Partially. It mainly queries the IMetaMember for compilation records and delegates further processing elsewhere; it uses little of its own state.
+
+3. Few Foreign Classes:
+- Yes. The foreign accesses are concentrated mainly in two types: Tag (and the Map returned by Tag.getAttributes()) and IParseDictionary. visit also uses IMetaMember. The accesses are not spread across many unrelated classes.
+
+4. Potential Misplacement:
+- processParseTag appears to be doing Tag/IParseDictionary-centric parsing logic (reading tag names, attributes, nested parse/phase tags and recursion). That logic could plausibly belong to a parser/visitor associated with Tag or the parse-dictionary layer (or a dedicated parser helper) rather than this histogram visitable class. So it looks like it could be more appropriate in a class closer to Tag/IParseDictionary (e.g., a Tag parser or a parse-dictionary utility).
+- visit(IMetaMember) is a thin driver that delegates to CompilationUtil; it seems reasonable here but could be considered part of a larger visitor pattern — less clear-cut.
+
+5. Summary Judgment:
+- Yes. The file contains at least one method (processParseTag) that shows strong signs of Feature Envy: it is much more concerned with the internal structure and attributes of Tag and IParseDictionary than with InlineSizeHistoVisitable's own state (aside from recording results). The foreign accesses are concentrated in Tag/IParseDictionary, and the parsing logic could be better placed nearer Tag or a parse-related helper.
+
+Final statement:
+YES, I found Feature Envy"
+CodahaleHealthChecker.java,
+ClassicPluginStrategy.java,
+ClientHead.java,
+Closer.java,
+Tokeniser.java,
+HazelcastPubSubStore.java,
+ContentType.java,
+ResultLoaderMap.java,
+HikariConfig.java,
+Configuration.java,
+VCardResultParser.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data:
+- parse(Result result)
+  - Calls getMassagedText(result) (inherited from ResultParser), uses the Result parameter.
+  - Constructs and returns an AddressBookParsedResult (calls its constructor).
+  - Calls URI.create(...).getSchemeSpecificPart() (java.net.URI).
+  - Calls many helper methods in this class (matchVCardPrefixedField, matchSingleVCardPrefixedField, toPrimaryValues, toTypes, toPrimaryValue, isLikeVCardDate, formatNames).
+- matchVCardPrefixedField(...)
+  - Uses java.util.regex.Pattern/Matcher heavily, works on the rawText String.
+  - May call URI.create(...).getSchemeSpecificPart().
+  - Manipulates java.util.List and java.util.ArrayList.
+- decodeQuotedPrintable(...)
+  - Uses java.io.ByteArrayOutputStream, appends to StringBuilder, calls parseHexDigit (a local method), maybeAppendFragment (local).
+- maybeAppendFragment(...)
+  - Uses ByteArrayOutputStream, StandardCharsets and may catch UnsupportedEncodingException.
+- toPrimaryValues(...), toTypes(...), toPrimaryValue(...)
+  - Work on Lists (List<List<String>>) and Collections, call list.get(...) and list.size().
+- formatNames(...) and maybeAppendComponent(...)
+  - Operate on Lists, String, StringBuilder.
+
+Summary: the file mostly calls standard library classes (String, Pattern/Matcher, URI, collections, ByteArrayOutputStream) and constructs AddressBookParsedResult; there is one call into the superclass (getMassagedText).
+
+2) Do these methods use more data/methods from another class than from their own class?
+No. The methods primarily operate on local data (rawText, local Lists, Strings) and on other helper methods defined in this same class. Calls to external classes are library/API calls (regex, URI, collections, streams), not heavy, repeated accesses to a single foreign domain object’s internal data or many getters of a particular other domain class. The parse method does use Result once (via getMassagedText) and then uses local parsing; it does not repeatedly access Result internals.
+
+3) Are the accessed foreign attributes or methods concentrated in one or very few other classes?
+No. The external interactions are spread across common library classes (Pattern/Matcher, String/URI, collections, IO/encoding). There is no concentration of many accesses into a single foreign domain class (e.g., repeatedly calling many getters on some other custom class).
+
+4) Potential misplacement:
+No evidence suggests any method belongs in another domain class. The parsing logic is cohesive to VCardResultParser: it manipulates raw text, extracts fields, and returns an AddressBookParsedResult. The heavy work is string/regex parsing and internal helper methods — these belong naturally here.
+
+5) Summary judgment:
+Based on the file alone, I do not see methods that are more interested in another class’s data than their own. The code mainly manipulates strings, regex matchers, lists, and uses local helper methods. External calls are to standard library classes or to a constructor (AddressBookParsedResult) and a single inherited helper (getMassagedText). There is no pattern of one method pulling many pieces of state or many getters from another custom class that would indicate Feature Envy.
+
+NO, I did not find Feature Envy."
+InterceptorProcessor.java,
+HandleCallbackParam.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- Methods present: constructors, getLogId, setLogId, getLogDateTim, setLogDateTim, getHandleCode, setHandleCode, getHandleMsg, setHandleMsg, toString.
+- None of these methods access attributes or methods of another user-defined class. The only external types referenced are Serializable (marker interface) and java.lang.String used in toString and a String-typed field. There is no access of another class's internal state or many calls into another class.
+
+2) More Interest in Foreign Data:
+- No. All methods operate on this class's own fields (logId, logDateTim, handleCode, handleMsg). The toString method builds a String from those fields (using String concatenation), which is not evidence of interest in another class's data.
+
+3) Few Foreign Classes:
+- Not applicable — there is no concentration of accesses to any foreign class. Only standard library String use appears, which is incidental.
+
+4) Potential Misplacement:
+- No methods appear misplaced. They belong naturally to this data-holder class (getters/setters and toString).
+
+5) Summary Judgment:
+- This file contains a simple data-transfer / value object. Its methods operate on its own fields and do not show the pattern of accessing many attributes or methods of another class.
+
+NO, I did not find Feature Envy"
+SimpleWebServer.java,
+AbstractWriteHolder.java,
+TestProxies.java,
+JITDataModel.java,
+BytecodeInstruction.java,
+BatchResult.java,"1. Methods Accessing Foreign Data:
+- There are no methods in this file that access many attributes or methods of another class. The only reference to another class is the field:
+  - mappedStatement (type MappedStatement) — accessed only by the getter getMappedStatement(), which merely returns the reference and does not call methods or access internals of MappedStatement.
+- All other methods operate on this class's own fields (sql, parameterObjects, updateCounts) or on standard library types (String, List, int[]).
+
+2. More Interest in Foreign Data:
+- No. None of the methods use more data or methods from MappedStatement (or any other external class) than from BatchResult itself. Methods like addParameterObject, getParameterObjects, getUpdateCounts, setUpdateCounts, getParameterObject operate on this class's own fields.
+
+3. Few Foreign Classes:
+- Only one foreign class appears: MappedStatement. But it is not extensively used — only stored and returned. There is no concentrated access pattern to that class beyond holding a reference.
+
+4. Potential Misplacement:
+- No evidence suggests a method would be more appropriately placed in MappedStatement (or any other class). Methods do not manipulate or query the internals of MappedStatement; they manage BatchResult's own data.
+
+5. Summary Judgment:
+- Based on the code in this file, there are no methods exhibiting Feature Envy. Methods primarily use their own fields and do not repeatedly access another class's data or behavior.
+
+NO, I did not find Feature Envy"
+AbstractSendMessageProcessor.java,
+StpLogic.java,
+QueueTest.java,"1. Methods Accessing Foreign Data:
+- Almost every test method in this class accesses a lot of another class (com.badlogic.gdx.utils.Queue). Methods that notably access many attributes/methods of Queue:
+  - addFirstAndLastTest() — uses Queue.addFirst, addLast, indexOf
+  - removeLastTest() — uses addLast, size field, indexOf, removeLast
+  - removeFirstTest() — uses addLast, size field, indexOf, removeFirst
+  - resizableQueueTest() — uses Queue constructor, size field, addLast, last(), first(), removeFirst(), clear()
+  - resizableDequeTest() — uses Queue constructor, size field, addFirst, first(), last(), removeLast(), clear()
+  - getTest() — uses constructor, addLast, get(int), first(), last(), removeFirst(), size field
+  - removeTest() — uses addLast, assertValues helper, removeIndex, clear, addFirst
+  - indexOfTest() — uses addLast, indexOf, clear, addFirst
+  - iteratorTest() — uses addLast, iterator(), Iterator.next/remove, clear, addFirst
+  - iteratorRemoveEdgeCaseTest() — uses addLast, removeFirst, iterator(), Iterator.next/remove, first()
+  - toStringTest() — uses toString(), addLast
+  - hashEqualsTest() — uses addFirst, addLast, removeFirst, equals/hashCode
+  - assertEqualsAndHash(Queue<?> q1, Queue<?> q2) — calls q1/q2.equals and q1.hashCode()/q2.hashCode()
+  - assertValues(Queue<Integer> q, Integer... values) — calls q.get(i)
+- The JUnit assertion calls (assertEquals, assertTrue, fail, etc.) are also foreign method uses but are standard test utilities.
+
+2. More Interest in Foreign Data:
+- Yes. These methods use many methods/fields of Queue and virtually no state or behavior from QueueTest itself (QueueTest has no instance fields; only helper methods). So they use far more data/methods from Queue than from their own class.
+
+3. Few Foreign Classes:
+- Yes. The foreign accesses are concentrated almost entirely on a single class: com.badlogic.gdx.utils.Queue (plus standard testing utilities like JUnit Assert/Assertions and java.util.Iterator). The heavy focus is on one class (Queue).
+
+4. Potential Misplacement:
+- From a pure feature-envy metric, these methods are ""more interested"" in Queue than in QueueTest and could be considered candidates for relocation into Queue. However, semantically they are unit tests — they belong in a test class and should remain separate. So although they exhibit the pattern of accessing another class heavily, moving test logic into the production Queue class would be inappropriate.
+
+5. Summary Judgment:
+- Yes — the file contains many methods that are much more interested in another class (Queue) than in their own (they call many Queue methods and access its size field). This matches the symptom pattern of Feature Envy. That said, this is expected and appropriate here because this is a test class whose purpose is to exercise Queue.
+
+YES, I found Feature Envy — the test methods strongly favor and operate on Queue's API and data much more than on their own class, though this is acceptable here because these methods are unit tests for Queue."
+DetectionResultRowIndicatorColumn.java,
+RedissonSessionRepository.java,
+RelationshipTest.java,
+BaseSwaggerConfig.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- apiInfo(SwaggerProperties swaggerProperties)
+  - Calls many getters on SwaggerProperties: getTitle(), getDescription(), getContactName(), getContactUrl(), getContactEmail(), getVersion().
+  - Also constructs a Contact using SwaggerProperties values.
+- createRestApi()
+  - Calls swaggerProperties() (abstract, returns SwaggerProperties), then uses swaggerProperties.getApiBasePackage() and swaggerProperties.isEnableSecurity().
+  - Passes the SwaggerProperties object into apiInfo(swaggerProperties).
+- Other methods
+  - defaultAuth(), securitySchemes(), securityContexts(), getContextByPath() create and assemble springfox/security objects (AuthorizationScope, SecurityReference, ApiKey, SecurityContext, etc.). They invoke constructors and builder methods of those classes but do not repeatedly access many different attributes/getters on a single foreign domain object.
+
+2) Do these methods use more data/methods from another class than from their own?
+- Yes. BaseSwaggerConfig has no instance fields; these methods primarily consume data from a SwaggerProperties instance (apiInfo uses ~6 getters; createRestApi uses several). They do little or no use of BaseSwaggerConfig’s own state (there is none) and instead rely on the data in SwaggerProperties.
+
+3) Are the accessed foreign attributes concentrated in few classes?
+- Yes. The heavy external access is concentrated in one class: SwaggerProperties. Other external types (springfox classes like ApiKey, SecurityContext, AuthorizationScope) are used but only for constructing/configuring objects rather than repeatedly querying a single external object’s data.
+
+4) Potential misplacement
+- apiInfo(...) appears to be a prime candidate for relocation or delegation: it merely maps many SwaggerProperties fields into an ApiInfoBuilder and could reasonably be implemented as a conversion method on SwaggerProperties (e.g., swaggerProperties.toApiInfo() or a builder/helper in SwaggerProperties). That would reduce the number of getters used here.
+- createRestApi() uses SwaggerProperties to drive configuration (package base, enableSecurity) — it’s reasonable to remain in a config class, though some of the mapping (building ApiInfo) could be delegated to SwaggerProperties as above.
+
+5) Summary judgment
+- There are clear symptoms of Feature Envy: apiInfo(...) (and to a lesser extent createRestApi()) access many getters of SwaggerProperties and use more data from that class than from their own.
+- The accesses are concentrated on a single other class (SwaggerProperties), and apiInfo in particular would likely be better placed as a responsibility of SwaggerProperties or a related mapper/helper.
+
+Final answer:
+YES, I found Feature Envy
+
+Reasoning: apiInfo(...) (and createRestApi() to a lesser extent) heavily depend on many SwaggerProperties getters instead of using local state; these methods show feature-envy toward SwaggerProperties and could be refactored by moving mapping logic into SwaggerProperties or a dedicated mapper."
+MapperBuilderAssistant.java,
+BuildCommand.java,
+FrameworkField.java,
+CmsSubjectCategoryExample.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- This file mostly manipulates its own fields (orderByClause, distinct, oredCriteria, criteria) and constructs inner objects (Criteria, Criterion).
+- Some methods do call methods on java.util.List (a foreign class) such as:
+  - CmsSubjectCategoryExample(): oredCriteria = new ArrayList<>(); (constructor)
+  - or(Criteria), or(), createCriteria(), createCriteriaInternal(), clear(), getOredCriteria(): these call oredCriteria.add(...), oredCriteria.clear(), oredCriteria.size() and/or return the list.
+  - GeneratedCriteria constructor and methods use criteria.add(...), criteria.size().
+  - Criterion constructors use ""value instanceof List<?>"".
+- None of the methods make heavy use of another domain class's attributes or many different methods of some other class. The only external interactions are with standard collection classes (List/ArrayList) and inner classes defined in the same file.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- No. Methods primarily read and modify the class's own fields (oredCriteria, criteria, orderByClause, distinct) and instantiate/return inner helper objects. Calls to List methods are few and are supporting operations on the class's own collections. They do not use more of another class's data/methods than their own.
+
+3) Are accessed foreign attributes/methods concentrated in few classes?
+- Yes: the only foreign class methods used are from java.util.List / ArrayList (add, size, clear, instanceof check for List). These are concentrated in one standard library API, not spread across many different foreign domain classes.
+
+4) Potential misplacement
+- No evidence that any method would be more appropriately located in another domain class. The methods operate on this example/criteria structure and therefore belong here (they manage criteria lists and build Criterion objects). Nothing suggests a method should be moved to a different class.
+
+5) Summary judgment
+- There are no methods that show the hallmark of Feature Envy (extensive access to another class's data or behavior). The code interacts briefly with collection classes and exclusively with its own fields and inner helpers.
+
+NO, I did not find Feature Envy."
+GsonBuilder.java,
+RedissonBloomFilter.java,
+InvokeCountOperation.java,
+AbstractSentinelAspectSupport.java,
+SaTokenConfig.java,"Step 1 — Methods Accessing Foreign Data
+- getCookieDomain(): calls getCookie().getDomain() — accesses SaCookieConfig (via getCookie()).
+- setCookieDomain(String cookieDomain): calls this.getCookie().setDomain(cookieDomain) — accesses SaCookieConfig.
+- toString(): includes ""sso="" + sso and ""cookie="" + cookie which causes use of SaSsoConfig.toString() and SaCookieConfig.toString() implicitly. (This is a read/concatenate use, not deep manipulation.)
+- getSso()/setSso()/getCookie()/setCookie(): these return or set the SaSsoConfig and SaCookieConfig objects (accessing those fields), but they are simple accessors.
+
+Step 2 — More Interest in Foreign Data
+- getCookieDomain() and setCookieDomain() use only the SaCookieConfig's API (they do not access SaTokenConfig's other fields). So they use more (in fact exclusively) foreign data/methods than their own class.
+- toString() reads many of this class's own fields and only includes sso and cookie via their toString representations; it is primarily about this class's data.
+- getSso/getCookie/setSso/setCookie are ordinary accessors; they don't demonstrate stronger interest in foreign data.
+
+Step 3 — Few Foreign Classes
+- The foreign accesses are concentrated: mainly SaCookieConfig (and to a lesser extent SaSsoConfig in toString()). So the accesses are concentrated in one or very few other classes.
+
+Step 4 — Potential Misplacement
+- getCookieDomain() and setCookieDomain() are simple delegating convenience methods that operate exclusively on SaCookieConfig. Semantically they belong with cookie configuration (SaCookieConfig). Indeed the Javadoc marks them deprecated and directs callers to use getCookie().getDomain() / getCookie().setDomain() instead — indicating the responsibility has been moved to SaCookieConfig. So these methods would be more appropriately placed in SaCookieConfig (or simply removed, as they are delegations).
+
+Step 5 — Summary Judgment
+- There are a couple of small methods (getCookieDomain, setCookieDomain) that access another class's data/methods exclusively and are therefore symptoms of Feature Envy. However, these are deprecated delegators kept for compatibility; the class otherwise mostly operates on its own fields.
+
+Final conclusion:
+YES, I found Feature Envy
+
+Reasoning summary: getCookieDomain() and setCookieDomain() act as passthroughs that only use SaCookieConfig’s API (not SaTokenConfig’s own data), and the foreign accesses are concentrated in SaCookieConfig. This is a typical indicator of Feature Envy, although the methods are deprecated convenience/delegation methods (intentionally forwarding calls)."
+HelpCommand.java,
+UrlConnectionClient.java,
+AssemblyProcessor.java,
+JavaBeanDeserializer.java,
+RetrofitError.java,
+Selectable.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- This file is an interface (Selectable) containing only method signatures and no implementations. There are no method bodies in this file that access attributes or call methods on other classes.
+- The only references to other types in signatures are standard/library types (String, List, int) and a custom type Selector used as a parameter in:
+  - select(Selector selector)
+  - selectList(Selector selector)
+  These signatures only declare that a Selector is passed in; they do not show any access to that object's internals in this file.
+
+2) More Interest in Foreign Data:
+- Not applicable: because there are no implementations here, we cannot observe actual usage counts of foreign vs. own data. The signatures alone do not indicate that a method uses more data from another class than from its own.
+
+3) Few Foreign Classes:
+- The file references very few other types: java.lang.String, java.util.List, and the custom Selector type. The references are limited and concentrated (not spread across many foreign classes). But again, these are only type mentions in method signatures.
+
+4) Potential Misplacement:
+- There is no implementation to evaluate. From the interface alone, there is no evidence that any method would be better placed in another class (no method body showing heavy use of another class's data).
+
+5) Summary Judgment:
+- Based on this file alone (an interface with no method implementations), there is no observable symptom of Feature Envy. There are no methods accessing another class's attributes/methods here.
+
+NO, I did not find Feature Envy."
+CellFormulaTagHandler.java,
+ClassWriter.java,
+CompareToBuilder.java,
+DataFormatter.java,
+AccessTokenModel.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- getExpiresIn()
+  - Accesses: System.currentTimeMillis() (java.lang.System).
+  - Uses: own field expiresTime and a call to System.currentTimeMillis().
+- getRefreshExpiresIn()
+  - Accesses: System.currentTimeMillis() (java.lang.System).
+  - Uses: own field refreshExpiresTime and a call to System.currentTimeMillis().
+- toLineMap()
+  - Accesses: LinkedHashMap, Map.put (java.util.LinkedHashMap / java.util.Map) to build a map.
+  - Uses: many own fields (accessToken, refreshToken, scope, clientId, openid) and the own method getExpiresIn()/getRefreshExpiresIn().
+- toString()
+  - Accesses: none of another domain class; only own fields and inherited Object methods (via implicit super.toString() not used here).
+- Constructors
+  - Call super(), assign own fields; do not access foreign object data.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- No. All methods predominantly use this class's fields and its own methods. The only foreign interactions are:
+  - System.currentTimeMillis() (a standard library time source) used in the two expiry methods.
+  - Creating and using a Map/LinkedHashMap API in toLineMap to assemble a result.
+  These are utility/library calls, not repeated accesses of another domain object's state.
+
+3) Are the accessed foreign attributes/methods concentrated in one or few other classes?
+- The foreign calls are limited to a couple of standard library classes (java.lang.System and java.util.Map/LinkedHashMap). They are few but are standard utilities rather than another domain class whose data is heavily inspected.
+
+4) Would the methods be more appropriately placed in another class?
+- No. The methods operate chiefly on the AccessTokenModel's own fields (calculating remaining expires time, serializing fields into a map, producing a toString). They belong naturally to AccessTokenModel.
+
+5) Summary judgment
+- This file does not show methods that are more interested in other classes' data than their own. The interactions with other classes are standard library calls (time and map construction) and not repeated field/method access into another domain object. Therefore there is no evidence of Feature Envy.
+
+NO, I did not find Feature Envy"
+NiceSecurePasswordField.java,
+GeometryViewerRegistry.java,
+RestMethodInfoTest.java,
+AssertUtil.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+All methods in this file are static helpers and operate primarily on their parameters and on standard library / test classes. The methods and the external classes they call include:
+
+- assertCollectionContains(Collection<byte[]> array, byte[] expected)
+  - uses: java.util.Collection (iteration), java.util.Arrays (equals, toString), org.junit.ComparisonFailure (throws)
+
+- assertByteArrayListEquals(List<byte[]> expected, List<byte[]> actual)
+  - uses: java.util.List (size, get), org.junit.Assert.assertEquals, org.junit.Assert.assertArrayEquals
+
+- assertByteArraySetEquals(Set<byte[]> expected, Set<byte[]> actual)
+  - uses: java.util.Set, java.util.Iterator, java.util.Arrays (equals), org.junit.ComparisonFailure (throws)
+
+- assertCollectionContains(Collection all, Collection few)
+  - uses: java.util.Collection (iterator), java.util.Iterator, java.util.Objects (equals, toString), org.junit.ComparisonFailure (throws)
+
+- assertByteArrayCollectionContainsAll(Collection<byte[]> all, Collection<byte[]> few)
+  - uses: java.util.Collection, java.util.Iterator, java.util.Arrays (equals, toString), org.junit.ComparisonFailure (throws)
+
+In short: these methods call methods on the Collection/List/Set/Iterator interfaces, java.util.Arrays and java.util.Objects utilities, and JUnit assertion/ComparisonFailure.
+
+2) Do these methods use more data/methods from another class than from their own class?
+Yes, trivially: AssertUtil has no instance fields and all methods are static. Each method operates almost exclusively on its parameters and calls methods of other classes (Collections, Arrays, Objects, JUnit). Therefore they use far more foreign operations than any use of their own class state (there is none). However, this pattern is expected for a utility/assertion class.
+
+3) Are the accessed foreign attributes or methods concentrated in one or very few other classes?
+Yes. Usage is concentrated in standard library classes (java.util.Collection/List/Set/Iterator, java.util.Arrays, java.util.Objects) and JUnit's assert helpers / ComparisonFailure. The foreign calls are not spread across many domain classes—only a small set of utility/test and collection classes.
+
+4) Potential misplacement: would the method be better placed in the class whose data it most frequently accesses?
+No. The methods are generic assertion/helpers for collections and byte arrays; they operate on external data (collections/arrays) but do not manipulate any internal state of a particular domain object. They are appropriately located in a test utility class. They cannot reasonably be moved into java.util.Collection or List (standard library) and they are not clearly tied to a single domain class that would own these behaviors. Thus there is no clear better placement.
+
+5) Summary judgment
+Although each method calls many methods on other classes (collections, Arrays, Objects), this is expected for static assertion utilities that operate on parameters and do not hold state. There are no instance methods in this class that dig deeply into another domain object's internals. Therefore these methods do not show the classic Feature Envy smell (i.e., an instance method in one class overly interested in another class's internal data and thus better moved).
+
+Final answer:
+NO, I did not find Feature Envy. The methods heavily call other classes' APIs, but that is appropriate for a stateless test-utility class rather than an indication that behavior should be moved to another domain class."
+FieldAttributes.java,
+ExcelWriteFillExecutor.java,
+Throwables.java,
+BeanCopier.java,
+AndroidGraphics.java,
+ExecutorRouteBusyover.java,
+IncompleteElementException.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- The file defines only constructors in class IncompleteElementException:
+  - IncompleteElementException()
+  - IncompleteElementException(String message, Throwable cause)
+  - IncompleteElementException(String message)
+  - IncompleteElementException(Throwable cause)
+- These constructors only invoke super(...) to call BuilderException's constructors. They do not read or write fields of other objects, do not call methods on other instances, and do not access attributes of other classes beyond delegating to the superclass.
+
+2) More Interest in Foreign Data:
+- No. The constructors do not use data or methods from another class more than from their own class. They merely pass parameters to the superclass constructor, which is standard behavior for an exception subclass.
+
+3) Few Foreign Classes:
+- The only external types referenced are BuilderException (the superclass), java.lang.String and java.lang.Throwable. There is no concentrated access to one other object's data or many accesses across a few classes.
+
+4) Potential Misplacement:
+- No indication of misplacement. These constructors belong here (an exception class) and their behavior (delegating to superclass constructors) is appropriate.
+
+5) Summary Judgment:
+- There are no methods in this file that exhibit the Feature Envy smell. The class only contains simple constructors delegating to the superclass and does not preferentially access another class's data or behavior.
+
+NO, I did not find Feature Envy"
+NioClientTest.java,
+ClientHandler.java,
+DefaultJedisSocketFactory.java,
+CronExpression.java,
+PooledDataSource.java,
+EmbedServer.java,
+SentinelDubboConsumerFilter.java,
+QueryParser.java,
+HikariDataSource.java,
+Excluder.java,
+JedisClusterCommand.java,
+TestConnections.java,
+OmsReceiverInfoParam.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- This file defines a DTO class OmsReceiverInfoParam with fields and a set of getter methods (getOrderId, getReceiverName, getReceiverPhone, getReceiverPostCode, getReceiverDetailAddress, getReceiverProvince, getReceiverCity, getReceiverRegion, getStatus1, getStatus).
+- None of these methods access any attributes or methods of another class. They simply return null (placeholders) and do not call into other classes or access foreign data. The file imports io.swagger.annotations.ApiModelProperty and lombok annotations, but no method calls those APIs.
+
+2) More Interest in Foreign Data:
+- Not applicable. The methods do not use data or methods from other classes at all, nor do they even read their own fields (they return null), so they are not more interested in foreign data.
+
+3) Few Foreign Classes:
+- Not applicable. There is no concentration of accesses to foreign classes.
+
+4) Potential Misplacement:
+- Not applicable. Since the methods do not access another class's data, there is no evidence they would be better placed elsewhere.
+
+5) Summary Judgment:
+- Based on the code in this file, there are no methods that show the Feature Envy pattern (no methods accessing another class's data or methods). The presence of placeholder getters returning null is a defect, but it is not Feature Envy.
+
+NO, I did not find Feature Envy"
+ResizeController.java,
+Lifecycle.java,
+MarkdownWebServerPlugin.java,
+EsProductServiceImpl.java,
+ProjectExportWizard.java,
+SentinelApacheHttpClientConfig.java,"1. Methods Accessing Foreign Data:
+- setPrefix(String): calls AssertUtil.notNull(prefix, ...) — a static utility method. Otherwise only assigns to this.prefix.
+- setExtractor(ApacheHttpClientResourceExtractor): calls AssertUtil.notNull(extractor, ...) and assigns to this.extractor.
+- setFallback(ApacheHttpClientFallback): calls AssertUtil.notNull(fallback, ...) and assigns to this.fallback.
+- getPrefix(), getExtractor(), getFallback(): return this class's fields; they do not call other objects' methods or access their internals.
+
+No methods in this file access many attributes or methods of another class (there are only single calls to AssertUtil.notNull and field initializations at declaration using Default* classes).
+
+2. More Interest in Foreign Data:
+- No. All methods primarily read or write this class's own fields (prefix, extractor, fallback). The only foreign interaction is a single null-check call to AssertUtil in each setter. They do not use more data/methods from other classes than from their own class.
+
+3. Few Foreign Classes:
+- Foreign interactions are minimal and concentrated: mainly AssertUtil (a single static method), and the field initializers instantiate DefaultApacheHttpClientResourceExtractor and DefaultApacheHttpClientFallback. These are few and limited in use.
+
+4. Potential Misplacement:
+- No indication the methods should be moved. Setters/getters are appropriate in this configuration holder class. The small use of AssertUtil for validation does not justify relocating the methods to AssertUtil or to the extracted/fallback classes.
+
+5. Summary Judgment:
+- Based on the above, there are no methods that demonstrate Feature Envy in this file. The methods operate on their own fields and only perform simple validation via a utility.
+NO, I did not find Feature Envy"
+CachingExecutor.java,
+RedisPriorityScheduler.java,
+EnablePluginCommand.java,"1. Methods Accessing Foreign Data:
+- run()
+  - Accesses Jenkins (Jenkins.get(), jenkins.checkPermission(...), jenkins.getPluginManager(), jenkins.safeRestart()) and uses PluginManager returned from Jenkins.
+- enablePlugin(PluginManager manager, String shortName)
+  - Heavily accesses PluginManager and PluginWrapper:
+    - manager.getPlugin(shortName)
+    - plugin.isEnabled(), plugin.getShortName(), plugin.getVersion(), plugin.enable()
+  - Also calls enableDependencies(manager, plugin) (delegates to another method that also uses PluginWrapper/PluginManager).
+- enableDependencies(PluginManager manager, PluginWrapper plugin)
+  - Iterates plugin.getDependencies(), uses PluginWrapper.Dependency.shortName, manager.getPlugin(...), dependency.isEnabled(), dependency.getShortName(), dependency.getVersion(), dependency.enable(), and recursively calls enableDependencies(manager, dependency).
+- getShortDescription()
+  - Calls Messages.EnablePluginCommand_ShortDescription() (single external accessor).
+
+2. More Interest in Foreign Data:
+- run(): Uses several Jenkins APIs and PluginManager; it does use the class's own fields (pluginNames, restart) and stdout, but the operational behavior is dominated by Jenkins/PluginManager interactions (permission check, obtaining manager, restart). So it is more focused on Jenkins/PluginManager behavior than on internal state.
+- enablePlugin() and enableDependencies(): These methods almost exclusively manipulate PluginManager and PluginWrapper instances (querying, checking/enabling plugins and dependencies) and only use the command class for output (stdout) and exceptions/messages. Thus they use more data/methods from PluginManager/PluginWrapper than from their own class.
+
+3. Few Foreign Classes:
+- Yes. The foreign interactions are concentrated primarily in a small set of classes: Jenkins, PluginManager, PluginWrapper (and PluginWrapper.Dependency), plus Messages for localized strings. The usage is not spread across many unrelated classes.
+
+4. Potential Misplacement:
+- enablePlugin() and enableDependencies() encapsulate logic about enabling a plugin and enabling its dependencies; most of their work is done by calling PluginManager and manipulating PluginWrapper instances. That suggests the core enabling behavior (especially the recursive dependency enabling) might be more appropriately placed on PluginManager or PluginWrapper (for example as manager.enablePluginWithDependencies(shortName) or plugin.enableWithDependencies(manager)). The current implementation mixes core plugin-management logic with CLI concerns (stdout printing and exception messages), so extracting the logic into the plugin-management domain would reduce the command's reliance on foreign data and improve cohesion.
+- run() is orchestration logic for a CLI command (permission check, iterate pluginNames, conditional restart). Orchestration using Jenkins APIs is natural for a CLI command, so while it interacts with Jenkins, its placement in the command class is reasonable.
+
+5. Summary Judgment:
+- The file contains clear symptoms of Feature Envy in enablePlugin() and enableDependencies(): these methods rely heavily on PluginManager and PluginWrapper APIs and perform recursive dependency enabling logic that appears to belong to the plugin management domain rather than the CLI command. run() also leans on Jenkins/PluginManager APIs, but as CLI orchestration this is less clearly misplaced.
+
+Conclusion: YES, I found Feature Envy
+
+Reasoning: enablePlugin() and enableDependencies() use far more methods and data from PluginManager/PluginWrapper than from their own class, their foreign interactions are concentrated in those few classes, and the core enabling behavior would be better hosted by PluginManager/PluginWrapper (with the CLI command limited to orchestration and user I/O)."
+PoolStats.java,"1. Methods Accessing Foreign Data:
+- shouldLoad(): calls com.zaxxer.hikari.util.ClockSource.currentTime() and ClockSource.plusMillis(), and calls methods on the java.util.concurrent.atomic.AtomicLong field reloadAt (get(), compareAndSet()).
+- The constructor PoolStats(long) instantiates an AtomicLong (new AtomicLong()) — minor foreign-class access at construction time.
+- The public getters (getTotalConnections, getIdleConnections, getActiveConnections, getPendingThreads, getMaxConnections, getMinConnections) call the local shouldLoad() and the abstract update() method; they otherwise return fields of this class. They do not directly access other classes.
+- update() is abstract (no implementation in this file) so any foreign access by it cannot be evaluated here.
+
+2. More Interest in Foreign Data:
+- shouldLoad() uses mostly this class's state: reloadAt (an AtomicLong field owned by PoolStats) and timeoutMs (own field). The foreign invocations are two static utility calls to ClockSource and calls on the AtomicLong instance (which is a field of this class). Overall shouldLoad() is primarily about PoolStats' own fields and synchronization of reload timing, not primarily about another class's data.
+- The getters primarily use this class's own fields (totalConnections, idleConnections, etc.) and local helpers, not other classes.
+
+3. Few Foreign Classes:
+- The foreign interactions are concentrated in a very small set:
+  - com.zaxxer.hikari.util.ClockSource (two static methods)
+  - java.util.concurrent.atomic.AtomicLong (get/compareAndSet)
+So the external dependencies are few and focused.
+
+4. Potential Misplacement:
+- shouldLoad() manipulates PoolStats' own timing/state (reloadAt, timeoutMs) and uses ClockSource only as a time utility. It appears appropriately placed in PoolStats — it coordinates the pool's reload timing and thus belongs here.
+- The getters clearly belong to PoolStats.
+- The abstract update() could be implemented in subclasses and might reference other classes there, but that is outside this file. Nothing here suggests a method should be moved to another class.
+
+5. Summary Judgment:
+- There are foreign-class calls (ClockSource, AtomicLong) but the methods in this file predominantly operate on PoolStats' own fields and responsibilities. No method in this file shows a pattern of using many attributes or methods of another class more than its own.
+
+NO, I did not find Feature Envy."
+MinMaxPriorityQueue.java,
+MapDeserializer.java,
+ConversionException.java,"1. Methods Accessing Foreign Data:
+- The file defines three constructors in class ConversionException:
+  - ConversionException(String message)
+  - ConversionException(String message, Throwable throwable)
+  - ConversionException(Throwable throwable)
+- These constructors only invoke the superclass (java.lang.Exception) constructors via super(...). They do not access fields or call methods on any other classes besides passing parameters to the superclass constructor.
+
+2. More Interest in Foreign Data:
+- No. The constructors do not use or manipulate data from other classes beyond forwarding the provided parameters to the superclass. They do not access multiple attributes or methods of any other class.
+
+3. Few Foreign Classes:
+- The only external types referenced are java.lang.String and java.lang.Throwable/java.lang.Exception (the superclass). These references are minimal and concentrated in the standard library; there is no spread across many other classes.
+
+4. Potential Misplacement:
+- No. These constructors belong naturally to the ConversionException class (which extends Exception) and are correctly placed here to construct the exception with different argument combinations.
+
+5. Summary Judgment:
+- There are no methods in this file that show interest in another class’s data or behavior to the extent that would indicate Feature Envy. The class simply defines lightweight constructors delegating to the superclass.
+
+NO, I did not find Feature Envy"
+Profiler.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- Methods present: Profiler.beforeCall(), Profiler.afterCall(RequestInformation, long, int, T), and the getters in RequestInformation (getMethod(), getBaseUrl(), getRelativePath(), getContentLength(), getContentType()).
+- None of these methods in this file access attributes or methods of another class. The afterCall method takes a RequestInformation parameter, but this file only declares the method signature (no implementation). The RequestInformation getters access only their own private fields (i.e., not foreign data).
+
+2) More Interest in Foreign Data:
+- Not applicable. There is no implementation here that uses data or methods from another class more than from its own class. The interface method afterCall could be implemented elsewhere to use RequestInformation heavily, but that usage is not present in this file.
+
+3) Few Foreign Classes:
+- N/A for this file: there is only one other type referenced in the signature (RequestInformation, which is a nested class in the same file) and the generic type T. There is no concentration of accesses to a foreign class in this file because there are no concrete accesses.
+
+4) Potential Misplacement:
+- No evidence of a method that would be more appropriate in another class. The only data-holder class here (RequestInformation) defines its own getters; those belong in that class. The Profiler interface defines hooks that naturally accept RequestInformation — this is appropriate design, not an indicator of Feature Envy in this file.
+
+5) Summary Judgment:
+- Based on the contents of this file (interface methods and a small nested data class, with no method implementations accessing foreign data), there are no symptoms of Feature Envy present here.
+
+NO, I did not find Feature Envy."
+ParentRunnerTest.java,
+NumberTest.java,
+TextEditorUtils.java,
+PageResult.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- DEFAULT_PAGE_SIZE (static field initialization) accesses: Page.DEFAULT_PAGE_SIZE (class: cn.hutool.db.Page) — a single static constant.
+- PageResult(int page, int pageSize, int total) (constructor) accesses: PageUtil.totalPage(total, pageSize) (class: cn.hutool.core.util.PageUtil).
+- isFirst() accesses: PageUtil.getFirstPageNo() (class: cn.hutool.core.util.PageUtil).
+
+No other methods in this file call methods or access fields of other classes.
+
+2) More interest in foreign data?
+- DEFAULT_PAGE_SIZE: it only reads one static constant from Page; this is a trivial dependency and not “interest” beyond configuration.
+- The three-arg constructor: it primarily initializes and sets this object's own fields (page, pageSize, total, totalPage). It calls PageUtil.totalPage(...) once to compute a value used to set this.totalPage. The constructor uses far more of its own state than the foreign class.
+- isFirst(): it compares this.page (own field) with PageUtil.getFirstPageNo() (one static helper call). It mostly uses its own data (page) and a single helper value.
+
+So none of these methods use more data/methods from another class than from their own class.
+
+3) Few foreign classes?
+- Yes. The external access is concentrated in two utility/related classes: Page (static constant) and PageUtil (helper methods). Not spread across many unrelated classes.
+
+4) Potential misplacement?
+- No. The behavior belongs naturally to PageResult: computing and storing pagination metadata, checking first/last page state. Calling PageUtil or reading Page.DEFAULT_PAGE_SIZE are reasonable uses of utility/helper classes and don’t indicate that these methods belong on Page or PageUtil instead.
+
+5) Summary judgment
+Based on the above, there are no methods in this file that exhibit the typical Feature Envy pattern (using many members of another class while ignoring their own). External accesses are minimal and appropriate (utility/constant use), and the methods mostly operate on their own fields.
+
+NO, I did not find Feature Envy."
+HikariPool.java,
+SMSParsedResult.java,"1. Methods Accessing Foreign Data:
+- getSMSURI(): constructs a URI using this class's fields (numbers, vias, subject, body) and methods of java.lang.StringBuilder. It does not access fields of other domain classes defined in the project.
+- getDisplayResult(): calls maybeAppend(numbers, result), maybeAppend(subject, result), maybeAppend(body, result). maybeAppend is not defined in this file (it is defined in the superclass ParsedResult), so this method invokes a superclass/helper method. It also uses StringBuilder.
+- The other methods (getNumbers, getVias, getSubject, getBody, constructors) only access this class's own fields or call super(...).
+
+2. More Interest in Foreign Data:
+- No. The methods primarily read and use this class's own fields (numbers, vias, subject, body). Their calls to StringBuilder (a standard library class) or to maybeAppend (a superclass helper) are usage of utility methods, not heavy access of another object's data. There are no methods that repeatedly navigate or access many fields/methods of some other domain class.
+
+3. Few Foreign Classes:
+- The only other classes referenced are:
+  - java.lang.StringBuilder (standard library utility)
+  - ParsedResult (superclass, for maybeAppend and the constructor call)
+  - ParsedResultType (an enum used in the super(...) call)
+  These are few and are either utility or inheritance-related, not domain objects whose data is being manipulated heavily.
+
+4. Potential Misplacement:
+- No method appears misplaced. Methods operate on SMSParsedResult's own data (numbers, vias, subject, body) and appropriately generate a URI or display string from them. The use of maybeAppend (superclass helper) is appropriate for building display text and does not indicate the behavior belongs in another domain class.
+
+5. Summary Judgment:
+- Based on the file, there are no methods that show the classic Feature Envy pattern (i.e., being more interested in another class's data than their own). The methods mainly use their own fields and use helper/utility methods appropriately.
+
+NO, I did not find Feature Envy"
+AnnotationScanner.java,"1. Methods Accessing Foreign Data:
+- This file declares an interface (AnnotationScanner) with three abstract methods:
+  - Class<? extends Annotation> getScanAnnotation();
+  - void addListener(Namespace namespace, Object object, Method method, Annotation annotation);
+  - void validate(Method method, Class<?> clazz);
+- There are no method bodies in this file, so there is no actual code that accesses attributes or calls methods on other classes. Therefore there are no methods here that demonstrably access many attributes or methods of another class.
+
+2. More Interest in Foreign Data:
+- Not applicable: because no implementations are present, we cannot observe any use of foreign data versus own-class data. The signatures only show parameter types (Namespace, Method, Annotation, Class) but not how those parameters are used.
+
+3. Few Foreign Classes:
+- The method signatures reference a small set of other types (Namespace, Method, Annotation, Class, Object). If an implementation heavily used one of these (e.g., Namespace), that could indicate concentration, but the interface itself does not show any concentrated access.
+
+4. Potential Misplacement:
+- Cannot determine from this interface alone. Without implementations, we cannot judge whether any behavior would be more appropriately placed in another class.
+
+5. Summary Judgment:
+- Based on this file alone (an interface with no method bodies), there is no evidence of methods being more interested in other classes' data than their own. Implementations of this interface could potentially show Feature Envy, but that cannot be inferred from the interface declaration.
+
+NO, I did not find Feature Envy"
+easyexcel-2.2.11_ExcelDataConvertException.java,"1. Methods Accessing Foreign Data:
+- No methods in this file access many attributes or methods of another class. The class contains only constructors, getters, and setters that assign or return its own fields. While the class holds references to external types (CellData and ExcelContentProperty) via fields and constructor parameters, none of the methods call methods or access attributes on those objects — they only store or return the references.
+
+2. More Interest in Foreign Data:
+- No. The methods operate only on this class's own fields (rowIndex, columnIndex, cellData, excelContentProperty). They do not use more data/methods from another class than from their own class.
+
+3. Few Foreign Classes:
+- Not applicable in a meaningful way. The only foreign types present are CellData and ExcelContentProperty, but they are only referenced as field types and constructor parameters; there is no concentrated access into either class beyond holding a reference.
+
+4. Potential Misplacement:
+- No. The behavior is standard for an exception/data holder: storing contextual data about an error. There is no indication these methods belong in another class.
+
+5. Summary Judgment:
+- Based on the above, this file does not exhibit Feature Envy. The methods do not preferentially access or manipulate other classes' data or behavior.
+
+NO, I did not find Feature Envy"
+Connection.java,
+CameraInputController.java,
+WebLogAspect.java,
+ComparisonCriteria.java,
+CodeCacheEventWalker.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- visit(IMetaMember metaMember)
+  - Accesses IMetaMember methods:
+    - metaMember.isCompiled()
+    - metaMember.getCompilations()
+  - Accesses many Compilation methods inside the loop:
+    - compilation.isFailed()
+    - compilation.getNativeAddress()
+    - compilation.getStampTaskCompilationStart()
+    - compilation.getNativeSize()
+  - Creates and manipulates CodeCacheEvent:
+    - new CodeCacheEvent(...)
+    - event.setNativeAddress(...)
+    - event.setCompilation(...)
+  - Uses result (CodeCacheWalkerResult) to add events:
+    - result.addEvent(event)
+  - Uses logger.error(...) with compilation and address in message.
+
+Other methods:
+- reset() calls result.reset() — only interacts with its own result field.
+- getResult() returns the result field — only uses its own field.
+
+2) More interest in foreign data?
+- Yes. visit() primarily reads data from Compilation objects (several different getters) and only minimally from its own class (it uses the result field to store the produced event). The majority of the decisions and data for creating a CodeCacheEvent come from Compilation, so visit() uses more data/methods from Compilation than from CodeCacheEventWalker itself.
+
+3) Few foreign classes?
+- The foreign accesses are concentrated: the dominant foreign class is Compilation. Other types touched are IMetaMember (to obtain the compilations), CodeCacheEvent (to build the event), and CodeCacheWalkerResult (result is a field of this class). But the heavy use is focused on Compilation, not spread across many unrelated classes.
+
+4) Potential misplacement?
+- There is a reasonable case that the logic that extracts native address, stamp, native size and constructs a CodeCacheEvent is strongly tied to Compilation and therefore could be placed on Compilation (e.g., a method like compilation.toCodeCacheEvent(...) or a static factory that converts a Compilation into a CodeCacheEvent). Alternatively, extracting that conversion into a small helper/factory would reduce the number of Compilation accessors here. That said, this class is a walker whose responsibility is to traverse meta-members and collect events, so keeping traversal orchestration here is defensible. Still, the data-extraction/creation logic is a candidate for relocation.
+
+5) Summary judgment
+- The visit(IMetaMember) method exhibits the classic symptom of Feature Envy: it calls many getters on Compilation and uses that data to construct and populate a CodeCacheEvent, more so than it operates on its own class state. The foreign accesses are concentrated in one class (Compilation), and the conversion logic could reasonably be moved nearer to Compilation or into a helper/factory.
+
+Final statement:
+YES, I found Feature Envy."
+Dictionary.java,
+SmartContentSelector.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- select(String html)
+  - This method performs heavy operations on the input html and on several standard library objects. It calls many methods on:
+    - java.lang.String instances (replaceAll, split, replaceAll again via lines elements, length, contains)
+    - java.util.List / java.util.ArrayList (Arrays.asList, lines.get, lines.set, indexDistribution.add, indexDistribution.get, size)
+    - java.lang.StringBuilder (setLength, append, toString)
+  - It also uses primitive ints and booleans locally.
+- selectList(String text)
+  - Does not access any foreign data; it simply throws UnsupportedOperationException.
+
+2) Do these methods use more data/methods from another class than from their own class?
+- The class SmartContentSelector has no instance fields; all data used by select are parameters and local variables. The method's behavior is dominated by operations on the input String and on local Lists/StringBuilders. Because there is no internal object state to compare against, the method is not ""more interested"" in some other class's fields — it is naturally a stateless processor operating on the provided html. So while select calls many methods on String/List/StringBuilder, those are standard library types and are the inputs/temporaries rather than member data of another domain class.
+
+3) Are the accessed foreign attributes/methods concentrated in one or few other classes?
+- Yes. The calls are concentrated in a few standard classes: String, List/ArrayList, StringBuilder, and Arrays. They are not scattered across many different domain classes.
+
+4) Potential misplacement
+- The select method is a self-contained HTML/content extraction routine. It could alternatively be implemented in a dedicated utility or extractor class (e.g., HtmlUtils or ContentExtractor) if desired, but it is also reasonable to have it here because this class implements Selector and provides content selection behavior. There is no clear target class within this file whose instance data is repeatedly accessed indicating the method should move there.
+
+5) Summary judgment
+- This file does not show the typical Feature Envy smell. Although select invokes many methods on String and collection objects, those are the method's inputs and temporaries rather than fields of another domain object. There is no repeated heavy access to another class's internal state that suggests the method is misplaced.
+
+Conclusion statement:
+NO, I did not find Feature Envy."
+Faker.java,
+ConstructorConstructor.java,
+StatisticSlot.java,
+HttpConnection.java,
+FireBirdMetaModel.java,
+PendingEntry.java,"Step-by-step analysis:
+
+1. Methods Accessing Foreign Data:
+- This class contains only a constructor and four simple getters: getId(), getConsumerName(), getIdleTime(), getLastTimeDelivered().
+- None of these methods access attributes or call methods on other objects. They only return fields of this PendingEntry instance.
+- The class references the type StreamMessageId for the id field, but no methods in this file call methods or access internals of a StreamMessageId instance.
+
+2. More Interest in Foreign Data:
+- No: the methods do not use any data or behavior from other classes at all. They use only this class's own fields.
+
+3. Few Foreign Classes:
+- The only foreign type referenced is StreamMessageId (and standard types like String/long). There is no concentration of accesses to a single other class because there are no such accesses.
+
+4. Potential Misplacement:
+- Not applicable: since methods only expose their own fields and do not operate on another class's data, there is no indication they'd be better placed elsewhere.
+
+5. Summary Judgment:
+- Based on the above, this file does not show symptoms of Feature Envy. The methods are simple accessors of their own fields and do not preferentially manipulate or query other classes' data.
+
+NO, I did not find Feature Envy"
+Location.java,
+Evaluator.java,
+JsonAdapterAnnotationTypeAdapterFactory.java,
+DriverDataSource.java,
+AbstractMetaMember.java,
+ParentRunner.java,
+OmsPortalOrderServiceImpl.java,
+JUnitCommandLineParseResult.java,
+ClassReader.java,
+XxlJobExecutor.java,
+InPacketHandler.java,
+ConstrainableInputStream.java,
+AndroidGL20.java,
+SaJwtUtil.java,
+Code.java,
+HomeController.java,"1. Methods Accessing Foreign Data:
+- rest():
+  - Calls methods on RestTemplate: getForObject(...), postForEntity(...).
+  - Builds and uses instances of HttpHeaders, MediaType, MultiValueMap, HttpEntity, ResponseEntity (local/standard library types).
+- feign():
+  - Calls methods on StorageService: storage(COMMODITY_CODE, ORDER_COUNT).
+  - Calls methods on OrderService: order(USER_ID, COMMODITY_CODE, ORDER_COUNT).
+
+2. More Interest in Foreign Data:
+- rest(): Uses RestTemplate methods for remote calls, but also heavily uses its own class constants (USER_ID, COMMODITY_CODE, ORDER_COUNT) and constructs local request objects. It does not access many different members of RestTemplate (only a couple of call methods) nor does it reach into another object's internal state. So it does not use more data/methods from RestTemplate than from its own class in a way that indicates envy.
+- feign(): Invokes one method on storageService and one on orderService. It passes its own constants as arguments. It does not operate on many attributes or methods of those services; it simply orchestrates calls. Thus it does not use more of another class’s data/methods than its own.
+
+3. Few Foreign Classes:
+- Yes. The foreign interactions are concentrated in a small number of classes: RestTemplate, StorageService, and OrderService (plus some standard Spring types used locally). They are not spread across many unrelated classes.
+
+4. Potential Misplacement:
+- These methods act as controller endpoints that orchestrate remote/service calls and transaction boundaries. Their responsibilities (coordinating calls, composing request data, handling responses/errors) are appropriate for a controller. There is no clear indication they'd be better placed inside RestTemplate, StorageService, or OrderService implementations.
+
+5. Summary Judgment:
+- The methods call other services and library types, but they do not delve into or manipulate many attributes/methods of another single class in a way that suggests the behavior belongs to that other class. The interactions are orchestration of service calls, which is appropriate for a controller.
+
+NO, I did not find Feature Envy."
+NacosWatch.java,
+DictSegment.java,
+RocketMQMessageHandler.java,
+NacosDiscoveryProperties.java,
+HtmlTreeBuilderStateTest.java,
+QuotedStringTokenizer.java,
+CodeCacheStage.java,
+HTTPSession.java,
+ParserConfig.java,
+btActivatingCollisionAlgorithm.java,"1. Methods Accessing Foreign Data:
+- btActivatingCollisionAlgorithm(long cPtr, boolean cMemoryOwn) (public constructor)
+  - Calls CollisionJNI.btActivatingCollisionAlgorithm_SWIGUpcast(cPtr) and calls construct() (likely inherited).
+- protected btActivatingCollisionAlgorithm(final String className, long cPtr, boolean cMemoryOwn) (protected constructor)
+  - Calls CollisionJNI.btActivatingCollisionAlgorithm_SWIGUpcast(cPtr) in the super(...) call.
+- reset(long cPtr, boolean cMemoryOwn)
+  - Calls destroy(), super.reset(...), and CollisionJNI.btActivatingCollisionAlgorithm_SWIGUpcast(swigCPtr = cPtr).
+- delete()
+  - Calls CollisionJNI.delete_btActivatingCollisionAlgorithm(swigCPtr) and accesses own fields swigCPtr/swigCMemOwn; then calls super.delete().
+- finalize()
+  - Calls destroy() and super.finalize().
+- getCPtr(btActivatingCollisionAlgorithm obj)
+  - Accesses obj.swigCPtr (own-class field).
+
+Foreign class referenced by these methods: CollisionJNI (static JNI wrapper methods). They also call superclass methods (super.reset, super.delete, etc.), but those are not ""foreign"" in the sense of other domain classes.
+
+2. More Interest in Foreign Data:
+- No. The methods primarily manipulate their own native pointer fields (swigCPtr, swigCMemOwn) and call superclass lifecycle methods (destroy, super.reset/delete/finalize). The calls to CollisionJNI are small number of static native-interop operations (upcast and delete). They do not access many attributes or behaviors of another domain object — only a few JNI helper functions.
+
+3. Few Foreign Classes:
+- Yes. Foreign interactions are concentrated in a single utility/native helper class: CollisionJNI. There are no many different external domain classes being probed.
+
+4. Potential Misplacement:
+- Unlikely. This class is a SWIG-generated wrapper around a native object; using CollisionJNI to upcast and delete native pointers is the expected responsibility of the wrapper. Moving these methods into CollisionJNI would not fit object responsibilities: CollisionJNI provides native bindings, while this wrapper manages instance lifecycle and pointer state. So methods appear appropriately placed.
+
+5. Summary Judgment:
+- Based on the above, the methods do not show the pattern of accessing many attributes/methods of another domain class (they only call a few JNI helpers). The code is concentrated on its own pointer/state and superclass lifecycle, which is expected for SWIG wrappers.
+
+NO, I did not find Feature Envy"
+RedissonTransactionalBucket.java,
+HttpClientRequestContext.java,"1. Methods Accessing Foreign Data:
+- The file defines four methods: getHttpUriRequest(), setHttpUriRequest(HttpUriRequest), getHttpClientContext(), setHttpClientContext(HttpClientContext).
+- None of these methods access attributes or call methods on the HttpUriRequest or HttpClientContext objects. The getters return the local fields; the setters assign the incoming parameter to the local field. There are no calls into the foreign objects’ APIs or accesses of many attributes of any other class.
+
+2. More Interest in Foreign Data:
+- No. The methods operate solely on the class’s own fields (reading or writing them). They do not use data or methods from another class at all, so they do not use more foreign data than their own class’s data.
+
+3. Few Foreign Classes:
+- Not applicable in practice: the only other types mentioned are as parameter/field types (HttpUriRequest and HttpClientContext), but they are not inspected or used internally. Access is not concentrated on any foreign class beyond being stored.
+
+4. Potential Misplacement:
+- No indication of misplacement. This class appears to be a simple container/DTO for holding an HttpUriRequest and an HttpClientContext. The behavior (getters/setters) belongs naturally to this class.
+
+5. Summary Judgment:
+- Based on the above, there are no methods that show interest in another class’s data or behavior; this file does not exhibit Feature Envy.
+
+NO, I did not find Feature Envy"
+DefaultMQAdminExtImpl.java,
+Settings.java,"Step-by-step analysis:
+
+1) Methods accessing foreign data
+- Settings(Environment env) (constructor): calls env.showTrayIcon() once to initialize showTrayIcon.
+- static field initializers (class initialization, not instance methods): reference SystemUtils.IS_OS_WINDOWS and SystemUtils.IS_OS_MAC to pick defaults (DEFAULT_PREFERRED_VOLUME_IMPL, DEFAULT_KEYCHAIN_PROVIDER). These are uses of an external utility class during class load.
+- save(): calls saveCmd.accept(this) if saveCmd != null — a single call into a Consumer passed from elsewhere.
+No other methods in this file call methods or access attributes of other classes. The getters return local property fields; they do not access internals of other classes.
+
+2) Do these methods use more data/methods from another class than from their own?
+- Settings(Environment): uses one value from Environment, but initializes and registers many of its own fields (showTrayIcon property initialization plus adding listeners to many own properties). It accesses far more of its own state than the foreign Environment.
+- static initializers: they read a few SystemUtils boolean flags to pick default constants; this is limited and not ""many"" interactions.
+- save(): invokes a single method on the Consumer; most logic concerns this class (checking null, passing this).
+So none of these methods use more data/methods from another class than from their own class.
+
+3) Are accessed foreign attributes/methods concentrated in one or few classes?
+Yes — the small number of foreign accesses are concentrated in:
+- Environment (one call in constructor)
+- SystemUtils (a few static flag reads in static initialization)
+- Consumer (single accept call in save())
+So foreign interaction is minimal and concentrated in very few classes.
+
+4) Potential misplacement
+No. The constructor’s use of Environment to obtain a single boolean does not suggest the logic belongs in Environment. The static uses of SystemUtils are for computing sensible defaults at class-load time; they belong in Settings. The save() method delegates to a Consumer supplied to Settings (pluggable persistence) — this is appropriate here. None of these indicate a method should be moved to another class.
+
+5) Summary judgment
+This file does not contain methods that are more interested in the data of other classes than their own. The class primarily manipulates its own properties and only makes minimal, well-scoped calls to a few external utilities or collaborators.
+
+NO, I did not find Feature Envy"
+ConnectionPageShellCommands.java,
+MailUtil.java,
+HttpRequestMethodsMatcherTest.java,"Step-by-step analysis:
+
+1) Methods Accessing Foreign Data:
+- testEqualsAndHashCode():
+  - Calls matcher.getMethods() (matcher is an HttpRequestMethodsMatcher).
+  - Calls Assert.assertEquals(...).
+  - Constructs new HashSet<>(Arrays.asList(HttpMethod.GET)) — uses HttpMethod enum and Arrays/HashSet utilities.
+- testGetContent():
+  - Calls matcher.getContent().
+  - Calls Assert.assertEquals(...).
+  - Uses HttpMethod and collection utilities similarly.
+- testGetToStringInfix():
+  - Calls matcher.getToStringInfix().
+  - Calls Assert.assertEquals(...).
+
+These methods primarily call methods on the matcher (HttpRequestMethodsMatcher) instance and use a few utility/static classes (Assert, Arrays, HashSet) and the HttpMethod enum.
+
+2) More Interest in Foreign Data:
+- The test methods do interact with another class (HttpRequestMethodsMatcher) but only by calling one small set of its public methods (getMethods, getContent, getToStringInfix) and then asserting results. They do not access many attributes or a wide surface of another class. They do not use more data from other classes than from their own context in a way that suggests heavy coupling — the test class’s purpose is to exercise that other class.
+
+3) Few Foreign Classes:
+- The external interactions are concentrated in a small set of classes: HttpRequestMethodsMatcher, Assert, HttpMethod, Arrays and HashSet. So accessed foreign behavior is concentrated in a few classes rather than spread widely.
+
+4) Potential Misplacement:
+- These methods are unit tests for HttpRequestMethodsMatcher; their use of that class’s public methods is appropriate. Moving these test methods into HttpRequestMethodsMatcher itself would be incorrect (tests belong in test classes). So they do not appear to be misplaced.
+
+5) Summary Judgment:
+- The methods access other classes (notably the class under test) but only in the normal, limited way a test does (calling a few public methods and asserting expected values). There is no evidence of a method accessing many attributes/methods of another class in a way that indicates it should live in that other class.
+
+Final answer:
+NO, I did not find Feature Envy. The usage patterns are consistent with normal unit tests calling a small set of public APIs on the class under test, not with methods overly interested in another class’s internals."
+SymbolInfo.java,"1. Methods Accessing Foreign Data:
+- lookup(int dataCodewords, SymbolShapeHint shape, Dimension minSize, Dimension maxSize, boolean fail)
+  - Accesses Dimension (minSize.getWidth(), minSize.getHeight(), maxSize.getWidth(), maxSize.getHeight()).
+  - Compares to SymbolShapeHint enum values (SymbolShapeHint.FORCE_SQUARE, SymbolShapeHint.FORCE_RECTANGLE, SymbolShapeHint.FORCE_NONE).
+- lookup overloads that delegate into the above (they ultimately call the 5-arg lookup).
+- Static initializer references DataMatrixSymbolInfo144() when building PROD_SYMBOLS (instantiation of another class), but no methods of that class are called here.
+
+No other methods in this file make notable calls into other classes; most methods operate only on this class's fields and other SymbolInfo instances.
+
+2. More Interest in Foreign Data:
+- The main lookup method actually inspects many members of SymbolInfo instances (symbol.rectangular, symbol.getSymbolWidth(), symbol.getSymbolHeight(), symbol.dataCapacity) while only calling a few methods on Dimension (at most four getWidth/getHeight calls) and checking an enum value. So it uses far more data/methods from its own class (and other SymbolInfo instances) than from external classes. Therefore it does not use more foreign data than its own.
+
+3. Few Foreign Classes:
+- The external interactions are concentrated in very few classes: Dimension and SymbolShapeHint (and the one-off instantiation of DataMatrixSymbolInfo144 during initialization). So any foreign access is not spread across many classes.
+
+4. Potential Misplacement:
+- The lookup logic is about selecting an appropriate SymbolInfo based on data codewords, shape hints, and size constraints. That responsibility logically belongs to SymbolInfo (a factory/registry-style lookup). Using Dimension and the ShapeHint to filter candidate SymbolInfo objects is appropriate here. There's no strong indication the method should be moved to Dimension or SymbolShapeHint.
+
+5. Summary Judgment:
+- There are minor accesses to other classes (Dimension and the enum SymbolShapeHint), but the methods — especially lookup — primarily inspect SymbolInfo instances and fields. The access pattern does not match Feature Envy (methods being more interested in another class's data than their own).
+
+NO, I did not find Feature Envy."
+TextureAtlas.java,
+ImmutableEnumMap.java,
+CharacterReader.java,
+ArgumentTokenizer.java,
+JobLogController.java,
+Monitor.java,
+HistoryPageFilter.java,
+HandshakeData.java,"1. Methods Accessing Foreign Data:
+- No methods in this class call many methods or access many attributes of another domain class. 
+- The only method that invokes methods on other types is getSingleUrlParam(String):
+  - It uses the local field urlParams (Map<String,List<String>>) and then calls Map.get(name), List.size(), and Iterator.next() on standard Java collections. 
+- All other methods are simple getters that return fields (InetSocketAddress, HttpHeaders, Date, String, boolean, Map) without invoking methods on those returned objects.
+
+2. More Interest in Foreign Data:
+- No. getSingleUrlParam primarily operates on this object's own data (the urlParams field). Its calls into Map/List/Iterator are minimal, standard collection operations rather than heavy use of another object's behavior or state. The getters use almost exclusively the class's own fields.
+
+3. Few Foreign Classes:
+- The few external types used are standard library classes (java.util.Map, java.util.List, java.util.Iterator, java.util.Date, io.netty.handler.codec.http.HttpHeaders, java.net.InetSocketAddress). The usage is limited and not concentrated in a single other domain class — mostly basic container types.
+
+4. Potential Misplacement:
+- No evidence suggests any method should be moved to another class. The methods operate on this class's stored handshake data and are appropriately placed here.
+
+5. Summary Judgment:
+- Based on this file, there are no methods showing the typical Feature Envy pattern (methods more interested in another class's data/behavior than their own). The only non-trivial method, getSingleUrlParam, manipulates this object's urlParams field and performs simple collection operations.
+
+NO, I did not find Feature Envy"
+Vault.java,
+CommandDecoder.java,
+FxApplication.java,
+HttpHeadRequestTest.java,
+BatchExecutor.java,
+TokenQueue.java,
+DubboServiceMetadataRepository.java,
+FakeValuesService.java,
+PassphraseEntryController.java,
+LexemePath.java,
+PullAPIWrapper.java,
+ParamFlowChecker.java,
+SaTokenContextForThreadLocalStorage.java,
+AbortedTransactionException.java,"Step-by-step analysis:
+
+1. Methods Accessing Foreign Data:
+- This file defines three methods (constructors):
+  - AbortedTransactionException(String message)
+  - AbortedTransactionException(Throwable cause)
+  - AbortedTransactionException(String message, Throwable cause)
+- These constructors only call the superclass constructors (super(...)) and accept standard types (String, Throwable). They do not access attributes or call methods of other classes beyond invoking the inherited constructor.
+
+2. More Interest in Foreign Data:
+- No. The constructors do not use data or methods from any other class in a way that exceeds use of their own class. Their only interaction with another class is delegating to the superclass constructor, which is normal for constructors and not evidence of feature envy.
+
+3. Few Foreign Classes:
+- Not applicable: there is no concentrated access to a particular foreign class. Only standard parameter types (String, Throwable) and the superclass constructor are involved.
+
+4. Potential Misplacement:
+- No. The class is an exception type that correctly extends JedisDataException and its constructors are appropriately placed here. There is no indication these methods would belong in another class.
+
+5. Summary Judgment:
+- NO, I did not find Feature Envy.
+
+Reasoning: The file contains only simple constructors that delegate to the superclass; there is no extensive access to another class's data or behavior that would suggest the methods are more interested in foreign data than their own."
+HttpRequest.java,
+ProxyDatabaseMetaData.java,
+MethodCallInliner.java,
+IKArbitrator.java,
+SingleRoomBroadcastOperations.java,
+Lorem.java,
+HostAndPort.java,
+DefaultJSONParser.java,
+AutoLocker.java,"1. Methods Accessing Foreign Data
+- exceedsIdleTime(Vault vault)
+  - Accesses: vault.isUnlocked(), vault.getVaultSettings().autoLockWhenIdle().get(), vault.getVaultSettings().autoLockIdleSeconds().get(), vault.getStats().getLastActivity().plusSeconds(...). It therefore reaches into Vault and through it into VaultSettings and Stats (or whatever types those accessors return).
+- autolock(Vault vault)
+  - Accesses: vault.lock(false), vault.getDisplayName(). Catches Volume.VolumeException and LockNotCompletedException thrown by Vault operations.
+- tick()
+  - Operates on vaultList (a field of AutoLocker) but calls Vault::isUnlocked and delegates to exceedsIdleTime and autolock, so it relies on Vault methods for its filtering/action.
+
+2. More Interest in Foreign Data
+- exceedsIdleTime: Yes. Almost all operations in this method use data/methods obtained from the Vault (and its settings/stats). AutoLocker’s own state is not used in the decision beyond having the Vault reference — the method is primarily examining Vault internals.
+- autolock: Mostly uses Vault methods (lock and getDisplayName). It contains little logic of its own aside from logging and exception handling, so it is more focused on invoking Vault behavior than on AutoLocker state.
+- tick: Mixed. It uses AutoLocker’s vaultList field to iterate, but the actual logic/filtering is driven by Vault methods. So tick orchestrates rather than inspects its own data.
+
+3. Few Foreign Classes
+- Yes. The foreign accesses are concentrated: Vault is the primary target, and via Vault the code touches a small set of related classes/objects (VaultSettings, Stats / last-activity Instant). The access pattern is not spread across many unrelated classes.
+
+4. Potential Misplacement
+- exceedsIdleTime looks like candidate to be moved into Vault (or VaultSettings/Stats) as a method such as Vault.exceedsIdleTime() or Vault.shouldAutoLockNow(). That would encapsulate Vault-related knowledge and avoid AutoLocker reaching into Vault internals.
+- autolock is borderline acceptable as an AutoLocker action (it triggers the lock), but the decision whether to log display name or handle particular exceptions could arguably also be part of Vault’s API (e.g., vault.tryAutoLockAndReport()). In practice the strongest smell is in exceedsIdleTime.
+
+5. Summary Judgment
+- The file contains methods (notably exceedsIdleTime, and to a lesser extent autolock) that are more interested in the data and behavior of Vault (and Vault-related objects) than in AutoLocker’s own state. The foreign accesses are concentrated in the Vault boundary, and the logic in exceedsIdleTime would likely be better placed on Vault (or its components), indicating Feature Envy.
+
+YES, I found Feature Envy"
+ReedSolomonDecoder.java,
+ExecutionSequencer.java,
+DirectedGraphConnections.java,
+HttpServerTest.java,
+ServiceLoader.java,
+JedisSentinelPool.java,
+SimpleEchoSocket.java,"1. Methods Accessing Foreign Data:
+- onConnect(Session session)
+  - Accesses methods on Session (session.getRemote(), session.close(...)).
+  - Accesses the Remote endpoint returned by session.getRemote(), invoking sendStringByFuture(message).
+  - Uses Future<Void> returned by sendStringByFuture and calls fut.get(...).
+  - Uses TimeUnit and StatusCode (enums/classes) as arguments.
+- onClose(int statusCode, String reason)
+  - Calls System.out.printf(...) (java.lang.System).
+  - Uses closeLatch.countDown() (own field; CountDownLatch is java.util.concurrent).
+- onMessage(String msg)
+  - Calls System.out.printf(...) (java.lang.System) and this.receivedMessages.add(msg) (own field).
+- awaitClose(int duration, TimeUnit unit)
+  - Calls this.closeLatch.await(duration, unit) (own field; uses TimeUnit parameter).
+
+2. More Interest in Foreign Data:
+- onConnect: Yes — it calls multiple methods on the Session (and its Remote), and uses Future.get(...) — several foreign-method invocations — while only reading its own toSendMessages list to iterate. The method interacts with the external Session API more than with this class's own state.
+- Other methods: onClose, onMessage, awaitClose primarily operate on this class's fields (closeLatch, receivedMessages) and do only trivial calls to System or CountDownLatch. They do not show more interest in foreign data than their own.
+
+3. Few Foreign Classes:
+- The foreign interactions in onConnect are concentrated mostly on one external abstraction: org.eclipse.jetty.websocket.api.Session (and its Remote). Additional foreign types used are Future and StatusCode/TimeUnit, but the primary foreign target is Session/Remote. So the foreign accesses are concentrated in a small number of classes.
+
+4. Potential Misplacement:
+- Although onConnect invokes many methods on Session/Remote, this behavior is expected for a WebSocket handler: the method implements connection-handling logic and drives the Session (sending messages, closing). It would not be appropriate to place this method inside the external Session class (which is part of the Jetty API). So despite the multiple foreign calls, the method's responsibility appears appropriate to this socket class rather than misplaced.
+
+5. Summary Judgment:
+- There is one method (onConnect) that exhibits the typical local pattern that tools flag as Feature Envy: it calls multiple methods on a single foreign object (Session/Remote) and a Future. However, given the context (a WebSocket handler whose job is to operate the session), these calls reflect its normal responsibility rather than a misplaced method.
+
+Final verdict: NO, I did not find Feature Envy — onConnect shows concentrated foreign access, but that access is appropriate for this class's purpose (handling a Session), so it does not indicate a misplaced method."
+RestAdapter.java,
