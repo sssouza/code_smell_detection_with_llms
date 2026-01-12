@@ -1,0 +1,7 @@
+jenkins-jenkins-2.287;hudson.FilePath.reading
+jenkins-jenkins-2.287;hudson.PluginManager.hasLatestVersionNewerThanOffered
+jenkins-jenkins-2.287;hudson.ClassicPluginStrategy.startPlugin
+jenkins-jenkins-2.287;hudson.Launcher.ProcStarter.join
+jenkins-jenkins-2.287;hudson.PluginManager.hasAdoptThisPluginLabel
+jenkins-jenkins-2.287;hudson.PluginManager.doPluginsSearch
+jenkins-jenkins-2.287;hudson.PluginManager.logPluginWarnings

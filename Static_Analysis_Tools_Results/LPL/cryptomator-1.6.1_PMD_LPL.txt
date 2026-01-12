@@ -1,0 +1,4 @@
+cryptomator-1.6.1;org.cryptomator.ui.addvaultwizard.CreateNewVaultPasswordController
+cryptomator-1.6.1;org.cryptomator.ui.fxapp.FxApplication
+cryptomator-1.6.1;org.cryptomator.ui.migration.MigrationRunController
+cryptomator-1.6.1;org.cryptomator.ui.preferences.GeneralPreferencesController

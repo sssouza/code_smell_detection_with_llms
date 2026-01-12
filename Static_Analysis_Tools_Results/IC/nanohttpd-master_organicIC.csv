@@ -1,0 +1,6 @@
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.HTTPSession.parseBody;IntensiveCoupling;method
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.response.Response.send;IntensiveCoupling;method
+nanohttpd-master - Copia;org.nanohttpd.junit.fileupload.TestNanoFileUpLoad.TestServer.serve;IntensiveCoupling;method
+nanohttpd-master - Copia;org.nanohttpd.webserver.SimpleWebServer.defaultRespond;IntensiveCoupling;method
+nanohttpd-master - Copia;org.nanohttpd.protocols.websockets.WebSocket.handleWebsocketFrame;IntensiveCoupling;method
+nanohttpd-master - Copia;org.nanohttpd.protocols.websockets.WebSocketFrame.readPayload;IntensiveCoupling;method

@@ -1,0 +1,3 @@
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.HikariPool.getConnection;DispersedCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.HikariPool.checkFailFast;DispersedCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.ConnectionPoolSizeVsThreadsTest.testPoolSize;DispersedCoupling;method

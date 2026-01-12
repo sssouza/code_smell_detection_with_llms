@@ -1,0 +1,3 @@
+nanohttpd-master - Copia;HTTPSession.execute
+nanohttpd-master - Copia;NanoHTTPD.decodeParameters
+nanohttpd-master - Copia;SimpleWebServer.listDirectory

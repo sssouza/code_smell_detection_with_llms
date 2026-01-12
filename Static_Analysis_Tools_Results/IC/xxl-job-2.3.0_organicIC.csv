@@ -1,0 +1,14 @@
+xxl-job-2.3.0;com.xxl.job.admin.controller.JobGroupController.update;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.alarm.impl.EmailJobAlarm.doAlarm;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.cron.CronExpression.storeExpressionVals;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.thread.JobFailMonitorHelper.start;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.thread.JobLogReportHelper.start;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.thread.JobRegistryHelper.start;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.thread.JobScheduleHelper.start;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.trigger.XxlJobTrigger.trigger;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.core.trigger.XxlJobTrigger.processTrigger;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.service.impl.XxlJobServiceImpl.add;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.admin.service.impl.XxlJobServiceImpl.update;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.core.biz.impl.ExecutorBizImpl.run;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.core.server.EmbedServer.EmbedHttpServerHandler.process;IntensiveCoupling;method
+xxl-job-2.3.0;com.xxl.job.core.thread.JobThread.run;IntensiveCoupling;method

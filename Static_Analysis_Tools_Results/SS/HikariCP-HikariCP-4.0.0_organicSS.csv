@@ -1,0 +1,2 @@
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.HikariConfig.validate;ShotgunSurgery;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.HikariDataSource.getConnection;ShotgunSurgery;method

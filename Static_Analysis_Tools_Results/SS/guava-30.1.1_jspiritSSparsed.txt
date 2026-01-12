@@ -1,0 +1,9 @@
+guava-30.1.1;Hasher.putByte
+guava-30.1.1;Hasher.hash
+guava-30.1.1;CharMatcher.matches
+guava-30.1.1;TypeVisitor.visit
+guava-30.1.1;Ticker.read
+guava-30.1.1;Closer.rethrow
+guava-30.1.1;Closer.close
+guava-30.1.1;ToStringHelper.add
+guava-30.1.1;ToStringHelper.toString

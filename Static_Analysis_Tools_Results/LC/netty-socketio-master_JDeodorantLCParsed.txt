@@ -1,0 +1,12 @@
+netty-socketio-master;com.corundumstudio.socketio.SingleRoomBroadcastOperations
+netty-socketio-master;com.corundumstudio.socketio.handler.ClientHead
+netty-socketio-master;com.corundumstudio.socketio.SocketIOServer
+netty-socketio-master;com.corundumstudio.socketio.ack.AckManager
+netty-socketio-master;com.corundumstudio.socketio.ack.AckManager.AckEntry
+netty-socketio-master;com.corundumstudio.socketio.handler.ClientsBox
+netty-socketio-master;com.corundumstudio.socketio.namespace.NamespacesHub
+netty-socketio-master;com.corundumstudio.socketio.parser.PayloadTest
+netty-socketio-master;com.corundumstudio.socketio.handler.EncoderHandler
+netty-socketio-master;com.corundumstudio.socketio.handler.EncoderHandler.ChannelFutureList
+netty-socketio-master;com.corundumstudio.socketio.namespace.Namespace
+netty-socketio-master;com.corundumstudio.socketio.protocol.JacksonJsonSupport

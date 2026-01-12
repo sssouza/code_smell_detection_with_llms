@@ -1,0 +1,2 @@
+easyexcel-2.2.11;com.alibaba.excel.ExcelWriter.write
+easyexcel-2.2.11;com.alibaba.excel.ExcelReader.read

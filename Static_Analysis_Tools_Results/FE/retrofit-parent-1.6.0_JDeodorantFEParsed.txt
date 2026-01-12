@@ -1,0 +1,4 @@
+retrofit-parent-1.6.0;retrofit.client.UrlConnectionClient.openConnection
+retrofit-parent-1.6.0;retrofit.client.UrlConnectionClient.prepareRequest
+retrofit-parent-1.6.0;retrofit.client.UrlConnectionClient.openConnection
+retrofit-parent-1.6.0;retrofit.client.UrlConnectionClient.prepareRequest

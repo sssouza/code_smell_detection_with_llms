@@ -1,0 +1,8 @@
+zxing-zxing-3.4.1;com.google.zxing.client.result.AddressBookParsedResult
+zxing-zxing-3.4.1;com.google.zxing.client.result.CalendarParsedResult
+zxing-zxing-3.4.1;com.google.zxing.client.result.ExpandedProductParsedResult
+zxing-zxing-3.4.1;com.google.zxing.common.DefaultGridSampler
+zxing-zxing-3.4.1;com.google.zxing.common.GridSampler
+zxing-zxing-3.4.1;com.google.zxing.common.PerspectiveTransform
+zxing-zxing-3.4.1;com.google.zxing.client.result.AddressBookParsedResultTestCase
+zxing-zxing-3.4.1;com.google.zxing.client.result.CalendarParsedResultTestCase

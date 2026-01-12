@@ -1,0 +1,3 @@
+webmagic-develop;Selectable.toString
+webmagic-develop;Request.getUrl
+webmagic-develop;HtmlNode.xpath

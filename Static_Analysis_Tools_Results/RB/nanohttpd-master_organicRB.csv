@@ -1,0 +1,8 @@
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.response.ChunkedOutputStream;RefusedBequest;class
+nanohttpd-master - Copia;org.nanohttpd.junit.protocols.http.HttpServerTest.TestTempFileManager;RefusedBequest;class
+nanohttpd-master - Copia;org.nanohttpd.router.RouterNanoHTTPD.GeneralHandler;RefusedBequest;class
+nanohttpd-master - Copia;org.nanohttpd.router.RouterNanoHTTPD.StaticPageHandler;RefusedBequest;class
+nanohttpd-master - Copia;org.nanohttpd.router.RouterNanoHTTPD.Error404UriHandler;RefusedBequest;class
+nanohttpd-master - Copia;org.nanohttpd.router.RouterNanoHTTPD.IndexHandler;RefusedBequest;class
+nanohttpd-master - Copia;org.nanohttpd.router.RouterNanoHTTPD.NotImplementedHandler;RefusedBequest;class
+nanohttpd-master - Copia;org.nanohttpd.junit.router.AppNanolets.UserHandler;RefusedBequest;class

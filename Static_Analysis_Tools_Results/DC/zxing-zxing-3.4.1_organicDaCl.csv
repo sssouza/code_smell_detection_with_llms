@@ -1,0 +1,16 @@
+zxing-zxing-3.4.1;com.google.zxing.integration.android.IntentResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.aztec.encoder.AztecCode;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.Binarizer;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.client.result.AddressBookParsedResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.client.result.CalendarParsedResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.client.result.EmailAddressParsedResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.client.result.ExpandedProductParsedResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.client.result.GeoParsedResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.client.result.SMSParsedResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.client.result.VINParsedResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.common.DecoderResult;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.datamatrix.decoder.Version;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.pdf417.PDF417ResultMetadata;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.qrcode.encoder.ByteMatrix;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.qrcode.encoder.QRCode;DataClass;class
+zxing-zxing-3.4.1;com.google.zxing.common.TestResult;DataClass;class

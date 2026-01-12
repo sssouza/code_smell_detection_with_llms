@@ -1,0 +1,4 @@
+mall-1.0.2;OmsOrderReturnApplyServiceImpl.updateStatus
+mall-1.0.2;OmsPortalOrderServiceImpl.generateOrder
+mall-1.0.2;HomeServiceImpl.getHomeFlashPromotion
+mall-1.0.2;EsProductServiceImpl.convertProductRelatedInfo

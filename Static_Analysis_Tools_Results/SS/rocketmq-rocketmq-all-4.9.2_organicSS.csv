@@ -1,0 +1,14 @@
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.acl.plain.PlainAccessValidator.parse;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.client.impl.factory.MQClientInstance.shutdown;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.client.impl.MQClientAPIImpl.sendMessage;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.common.filter.FilterAPI.buildSubscriptionData;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.common.message.MessageDecoder.messageProperties2String;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.filter.parser.SelectorParser.jj_consume_token;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.filter.parser.SelectorParser.jj_scan_token;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.remoting.protocol.RemotingCommand.decodeCommandCustomHeader;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.remoting.protocol.RemotingCommand.makeCustomHeaderToNet;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.store.DefaultMessageStore.shutdown;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.store.DefaultMessageStore.findConsumeQueue;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.store.dledger.MessageStoreTestBase.createDledgerMessageStore;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.test.listener.AbstractListener.waitForMessageConsume;ShotgunSurgery;method
+rocketmq-rocketmq-all-4.9.2;org.apache.rocketmq.test.util.MQWait.waitConsumeAll;ShotgunSurgery;method

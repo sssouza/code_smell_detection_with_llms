@@ -1,0 +1,11 @@
+jedis-master/jedis-master;redis.clients.jedis.DefaultJedisClientConfig.Builder
+jedis-master/jedis-master;redis.clients.jedis.params.XAddParams
+jedis-master/jedis-master;redis.clients.jedis.tests.JedisClusterTest
+jedis-master/jedis-master;redis.clients.jedis.tests.commands.ClusterCommandsTest
+jedis-master/jedis-master;redis.clients.jedis.tests.commands.GeoCommandsTest
+jedis-master/jedis-master;redis.clients.jedis.tests.commands.ScriptingCommandsTest
+jedis-master/jedis-master;redis.clients.jedis.params.XTrimParams
+jedis-master/jedis-master;redis.clients.jedis.Connection
+jedis-master/jedis-master;redis.clients.jedis.params.RestoreParams
+jedis-master/jedis-master;redis.clients.jedis.JedisClusterInfoCache
+jedis-master/jedis-master;redis.clients.jedis.params.FailoverParams

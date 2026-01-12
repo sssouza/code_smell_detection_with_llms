@@ -1,0 +1,14 @@
+zxing-zxing-3.4.1;UPCEANReader
+zxing-zxing-3.4.1;DetectionResultRowIndicatorColumn
+zxing-zxing-3.4.1;RSS14Reader
+zxing-zxing-3.4.1;AbstractRSSReader
+zxing-zxing-3.4.1;ExpandedProductParsedResult
+zxing-zxing-3.4.1;VCardResultParser
+zxing-zxing-3.4.1;ITFReader
+zxing-zxing-3.4.1;CalendarParsedResult
+zxing-zxing-3.4.1;RSSExpandedReader
+zxing-zxing-3.4.1;AddressBookParsedResult
+zxing-zxing-3.4.1;Code93Reader
+zxing-zxing-3.4.1;Code39Reader
+zxing-zxing-3.4.1;CodaBarReader
+zxing-zxing-3.4.1;SMSParsedResult

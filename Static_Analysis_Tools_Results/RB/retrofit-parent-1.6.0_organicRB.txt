@@ -1,0 +1,4 @@
+retrofit;retrofit.converter.ConversionException;RefusedBequest
+retrofit;retrofit.ExceptionCatchingTypedInput.ExceptionCatchingInputStream;RefusedBequest
+retrofit;retrofit.Platform.Base;RefusedBequest
+retrofit;retrofit.Platform.Android;RefusedBequest

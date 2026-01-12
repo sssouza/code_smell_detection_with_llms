@@ -1,0 +1,8 @@
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.HikariPool.HikariPool;IntensiveCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.HikariPool.HouseKeeper.run;IntensiveCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.PoolBase.initializeDataSource;IntensiveCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.ConnectionRaceConditionTest.testRaceCondition;IntensiveCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.ShutdownTest.testShutdown1;IntensiveCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.ShutdownTest.testThreadedShutdown;IntensiveCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.TestConnections.testMaximumPoolLimit;IntensiveCoupling;method
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.TestSaturatedPool830.saturatedPoolTest;IntensiveCoupling;method

@@ -1,0 +1,9 @@
+easyexcel-2.2.11;com.alibaba.excel.analysis.v07.handlers.CellFormulaTagHandler;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.analysis.v07.handlers.CellTagHandler;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.analysis.v07.handlers.HyperlinkTagHandler;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.analysis.v07.handlers.MergeCellTagHandler;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.analysis.v07.handlers.RowTagHandler;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.exception.ExcelAnalysisException;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.exception.ExcelAnalysisStopException;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.exception.ExcelCommonException;RefusedBequest;class
+easyexcel-2.2.11;com.alibaba.excel.exception.ExcelGenerateException;RefusedBequest;class

@@ -1,0 +1,17 @@
+jsoup-master;Tokeniser
+jsoup-master;Document
+jsoup-master;Node
+jsoup-master;HtmlParserTest
+jsoup-master;HtmlTreeBuilder
+jsoup-master;Response
+jsoup-master;ConnectTest
+jsoup-master;Entities
+jsoup-master;Element
+jsoup-master;Safelist
+jsoup-master;SelectorTest
+jsoup-master;UrlConnectTest
+jsoup-master;StringUtil
+jsoup-master;ElementTest
+jsoup-master;Base
+jsoup-master;DataUtil
+jsoup-master;Elements

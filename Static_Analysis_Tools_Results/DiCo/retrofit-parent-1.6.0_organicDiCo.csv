@@ -1,0 +1,6 @@
+retrofit-parent-1.6.0;retrofit.RestAdapter.logAndReplaceRequest;DispersedCoupling;method
+retrofit-parent-1.6.0;retrofit.RestAdapter.logAndReplaceResponse;DispersedCoupling;method
+retrofit-parent-1.6.0;retrofit.RestAdapter.RestHandler.invokeRequest;DispersedCoupling;method
+retrofit-parent-1.6.0;retrofit.RestMethodInfo.parseParameters;DispersedCoupling;method
+retrofit-parent-1.6.0;retrofit.MockRestAdapter.MockHandler.invokeSync;DispersedCoupling;method
+retrofit-parent-1.6.0;retrofit.MockRestAdapter.MockHandler.invokeAsync;DispersedCoupling;method

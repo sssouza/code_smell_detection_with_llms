@@ -1,0 +1,12 @@
+guava-30.1.1;com.google.common.cache.LocalCache.AbstractReferenceEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.StrongEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.StrongAccessEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.StrongWriteEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.StrongAccessWriteEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.WeakEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.WeakAccessEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.WeakWriteEntry;DataClass;class
+guava-30.1.1;com.google.common.cache.LocalCache.WeakAccessWriteEntry;DataClass;class
+guava-30.1.1;com.google.common.collect.LinkedHashMultimap.ValueEntry;DataClass;class
+guava-30.1.1;com.google.common.reflect.Parameter;DataClass;class
+guava-30.1.1;com.google.common.util.concurrent.ThreadFactoryBuilder;DataClass;class

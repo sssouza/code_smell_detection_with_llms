@@ -1,0 +1,17 @@
+jsoup-master;org.jsoup.Connection.data;LongParameterList;method
+jsoup-master;org.jsoup.helper.DataUtil.load;LongParameterList;method
+jsoup-master;org.jsoup.helper.DataUtil.load;LongParameterList;method
+jsoup-master;org.jsoup.helper.DataUtil.parseInputStream;LongParameterList;method
+jsoup-master;org.jsoup.helper.HttpConnection.data;LongParameterList;method
+jsoup-master;org.jsoup.Jsoup.parse;LongParameterList;method
+jsoup-master;org.jsoup.Jsoup.parse;LongParameterList;method
+jsoup-master;org.jsoup.Jsoup.clean;LongParameterList;method
+jsoup-master;org.jsoup.Jsoup.clean;LongParameterList;method
+jsoup-master;org.jsoup.nodes.Attribute.html;LongParameterList;method
+jsoup-master;org.jsoup.nodes.Entities.escape;LongParameterList;method
+jsoup-master;org.jsoup.parser.CharacterReader.cacheString;LongParameterList;method
+jsoup-master;org.jsoup.parser.CharacterReader.rangeEquals;LongParameterList;method
+jsoup-master;org.jsoup.parser.HtmlTreeBuilder.parseFragment;LongParameterList;method
+jsoup-master;org.jsoup.parser.Parser.parseFragment;LongParameterList;method
+jsoup-master;org.jsoup.parser.TreeBuilder.parseFragment;LongParameterList;method
+jsoup-master;org.jsoup.parser.XmlTreeBuilder.parseFragment;LongParameterList;method

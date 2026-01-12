@@ -1,0 +1,10 @@
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.compilation.CompilationUtil.memberMatchesMethodID;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.core.TagProcessor.processLine;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.loader.BytecodeLoader.parseInstructions;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.assembly.AssemblyProcessor.attachAssemblyToMembers;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.assembly.AssemblyUtil.getParserForArchitecture;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.bytecode.SourceMapper.getMemberBytecodeForSourceLine;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.JITDataModel.buildAndGetMetaClass;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.MemberSignatureParts.fromBytecodeSignature;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.Tag.toString;ShotgunSurgery;method
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.util.ParseUtil.paramClassesMatch;ShotgunSurgery;method

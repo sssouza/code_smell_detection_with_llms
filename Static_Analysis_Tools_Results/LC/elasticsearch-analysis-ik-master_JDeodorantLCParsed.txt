@@ -1,0 +1,2 @@
+elasticsearch-analysis-ik-master;org.wltea.analyzer.dic.Dictionary
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.AnalyzeContext

@@ -1,0 +1,8 @@
+webmagic-develop;us.codecraft.webmagic.downloader.HttpClientDownloader.handleResponse;IntensiveCoupling;method
+webmagic-develop;us.codecraft.webmagic.Spider.run;IntensiveCoupling;method
+webmagic-develop;us.codecraft.webmagic.configurable.ConfigurablePageProcessor.process;IntensiveCoupling;method
+webmagic-develop;us.codecraft.webmagic.model.ModelPageProcessor.process;IntensiveCoupling;method
+webmagic-develop;us.codecraft.webmagic.model.PageModelExtractor.processSingle;IntensiveCoupling;method
+webmagic-develop;us.codecraft.webmagic.pipeline.MultiPagePipeline.handleObject;IntensiveCoupling;method
+webmagic-develop;us.codecraft.webmagic.samples.AlexanderMcqueenGoodsProcessor.process;IntensiveCoupling;method
+webmagic-develop;us.codecraft.webmagic.samples.scheduler.ZipCodePageProcessor.processProvince;IntensiveCoupling;method

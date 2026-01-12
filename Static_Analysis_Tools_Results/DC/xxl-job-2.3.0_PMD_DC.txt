@@ -1,0 +1,15 @@
+xxl-job-2.3.0;src.main.java.com.xxl.job.core.biz.model.HandleCallbackParam
+xxl-job-2.3.0;src.main.java.com.xxl.job.core.biz.model.LogParam
+xxl-job-2.3.0;src.main.java.com.xxl.job.core.biz.model.LogResult
+xxl-job-2.3.0;src.main.java.com.xxl.job.core.biz.model.RegistryParam
+xxl-job-2.3.0;src.main.java.com.xxl.job.core.biz.model.ReturnT
+xxl-job-2.3.0;src.main.java.com.xxl.job.core.biz.model.TriggerParam
+xxl-job-2.3.0;src.main.java.com.xxl.job.core.context.XxlJobContext
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.conf.XxlJobAdminConfig
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.model.XxlJobGroup
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.model.XxlJobLog
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.model.XxlJobLogGlue
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.model.XxlJobLogReport
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.model.XxlJobRegistry
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.model.XxlJobUser
+xxl-job-2.3.0;src.main.java.com.xxl.job.admin.core.util.LocalCacheUtil

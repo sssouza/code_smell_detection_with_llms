@@ -1,0 +1,11 @@
+jsoup-master;Tokeniser.consumeCharacterReference
+jsoup-master;Tokeniser.unescapeEntities
+jsoup-master;NodeTraversor.traverse
+jsoup-master;TokenQueue.consumeToIgnoreCase
+jsoup-master;W3CBuilder.updateNamespaces
+jsoup-master;Response.execute
+jsoup-master;Response.processResponseHeaders
+jsoup-master;QueryParser.consumeSubQuery
+jsoup-master;Element.cssSelector
+jsoup-master;Safelist.removeProtocols
+jsoup-master;EchoServlet.doIt

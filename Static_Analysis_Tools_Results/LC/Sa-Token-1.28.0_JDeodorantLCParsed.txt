@@ -1,0 +1,8 @@
+Sa-Token-1.28.0;cn.dev33.satoken.config.SaTokenConfig
+Sa-Token-1.28.0;cn.dev33.satoken.session.SaSession
+Sa-Token-1.28.0;cn.dev33.satoken.context.model.SaCookie
+Sa-Token-1.28.0;cn.dev33.satoken.config.SaSsoConfig
+Sa-Token-1.28.0;cn.dev33.satoken.sso.SaSsoTemplate
+Sa-Token-1.28.0;cn.dev33.satoken.config.SaCookieConfig
+Sa-Token-1.28.0;cn.dev33.satoken.stp.SaLoginModel
+Sa-Token-1.28.0;cn.dev33.satoken.dao.SaTokenDaoDefaultImpl

@@ -1,0 +1,7 @@
+mall-1.0.2;com.macro.mall.service.impl.PmsProductAttributeServiceImpl.delete;DispersedCoupling;method
+mall-1.0.2;com.macro.mall.service.impl.PmsProductServiceImpl.handleUpdateSkuStockList;DispersedCoupling;method
+mall-1.0.2;com.macro.mall.service.impl.SmsCouponServiceImpl.create;DispersedCoupling;method
+mall-1.0.2;com.macro.mall.service.impl.SmsCouponServiceImpl.update;DispersedCoupling;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPortalOrderServiceImpl.cancelTimeOutOrder;DispersedCoupling;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPortalOrderServiceImpl.cancelOrder;DispersedCoupling;method
+mall-1.0.2;com.macro.mall.portal.service.impl.UmsMemberCouponServiceImpl.listCart;DispersedCoupling;method

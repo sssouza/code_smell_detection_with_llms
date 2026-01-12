@@ -1,0 +1,17 @@
+gson-gson-parent-2.8.8;com.google.gson.graph.GraphAdapterBuilder.Factory.create;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.internal.$Gson$Types.resolve;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.internal.bind.MapTypeAdapterFactory.Adapter.read;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.internal.bind.MapTypeAdapterFactory.Adapter.keyToString;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.Adapter.read;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.doPeek;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextName;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextString;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextDouble;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextLong;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextInt;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextNonWhitespace;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReaderTest.assertDocument;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.metrics.BagOfPrimitivesDeserializationBenchmark.timeBagOfPrimitivesStreaming;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.metrics.BagOfPrimitivesDeserializationBenchmark.timeBagOfPrimitivesReflectionStreaming;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.metrics.CollectionsDeserializationBenchmark.timeCollectionsStreaming;IntensiveCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.metrics.CollectionsDeserializationBenchmark.timeCollectionsReflectionStreaming;IntensiveCoupling;method

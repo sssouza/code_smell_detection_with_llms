@@ -1,0 +1,2 @@
+jedis-master/jedis-master;redis.clients.jedis.Connection.connect;ShotgunSurgery;method
+jedis-master/jedis-master;redis.clients.jedis.ShardedJedis.close;ShotgunSurgery;method

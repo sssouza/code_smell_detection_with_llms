@@ -1,0 +1,5 @@
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKArbitrator.backPath
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKArbitrator.forwardPath
+elasticsearch-analysis-ik-master;org.wltea.analyzer.dic.Dictionary.loadDictFile
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKArbitrator.process
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CN_QuantifierSegmenter.processCount

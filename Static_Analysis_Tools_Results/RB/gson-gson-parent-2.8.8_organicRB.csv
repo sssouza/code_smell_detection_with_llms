@@ -1,0 +1,11 @@
+gson-gson-parent-2.8.8;com.google.gson.internal.LazilyParsedNumber;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.JsonArray;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.JsonIOException;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.JsonParseException;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.JsonPrimitive;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.JsonSyntaxException;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.stream.MalformedJsonException;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.common.TestTypes.Sub;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.functional.JsonAdapterAnnotationOnClassesTest.B;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.functional.TypeHierarchyAdapterTest.CEO;RefusedBequest;class
+gson-gson-parent-2.8.8;com.google.gson.GsonTypeAdapterTest.Concrete;RefusedBequest;class

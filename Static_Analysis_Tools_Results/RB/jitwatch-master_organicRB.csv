@@ -1,0 +1,4 @@
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.histo.InlineSizeHistoVisitable;RefusedBequest;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.toplist.InliningFailReasonTopListVisitable;RefusedBequest;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.test.TestAssemblyParserARM;RefusedBequest;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.test.TestAssemblyParserX86;RefusedBequest;class

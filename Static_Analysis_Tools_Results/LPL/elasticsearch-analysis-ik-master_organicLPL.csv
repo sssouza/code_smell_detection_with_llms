@@ -1,0 +1,11 @@
+elasticsearch-analysis-ik-master;org.elasticsearch.index.analysis.IkAnalyzerProvider.IkAnalyzerProvider;LongParameterList;method
+elasticsearch-analysis-ik-master;org.elasticsearch.index.analysis.IkAnalyzerProvider.getIkSmartAnalyzerProvider;LongParameterList;method
+elasticsearch-analysis-ik-master;org.elasticsearch.index.analysis.IkAnalyzerProvider.getIkAnalyzerProvider;LongParameterList;method
+elasticsearch-analysis-ik-master;org.elasticsearch.index.analysis.IkTokenizerFactory.IkTokenizerFactory;LongParameterList;method
+elasticsearch-analysis-ik-master;org.elasticsearch.index.analysis.IkTokenizerFactory.getIkTokenizerFactory;LongParameterList;method
+elasticsearch-analysis-ik-master;org.elasticsearch.index.analysis.IkTokenizerFactory.getIkSmartTokenizerFactory;LongParameterList;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.Lexeme.Lexeme;LongParameterList;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.dic.Dictionary.loadDictFile;LongParameterList;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.dic.DictSegment.match;LongParameterList;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.dic.DictSegment.fillSegment;LongParameterList;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.help.PrefixPluginLogger.logMessage;LongParameterList;method

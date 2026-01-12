@@ -1,0 +1,6 @@
+redisson-redisson-3.15.3;org.redisson.api.StreamMessageId.toString;ShotgunSurgery;method
+redisson-redisson-3.15.3;org.redisson.command.CommandBatchService.executeAsync;ShotgunSurgery;method
+redisson-redisson-3.15.3;org.redisson.liveobject.misc.ClassUtils.getDeclaredField;ShotgunSurgery;method
+redisson-redisson-3.15.3;org.redisson.misc.LogHelper.toString;ShotgunSurgery;method
+redisson-redisson-3.15.3;org.redisson.ClusterRunner.run;ShotgunSurgery;method
+redisson-redisson-3.15.3;org.redisson.spring.data.connection.RedissonConnection.value;ShotgunSurgery;method

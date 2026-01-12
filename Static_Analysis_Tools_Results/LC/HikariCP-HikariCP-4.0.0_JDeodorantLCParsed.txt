@@ -1,0 +1,4 @@
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.HikariConfig
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.metrics.PoolStats
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.PoolEntry
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.mocks.StubConnection

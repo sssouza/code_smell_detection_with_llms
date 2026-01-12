@@ -1,0 +1,2 @@
+HikariCP-HikariCP-4.0.0;src.main.java.com.zaxxer.hikari.metrics.PoolStats
+HikariCP-HikariCP-4.0.0;src.test.java.com.zaxxer.hikari.mocks.TestObject

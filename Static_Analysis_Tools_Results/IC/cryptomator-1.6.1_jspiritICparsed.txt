@@ -1,0 +1,3 @@
+cryptomator-1.6.1;CreateNewVaultLocationController.togglePredefinedLocation
+cryptomator-1.6.1;ResizeController.initialize
+cryptomator-1.6.1;VaultListChangeListener.onChanged

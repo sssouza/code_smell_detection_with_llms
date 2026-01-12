@@ -1,0 +1,5 @@
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CJKSegmenter.analyze;IntensiveCoupling;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CN_QuantifierSegmenter.processCount;IntensiveCoupling;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKSegmenter.next;IntensiveCoupling;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.LetterSegmenter.processEnglishLetter;IntensiveCoupling;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.dic.Dictionary.initial;IntensiveCoupling;method

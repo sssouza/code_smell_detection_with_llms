@@ -1,0 +1,5 @@
+Sa-Token-1.28.0;StpLogic
+Sa-Token-1.28.0;SaSsoHandle
+Sa-Token-1.28.0;SaFoxUtil
+Sa-Token-1.28.0;SaSession
+Sa-Token-1.28.0;SaSsoTemplate

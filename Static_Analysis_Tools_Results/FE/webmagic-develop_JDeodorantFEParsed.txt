@@ -1,0 +1,8 @@
+webmagic-develop;us.codecraft.webmagic.downloader.HttpClientGenerator.generateCookie
+webmagic-develop;us.codecraft.webmagic.downloader.HttpUriRequestConverter.convertHttpClientContext
+webmagic-develop;us.codecraft.webmagic.downloader.HttpUriRequestConverter.convertHttpClientContext
+webmagic-develop;us.codecraft.webmagic.scheduler.DuplicateRemovedScheduler.shouldReserved
+webmagic-develop;us.codecraft.webmagic.scheduler.DuplicateRemovedScheduler.noNeedToRemoveDuplicate
+webmagic-develop;us.codecraft.webmagic.downloader.HttpUriRequestConverter.convertHttpUriRequest
+webmagic-develop;us.codecraft.webmagic.downloader.HttpClientGenerator.generateClient
+webmagic-develop;us.codecraft.webmagic.selector.HtmlNode.selectElements

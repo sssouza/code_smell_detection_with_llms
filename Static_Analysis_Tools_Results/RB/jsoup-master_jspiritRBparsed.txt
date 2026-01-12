@@ -1,0 +1,11 @@
+jsoup-master;Document
+jsoup-master;LeafNode
+jsoup-master;TextNode
+jsoup-master;HtmlTreeBuilder
+jsoup-master;Request
+jsoup-master;Response
+jsoup-master;Element
+jsoup-master;Comment
+jsoup-master;XmlTreeBuilder
+jsoup-master;DocumentType
+jsoup-master;Tag

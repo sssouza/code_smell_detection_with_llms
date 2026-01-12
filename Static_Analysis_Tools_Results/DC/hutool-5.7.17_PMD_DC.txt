@@ -1,0 +1,11 @@
+hutool-5.7.17;src.main.java.cn.hutool.db.PageResult
+hutool-5.7.17;src.main.java.cn.hutool.db.ds.pooled.DbConfig
+hutool-5.7.17;src.main.java.cn.hutool.db.sql.Order
+hutool-5.7.17;src.test.java.cn.hutool.dfa.SensitiveUtilTest
+hutool-5.7.17;src.main.java.cn.hutool.extra.ssh.Connector
+hutool-5.7.17;src.main.java.cn.hutool.extra.template.TemplateConfig
+hutool-5.7.17;src.main.java.cn.hutool.extra.validation.BeanValidationResult
+hutool-5.7.17;src.main.java.cn.hutool.http.useragent.UserAgent
+hutool-5.7.17;src.main.java.cn.hutool.socket.SocketConfig
+hutool-5.7.17;src.main.java.cn.hutool.system.oshi.CpuInfo
+hutool-5.7.17;src.main.java.cn.hutool.system.oshi.CpuTicks

@@ -1,0 +1,10 @@
+jitwatch-master/jitwatch-master;TestAssemblyParserX86
+jitwatch-master/jitwatch-master;HotSpotLogParser
+jitwatch-master/jitwatch-master;BytecodeAnnotationBuilder
+jitwatch-master/jitwatch-master;SuggestionWalker
+jitwatch-master/jitwatch-master;ZingLogParser
+jitwatch-master/jitwatch-master;CompilerThreadStage
+jitwatch-master/jitwatch-master;CodeCacheLayoutStage
+jitwatch-master/jitwatch-master;ViewerAssembly
+jitwatch-master/jitwatch-master;TimeLineStage
+jitwatch-master/jitwatch-master;ViewerBytecode

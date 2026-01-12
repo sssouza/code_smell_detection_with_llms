@@ -1,0 +1,3 @@
+easyexcel-2.2.11;com.alibaba.excel.metadata.format.DataFormatter
+easyexcel-2.2.11;com.alibaba.excel.write.metadata.holder.AbstractWriteHolder
+easyexcel-2.2.11;com.alibaba.excel.write.builder.ExcelWriterTableBuilder

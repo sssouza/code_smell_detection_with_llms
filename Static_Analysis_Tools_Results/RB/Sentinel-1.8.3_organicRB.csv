@@ -1,0 +1,10 @@
+Sentinel-1.8.3;com.alibaba.csp.sentinel.benchmark.generated.SentinelEntryBenchmark_jmhType;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.benchmark.generated.SentinelEntryBenchmark_jmhType_B2;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.benchmark.generated.SentinelEntryBenchmark_jmhType_B3;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.eagleeye.EagleEyeRollingFileAppender;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.eagleeye.SyncAppender;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.slotchain.DefaultProcessorSlotChain;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.spi.SpiLoaderException;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.demo.zuul2.gateway.ZuulBootstrap.ZuulModule;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.logging.slf4j.CommandCenterLogTest;RefusedBequest;class
+Sentinel-1.8.3;com.alibaba.csp.sentinel.logging.slf4j.RecordLogTest;RefusedBequest;class

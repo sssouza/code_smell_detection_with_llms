@@ -1,0 +1,10 @@
+webmagic-develop;us.codecraft.webmagic.Site
+webmagic-develop;us.codecraft.webmagic.Page
+webmagic-develop;us.codecraft.webmagic.Spider
+webmagic-develop;us.codecraft.webmagic.downloader.HttpClientDownloader
+webmagic-develop;us.codecraft.webmagic.downloader.HttpClientGenerator
+webmagic-develop;us.codecraft.webmagic.selector.RegexSelector
+webmagic-develop;us.codecraft.webmagic.Request
+webmagic-develop;us.codecraft.webmagic.thread.CountableThreadPool
+webmagic-develop;us.codecraft.webmagic.scripts.ScriptProcessorBuilder
+webmagic-develop;us.codecraft.webmagic.downloader.selenium.WebDriverPool

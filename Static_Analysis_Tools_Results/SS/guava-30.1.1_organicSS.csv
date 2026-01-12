@@ -1,0 +1,4 @@
+guava-30.1.1;com.google.common.base.Strings.lenientFormat;ShotgunSurgery;method
+guava-30.1.1;com.google.common.reflect.TypeResolver.resolveType;ShotgunSurgery;method
+guava-30.1.1;com.google.common.reflect.TypeVisitor.visit;ShotgunSurgery;method
+guava-30.1.1;com.google.common.util.concurrent.AbstractService.notifyFailed;ShotgunSurgery;method

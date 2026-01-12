@@ -1,0 +1,9 @@
+webmagic-develop;us.codecraft.webmagic.configurable.ExtractRule;DataClass;class
+webmagic-develop;us.codecraft.webmagic.example.GithubRepo;DataClass;class
+webmagic-develop;us.codecraft.webmagic.example.GithubRepoApi;DataClass;class
+webmagic-develop;us.codecraft.webmagic.monitor.SpiderStatus;DataClass;class
+webmagic-develop;us.codecraft.webmagic.monitor.SpiderStatusMXBean;DataClass;class
+webmagic-develop;us.codecraft.webmagic.SimpleHttpClient;DataClass;class
+webmagic-develop;us.codecraft.webmagic.SimpleHttpClientTest.Weather;DataClass;class
+webmagic-develop;us.codecraft.webmagic.model.samples.GithubRepo;DataClass;class
+webmagic-develop;us.codecraft.webmagic.samples.GithubRepo;DataClass;class

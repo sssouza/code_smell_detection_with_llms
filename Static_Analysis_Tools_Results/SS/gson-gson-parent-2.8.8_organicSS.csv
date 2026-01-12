@@ -1,0 +1,13 @@
+gson-gson-parent-2.8.8;com.google.gson.internal.bind.JsonTreeReader.peek;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.internal.bind.JsonTreeWriter.put;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.internal.Excluder.excludeField;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.peek;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.doPeek;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextName;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextString;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextDouble;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextLong;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.nextInt;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.skipValue;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonReader.getPath;ShotgunSurgery;method
+gson-gson-parent-2.8.8;com.google.gson.stream.JsonWriter.beforeValue;ShotgunSurgery;method

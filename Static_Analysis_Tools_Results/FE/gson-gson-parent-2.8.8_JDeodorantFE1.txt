@@ -1,0 +1,5 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory::getTypeAdapter(com.google.gson.internal.ConstructorConstructor, com.google.gson.Gson, com.google.gson.reflect.TypeToken<?>, com.google.gson.annotations.JsonAdapter):com.google.gson.TypeAdapter<?>	com.google.gson.internal.ConstructorConstructor	0/1	
+Move Method	com.google.gson.internal.bind.MapTypeAdapterFactory::getKeyAdapter(com.google.gson.Gson, java.lang.reflect.Type):com.google.gson.TypeAdapter<?>	com.google.gson.Gson	0/1	
+Move Method	com.google.gson.Gson::fromJson(com.google.gson.stream.JsonReader, java.lang.reflect.Type):T	com.google.gson.stream.JsonReader	1/3	
+Move Method	com.google.gson.Gson::toJson(com.google.gson.JsonElement, com.google.gson.stream.JsonWriter):void	com.google.gson.stream.JsonWriter	2/6	

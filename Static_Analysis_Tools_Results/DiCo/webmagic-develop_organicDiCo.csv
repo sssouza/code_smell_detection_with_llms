@@ -1,0 +1,3 @@
+webmagic-develop;us.codecraft.webmagic.downloader.HttpUriRequestConverter.convertHttpUriRequest;DispersedCoupling;method
+webmagic-develop;us.codecraft.webmagic.Spider.onDownloadSuccess;DispersedCoupling;method
+webmagic-develop;us.codecraft.webmagic.downloader.selenium.SeleniumDownloader.download;DispersedCoupling;method

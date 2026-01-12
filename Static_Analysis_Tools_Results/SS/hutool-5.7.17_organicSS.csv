@@ -1,0 +1,3 @@
+hutool-5.7.17;cn.hutool.core.text.CharSequenceUtil.sub;ShotgunSurgery;method
+hutool-5.7.17;cn.hutool.core.util.NumberUtil.toBigDecimal;ShotgunSurgery;method
+hutool-5.7.17;cn.hutool.json.JSONTokener.next;ShotgunSurgery;method

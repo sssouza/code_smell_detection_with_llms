@@ -1,0 +1,9 @@
+jsoup-master;org.jsoup.helper.HttpConnection.Response.execute;IntensiveCoupling;method
+jsoup-master;org.jsoup.helper.HttpConnection.Response.Response;IntensiveCoupling;method
+jsoup-master;org.jsoup.helper.HttpConnection.Response.writePost;IntensiveCoupling;method
+jsoup-master;org.jsoup.nodes.Document.ensureMetaCharsetElement;IntensiveCoupling;method
+jsoup-master;org.jsoup.nodes.Element.cssSelector;IntensiveCoupling;method
+jsoup-master;org.jsoup.nodes.FormElement.formData;IntensiveCoupling;method
+jsoup-master;org.jsoup.parser.Tokeniser.consumeCharacterReference;IntensiveCoupling;method
+jsoup-master;org.jsoup.select.NodeTraversor.traverse;IntensiveCoupling;method
+jsoup-master;org.jsoup.select.QueryParser.findElements;IntensiveCoupling;method

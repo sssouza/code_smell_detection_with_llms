@@ -1,0 +1,6 @@
+java-faker-master/java-faker-master;Internet.macAddress
+java-faker-master/java-faker-master;NumberTest.testRandomDouble
+java-faker-master/java-faker-master;FakeValuesService.FakeValuesService
+java-faker-master/java-faker-master;FakeValuesService.accessor
+java-faker-master/java-faker-master;FakeValuesService.coerceArguments
+java-faker-master/java-faker-master;FakerIT.testAllMethodsThatReturnStringsActuallyReturnStrings

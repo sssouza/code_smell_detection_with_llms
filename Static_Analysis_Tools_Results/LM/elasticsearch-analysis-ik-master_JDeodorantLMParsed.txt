@@ -1,0 +1,10 @@
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CN_QuantifierSegmenter.processCount
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CJKSegmenter.analyze
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.AnalyzeContext.compound
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKArbitrator.process
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKSegmenter.next
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.QuickSortSet.addLexeme
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CN_QuantifierSegmenter.outputNumLexeme
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKArbitrator.judge
+elasticsearch-analysis-ik-master;org.wltea.analyzer.lucene.IKTokenizer.end
+elasticsearch-analysis-ik-master;org.wltea.analyzer.lucene.IKTokenizer.incrementToken

@@ -1,0 +1,5 @@
+retrofit-parent-1.6.0;retrofit.RequestBuilderTest.Helper
+retrofit-parent-1.6.0;retrofit.RestAdapter.Builder
+retrofit-parent-1.6.0;retrofit.RestAdapter
+retrofit-parent-1.6.0;retrofit.RestMethodInfo
+retrofit-parent-1.6.0;retrofit.RxSupport

@@ -1,0 +1,4 @@
+webmagic-develop;us.codecraft.webmagic.downloader.HttpClientDownloader.handleResponse;LongParameterList;method
+webmagic-develop;us.codecraft.webmagic.proxy.Proxy.Proxy;LongParameterList;method
+webmagic-develop;us.codecraft.webmagic.model.Extractor.Extractor;LongParameterList;method
+webmagic-develop;us.codecraft.webmagic.model.FieldExtractor.FieldExtractor;LongParameterList;method

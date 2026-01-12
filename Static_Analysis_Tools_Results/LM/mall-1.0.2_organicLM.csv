@@ -1,0 +1,14 @@
+mall-1.0.2;com.macro.mall.service.impl.OssServiceImpl.policy;LongMethod;method
+mall-1.0.2;com.macro.mall.service.impl.PmsProductServiceImpl.update;LongMethod;method
+mall-1.0.2;com.macro.mall.common.log.WebLogAspect.doAround;LongMethod;method
+mall-1.0.2;com.macro.mall.model.OmsOrder.toString;LongMethod;method
+mall-1.0.2;com.macro.mall.model.OmsOrderReturnApply.toString;LongMethod;method
+mall-1.0.2;com.macro.mall.model.PmsProduct.toString;LongMethod;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPortalOrderServiceImpl.generateOrder;LongMethod;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPortalOrderServiceImpl.list;LongMethod;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPromotionServiceImpl.calcCartPromotion;LongMethod;method
+mall-1.0.2;com.macro.mall.portal.service.impl.PmsPortalProductServiceImpl.detail;LongMethod;method
+mall-1.0.2;com.macro.mall.portal.service.impl.UmsMemberCouponServiceImpl.listCart;LongMethod;method
+mall-1.0.2;com.macro.mall.search.service.impl.EsProductServiceImpl.search;LongMethod;method
+mall-1.0.2;com.macro.mall.search.service.impl.EsProductServiceImpl.recommend;LongMethod;method
+mall-1.0.2;com.macro.mall.search.service.impl.EsProductServiceImpl.convertProductRelatedInfo;LongMethod;method

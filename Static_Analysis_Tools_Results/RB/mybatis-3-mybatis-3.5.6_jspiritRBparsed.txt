@@ -1,0 +1,15 @@
+mybatis-3-mybatis-3.5.6;MapWrapper
+mybatis-3-mybatis-3.5.6;XMLMapperBuilder
+mybatis-3-mybatis-3.5.6;MapperBuilderAssistant
+mybatis-3-mybatis-3.5.6;CustomCache
+mybatis-3-mybatis-3.5.6;ScriptRunnerTest
+mybatis-3-mybatis-3.5.6;XMLConfigBuilder
+mybatis-3-mybatis-3.5.6;UnknownTypeHandlerTest
+mybatis-3-mybatis-3.5.6;BeanWrapper
+mybatis-3-mybatis-3.5.6;BaseExecutorTest
+mybatis-3-mybatis-3.5.6;DynamicSqlSourceTest
+mybatis-3-mybatis-3.5.6;BaseTypeHandler
+mybatis-3-mybatis-3.5.6;XMLStatementBuilder
+mybatis-3-mybatis-3.5.6;CallableStatementHandler
+mybatis-3-mybatis-3.5.6;SqlSessionTest
+mybatis-3-mybatis-3.5.6;ResourcesTest

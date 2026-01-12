@@ -1,0 +1,12 @@
+hutool-5.7.17;cn.hutool.core.compiler.JavaSourceCompiler.compile;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.core.convert.ConverterRegistry.convert;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.core.map.MapProxy.invoke;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.core.util.XmlUtil.xmlToMap;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.db.handler.HandleHelper.handleRow;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.http.HttpRequest.form;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.http.HttpRequest.body;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.http.MultipartOutputStream.appendResource;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.http.server.HttpServerRequest.getParams;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.json.JSONObject.init;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.json.serialize.JSONWriter.writeObjValue;DispersedCoupling;method
+hutool-5.7.17;cn.hutool.poi.excel.ExcelWriter.writeRow;DispersedCoupling;method

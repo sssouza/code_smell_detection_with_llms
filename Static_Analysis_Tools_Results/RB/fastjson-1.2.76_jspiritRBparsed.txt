@@ -1,0 +1,12 @@
+fastjson-1.2.76;DeserializerGen
+fastjson-1.2.76;JavaBeanSerializer
+fastjson-1.2.76;JSONSerializer
+fastjson-1.2.76;JSONObject
+fastjson-1.2.76;AvailRoomStayDTO
+fastjson-1.2.76;Jdk8DateCodec
+fastjson-1.2.76;JSONArray
+fastjson-1.2.76;RatePlanDTO
+fastjson-1.2.76;RoomTypeDTO
+fastjson-1.2.76;JSONScanner
+fastjson-1.2.76;MapDeserializer
+fastjson-1.2.76;JSONReaderScanner

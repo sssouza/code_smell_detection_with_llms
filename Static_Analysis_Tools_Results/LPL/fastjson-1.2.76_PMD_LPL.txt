@@ -1,0 +1,4 @@
+fastjson-1.2.76;com.alibaba.fastjson.util.FieldInfo
+fastjson-1.2.76;com.alibaba.fastjson.util.FieldInfo
+fastjson-1.2.76;com.alibaba.fastjson.util.FieldInfo
+fastjson-1.2.76;com.alibaba.fastjson.util.FieldInfo

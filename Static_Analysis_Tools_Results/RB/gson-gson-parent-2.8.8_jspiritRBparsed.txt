@@ -1,0 +1,2 @@
+gson-gson-parent-2.8.8;DefaultDateTypeAdapter
+gson-gson-parent-2.8.8;JsonObject

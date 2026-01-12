@@ -1,0 +1,8 @@
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.HandshakeData
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.HandshakeData
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.SocketConfig
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.SocketConfig
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.protocol.AuthPacket
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.protocol.AuthPacket
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.protocol.Packet
+netty-socketio-master;src.main.java.com.corundumstudio.socketio.protocol.Packet

@@ -1,0 +1,6 @@
+java-faker-master/java-faker-master;com.github.javafaker.File.fileName;LongParameterList;method
+java-faker-master/java-faker-master;com.github.javafaker.Internet.image;LongParameterList;method
+java-faker-master/java-faker-master;com.github.javafaker.Internet.password;LongParameterList;method
+java-faker-master/java-faker-master;com.github.javafaker.Internet.password;LongParameterList;method
+java-faker-master/java-faker-master;com.github.javafaker.Lorem.characters;LongParameterList;method
+java-faker-master/java-faker-master;com.github.javafaker.service.FakeValuesService.resolveExpression;LongParameterList;method

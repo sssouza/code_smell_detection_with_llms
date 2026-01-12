@@ -1,0 +1,10 @@
+netty;com.corundumstudio.socketio.annotation.OnEventScanner.addListener;LongMethod
+netty;com.corundumstudio.socketio.Configuration.Configuration;LongMethod
+netty;com.corundumstudio.socketio.handler.AuthorizeHandler.authorize;LongMethod
+netty;com.corundumstudio.socketio.handler.InPacketHandler.channelRead0;LongMethod
+netty;com.corundumstudio.socketio.handler.PacketListener.onPacket;LongMethod
+netty;com.corundumstudio.socketio.protocol.PacketDecoder.parseBinary;LongMethod
+netty;com.corundumstudio.socketio.protocol.PacketEncoder.encodePacket;LongMethod
+netty;com.corundumstudio.socketio.store.pubsub.BaseStoreFactory.init;LongMethod
+netty;com.corundumstudio.socketio.transport.PollingTransport.channelRead;LongMethod
+netty;com.corundumstudio.socketio.transport.WebSocketTransport.channelRead;LongMethod

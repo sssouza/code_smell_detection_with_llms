@@ -1,0 +1,17 @@
+jedis-master/jedis-master;Connection
+jedis-master/jedis-master;BinaryClient
+jedis-master/jedis-master;MultiKeyCommands
+jedis-master/jedis-master;JedisShardInfo
+jedis-master/jedis-master;Jedis
+jedis-master/jedis-master;JedisPool
+jedis-master/jedis-master;Client
+jedis-master/jedis-master;BinaryJedisCommands
+jedis-master/jedis-master;BinaryShardedJedis
+jedis-master/jedis-master;MultiKeyCommandsPipeline
+jedis-master/jedis-master;JedisCommands
+jedis-master/jedis-master;ShardedJedis
+jedis-master/jedis-master;PipeliningTest
+jedis-master/jedis-master;JedisCluster
+jedis-master/jedis-master;JedisPubSub
+jedis-master/jedis-master;JedisClusterTest
+jedis-master/jedis-master;PipelineBase

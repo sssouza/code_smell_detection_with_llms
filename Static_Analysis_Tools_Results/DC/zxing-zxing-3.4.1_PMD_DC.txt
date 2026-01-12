@@ -1,0 +1,14 @@
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.aztec.encoder.AztecCode
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.client.result.AddressBookParsedResult
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.client.result.CalendarParsedResult
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.client.result.ExpandedProductParsedResult
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.client.result.SMSParsedResult
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.client.result.VINParsedResult
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.client.result.WifiParsedResult
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.common.DecoderResult
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.common.reedsolomon.GenericGF
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.datamatrix.decoder.Version
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.pdf417.PDF417ResultMetadata
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.pdf417.encoder.Dimensions
+zxing-zxing-3.4.1;src.main.java.com.google.zxing.qrcode.encoder.QRCode
+zxing-zxing-3.4.1;src.test.java.com.google.zxing.common.TestResult

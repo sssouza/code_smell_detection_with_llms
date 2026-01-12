@@ -1,0 +1,7 @@
+gson-gson-parent-2.8.8;com.google.gson.GsonBuilder.registerTypeAdapter
+gson-gson-parent-2.8.8;com.google.gson.GsonBuilder.addTypeAdaptersForDate
+gson-gson-parent-2.8.8;com.google.gson.Gson.getDelegateAdapter
+gson-gson-parent-2.8.8;com.google.gson.Gson.newJsonWriter
+gson-gson-parent-2.8.8;com.google.gson.GsonBuilder.registerTypeHierarchyAdapter
+gson-gson-parent-2.8.8;com.google.gson.JsonArray.add
+gson-gson-parent-2.8.8;com.google.gson.Gson.toJson

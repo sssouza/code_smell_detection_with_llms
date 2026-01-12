@@ -1,0 +1,5 @@
+retrofit-parent-1.6.0;src.main.java.retrofit.Profiler
+retrofit-parent-1.6.0;src.main.java.retrofit.client.Request
+retrofit-parent-1.6.0;src.main.java.retrofit.client.Response
+retrofit-parent-1.6.0;src.test.java.retrofit.converter.SimpleXMLConverterTest
+retrofit-parent-1.6.0;src.test.java.retrofit.converter.SimpleXMLConverterTest

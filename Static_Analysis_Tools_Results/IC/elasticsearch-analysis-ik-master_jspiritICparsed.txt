@@ -1,0 +1,4 @@
+elasticsearch-analysis-ik-master;DictSegment.match
+elasticsearch-analysis-ik-master;CJKSegmenter.analyze
+elasticsearch-analysis-ik-master;CN_QuantifierSegmenter.processCount
+elasticsearch-analysis-ik-master;IKSegmenter.next

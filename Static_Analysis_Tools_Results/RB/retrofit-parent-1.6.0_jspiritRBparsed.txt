@@ -1,0 +1,3 @@
+retrofit-parent-1.6.0;StubConnection
+retrofit-parent-1.6.0;HikariPool
+retrofit-parent-1.6.0;HikariDataSource

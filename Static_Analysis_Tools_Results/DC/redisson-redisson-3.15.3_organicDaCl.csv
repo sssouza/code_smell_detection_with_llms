@@ -1,0 +1,42 @@
+redisson-redisson-3.15.3;org.redisson.api.map.event.EntryEvent;DataClass;class
+redisson-redisson-3.15.3;org.redisson.api.queue.DequeMoveParams;DataClass;class
+redisson-redisson-3.15.3;org.redisson.api.stream.StreamAddParams;DataClass;class
+redisson-redisson-3.15.3;org.redisson.api.stream.StreamReadParams;DataClass;class
+redisson-redisson-3.15.3;org.redisson.api.StreamInfo;DataClass;class
+redisson-redisson-3.15.3;org.redisson.client.codec.BaseCodec;DataClass;class
+redisson-redisson-3.15.3;org.redisson.client.codec.BitSetCodec;DataClass;class
+redisson-redisson-3.15.3;org.redisson.client.protocol.decoder.MapScanResult;DataClass;class
+redisson-redisson-3.15.3;org.redisson.client.RedisClientConfig;DataClass;class
+redisson-redisson-3.15.3;org.redisson.codec.BaseEventCodec;DataClass;class
+redisson-redisson-3.15.3;org.redisson.config.BaseConfig;DataClass;class
+redisson-redisson-3.15.3;org.redisson.config.BaseMasterSlaveServersConfig;DataClass;class
+redisson-redisson-3.15.3;org.redisson.config.ClusterServersConfig;DataClass;class
+redisson-redisson-3.15.3;org.redisson.config.ReplicatedServersConfig;DataClass;class
+redisson-redisson-3.15.3;org.redisson.config.SentinelServersConfig;DataClass;class
+redisson-redisson-3.15.3;org.redisson.config.SingleServerConfig;DataClass;class
+redisson-redisson-3.15.3;org.redisson.executor.params.ScheduledAtFixedRateParameters;DataClass;class
+redisson-redisson-3.15.3;org.redisson.executor.params.ScheduledCronExpressionParameters;DataClass;class
+redisson-redisson-3.15.3;org.redisson.executor.params.TaskParameters;DataClass;class
+redisson-redisson-3.15.3;org.redisson.executor.RedissonExecutorRemoteService;DataClass;class
+redisson-redisson-3.15.3;org.redisson.executor.TasksService;DataClass;class
+redisson-redisson-3.15.3;org.redisson.reactive.RedissonBatchReactive;DataClass;class
+redisson-redisson-3.15.3;org.redisson.reactive.RedissonTransactionReactive;DataClass;class
+redisson-redisson-3.15.3;org.redisson.RedissonBatch;DataClass;class
+redisson-redisson-3.15.3;org.redisson.remote.BaseRemoteService;DataClass;class
+redisson-redisson-3.15.3;org.redisson.rx.RedissonBatchRx;DataClass;class
+redisson-redisson-3.15.3;org.redisson.rx.RedissonTransactionRx;DataClass;class
+redisson-redisson-3.15.3;org.redisson.spring.session.RedissonSessionRepository.RedissonSession;DataClass;class
+redisson-redisson-3.15.3;org.redisson.codec.TestObject;DataClass;class
+redisson-redisson-3.15.3;org.redisson.codec.TestObject2;DataClass;class
+redisson-redisson-3.15.3;org.redisson.RedissonLiveObjectServiceTest.TestEnum;DataClass;class
+redisson-redisson-3.15.3;org.redisson.RedissonLiveObjectServiceTest.TestIndexed;DataClass;class
+redisson-redisson-3.15.3;org.redisson.RedissonLiveObjectServiceTest.TestClass;DataClass;class
+redisson-redisson-3.15.3;org.redisson.spring.support.SpringNamespaceTest.AutowireRedisson;DataClass;class
+redisson-redisson-3.15.3;org.redisson.hibernate.ItemReadWrite;DataClass;class
+redisson-redisson-3.15.3;org.redisson.hibernate.ItemTransactional;DataClass;class
+redisson-redisson-3.15.3;Sistemas - Git\redisson-redisson-3.15.3\redisson-redisson-3.15.3\redisson-hibernate\redisson-hibernate-5\src\test\java\org\redisson\hibernate\ItemReadWrite;DataClass;class
+redisson-redisson-3.15.3;Sistemas - Git\redisson-redisson-3.15.3\redisson-redisson-3.15.3\redisson-hibernate\redisson-hibernate-5\src\test\java\org\redisson\hibernate\ItemTransactional;DataClass;class
+redisson-redisson-3.15.3;Sistemas - Git\redisson-redisson-3.15.3\redisson-redisson-3.15.3\redisson-hibernate\redisson-hibernate-52\src\test\java\org\redisson\hibernate\ItemReadWrite;DataClass;class
+redisson-redisson-3.15.3;Sistemas - Git\redisson-redisson-3.15.3\redisson-redisson-3.15.3\redisson-hibernate\redisson-hibernate-52\src\test\java\org\redisson\hibernate\ItemTransactional;DataClass;class
+redisson-redisson-3.15.3;Sistemas - Git\redisson-redisson-3.15.3\redisson-redisson-3.15.3\redisson-hibernate\redisson-hibernate-53\src\test\java\org\redisson\hibernate\ItemReadWrite;DataClass;class
+redisson-redisson-3.15.3;Sistemas - Git\redisson-redisson-3.15.3\redisson-redisson-3.15.3\redisson-hibernate\redisson-hibernate-53\src\test\java\org\redisson\hibernate\ItemTransactional;DataClass;class

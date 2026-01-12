@@ -1,0 +1,11 @@
+java-faker-master/java-faker-master;com.github.javafaker.idnumbers.SvSEIdNumber.calculateDigits
+java-faker-master/java-faker-master;com.github.javafaker.idnumbers.EnIdNumber.getValidSsn
+java-faker-master/java-faker-master;com.github.javafaker.service.FakeValues.loadValues
+java-faker-master/java-faker-master;com.github.javafaker.service.FakeValuesService.fetchObject
+java-faker-master/java-faker-master;com.github.javafaker.Code.imei
+java-faker-master/java-faker-master;com.github.javafaker.Code.gtin13
+java-faker-master/java-faker-master;com.github.javafaker.Code.gtin8
+java-faker-master/java-faker-master;com.github.javafaker.Company.joinSampleOfEachList
+java-faker-master/java-faker-master;com.github.javafaker.Internet.userAgent
+java-faker-master/java-faker-master;com.github.javafaker.Internet.publicIpV4Address
+java-faker-master/java-faker-master;com.github.javafaker.Lorem.characters

@@ -1,0 +1,8 @@
+gson-gson-parent-2.8.8;ISO8601Utils.parse
+gson-gson-parent-2.8.8;Adapter.write
+gson-gson-parent-2.8.8;Adapter.keyToString
+gson-gson-parent-2.8.8;ConstructorConstructor.newDefaultImplementationConstructor
+gson-gson-parent-2.8.8;RuntimeTypeAdapterFactory.create
+gson-gson-parent-2.8.8;$Gson$Types.getGenericSupertype
+gson-gson-parent-2.8.8;JsonReaderTest.assertDocument
+gson-gson-parent-2.8.8;Excluder.excludeField

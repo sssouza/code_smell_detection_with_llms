@@ -1,0 +1,6 @@
+junit4-main;junit.framework.TestSuite.addTestMethod;IntensiveCoupling;method
+junit4-main;org.junit.experimental.theories.internal.AllMembersSupplier.addMultiPointMethods;IntensiveCoupling;method
+junit4-main;org.junit.experimental.theories.Theories.validateTestMethods;IntensiveCoupling;method
+junit4-main;org.junit.internal.runners.JUnit38ClassRunner.makeDescription;IntensiveCoupling;method
+junit4-main;org.junit.internal.runners.JUnit38ClassRunner.filter;IntensiveCoupling;method
+junit4-main;junit.tests.runner.ResultTest.assertSerializedCorrectly;IntensiveCoupling;method

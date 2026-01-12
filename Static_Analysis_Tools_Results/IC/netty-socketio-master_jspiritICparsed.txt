@@ -1,0 +1,6 @@
+netty-socketio-master;ScannerEngine.scan
+netty-socketio-master;InPacketHandler.channelRead0
+netty-socketio-master;PacketEncoder.encodePacket
+netty-socketio-master;PacketDecoder.decodePackets
+netty-socketio-master;PacketDecoder.parseBinary
+netty-socketio-master;PacketDecoder.parseBody

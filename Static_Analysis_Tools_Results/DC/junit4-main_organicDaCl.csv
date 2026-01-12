@@ -1,0 +1,4 @@
+junit4-main;org.junit.runner.notification.Failure;DataClass;class
+junit4-main;org.junit.runners.model.FrameworkField;DataClass;class
+junit4-main;junit.tests.runner.ResultTest.ResultWithFixedRunTime;DataClass;class
+junit4-main;org.junit.rules.TestWatcherTest;DataClass;class

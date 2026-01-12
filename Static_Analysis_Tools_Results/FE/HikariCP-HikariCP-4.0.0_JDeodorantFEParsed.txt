@@ -1,0 +1,1 @@
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.HikariDataSource.isRunning

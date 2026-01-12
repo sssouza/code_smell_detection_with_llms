@@ -1,0 +1,2 @@
+cryptomator-1.6.1;FuseVolume
+cryptomator-1.6.1;DokanyVolume

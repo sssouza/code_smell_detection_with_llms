@@ -1,0 +1,11 @@
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteBusyover;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteConsistentHash;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteFailover;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteFirst;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteLast;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteLFU;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteLRU;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteRandom;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.admin.core.route.strategy.ExecutorRouteRound;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.core.handler.impl.GlueJobHandler;RefusedBequest;class
+xxl-job-2.3.0;com.xxl.job.core.handler.impl.MethodJobHandler;RefusedBequest;class

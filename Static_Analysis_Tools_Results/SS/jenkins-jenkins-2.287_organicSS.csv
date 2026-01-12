@@ -1,0 +1,16 @@
+jenkins-jenkins-2.287;hudson.lifecycle.Lifecycle.get;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.model.AbstractItem.getUrl;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.model.UpdateCenter.verifyChecksums;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.scheduler.CronTab.ceil;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.scheduler.CronTab.floor;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.util.AtomicFileWriter.commit;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.util.ProcessTree.get;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.Util.getTimeSpanString;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.Util.rawEncode;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.Util.escape;ShotgunSurgery;method
+jenkins-jenkins-2.287;hudson.Util.createSymlink;ShotgunSurgery;method
+jenkins-jenkins-2.287;jenkins.model.Jenkins.cleanUp;ShotgunSurgery;method
+jenkins-jenkins-2.287;jenkins.model.Jenkins.checkGoodName;ShotgunSurgery;method
+jenkins-jenkins-2.287;jenkins.org.apache.commons.validator.routines.DomainValidator.unicodeToASCII;ShotgunSurgery;method
+jenkins-jenkins-2.287;org.acegisecurity.Authentication.fromSpring;ShotgunSurgery;method
+jenkins-jenkins-2.287;org.acegisecurity.AuthenticationException.fromSpring;ShotgunSurgery;method

@@ -1,0 +1,4 @@
+mall-1.0.2;GeneratedCriteria
+mall-1.0.2;GeneratedCriteria
+mall-1.0.2;GeneratedCriteria
+mall-1.0.2;OmsPortalOrderServiceImpl

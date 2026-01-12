@@ -1,0 +1,3 @@
+Sa-Token-1.28.0;cn.dev33.satoken.stp.StpLogic.login;IntensiveCoupling;method
+Sa-Token-1.28.0;cn.dev33.satoken.stp.StpLogic.logoutByTokenValue;IntensiveCoupling;method
+Sa-Token-1.28.0;cn.dev33.satoken.stp.StpLogic.getTokenSession;IntensiveCoupling;method

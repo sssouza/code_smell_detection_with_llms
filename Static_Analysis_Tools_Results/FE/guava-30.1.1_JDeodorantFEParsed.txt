@@ -1,0 +1,16 @@
+guava-30.1.1;com.google.common.math.StatsAccumulator.addAll
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIf
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIf
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIfInterruptibly
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIfInterruptibly
+guava-30.1.1;com.google.common.util.concurrent.Monitor.tryEnterIf
+guava-30.1.1;com.google.common.util.concurrent.Monitor.getWaitQueueLength
+guava-30.1.1;com.google.common.io.BaseEncoding.StandardBaseEncoding.encodeChunkTo
+guava-30.1.1;com.google.common.math.StatsAccumulator.addAll
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIf
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIf
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIfInterruptibly
+guava-30.1.1;com.google.common.util.concurrent.Monitor.enterIfInterruptibly
+guava-30.1.1;com.google.common.util.concurrent.Monitor.tryEnterIf
+guava-30.1.1;com.google.common.util.concurrent.Monitor.getWaitQueueLength
+guava-30.1.1;com.google.common.io.BaseEncoding.StandardBaseEncoding.encodeChunkTo

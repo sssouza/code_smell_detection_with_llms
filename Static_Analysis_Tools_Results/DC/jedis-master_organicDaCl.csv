@@ -1,0 +1,8 @@
+jedis-master/jedis-master;redis.clients.jedis.AccessControlLogEntry;DataClass;class
+jedis-master/jedis-master;redis.clients.jedis.DefaultJedisClientConfig;DataClass;class
+jedis-master/jedis-master;redis.clients.jedis.DefaultJedisSocketFactory;DataClass;class
+jedis-master/jedis-master;redis.clients.jedis.GeoRadiusResponse;DataClass;class
+jedis-master/jedis-master;redis.clients.jedis.StreamGroupInfo;DataClass;class
+jedis-master/jedis-master;redis.clients.jedis.StreamInfo;DataClass;class
+jedis-master/jedis-master;redis.clients.jedis.util.Slowlog;DataClass;class
+jedis-master/jedis-master;redis.clients.jedis.tests.UdsTest.UdsJedisSocketFactory;DataClass;class

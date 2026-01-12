@@ -1,0 +1,3 @@
+mall-1.0.2;com.macro.mall.common.config.BaseSwaggerConfig.apiInfo
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPortalOrderServiceImpl.getCouponOrderItemByRelation
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPromotionServiceImpl.getOriginalPrice

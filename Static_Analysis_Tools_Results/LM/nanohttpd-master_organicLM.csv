@@ -1,0 +1,14 @@
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.HTTPSession.decodeMultipartFormData;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.HTTPSession.execute;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.HTTPSession.parseBody;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.response.Response.send;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.junit.protocols.http.HttpKeepAliveTest.testManyRequests;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.junit.protocols.http.HttpServerTest.testMultipartFormData;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.junit.protocols.http.HttpServerTest.testTempFileInterface;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.junit.protocols.http.StatusTest.testLookup;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.junit.fileupload.TestNanoFileUpLoad.TestServer.serve;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.junit.router.TestNanolets.staticFiles;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.webserver.SimpleWebServer.main;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.webserver.SimpleWebServer.listDirectory;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.webserver.SimpleWebServer.defaultRespond;LongMethod;method
+nanohttpd-master - Copia;org.nanohttpd.webserver.SimpleWebServer.serveFile;LongMethod;method

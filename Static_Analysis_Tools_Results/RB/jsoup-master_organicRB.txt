@@ -1,0 +1,13 @@
+jsoup;org.jsoup.safety.Whitelist;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.AllElements;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IndexLessThan;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IndexGreaterThan;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IndexEquals;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IsLastChild;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IsFirstChild;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IsRoot;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IsOnlyChild;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IsOnlyOfType;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.IsEmpty;RefusedBequest
+jsoup;org.jsoup.select.Evaluator.MatchText;RefusedBequest
+jsoup;org.jsoup.SerializationException;RefusedBequest

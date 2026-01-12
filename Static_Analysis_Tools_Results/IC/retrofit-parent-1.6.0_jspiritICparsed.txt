@@ -1,0 +1,7 @@
+retrofit-parent-1.6.0;PoolBase.initializeDataSource
+retrofit-parent-1.6.0;JavassistProxyFactory.generateProxyClass
+retrofit-parent-1.6.0;HouseKeeper.run
+retrofit-parent-1.6.0;HikariPool.HikariPool
+retrofit-parent-1.6.0;FauxWebContext.checkThreadLocalsForLeaks
+retrofit-parent-1.6.0;HikariConfig.logConfiguration
+retrofit-parent-1.6.0;DriverDataSource.DriverDataSource

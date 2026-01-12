@@ -1,0 +1,14 @@
+retrofit;retrofit.RequestBuilder.RequestBuilder;LongMethod
+retrofit;retrofit.RequestBuilder.setArguments;LongMethod
+retrofit;retrofit.RestAdapter.RestHandler.invoke;LongMethod
+retrofit;retrofit.RestAdapter.RestHandler.invokeRequest;LongMethod
+retrofit;retrofit.RestMethodInfo.parseMethodAnnotations;LongMethod
+retrofit;retrofit.RestMethodInfo.parseResponseType;LongMethod
+retrofit;retrofit.RestMethodInfo.parseParameters;LongMethod
+retrofit;retrofit.Types.resolve;LongMethod
+retrofit;retrofit.MockRestAdapter.MockHandler.invokeSync;LongMethod
+retrofit;retrofit.MockRestAdapter.MockHandler.invokeAsync;LongMethod
+retrofit;retrofit.MockRestAdapterTest.asyncApiIsCalledWithDelay;LongMethod
+retrofit;retrofit.MockRestAdapterTest.observableApiIsCalledWithDelay;LongMethod
+retrofit;retrofit.MockRestAdapterTest.asyncHttpExceptionBecomesError;LongMethod
+retrofit;retrofit.MockRestAdapterTest.observableHttpExceptionBecomesError;LongMethod

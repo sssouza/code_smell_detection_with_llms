@@ -1,0 +1,2 @@
+webmagic;us.codecraft.webmagic.utils.DoubleKeyMap;RefusedBequest
+webmagic;us.codecraft.webmagic.model.GithubRepo;RefusedBequest

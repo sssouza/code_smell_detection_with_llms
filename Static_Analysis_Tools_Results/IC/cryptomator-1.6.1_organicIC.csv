@@ -1,0 +1,3 @@
+cryptomator-1.6.1;org.cryptomator.ui.addvaultwizard.CreateNewVaultLocationController.togglePredefinedLocation;IntensiveCoupling;method
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.ResizeController.initialize;IntensiveCoupling;method
+cryptomator-1.6.1;org.cryptomator.ui.vaultoptions.MountOptionsController.initialize;IntensiveCoupling;method

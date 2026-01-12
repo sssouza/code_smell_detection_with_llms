@@ -1,0 +1,10 @@
+cryptomator-1.6.1;org.cryptomator.common.settings.VaultSettingsJsonAdapter.write
+cryptomator-1.6.1;org.cryptomator.common.vaults.AutoLocker.exceedsIdleTime
+cryptomator-1.6.1;org.cryptomator.ui.launcher.UiLauncher.shouldAttemptAutoUnlock
+cryptomator-1.6.1;org.cryptomator.ui.health.ReportWriter.prepareFailureMsg
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.ResizeController.neverTouched
+cryptomator-1.6.1;org.cryptomator.common.vaults.AutoLocker.autolock
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.MainWindowTitleController.saveWindowSettings
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.ResizeController.savePositionalSettings
+cryptomator-1.6.1;org.cryptomator.ui.traymenu.TrayMenuController.buildSubmenu
+cryptomator-1.6.1;org.cryptomator.ui.vaultoptions.MasterkeyOptionsController.isPasswordSaved

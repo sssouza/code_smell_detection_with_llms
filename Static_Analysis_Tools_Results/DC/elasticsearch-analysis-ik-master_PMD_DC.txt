@@ -1,0 +1,2 @@
+elasticsearch-analysis-ik-master;src.main.java.org.wltea.analyzer.cfg.Configuration
+elasticsearch-analysis-ik-master;src.main.java.org.wltea.analyzer.dic.Hit

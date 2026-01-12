@@ -1,0 +1,9 @@
+Sentinel-1.8.3;FlowRule
+Sentinel-1.8.3;TracerTest
+Sentinel-1.8.3;DegradeRule
+Sentinel-1.8.3;SystemRule
+Sentinel-1.8.3;StatLoggerBuilder
+Sentinel-1.8.3;SentinelDubboConsumerFilterTest
+Sentinel-1.8.3;SentinelReactorSubscriber
+Sentinel-1.8.3;ParamFlowRuleEntity
+Sentinel-1.8.3;FileRefreshableDataSource

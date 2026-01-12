@@ -1,0 +1,3 @@
+HikariCP-HikariCP-4.0.0;TestConnections
+HikariCP-HikariCP-4.0.0;HikariConfig
+HikariCP-HikariCP-4.0.0;HikariPool

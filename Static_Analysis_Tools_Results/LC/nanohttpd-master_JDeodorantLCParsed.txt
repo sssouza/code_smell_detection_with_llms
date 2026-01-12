@@ -1,0 +1,10 @@
+nanohttpd-master - Copia;org.nanohttpd.junit.protocols.http.HttpServerTest
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.ClientHandler
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.NanoHTTPD
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.content.ContentType
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.response.Response
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.HTTPSession
+nanohttpd-master - Copia;org.nanohttpd.protocols.http.content.CookieHandler
+nanohttpd-master - Copia;org.nanohttpd.router.RouterNanoHTTPD.UriResource
+nanohttpd-master - Copia;org.nanohttpd.webserver.SimpleWebServer
+nanohttpd-master - Copia;org.nanohttpd.junit.protocols.websockets.SimpleEchoSocket

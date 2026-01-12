@@ -1,0 +1,6 @@
+Sa-Token-1.28.0;SaSecureUtil.sha256
+Sa-Token-1.28.0;StpLogic.login
+Sa-Token-1.28.0;SaCookie.toHeaderValue
+Sa-Token-1.28.0;SaSsoHandle.ssoLogin
+Sa-Token-1.28.0;SaSsoHandle.checkTicket
+Sa-Token-1.28.0;SaFoxUtil.getValueByType

@@ -1,0 +1,13 @@
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.AbstractMetaMember;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.assembly.AssemblyMethod;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.bytecode.ClassBC;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.CodeCacheEvent;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.Compilation;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.model.CompilerThread;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.parser.zing.ZingLine;DataClass;class
+jitwatch-master/jitwatch-master;..\..\..\..\Users\rique\Documents\Doutorado\SmellDetectionCaller-master\Temp\jitwatch-master\core\src\test\java\FooClassInDefaultPackage;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.ui.main.CompilationTableRow;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.ui.report.eliminatedallocation.EliminatedAllocationRowBean;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.ui.report.inlining.InliningRowBean;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.ui.report.locks.OptimisedLockRowBean;DataClass;class
+jitwatch-master/jitwatch-master;org.adoptopenjdk.jitwatch.ui.triview.assembly.ViewerAssembly;DataClass;class

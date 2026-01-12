@@ -1,0 +1,6 @@
+netty-socketio-master;com.corundumstudio.socketio.Configuration.Configuration;IntensiveCoupling;method
+netty-socketio-master;com.corundumstudio.socketio.handler.InPacketHandler.channelRead0;IntensiveCoupling;method
+netty-socketio-master;com.corundumstudio.socketio.handler.PacketListener.onPacket;IntensiveCoupling;method
+netty-socketio-master;com.corundumstudio.socketio.protocol.PacketDecoder.parseBinary;IntensiveCoupling;method
+netty-socketio-master;com.corundumstudio.socketio.protocol.PacketDecoder.parseBody;IntensiveCoupling;method
+netty-socketio-master;com.corundumstudio.socketio.protocol.PacketEncoder.encodePacket;IntensiveCoupling;method

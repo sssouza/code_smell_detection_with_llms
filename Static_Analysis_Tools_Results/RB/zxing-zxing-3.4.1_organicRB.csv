@@ -1,0 +1,8 @@
+zxing-zxing-3.4.1;com.google.zxing.ChecksumException;RefusedBequest;class
+zxing-zxing-3.4.1;com.google.zxing.common.GlobalHistogramBinarizer;RefusedBequest;class
+zxing-zxing-3.4.1;com.google.zxing.datamatrix.encoder.X12Encoder;RefusedBequest;class
+zxing-zxing-3.4.1;com.google.zxing.FormatException;RefusedBequest;class
+zxing-zxing-3.4.1;com.google.zxing.InvertedLuminanceSource;RefusedBequest;class
+zxing-zxing-3.4.1;com.google.zxing.WriterException;RefusedBequest;class
+zxing-zxing-3.4.1;com.google.zxing.BufferedImageLuminanceSource;RefusedBequest;class
+zxing-zxing-3.4.1;com.google.zxing.client.j2se.BufferedImageLuminanceSource;RefusedBequest;class

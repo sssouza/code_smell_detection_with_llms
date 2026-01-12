@@ -1,0 +1,2 @@
+xxl-job-2.3.0;XxlJobInfo.getId
+xxl-job-2.3.0;XxlJobInfoDao.loadById

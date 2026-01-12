@@ -1,0 +1,14 @@
+xxl-job-2.3.0;com.xxl.job.admin.core.conf.XxlJobAdminConfig;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.model.XxlJobGroup;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.model.XxlJobInfo;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.model.XxlJobLog;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.model.XxlJobLogGlue;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.model.XxlJobLogReport;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.model.XxlJobRegistry;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.model.XxlJobUser;DataClass;class
+xxl-job-2.3.0;com.xxl.job.admin.core.util.LocalCacheUtil.LocalCacheData;DataClass;class
+xxl-job-2.3.0;com.xxl.job.core.biz.model.HandleCallbackParam;DataClass;class
+xxl-job-2.3.0;com.xxl.job.core.biz.model.LogParam;DataClass;class
+xxl-job-2.3.0;com.xxl.job.core.biz.model.LogResult;DataClass;class
+xxl-job-2.3.0;com.xxl.job.core.biz.model.TriggerParam;DataClass;class
+xxl-job-2.3.0;com.xxl.job.core.context.XxlJobContext;DataClass;class

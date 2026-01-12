@@ -1,0 +1,9 @@
+gson-gson-parent-2.8.8;ISO8601Utils
+gson-gson-parent-2.8.8;Gson
+gson-gson-parent-2.8.8;LinkedTreeMap
+gson-gson-parent-2.8.8;JsonWriterTest
+gson-gson-parent-2.8.8;$Gson$Types
+gson-gson-parent-2.8.8;JsonTreeWriter
+gson-gson-parent-2.8.8;JsonReaderTest
+gson-gson-parent-2.8.8;LinkedHashTreeMap
+gson-gson-parent-2.8.8;Excluder

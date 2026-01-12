@@ -1,0 +1,15 @@
+jsoup-master;org.jsoup.parser.Token.Tag
+jsoup-master;org.jsoup.safety.Safelist
+jsoup-master;org.jsoup.internal.ConstrainableInputStream
+jsoup-master;org.jsoup.nodes.Document.OutputSettings
+jsoup-master;org.jsoup.parser.Parser
+jsoup-master;org.jsoup.parser.Tag
+jsoup-master;org.jsoup.parser.Tokeniser
+jsoup-master;org.jsoup.internal.StringUtil.StringJoiner
+jsoup-master;org.jsoup.nodes.CommentTest
+jsoup-master;org.jsoup.nodes.Document
+jsoup-master;org.jsoup.parser.ParseSettings
+jsoup-master;org.jsoup.safety.Cleaner
+jsoup-master;org.jsoup.select.SelectorTest
+jsoup-master;org.jsoup.nodes.Node
+jsoup-master;org.jsoup.parser.CharacterReader

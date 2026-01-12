@@ -1,0 +1,6 @@
+mall-1.0.2;com.macro.mall.service.impl.OmsOrderReturnApplyServiceImpl.updateStatus;IntensiveCoupling;method
+mall-1.0.2;com.macro.mall.service.impl.PmsProductAttributeServiceImpl.create;IntensiveCoupling;method
+mall-1.0.2;com.macro.mall.portal.service.impl.HomeServiceImpl.getHomeFlashPromotion;IntensiveCoupling;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPortalOrderServiceImpl.generateOrder;IntensiveCoupling;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPromotionServiceImpl.calcCartPromotion;IntensiveCoupling;method
+mall-1.0.2;com.macro.mall.portal.service.impl.OmsPromotionServiceImpl.handleNoReduce;IntensiveCoupling;method

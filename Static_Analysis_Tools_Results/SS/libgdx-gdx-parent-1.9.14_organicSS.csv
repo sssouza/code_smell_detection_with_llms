@@ -1,0 +1,14 @@
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.physics.box2d.World.createJoint;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.physics.bullet.collision.btCollisionShape.newDerivedObject;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.assets.AssetManager.unload;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.graphics.Color.clamp;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.graphics.g3d.utils.AnimationController.AnimationDesc.update;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.graphics.g3d.utils.CameraInputController.update;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.graphics.glutils.ShapeRenderer.check;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.scenes.scene2d.Actor.fire;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.scenes.scene2d.ui.Label.setText;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.scenes.scene2d.ui.Skin.getDrawable;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.scenes.scene2d.ui.Table.computeSize;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.scenes.scene2d.ui.WidgetGroup.validate;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.utils.BufferUtils.positionInBytes;ShotgunSurgery;method
+libgdx-gdx-parent-1.9.14;com.badlogic.gdx.utils.Json.writeValue;ShotgunSurgery;method

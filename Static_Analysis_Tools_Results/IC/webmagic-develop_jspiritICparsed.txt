@@ -1,0 +1,13 @@
+webmagic-develop;HttpUriRequestConverter.convertHttpUriRequest
+webmagic-develop;HttpClientDownloader.handleResponse
+webmagic-develop;HttpClientGenerator.generateClient
+webmagic-develop;HttpClientGenerator.generateCookie
+webmagic-develop;Spider.run
+webmagic-develop;SmartContentSelector.select
+webmagic-develop;ModelPageProcessor.process
+webmagic-develop;ConfigurablePageProcessor.process
+webmagic-develop;MultiPagePipeline.handleObject
+webmagic-develop;IPUtils.getFirstNoLoopbackIPAddresses
+webmagic-develop;ZipCodePageProcessor.processProvince
+webmagic-develop;AlexanderMcqueenGoodsProcessor.process
+webmagic-develop;AngularJSProcessor.process

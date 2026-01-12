@@ -1,0 +1,8 @@
+jsoup-master;org.jsoup.helper.DataUtil.parseInputStream;ShotgunSurgery;method
+jsoup-master;org.jsoup.nodes.Element.text;ShotgunSurgery;method
+jsoup-master;org.jsoup.nodes.Element.data;ShotgunSurgery;method
+jsoup-master;org.jsoup.nodes.Element.hasClass;ShotgunSurgery;method
+jsoup-master;org.jsoup.nodes.Node.addChildren;ShotgunSurgery;method
+jsoup-master;org.jsoup.parser.CharacterReader.bufferUp;ShotgunSurgery;method
+jsoup-master;org.jsoup.parser.TokenQueue.chompBalanced;ShotgunSurgery;method
+jsoup-master;org.jsoup.select.NodeTraversor.traverse;ShotgunSurgery;method

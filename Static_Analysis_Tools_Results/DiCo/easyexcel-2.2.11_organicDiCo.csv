@@ -1,0 +1,14 @@
+easyexcel-2.2.11;com.alibaba.excel.analysis.v03.handlers.DummyRecordHandler.processRecord;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.analysis.v07.XlsxSaxAnalyser.XlsxSaxAnalyser;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.context.WriteContextImpl.currentTable;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.metadata.property.ExcelHeadProperty.initOneColumnProperty;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.read.listener.ModelBuildEventListener.buildStringList;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.read.listener.ModelBuildEventListener.buildUserModel;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.read.processor.DefaultAnalysisEventProcessor.buildHead;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.util.SheetUtils.match;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.util.WriteHandlerUtils.afterSheetCreate;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.util.WriteHandlerUtils.afterCellDispose;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.util.WriteHandlerUtils.afterRowDispose;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.write.executor.ExcelWriteAddExecutor.addJavaObjectToExcel;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.write.executor.ExcelWriteFillExecutor.doFill;DispersedCoupling;method
+easyexcel-2.2.11;com.alibaba.excel.write.executor.ExcelWriteFillExecutor.getOneCell;DispersedCoupling;method

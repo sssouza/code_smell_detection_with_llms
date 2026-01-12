@@ -1,0 +1,3 @@
+java-faker-master/java-faker-master;com.github.javafaker.Faker.Faker;LongMethod;method
+java-faker-master/java-faker-master;com.github.javafaker.Finance.createCountryCodeToBasicBankAccountNumberPatternMap;LongMethod;method
+java-faker-master/java-faker-master;com.github.javafaker.integration.FakerIT.testAllFakerMethodsThatReturnStrings;LongMethod;method

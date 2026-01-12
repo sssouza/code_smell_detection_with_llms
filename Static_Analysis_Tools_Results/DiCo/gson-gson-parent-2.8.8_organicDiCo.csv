@@ -1,0 +1,4 @@
+gson-gson-parent-2.8.8;com.google.gson.internal.bind.MapTypeAdapterFactory.Adapter.write;DispersedCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields;DispersedCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.functional.RuntimeTypeAdapterFactoryFunctionalTest.RuntimeTypeAdapterFactory.create;DispersedCoupling;method
+gson-gson-parent-2.8.8;com.google.gson.protobuf.ProtoTypeAdapter.deserialize;DispersedCoupling;method

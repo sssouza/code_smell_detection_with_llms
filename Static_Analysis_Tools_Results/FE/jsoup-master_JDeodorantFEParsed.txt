@@ -1,0 +1,12 @@
+jsoup-master;org.jsoup.helper.W3CDom.convert
+jsoup-master;org.jsoup.parser.HtmlTreeBuilder.isSameFormattingElement
+jsoup-master;org.jsoup.nodes.Node.indent
+jsoup-master;org.jsoup.nodes.Attributes.put
+jsoup-master;org.jsoup.parser.Tokeniser.createBogusCommentPending
+jsoup-master;org.jsoup.parser.XmlTreeBuilder.insert
+jsoup-master;org.jsoup.parser.XmlTreeBuilder.insert
+jsoup-master;org.jsoup.safety.Cleaner.createSafeElement
+jsoup-master;org.jsoup.select.QueryParser.consumeSubQuery
+jsoup-master;org.jsoup.parser.Tokeniser.unescapeEntities
+jsoup-master;org.jsoup.parser.XmlTreeBuilder.insert
+jsoup-master;org.jsoup.safety.Safelist.testValidProtocol

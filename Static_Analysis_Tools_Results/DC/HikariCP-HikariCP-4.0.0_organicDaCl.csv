@@ -1,0 +1,6 @@
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.metrics.PoolStats;DataClass;class
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.pool.ProxyDatabaseMetaData;DataClass;class
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.util.DriverDataSource;DataClass;class
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.mocks.MockDataSource;DataClass;class
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.mocks.StubDataSource;DataClass;class
+HikariCP-HikariCP-4.0.0;com.zaxxer.hikari.mocks.TestObject;DataClass;class

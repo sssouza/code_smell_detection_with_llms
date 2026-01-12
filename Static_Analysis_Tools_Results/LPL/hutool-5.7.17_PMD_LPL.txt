@@ -1,0 +1,1 @@
+hutool-5.7.17;cn.hutool.extra.mail.MailUtil

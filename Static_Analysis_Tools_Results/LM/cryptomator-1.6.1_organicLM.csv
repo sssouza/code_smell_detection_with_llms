@@ -1,0 +1,5 @@
+cryptomator-1.6.1;org.cryptomator.common.settings.SettingsJsonAdapter.read;LongMethod;method
+cryptomator-1.6.1;org.cryptomator.common.settings.VaultSettingsJsonAdapter.read;LongMethod;method
+cryptomator-1.6.1;org.cryptomator.ui.keyloading.masterkeyfile.PassphraseEntryController.initialize;LongMethod;method
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.VaultListController.initialize;LongMethod;method
+cryptomator-1.6.1;org.cryptomator.ui.migration.MigrationRunController.migrate;LongMethod;method

@@ -1,0 +1,14 @@
+easyexcel-2.2.11;ReadSheetHolder.getCellMap
+easyexcel-2.2.11;WriteSheetHolder.getSheet
+easyexcel-2.2.11;ConfigurationHolder.globalConfiguration
+easyexcel-2.2.11;ReadWorkbookHolder.getExtraReadSet
+easyexcel-2.2.11;ExcelHeadProperty.getHeadMap
+easyexcel-2.2.11;WriteContext.writeSheetHolder
+easyexcel-2.2.11;AnalysisContext.readWorkbookHolder
+easyexcel-2.2.11;AnalysisContext.readSheetHolder
+easyexcel-2.2.11;AnalysisContext.currentReadHolder
+easyexcel-2.2.11;AnalysisContext.analysisEventProcessor
+easyexcel-2.2.11;XlsReadContext.xlsReadWorkbookHolder
+easyexcel-2.2.11;XlsReadContext.xlsReadSheetHolder
+easyexcel-2.2.11;XlsxReadContext.xlsxReadSheetHolder
+easyexcel-2.2.11;AbstractHolder.getGlobalConfiguration

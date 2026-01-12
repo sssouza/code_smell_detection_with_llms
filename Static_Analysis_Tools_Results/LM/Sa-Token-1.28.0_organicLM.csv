@@ -1,0 +1,5 @@
+Sa-Token-1.28.0;cn.dev33.satoken.config.SaTokenConfigFactory.getObjectByClass;LongMethod;method
+Sa-Token-1.28.0;cn.dev33.satoken.util.SaFoxUtil.getValueByType;LongMethod;method
+Sa-Token-1.28.0;com.pj.utils.SoMap.getValueByClass;LongMethod;method
+Sa-Token-1.28.0;cn.dev33.satoken.dao.alone.SaAloneRedisInject.setEnvironment;LongMethod;method
+Sa-Token-1.28.0;cn.dev33.satoken.solon.XPluginImp.start;LongMethod;method

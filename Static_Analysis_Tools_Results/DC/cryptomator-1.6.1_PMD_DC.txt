@@ -1,0 +1,2 @@
+cryptomator-1.6.1;src.main.java.org.cryptomator.common.settings.Settings
+cryptomator-1.6.1;src.main.java.org.cryptomator.common.settings.VaultSettings

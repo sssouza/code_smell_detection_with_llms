@@ -1,0 +1,3 @@
+xxl-job-2.3.0;com.xxl.job.admin.core.thread.JobScheduleHelper.refreshNextValidTime
+xxl-job-2.3.0;com.xxl.job.admin.controller.JobGroupController.save
+xxl-job-2.3.0;com.xxl.job.admin.controller.JobGroupController.update

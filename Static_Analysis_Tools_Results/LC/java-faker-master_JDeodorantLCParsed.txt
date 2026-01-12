@@ -1,0 +1,5 @@
+java-faker-master/java-faker-master;com.github.javafaker.service.FakeValuesService
+java-faker-master/java-faker-master;com.github.javafaker.integration.FakerIT
+java-faker-master/java-faker-master;com.github.javafaker.Code
+java-faker-master/java-faker-master;com.github.javafaker.Internet
+java-faker-master/java-faker-master;com.github.javafaker.service.FakeValues

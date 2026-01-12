@@ -1,0 +1,14 @@
+cryptomator-1.6.1;org.cryptomator.common.vaults.VaultListChangeListener.onChanged
+cryptomator-1.6.1;org.cryptomator.ui.addvaultwizard.CreateNewVaultLocationController.chooseCustomVaultPath
+cryptomator-1.6.1;org.cryptomator.ui.common.FxmlLoaderFactory.createScene
+cryptomator-1.6.1;org.cryptomator.ui.controls.DraggableListCell.onDragDropped
+cryptomator-1.6.1;org.cryptomator.ui.controls.DraggableListCell.onDragDetected
+cryptomator-1.6.1;org.cryptomator.ui.controls.SecurePasswordField.setPassword
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.MainWindowController.initialize
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.MainWindowController.containsVault
+cryptomator-1.6.1;org.cryptomator.ui.mainwindow.MainWindowController.handleDragEvent
+cryptomator-1.6.1;org.cryptomator.ui.preferences.VolumePreferencesController.initialize
+cryptomator-1.6.1;org.cryptomator.ui.recoverykey.RecoveryKeyFactory.decodeRecoveryKey
+cryptomator-1.6.1;org.cryptomator.ui.stats.VaultStatisticsModule.provideStage
+cryptomator-1.6.1;org.cryptomator.ui.vaultoptions.MountOptionsController.initialize
+cryptomator-1.6.1;org.cryptomator.ui.vaultoptions.MountOptionsController.toggleUseCustomMountFlags

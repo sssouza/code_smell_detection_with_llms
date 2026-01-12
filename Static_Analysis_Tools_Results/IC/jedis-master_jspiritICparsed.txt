@@ -1,0 +1,4 @@
+jedis-master/jedis-master;ClusterCommandsTest.clusterSlots
+jedis-master/jedis-master;BuilderFactory.createMapFromDecodingFunctions
+jedis-master/jedis-master;AccessControlListCommandsTest.aclLogTest
+jedis-master/jedis-master;DefaultJedisSocketFactory.createSocket

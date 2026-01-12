@@ -1,0 +1,2 @@
+java-faker-master/java-faker-master;Finance.creditCard
+java-faker-master/java-faker-master;Finance.calculateIbanChecksum

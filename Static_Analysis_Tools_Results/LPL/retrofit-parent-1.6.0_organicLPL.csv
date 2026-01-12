@@ -1,0 +1,12 @@
+retrofit-parent-1.6.0;retrofit.client.Request.Request;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.client.Response.Response;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.mime.MultipartTypedOutput.MimePart.MimePart;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.Profiler.afterCall;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.Profiler.RequestInformation.RequestInformation;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.RestAdapter.RestAdapter;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.RetrofitError.conversionError;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.RetrofitError.httpError;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.RetrofitError.RetrofitError;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.MockHttpRetrofitError.MockHttpRetrofitError;LongParameterList;method
+retrofit-parent-1.6.0;retrofit.MockRestAdapter.MockRxSupport.createMockObservable;LongParameterList;method
+retrofit-parent-1.6.0;Sistemas - Git\retrofit-parent-1.6.0\retrofit-parent-1.6.0\retrofit-samples\mock-github-client\src\main\java\com\example\retrofit\GitHubClient;LongParameterList;method

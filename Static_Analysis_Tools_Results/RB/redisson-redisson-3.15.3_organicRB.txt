@@ -1,0 +1,8 @@
+redisson;org.redisson.client.protocol.convertor.DoubleNullSafeReplayConvertor;RefusedBequest
+redisson;org.redisson.client.protocol.decoder.StreamObjectMapReplayDecoder;RefusedBequest
+redisson;org.redisson.client.RedisException;RefusedBequest
+redisson;org.redisson.client.WriteRedisConnectionException;RefusedBequest
+redisson;org.redisson.jcache.JCacheMBeanServerBuilder;RefusedBequest
+redisson;org.redisson.jcache.JCacheMBeanServerBuilder.JCacheMBeanServerDelegate;RefusedBequest
+redisson;org.redisson.RedissonLiveObjectServiceTest.Dog;RefusedBequest
+redisson;org.redisson.spring.data.connection.RedissonReactiveRedisClusterConnection;RefusedBequest

@@ -1,0 +1,4 @@
+junit4;junit.runner.BaseTestRunner.getTest;LongMethod
+junit4;org.junit.internal.ComparisonCriteria.arrayEquals;LongMethod
+junit4;org.junit.runner.notification.ConcurrentRunNotifierTest.AbstractConcurrentFailuresTest.test;LongMethod
+junit4;org.junit.tests.experimental.max.DescriptionTest.usesPassedInClassObject;LongMethod

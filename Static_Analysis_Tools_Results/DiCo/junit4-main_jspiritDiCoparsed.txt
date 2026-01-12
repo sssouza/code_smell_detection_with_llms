@@ -1,0 +1,12 @@
+junit4-main;ResultTest.assertSerializedCorrectly
+junit4-main;AbstractConcurrentFailuresTest.test
+junit4-main;BaseTestRunner.getTest
+junit4-main;Throwables.getTrimmedStackTraceLines
+junit4-main;Throwables.getCauseStackTraceLines
+junit4-main;Assert.assertThrows
+junit4-main;Theories.validateDataPointFields
+junit4-main;Theories.validateDataPointMethods
+junit4-main;BlockJUnit4ClassRunnerWithParameters.createTestUsingFieldInjection
+junit4-main;ParentRunner.filter
+junit4-main;MethodValidator.validateTestMethods
+junit4-main;JUnit38ClassRunner.makeDescription

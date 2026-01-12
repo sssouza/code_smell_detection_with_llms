@@ -1,0 +1,11 @@
+jsoup-master;org.jsoup.examples.ListLinks.main;DispersedCoupling;method
+jsoup-master;org.jsoup.helper.DataUtil.parseInputStream;DispersedCoupling;method
+jsoup-master;org.jsoup.helper.HttpConnection.Response.serialiseRequestUrl;DispersedCoupling;method
+jsoup-master;org.jsoup.helper.W3CDom.W3CBuilder.head;DispersedCoupling;method
+jsoup-master;org.jsoup.nodes.Element.outerHtmlHead;DispersedCoupling;method
+jsoup-master;org.jsoup.nodes.Node.wrap;DispersedCoupling;method
+jsoup-master;org.jsoup.parser.HtmlTreeBuilder.parseFragment;DispersedCoupling;method
+jsoup-master;org.jsoup.parser.HtmlTreeBuilder.insert;DispersedCoupling;method
+jsoup-master;org.jsoup.parser.HtmlTreeBuilder.insertEmpty;DispersedCoupling;method
+jsoup-master;org.jsoup.parser.XmlTreeBuilder.insert;DispersedCoupling;method
+jsoup-master;org.jsoup.safety.Safelist.isSafeAttribute;DispersedCoupling;method

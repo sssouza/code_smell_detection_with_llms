@@ -1,0 +1,7 @@
+HikariCP-HikariCP-4.0.0;HouseKeeper.run
+HikariCP-HikariCP-4.0.0;JavassistProxyFactory.generateProxyClass
+HikariCP-HikariCP-4.0.0;PoolBase.initializeDataSource
+HikariCP-HikariCP-4.0.0;HikariConfig.logConfiguration
+HikariCP-HikariCP-4.0.0;FauxWebContext.checkThreadLocalsForLeaks
+HikariCP-HikariCP-4.0.0;HikariPool.HikariPool
+HikariCP-HikariCP-4.0.0;DriverDataSource.DriverDataSource

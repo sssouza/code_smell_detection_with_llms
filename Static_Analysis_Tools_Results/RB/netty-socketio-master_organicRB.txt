@@ -1,0 +1,8 @@
+netty;com.corundumstudio.socketio.ack.AckSchedulerKey;RefusedBequest
+netty;com.corundumstudio.socketio.handler.SocketIOException;RefusedBequest
+netty;com.corundumstudio.socketio.listener.DefaultExceptionListener;RefusedBequest
+netty;com.corundumstudio.socketio.messages.XHROptionsMessage;RefusedBequest
+netty;com.corundumstudio.socketio.parser.EncoderAckPacketTest;RefusedBequest
+netty;com.corundumstudio.socketio.parser.EncoderConnectionPacketTest;RefusedBequest
+netty;com.corundumstudio.socketio.parser.EncoderEventPacketTest;RefusedBequest
+netty;com.corundumstudio.socketio.parser.EncoderMessagePacketTest;RefusedBequest

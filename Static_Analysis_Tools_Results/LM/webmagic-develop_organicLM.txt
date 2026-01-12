@@ -1,0 +1,10 @@
+webmagic;us.codecraft.webmagic.selector.SmartContentSelector.select;LongMethod
+webmagic;us.codecraft.webmagic.Spider.run;LongMethod
+webmagic;us.codecraft.webmagic.downloader.HttpClientDownloaderTest.testGetHtmlCharset;LongMethod
+webmagic;us.codecraft.webmagic.downloader.HttpClientDownloaderTest.test_selectRequestMethod;LongMethod
+webmagic;us.codecraft.webmagic.proxy.ProxyTest.testCreate;LongMethod
+webmagic;us.codecraft.webmagic.model.formatter.BasicTypeFormatter.detectBasicClass;LongMethod
+webmagic;us.codecraft.webmagic.model.PageModelExtractor.processSingle;LongMethod
+webmagic;us.codecraft.webmagic.pipeline.MultiPagePipeline.handleObject;LongMethod
+webmagic;us.codecraft.webmagic.selector.XpathSelectorTest.parserPerformanceTest;LongMethod
+webmagic;us.codecraft.webmagic.downloader.selenium.WebDriverPool.configure;LongMethod

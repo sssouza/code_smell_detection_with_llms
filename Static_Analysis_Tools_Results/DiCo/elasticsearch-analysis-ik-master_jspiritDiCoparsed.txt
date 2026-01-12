@@ -1,0 +1,6 @@
+elasticsearch-analysis-ik-master;Monitor.runUnprivileged
+elasticsearch-analysis-ik-master;Dictionary.Dictionary
+elasticsearch-analysis-ik-master;Dictionary.loadDictFile
+elasticsearch-analysis-ik-master;Dictionary.getRemoteWordsUnprivileged
+elasticsearch-analysis-ik-master;Dictionary.loadStopWordDict
+elasticsearch-analysis-ik-master;CN_QuantifierSegmenter.needCountScan

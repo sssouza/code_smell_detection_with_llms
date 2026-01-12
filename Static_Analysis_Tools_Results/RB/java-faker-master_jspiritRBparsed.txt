@@ -1,0 +1,10 @@
+java-faker-master/java-faker-master;SipTest
+java-faker-master/java-faker-master;AddressTest
+java-faker-master/java-faker-master;DateAndTimeTest
+java-faker-master/java-faker-master;InternetTest
+java-faker-master/java-faker-master;BasketballTest
+java-faker-master/java-faker-master;NumberTest
+java-faker-master/java-faker-master;FakeValuesServiceTest
+java-faker-master/java-faker-master;LoremTest
+java-faker-master/java-faker-master;DiseaseTest
+java-faker-master/java-faker-master;FakerTest

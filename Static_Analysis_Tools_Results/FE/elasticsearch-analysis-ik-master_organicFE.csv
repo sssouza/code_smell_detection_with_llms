@@ -1,0 +1,17 @@
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.AnalyzeContext.getNextLexeme;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.AnalyzeContext.compound;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CJKSegmenter.analyze;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CN_QuantifierSegmenter.processCNumber;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CN_QuantifierSegmenter.processCount;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.CN_QuantifierSegmenter.needCountScan;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKArbitrator.process;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.IKSegmenter.next;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.LetterSegmenter.processMixLetter;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.LetterSegmenter.processEnglishLetter;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.LetterSegmenter.processArabicLetter;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.LexemePath.addCrossLexeme;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.LexemePath.addNotCrossLexeme;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.LexemePath.checkCross;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.core.QuickSortSet.addLexeme;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.dic.DictSegment.match;FeatureEnvy;method
+elasticsearch-analysis-ik-master;org.wltea.analyzer.lucene.IKTokenizer.incrementToken;FeatureEnvy;method

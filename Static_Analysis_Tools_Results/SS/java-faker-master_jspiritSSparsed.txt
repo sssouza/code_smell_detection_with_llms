@@ -1,0 +1,15 @@
+java-faker-master/java-faker-master;Number.numberBetween
+java-faker-master/java-faker-master;RandomService.nextInt
+java-faker-master/java-faker-master;FakeValuesService.fetchString
+java-faker-master/java-faker-master;FakeValuesService.resolve
+java-faker-master/java-faker-master;Faker.numerify
+java-faker-master/java-faker-master;Faker.regexify
+java-faker-master/java-faker-master;Faker.random
+java-faker-master/java-faker-master;Faker.fakeValuesService
+java-faker-master/java-faker-master;Faker.name
+java-faker-master/java-faker-master;Faker.number
+java-faker-master/java-faker-master;Faker.internet
+java-faker-master/java-faker-master;Faker.lorem
+java-faker-master/java-faker-master;Faker.address
+java-faker-master/java-faker-master;Faker.options
+java-faker-master/java-faker-master;Faker.resolve

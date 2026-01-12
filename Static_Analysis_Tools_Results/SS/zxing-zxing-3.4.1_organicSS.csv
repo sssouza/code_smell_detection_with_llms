@@ -1,0 +1,3 @@
+zxing-zxing-3.4.1;com.google.zxing.aztec.encoder.Encoder.encode;ShotgunSurgery;method
+zxing-zxing-3.4.1;com.google.zxing.common.BitSource.readBits;ShotgunSurgery;method
+zxing-zxing-3.4.1;com.google.zxing.qrcode.encoder.Encoder.encode;ShotgunSurgery;method

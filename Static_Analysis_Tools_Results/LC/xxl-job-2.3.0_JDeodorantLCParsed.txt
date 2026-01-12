@@ -1,0 +1,10 @@
+xxl-job-2.3.0;com.xxl.job.admin.controller.JobGroupController
+xxl-job-2.3.0;com.xxl.job.admin.controller.JobLogController
+xxl-job-2.3.0;com.xxl.job.admin.core.thread.JobTriggerPoolHelper
+xxl-job-2.3.0;com.xxl.job.admin.controller.IndexController
+xxl-job-2.3.0;com.xxl.job.admin.controller.UserController
+xxl-job-2.3.0;com.xxl.job.admin.core.cron.CronExpression
+xxl-job-2.3.0;com.xxl.job.core.thread.JobThread
+xxl-job-2.3.0;com.xxl.job.core.executor.XxlJobExecutor
+xxl-job-2.3.0;com.xxl.job.core.server.EmbedServer.EmbedHttpServerHandler
+xxl-job-2.3.0;com.xxl.job.core.thread.TriggerCallbackThread

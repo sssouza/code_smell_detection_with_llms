@@ -1,0 +1,7 @@
+junit4-main;BaseTestRunner
+junit4-main;TestCase
+junit4-main;AssertionTest
+junit4-main;Assert
+junit4-main;BlockJUnit4ClassRunner
+junit4-main;ParentRunner
+junit4-main;TestClass

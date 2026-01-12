@@ -1,0 +1,4 @@
+retrofit-parent-1.6.0;TestConnections
+retrofit-parent-1.6.0;HikariPool
+retrofit-parent-1.6.0;HikariConfig
+retrofit-parent-1.6.0;Phone

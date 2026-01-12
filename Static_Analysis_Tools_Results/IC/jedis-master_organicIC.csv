@@ -1,0 +1,6 @@
+jedis-master/jedis-master;redis.clients.jedis.BinaryJedis.initializeFromClientConfig;IntensiveCoupling;method
+jedis-master/jedis-master;redis.clients.jedis.BinaryJedisPubSub.process;IntensiveCoupling;method
+jedis-master/jedis-master;redis.clients.jedis.DefaultJedisSocketFactory.createSocket;IntensiveCoupling;method
+jedis-master/jedis-master;redis.clients.jedis.JedisPubSub.process;IntensiveCoupling;method
+jedis-master/jedis-master;redis.clients.jedis.tests.commands.AccessControlListCommandsTest.aclLogTest;IntensiveCoupling;method
+jedis-master/jedis-master;redis.clients.jedis.tests.JedisClusterTest.testReadonlyAndReadwrite;IntensiveCoupling;method

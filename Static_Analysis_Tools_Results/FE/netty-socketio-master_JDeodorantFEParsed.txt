@@ -1,0 +1,3 @@
+netty-socketio-master;com.corundumstudio.socketio.SocketIOChannelInitializer.createSSLContext
+netty-socketio-master;com.corundumstudio.socketio.handler.AuthorizeHandler.connect
+netty-socketio-master;com.corundumstudio.socketio.protocol.PacketDecoder.parseHeader
