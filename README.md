@@ -64,7 +64,7 @@ Note (2): Both scripts can be changed to whateaver HuggingFace or OpenAI model y
 4. Add your HuggingFace or OpenAI token where is described in the script;
 5. Change the destination folder in the script;
 6. Open a terminal with the path set where the folder with the codes is located;
-7. Run the script with python3 "SCRIPT_NAME" (MacOS) or python hello.py (Windows);
+7. Run the script with python3 "SCRIPT_NAME" (MacOS) or python "SCRIPT_NAME" (Windows);
 
 ### Static Analysis Tools Results
 
